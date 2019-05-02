@@ -1,0 +1,55 @@
+/* Print Styles for elements and global uses */
+
+@media print {
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+
+  ul, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  // Expands link address in pseudo element
+  a {
+    font-weight: bolder;
+    text-decoration: none;
+    
+    &[href^=http]:after {
+      content:" (" attr(href) ") ";
+    }
+
+    &[href^="#"]:after {
+      content: "";
+    }
+  }
+
+  iframe,
+  .print-hide {
+    display: none;
+  }
+
+  .site-content {
+    margin: 0;
+  }
+
+  .recipe-hero,
+  .recipe-content {
+    padding: $gap;
+  }
+
+}

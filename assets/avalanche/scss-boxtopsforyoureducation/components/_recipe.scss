@@ -1,0 +1,341 @@
+// Note: Layout is based on the 12 column Sketch design grid. All widths set using `(100% / 12) * n` are leveraging this format.
+// For example, the .recipe-content-right section is 3 columns wide in the design file => (100% / 12) * 3;
+// When working with a portion of columns nested within the full 12-column grid, the formula is subsetted => (100% / 9) * 4;
+
+.recipe-bkg {
+    background-color: $white;
+}
+
+.recipe-hero {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: $contentWidth;
+    margin: 0 auto;
+    padding: 0 0 ($gapLarge / 2);
+
+    @media screen and (min-width: $medium) {
+        flex-flow: row nowrap;
+        padding: ($gapLarge / 2) $gap;
+    }
+}
+
+.recipe-hero-image {
+
+    @media screen and (min-width: $medium) {
+        width: (100% / 12) * 7;
+        padding-right: ($gapLarge / 2);
+    }
+}
+
+.recipe-hero-info {
+    padding: ($gapLarge / 2) $gap 0;
+
+    @media screen and (min-width: $medium) {
+        width: (100% / 12) * 5;
+        padding: ($gapLarge / 2) 0 0;
+    }
+}
+
+.recipe-title {
+    margin: 0;
+    padding: 0 0 ($gapLarge / 2);
+    color: $colorPrimary;
+    font-family: $fontLilitaOne;
+    font-size: 30px;
+    line-height: 50px;
+
+    @media screen and (min-width: $medium) {
+        font-size: 42px;
+    }
+}
+
+.recipe-info-item {
+    display: flex;
+    align-items: center;
+    padding-bottom: $gap;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+
+    .recipe-info-item-content {
+        display: block;
+
+        div {
+            display: inline-block;
+        }
+
+        .item-content-seperator {
+            display: inline-block !important;
+        }
+    }
+}
+
+.recipe-icon {
+    flex: 0 0 auto;
+    width: ($gap * 2);
+    margin-right: $gap;
+    vertical-align: middle;
+
+    & path,
+    & g,
+    & polyline {
+        fill: $colorRecipeListining;
+    }
+}
+
+.recipe-content {
+    padding: ($gapLarge / 2) $gap;
+
+    @media screen and (min-width: $medium) {
+        display: flex;
+        padding: $gapLarge $gap 0;
+    }
+}
+
+.recipe-content-left {
+
+    & .constrain {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    p {
+        font-family: $fontBarlow;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 26px;
+        color: $colorPrimary;
+    }
+
+    @media screen and (min-width: $medium) {
+        flex: 1 1 auto;
+        width: (100% / 12) * 9;
+    }
+}
+
+.recipe-content-right {
+
+    @media screen and (min-width: $medium) {
+        flex: 0 0 auto;
+        width: (100% / 12) * 3;
+        padding-left: ($gapLarge / 2);
+    }
+}
+
+.recipe-hr {
+    display: block;
+    height: 0;
+    margin: ($gapLarge / 2) 0;
+    border: 0;
+    border-bottom: 2px solid $colorNavMenuHover;
+
+    @media screen and (min-width: $medium) {
+        margin: ($gapLarge / 2) 0 $gapLarge;
+    }
+}
+
+.recipe-content-inner {
+    padding: 0 0 ($gapLarge / 3);
+
+    @media screen and (min-width: $medium) {
+        display: flex;
+        padding: 0 0 ($gapLarge / 2);
+    }
+}
+
+.recipe-ingredients {
+    padding-bottom: ($gapLarge / 2);
+
+    @media screen and (min-width: $medium) {
+        width: (100% / 9) * 4;
+        padding-right: ($gapLarge / 2);
+    }
+
+    .module-heading {
+        font-family: $fontBarlow;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 28px;
+    }
+}
+
+.recipe-list-heading {
+    padding-bottom: $gap;
+    font-weight: $weightBold;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+}
+
+.recipe-ingredients-list {
+    margin: 0;
+    padding: 0 0 ($gap * 2.5);
+
+    &:last-child {
+        padding: 0;
+    }
+
+    & li {
+        display: flex;
+        align-items: flex-start;
+        padding: 0 0 $gap 0;
+        list-style: none;
+        color: $colorPrimary;
+        font-family: $fontBarlow;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.recipe-ingredients-icon {
+    flex: 0 0 auto;
+    width: ($gapLarge / 3);
+    margin-right: ($gap / 2);
+
+    & path {
+        fill: $colorRecipeListining;
+    }
+}
+
+.recipe-directions {
+
+    @media screen and (min-width: $medium) {
+        width: (100% / 9) * 5;
+    }
+
+    .module-heading {
+        font-family: $fontBarlow;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 28px;
+        color: $colorPrimary;
+    }
+
+    .wysiwyg {
+        text-align: left;
+
+        .recipe-sub-heading {
+            padding: 40px 0 20px;
+            font-family: $fontBarlow;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 28px;
+            color: $colorPrimary;
+        }
+
+        .recipe-nutrition {
+            color: $colorPrimary;
+            font-family: $fontBarlow;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px;
+        }
+    }
+
+    .recipe-directions-list {
+        margin: 0;
+        padding: 0 0 ($gap * 2.5) ($gapLarge / 3);
+
+        & li {
+            padding: 0 0 $gap 0;
+            color: $colorPrimary;
+            font-family: $fontBarlow;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.recipe-sub-heading {
+    margin: 0;
+    padding: ($gapLarge / 3) 0 $gap;
+
+    @media screen and (min-width: $medium) {
+        padding: ($gapLarge / 1.5) 0 ($gapLarge / 3);
+    }
+}
+
+.recipe-tips-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & li {
+        padding: 0 0 $gap 0;
+        color: $colorPrimary;
+        font-family: $fontBarlow;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.recipe-content-right {
+
+    .featured-items-title {
+        color: $colorPrimary;
+        font-family: $fontBarlow;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 34px;
+    }
+
+    .featured-items-heading {
+        color: $colorPrimary;
+        font-family: $fontBarlow;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .pad-bottom {
+        color: $colorPrimary;
+        font-family: $fontBarlow;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+        padding-top: 12px;
+    }
+
+    .button {
+        color: $colorPrimary;
+        border: 1px solid $colorNavMenuHover;
+        background-color: $colorNavMenuHover;
+        color: $colorPrimary;
+        font-family: $fontBarlow;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 24px;
+        text-align: center;
+        margin-top: 26px;
+        padding:10px 18px;
+    }
+
+    .recipe-button-icon {
+        margin-top: 2px;
+        margin-left: 24px;
+        float: right;
+        color: $colorPrimary;
+
+        path {
+            fill: $colorPrimary;
+        }
+    }
+}

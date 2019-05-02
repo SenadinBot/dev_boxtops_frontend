@@ -1,0 +1,32 @@
+﻿.faq-text-question {
+    font-size: 38px;
+    padding: 0 0 $gap;
+    color: $black;
+    text-align: center;
+    font-family: $fontOswald;
+}
+
+.faq-text-answer {
+    padding: 0 0 40px;
+    color: $black;
+    font-size: $textXSmall;
+    text-align: center;
+}
+
+.faq-heading {
+    color: $black;
+    font-size: $textXLarge;
+    text-align: center;
+    font-family: $fontOswald;
+    padding-bottom: 80px;
+}
+
+.constrain.fqalist {
+    padding: 0 $gap;
+    padding-top: 80px;
+}
+
+.wysiwyg
+{
+    text-align:center;
+}

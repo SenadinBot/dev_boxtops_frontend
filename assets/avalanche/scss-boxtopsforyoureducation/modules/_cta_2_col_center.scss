@@ -1,0 +1,97 @@
+﻿.cta2colcenter .module-title {
+    padding: 0 0 60px;
+    color: $colorPrimary;
+    font-family: $fontLilitaOne;
+    font-size: 42px;
+    line-height: 50px;
+
+    @media screen and (max-width: $medium) {
+        font-size: 30px;
+    }
+}
+
+.cta2colcenter .module-heading {
+    color: $white;
+    font-family: $fontBarlow;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 43px;
+
+    @media screen and (max-width: $medium) {
+        font-size: 28px;
+    }
+}
+
+.cta2colcenter .module-pad-bottom {
+    color: $white;
+    font-family: $fontBarlow;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.cta2colcenter .module-pad-bottom .small{
+    font-size: 13px;
+}
+
+.cta2colcenter .button {
+    padding: 20px 20px;
+    min-width: 248px;
+    background-color: $colorNavMenuHover;
+    border-color: $colorNavMenuHover;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 18px;
+    font-weight: bold;
+
+    @media screen and (max-width: $medium) {
+        width: 100%
+    }
+}
+
+.cta2colcenter .button:hover, .cta2colcenter .button:focus, .cta2colcenter .button:active {
+    background-color: $colorNavMenuHover;
+    border-color: $colorNavMenuHover;
+    color: $colorPrimary;
+}
+
+.cta2colcenter .module-pad-bottom .bulletlist {
+    font-size: 28px;
+    text-align: left;
+    list-style-type: none;
+
+    @media screen and (max-width: $medium) {
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+.cta2colcenter hr {
+    margin-top: 80px;
+}
+
+.cta2colcenter .cta-2-col-wrap.cta-2-col-yellow {
+    background-color: #FBBD32;
+}
+
+.cta2colcenter .cta-2-col-wrap.cta-2-col-blue {
+    background-color: $colorPrimary;
+}
+
+.cta2colcenter .cta-2-col-wrap.cta-2-col-none {
+    background-color: unset;
+}
+
+.module-pad-bottom .bulletlist {
+    padding-left: 0px;
+}
+
+.cta2colcenter .cta-2-col-button-icon {
+    margin-top: 0px;
+    margin-left: 50px;
+    float: right;
+}
+
+.cta2colcenter .cta-2-col-button-icon path {
+    fill: $colorPrimary;
+}

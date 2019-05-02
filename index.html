@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Homepage</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="description"
+        content="This is an example of a meta description. This will often show up in search results.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
+
+    <!-- Styles -->
+    <link href="/assets/avalanche/scss-boxtopsforyoureducation/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header id="masthead" class="header @headercss" role="banner">
+        <div class="header-wrap">
+            <a href="#" rel="home">
+                <img src="./assets/images/logo.png" alt="Header Logo" class="header-logo">
+            </a>
+            <nav id="nav" class="nav" role="navigation">
+                <button id="navtoggle" class="nav-toggle" aria-controls="navmenu" aria-label="Menu"
+                    aria-expanded="false">
+                    <span class="screen-reader-text">Menu</span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                <ul id="navmenu" class="nav-menu" style="display: none">
+                    @foreach (var navItem in Model.NavigationItem.MainNavigation)
+                    {
+                    string css = Model.GetActiveMenuClass(navItem);
+                    <li id="@navItem.ID" class="">
+                        <a href="@navItem.GetItemUrl()">@navItem.InnerItem.GetNavigationTitle()</a>
+                    </li>
+                    }
+
+                    <div class="nav-registration-wrapper">
+                        @if (Model._pageContext.User.IsAuthenticated && !Model._pageContext.IsInSitecore())
+                        {
+                        string cssLogout = @Model.GetActiveMenuClassRegistration("log out");
+                        <li id="nav-reg-logout" class="@cssLogout">
+                            @Html.ActionLink("Logout", "Logout", "Navigation", new { returnUrl = Model.GetRedirectPage()
+                            }, new { @class = "" })
+                        </li>
+
+                        string cssMyAccount = @Model.GetActiveMenuClassRegistration("My account");
+                        <li id="nav-reg-my-account" class="@cssMyAccount">
+                            @Html.Sitecore().Field("My Account", Model._pageContext.Root, new { @class = "" })
+                        </li>
+                        }
+                        else
+                        {
+                        string cssMyLogIn = @Model.GetActiveMenuClassRegistration("log in");
+                        <li id="nav-reg-login" class="@cssMyLogIn">
+                            @Html.Sitecore().Field("Log in", Model._pageContext.Root, new { @class = "" })
+                        </li>
+
+                        string cssRegister = @Model.GetActiveMenuClassRegistration("Register");
+                        <li id="nav-reg-register" class="nav-reg-register @cssRegister">
+                            @Html.Sitecore().Field("Register", Model._pageContext.Root, new { @class =
+                            "nav-registration-btn" })
+                        </li>
+                        }
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="site-content max-width">
+        <div class="content-area">
+            <div class="site-main">
+                <div class="modules">
+                    <section class="hero-banner-container logged-page-hero">
+                        <div class="banner-image"
+                            style="background-image: url('./assets/images/images/logged-page-background.png')">
+                            <div class="hero-banner-inner-container">
+                                <div class="img-container" class="logged-image">
+                                    <img src="./assets/images/images/custom-image@2x.png" alt="Clipped Image">
+                                </div>
+                                <div class="hero-banner-content">
+                                    <h2>SKIP THE SCISSORS...</h2>
+                                    <span>USE THE MOBILE APP INSTEAD!</span>
+                                    <p>It's the easiest way to earn for your school: just use the Box Tops mobile app to
+                                        scan your store receipt. It automatically finds participating products and
+                                        instantly
+                                        adds 10¢ Box Tops to your school's earnings online. No clipping required!</p>
+                                    <div class="download-app">
+                                        <a href="#"><span>Download the app</span></a>
+                                    </div>
+                                    <a href="#" class="scan-without-app-link visible-xs">SCAN WITHOUT THE APP</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="colophon" class="site-footer footer print-hide" role="contentinfo">
+        <div class="footer-social-wrap">
+            <div class="footer-social">
+                <div class="social-sharing">
+                    <a class="social-sharing-link" href="" target="_blank" rel="noopener">
+                        <img src="./assets/images/icons/footer-fcb.png" alt="Share on Facebook">
+                    </a>
+                    <a class="social-sharing-link" href="" target="_blank" rel="noopener">
+                        <img src="./assets/images/icons/footer-instagram.png" alt="Share on Instagram">
+                    </a>
+                    <a class="social-sharing-link" href="#" target="_blank" rel="noopener">
+                        <img src="./assets/images/icons/footer-youtube.png" alt="Pin it">
+                    </a>
+                </div>
+                <p>
+                    Share This Page
+                </p>
+            </div>
+        </div>
+        <div class="footer-wrap">
+            <div class="footer-menu-wrapper">
+                <ul id="footermenu" class="footer-menu">
+                    <li id="menu-item-0">
+                        <a target="_blank" rel="noopener" href="#">FAQs</a>
+                    </li>
+                    <li id="menu-item-1">
+                        <a target="_blank" rel="noopener" href="#"> Contact Us</a>
+                    </li>
+                    <li id="menu-item-2">
+                        <a target="_blank" rel="noopener" href="#"> Español</a>
+                    </li>
+                    <li id="menu-item-3">
+                        <a target="" rel="noopener" href="#">Privacy Policy</a>
+                    </li>
+                    <li id="menu-item-4">
+                        <a target="_blank" rel="noopener" href="#">Legal Terms</a>
+                    </li>
+                    <li id="menu-item-5">
+                        <a target="" rel="noopener" href="">Official Rules</a>
+                    </li>
+                    <li id="menu-item-6">
+                        <a target="" rel="noopener" href="">Ad Choices</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-copyright">© General Mills</div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+</body>
+
+</html>

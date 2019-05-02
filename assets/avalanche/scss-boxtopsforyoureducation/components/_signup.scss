@@ -1,0 +1,372 @@
+.signup-container {
+    padding-top: 20px;
+    padding-bottom: 157px;
+    width: 616px;
+    margin: auto;
+
+    @media screen and (max-width: $medium) {
+        width: auto;
+        margin: auto 6px;
+        padding-bottom: 40px;
+    }
+}
+
+.signup-container header {
+    text-align: center;
+    padding: $gapSignupHeader 0;
+
+    @media screen and (max-width: $medium) {
+        padding: 10px 0 20px 0;
+    }
+}
+
+.signup-heading {
+    font-size: 42px;
+    padding: 20px 0 $gapSignup;
+    color: $colorPrimary;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0px;
+    font-family: $fontLilitaOne;
+    max-width: 533px;
+    margin: 0 auto;
+
+    @media screen and (max-width: $medium) {
+        padding-top: 0px;
+        font-size: 30px;
+    }
+}
+
+.signup-heading-small {
+    font-size: $textH5;
+    padding: 0 0 $gapSignup;
+    color: $colorPrimary;
+    font-weight: bold;
+    font-family: $fontBarlow
+}
+
+.signup-text {
+    /*padding: 0 0 $gap;*/
+    color: $colorPrimary;
+    font-size: $textXSmall;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0px;
+    line-height: 24px;
+    font-family: $fontBarlow;
+    font-weight: 500;
+    padding-bottom:37px;
+
+    @media screen and (max-width: $medium) {
+        padding-top: 0px;
+        font-size: 16px;
+    }
+}
+
+.signup-error-message {
+    /*text-align: center;*/
+    color: $colorInvalidAlert;
+    padding: 0 0 $gap;
+    margin-bottom: $gapSignup;
+    font-size: $textXSmall;
+    font-family: $fontBarlow;
+    font-weight:500;
+}
+
+.signup-error-message span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.signup-field-validation {
+    color: $colorInvalidAlert;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-family: $fontBarlow;
+}
+
+.input-validation-error.signup-input,
+.input-validation-error.signup-input-small {
+    border: 1px solid $colorInvalidAlert;
+    border-radius: $radiusInput;
+}
+
+.signup-field-wrapper {
+    margin-bottom: 20px;
+
+    &.narrow {
+        margin-bottom: 10px;
+        margin-top: -10px;
+    }
+}
+
+.signup-label {
+    padding: 0 0 5px;
+    color: $black;
+    font-size: 14px;
+    font-family: $fontBarlow;
+    font-weight:500;
+}
+
+.well {
+    border: 1px solid $colorLightGrey;
+    padding: 40px 30px;
+    border-radius: 8px;
+
+    @media screen and (max-width: $medium) {
+        padding: 52px 10px 30px 10px;
+    }
+}
+
+.well.narrow {
+    padding-top: 20px;
+}
+
+.signup-input {
+    border: 1px solid $colorLightGrey;
+    border-radius: $radiusInput;
+    padding: 11px 12px;
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 100%;
+    color: $colorPlaceHolder;
+    height: $textboxHeight;
+    font-size: $textXSmall;
+    font-family: $fontBarlow;
+}
+
+.signup-btn-inline {
+    width: 100%;
+    margin-bottom: $gapSignup;
+    border-radius: 0 $radiusInput $radiusInput 0;
+    height: 60px;
+    font-size: 16px;
+    font-family: $fontBarlow;
+    border-color: $colorNavMenuHover;
+    font-weight: bold;
+    border: 1px solid $colorNavMenuHover;
+    background: $colorNavMenuHover;
+    color: $colorPrimary;
+}
+
+.signup-btn {
+    width: 100%;
+    margin-bottom: $gap;
+    border-radius: $radiusInput;
+    background-color: $colorNavMenuHover;
+    color: $colorPrimary;
+    height: 60px;
+    font-size: 18px;
+    font-family: $fontBarlow;
+    border-color: $colorNavMenuHover;
+    font-weight: bold;
+
+    @media screen and (max-width: $medium) {
+        margin-bottom: 0;
+    }
+}
+
+
+.signup-link {
+    display: inline;
+    text-decoration: none;
+    //font-weight: bold;
+    color: $colorTextLinkColor;
+}
+
+.signup-link:hover {
+    color: $colorInvalidAlert;
+}
+
+.signup-input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+
+.signup-input-group .signup-input {
+    width: 1%;
+    border-radius: 5px 0 0 5px;
+}
+
+.signup-input-group-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.signup-input-group-btn .signup-btn {
+    width: 100%;
+}
+
+.signup-input-group-btn .button {
+    padding: 11px 12px;
+    width: 115px;
+}
+
+.signup-input-small {
+    border: 1px solid $colorLightGrey;
+    border-radius: $radiusInput;
+    padding: 11px 12px;
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 80%;
+    color: $colorPlaceHolder;
+    height: $textboxHeight;
+    font-size: $textXSmall;
+}
+
+.signup-inline-wrapper {
+    display: block;
+}
+
+.signup-inline-wrapper input,
+.signup-inline-wrapper select {
+    display: inline-block;
+}
+
+.seperator {
+    padding: 6px;
+    display: inline-block;
+    padding-left: 14px;
+
+    @media screen and (max-width: $medium) {
+        padding-left: 6px;
+    }
+
+    @media screen and (max-width: $small) {
+        padding: 0px;
+    }
+}
+
+.signup-field-wrapper-small {
+    display: inline-block;
+    width: 32%;
+    margin-bottom: $gapSignup;
+}
+
+.signup-field-wrapper-small.last {
+    width: 34%;
+
+    @media screen and (max-width: $medium) {
+        width: 32%;
+    }
+}
+
+.signup-field-wrapper-small.last .signup-input-small {
+    width: 100%;
+}
+
+.signup-input.dropdownlist {
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.signup-line {
+    box-sizing: border-box;
+    border: 2px solid $colorNavMenuHover;
+    margin: $gapSignup 0;
+}
+
+.signup-label.all-fields-required {
+    font-size: $textXXSmall;
+    font-weight: bold;
+    margin-bottom: 35px;
+    font-family: $fontBarlow;
+    color: $colorPrimary;
+}
+
+.signup-error-message span:before {
+    content: url('../../GMI/shopriteformyschool/Icons/Shape');
+    padding-right: 10px;
+    position: relative;
+}
+
+.signup-field-wrapper.nogap {
+    margin-bottom: 0px;
+}
+
+.signup-text a {
+    display: inline;
+    text-decoration: none;
+    //font-weight: bold;
+    color: $colorTextLinkColor;
+}
+
+.signup-check-label {
+    font-size: 12px;
+    font-family: $fontBarlow;
+}
+
+.signup-text.password-rule {
+    text-align: left;
+    color: $black;
+    font-size: 16px;
+    font-weight:normal;
+    margin-bottom: 20px;
+}
+
+.button.signup-btn-inline:hover, .button.signup-btn-inline:focus, .button.signup-btn-inline:active,
+.button.signup-btn:hover, .button.signup-btn:focus, .button.signup-btn:active {
+    color: $colorPrimary;
+    background-color: $colorNavMenuHover;
+    border-color: $colorNavMenuHover;
+}
+
+#SchoolSearchKeyWords {
+    height: 60px;
+    font-family: $fontBarlow;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#SchoolSearchKeyWords::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $colorPrimary;
+}
+
+#SchoolSearchKeyWords::-moz-placeholder { /* Firefox 19+ */
+    color: $colorPrimary;
+}
+
+#SchoolSearchKeyWords:-ms-input-placeholder { /* IE 10+ */
+    color: $colorPrimary;
+}
+
+#SchoolSearchKeyWords:-moz-placeholder { /* Firefox 18- */
+    color: $colorPrimary;
+}
+
+.sigup-text-large .signup-text{
+    font-size: 18px;
+    padding-bottom:5px;
+}
+
+.check-icon{
+    content: url('../../GMI/cashforyoureducation/Icons/check');
+}
+
+.signup-check-input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 8px;
+}

@@ -1,0 +1,125 @@
+.dynamic-sliders {
+    background-color: $colorRecipeListining;
+}
+
+.dynamic-sliders-wrap {
+    padding: 20px 0px 1.5px 0px;
+
+    @media screen and (min-width: $medium) {
+        padding: 80px 0px 80px 0px;
+    }
+}
+
+.dynamic-sliders-slide-wrap {
+    border: 1px solid #F0F0F1;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    margin: 0px 15px 20px 15px;
+    min-height: 229px;
+    font-family: $fontOswald;
+    text-align: center;
+    padding-bottom:80px;
+
+    @media screen and (min-width: $medium) {
+        margin: 0px 15px 40px 15px;
+        min-height: 300px
+    }
+}
+
+.dynamic-sliders-title {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    padding: 30px 30px 20px 30px;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-weight: 500;
+
+    @media screen and (min-width: $medium) {
+        font-size: 36px;
+        line-height: 43px;
+        padding: 50px 30px 30px 30px;
+    }
+}
+
+.dynamic-sliders-text {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 5px;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-weight: 500;
+    text-align: center;
+
+    @media screen and (min-width: $medium) {
+        font-size: 24px;
+        line-height: 34px;
+        padding-bottom: 15px;
+    }
+
+    &.cashsite {
+        display: block;
+    }
+
+    &.shoprite {
+        display: none;
+    }
+}
+
+.dynamic-sliders-amount {
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-weight: bold;
+    line-height: 28px;
+    display: inline-flex;
+    width: 90%;
+
+    @media screen and (min-width: $medium) {
+        font-size: 24px;
+        width: 751px;
+    }
+
+    .amount {
+        flex: 1;
+
+        &.first {
+            text-align: left;
+        }
+
+        &.middle {
+            //text-align: left;
+        }
+
+        &.last {
+            text-align: right;
+        }
+    }
+}
+
+.dynamic-sliders-progressbar {
+    text-align: center;
+
+    .progressbar {
+        height: 60px;
+        width: 751px;
+        border: 1px solid #DCDDDE;
+        border-radius: 30px;
+        background-color: #FFF;
+        display: inline-block;
+
+        .progress {
+            background-color: #FFCA00;
+            width: 40%;
+            height: 60px;
+            border-radius: 30px;
+        }
+
+        @media screen and (max-width: $medium) {
+            width: 90%;
+        }
+    }
+}
+
+

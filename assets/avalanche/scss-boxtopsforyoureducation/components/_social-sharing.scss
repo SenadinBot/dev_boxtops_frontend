@@ -1,0 +1,30 @@
+.social-sharing {
+    margin: 6px 0px 9px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: $medium) {
+        margin: 14px 0px;
+    }
+}
+
+.social-sharing-link {
+    display: inline-block;
+    height: auto;
+    margin: 0 17px;
+    border-radius: 2px;
+    color: #FFF;
+    text-decoration: none;
+    transition: background 250ms ease;
+    cursor: pointer;
+
+    @media screen and (min-width: $medium) {
+        margin: 0 6px;
+    }
+
+    & img {
+        display: block;
+        margin: 0 auto;
+    }
+}

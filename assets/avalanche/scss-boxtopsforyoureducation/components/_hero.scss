@@ -1,0 +1,16 @@
+.hero-banner {
+  padding: ($gapLarge / 2) $gap $gap;
+  background: $colorTertiary center center no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  @media screen and (min-width: $medium) {
+    padding: ($gapLarge / 1.5) $gap ($gapLarge / 2);
+  }
+}
+
+.hero-heading {
+  max-width: $textWidth;
+  margin: 0 auto;
+  padding: 0 0 $gap;
+}

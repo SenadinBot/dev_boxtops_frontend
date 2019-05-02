@@ -1,0 +1,33 @@
+.video-section-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  align-items: center;
+
+  &.video-section-flipped {
+    flex-direction: row-reverse;
+  }
+
+  @media screen and (min-width: $medium) {
+    flex-flow: row nowrap;
+  }
+}
+
+.video-section-video {
+  flex: 1 0 auto;
+  width: 55%;
+}
+
+.video-section-content {
+  flex: 0 2 auto;
+  padding: ($gapLarge / 3) 0 0;
+  text-align: left;
+
+  @media screen and (min-width: $medium) {
+    padding: 0 0 0 ($gap * 2);
+
+    .video-section-flipped & {
+      padding: 0 ($gap * 2) 0 0;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+.footer {
+    background-color: #00182D;
+    margin: 0 auto 0;
+    @media screen and (min-width: $maxWidth) {
+        max-width: $maxWidth;
+        margin: 0 auto 0;
+    }
+}
+.footer-social-wrap {
+    background: $midnightBlue;
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 57px 0 71px 0;
+    @include media-md {
+        padding: 47px 0 61px 0;            
+    }
+    @include media-sm {
+        padding: 37px 0 41px 0;            
+    }
+    @include media-xs {
+        padding: 37px 0;
+    }
+    & img {
+        display: inline-block;
+        max-width: none;
+    }
+    p {
+        display: none;
+    }
+    a {
+        margin-right: 15px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+.footer-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $contentWidth;
+    margin: 0px auto;
+    text-align: center;
+    padding: 57.4px 0 55.4px 0;
+    @include media-md {
+        padding: 47.4px 19px 45.4px 19px;
+    }
+    @include media-sm {
+        padding: 37.4px 19px 35.4px 19px;
+    }
+    @include media-xs {
+        text-align: center;
+        padding: 37.4px 0;
+    }
+    .footer-menu-wrapper {
+        flex: 1 1 83%;
+        @include media-xs {
+            flex: 1 1 100%;
+        }
+        .footer-menu {
+            text-align: left;
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+            @include media-xs {
+                text-align: center;
+            }
+            li {
+                display: inline-block;
+                margin-right: 30px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                @include media-xs {
+                    margin-right: 0;
+                    margin-bottom: 5px;
+                    display: block;
+                }
+                a {
+                    color: $white;
+                    position: relative;
+                    font-family: $brandonGrotesque;
+                    font-size: $textXSmall;
+                    line-height: 19.2px;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 1px;
+                        bottom: -2px;
+                        left: 0;
+                        visibility: hidden;
+                        -webkit-transition: all 0.3s ease-in-out 0s;
+                        -moz-transition: all 0.3s ease-in-out 0s;
+                        -ms-transition: all 0.3s ease-in-out 0s;
+                        -o-transition: all 0.3s ease-in-out 0s;
+                        transition: all 0.3s ease-in-out 0s;
+                        background-color: #ffffff;
+                    }
+                    &:focus,
+                    &:hover,
+                    &:active {
+                        text-decoration: none;
+                        outline: none;
+                        &:before {
+                            visibility: visible;
+                            width: 100%;
+                        }
+                    }
+                    @include media-sm {
+                        font-size: 14px;
+                        line-height: 18.2px;
+                    }
+                    @include media-xs {
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    .footer-copyright {
+        flex: 1 1 17%;
+        color: $white;
+        font-size: $textXSmall;
+        line-height: 19.2px;
+        font-family: $brandonGrotesque;
+        text-align: right;
+        @include media-xs {
+            flex: 1 1 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

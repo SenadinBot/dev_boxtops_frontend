@@ -1,0 +1,23 @@
+﻿.social-sharing-title {
+    color: $colorPrimary;
+    font-family: $fontLilitaOne;
+    font-size: 42px;
+    line-height: 50px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @media screen and (max-width: $medium) {
+        font-size: 30px;
+    }
+}
+
+.sharing-this-page-container .social-sharing-link {
+    @media screen and (min-width: $medium) {
+        margin: 0 25px;
+    }
+}
+
+.sharing-this-page-container {
+    padding-bottom: 80px;
+}

@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: lighten($colorSecondary, 4%);
+  color: $black;
+  font-family: $fontDefault;
+  font-size: $textNormal;
+}
+
+a {
+  color: $colorPrimary;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken($colorPrimary, 10%);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Keeps body content from slipping up/behind fixed header
+.site-content {
+    margin-top: $headerHeightSm;
+    background-color: $white;
+    /*padding-bottom: 45px;*/
+
+
+    @media screen and (min-width: $medium) {
+        margin-top: $headerHeightLg;
+        /*padding-bottom: 50px;*/
+    }
+}
+
+// Site max-width container
+.max-width {
+  max-width: $maxWidth;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Content max-width container
+.constrain {
+  max-width: $contentWidth;
+  margin: 0 auto;
+  padding: ($gapLarge / 3) $gap;
+
+  @media screen and (min-width: $medium) {
+    padding: ($gapLarge / 2) $gap;
+  }
+}
+
+.constrain-nopadding {
+  max-width: $contentWidth;
+  margin: 0 auto;
+}
+
+// Responsive video embed
+.iframe-embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.iframe-embed-container iframe,
+.iframe-embed-container object,
+.iframe-embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Wild cards to apply with discernment
+.pad-top {
+  padding-top: $gap;
+}
+
+.pad-bottom {
+  padding-bottom: $gap;
+}
+
+.font-bold {
+  font-weight: $weightBold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-white {
+  color: $white;
+}
+
+.content-area {
+    min-height: 413px;
+
+    @media screen and (min-width: $medium) {
+        min-height: 604px;
+    }
+}

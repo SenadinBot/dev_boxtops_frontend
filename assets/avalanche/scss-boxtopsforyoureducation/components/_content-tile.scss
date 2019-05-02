@@ -1,0 +1,86 @@
+.content-tile {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+
+  padding: ($gap * 2) $gap $gap;
+  background-color: $colorTertiary;
+  border-radius: $radiusTile;
+  text-align: center;
+  overflow: hidden;
+  transition: all $speedFast ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($colorTertiary, 10%);
+  }
+
+  @media screen and (min-width: $medium) {
+    border-radius: $radiusTilex;
+  }
+}
+
+.content-tile-title {
+  width: 100%;
+  padding: ($gapLarge / 3) 0 0;
+  font-size: $textNormal;
+  font-weight: $weightBold;
+
+  @media screen and (min-width: $medium) {
+    font-size: $textMedium;
+  }
+}
+
+.content-tile-link {
+  margin: 0 auto;
+  color: $black;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $black;
+  }
+
+  // Needs set width for IE11 nested flex child image bug
+  & img {
+    width: 100%;
+  }
+}
+
+.content-tile-flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.6em;
+  color: $white;
+  font-size: $textSmall;
+  font-weight: $weightBold;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $medium) {
+    font-size: $textMedium;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -1.5em;
+    bottom: 100%;
+    width: 300%;
+    padding-bottom: 200%;
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+    background-color: $colorPrimary;
+    z-index: $zFlag;
+  }
+}
+
+.content-tile-flag-text {
+  position: relative;
+  z-index: $zFlagText;
+}

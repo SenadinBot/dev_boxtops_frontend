@@ -1,0 +1,92 @@
+
+.recipe .module-heading {
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: left;
+    padding: 15px 0 20px 15px;
+}
+
+.recipe .feature-text {
+    font-size: $textXSmall;
+    padding-bottom: 0px;
+}
+
+.recipe .button {
+    padding: 0 0;
+    background-color: $white;
+    border: none;
+    font-size: $textXSmall;
+    color: $colorTextLinkColor;
+}
+
+.recipe .button:active {
+    color: $colorInvalidAlert;
+}
+
+.recipe .button:hover {
+    color: $colorInvalidAlert;
+}
+
+.recipe .module-title {
+    font-family: $fontLilitaOne;
+    line-height: 50px;
+    color: $colorPrimary;
+    font-size: 42px;
+    line-height: 50px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 76px;
+
+    @media screen and (max-width: $medium) {
+        font-size: 30px;
+    }
+}
+
+.recipe .module-second-title {
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+    padding-bottom: 50px;
+
+    @media screen and (max-width: $medium) {
+        font-size: 20px;
+    }
+}
+
+.feature-item.recipe {
+    align-items: stretch;
+}
+
+.feature-section.recipe.Blue {
+    background-color: $colorRecipeListining;
+}
+
+.feature-section.recipe {
+    margin-top: 40px;
+}
+
+.recipe .button {
+    font-family: $fontBarlow;
+    width: 206px;
+    color: $colorPrimary;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+    padding: 20px 30px;
+    background-color: #ffca00;
+    margin-bottom: 80px;
+    margin-top:20px;
+}
+
+.recipe .button:hover, .recipe .button:focus, .recipe .button:active {
+    background-color: #ffca00;
+    border-color: #FFCA00;
+    color: #2a3083;
+}

@@ -1,0 +1,68 @@
+.featured-items-title {
+  margin: 0;
+  padding: ($gapLarge / 3) 0;
+
+  @media screen and (min-width: $medium) {
+    padding: 0 0 ($gapLarge / 2);
+  }
+}
+
+.featured-items-item {
+  padding: ($gapLarge / 3) 0;
+  text-align: center;
+
+  @media screen and (min-width: $medium) {
+    padding: ($gapLarge / 2) 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  & img {
+    margin: 0 auto;
+  }
+}
+
+.featured-items-heading {
+  margin: 0;
+  padding: 0 0 ($gap / 2);
+}
+
+.howitworks .module-heading{
+    font-family: Oswald;
+    font-size: 38px;
+}
+
+.howitworks .feature-text {
+    font-size: $textXSmall;
+    padding-bottom: 0px;
+}
+
+.howitworks .button {
+    padding: 0 0;
+    background-color: $white;
+    border: none;
+    font-size: $textXSmall;
+    color: $colorTextLinkColor;
+}
+
+.howitworks .button:active {
+    color: $colorInvalidAlert;
+}
+
+.howitworks .button:hover {
+    color: $colorInvalidAlert;
+}
+
+.howitworks .module-title {
+    font-family: $fontLilitaOne;
+    font-size: 42px;
+    text-transform: uppercase;
+    line-height: 50px;
+    color: $colorPrimary;
+
+    @media screen and (max-width: $medium) {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,12 @@
+﻿.horizontal-line {
+    display: inline-block;
+    border: 2px solid #fbbd32;
+    box-sizing: border-box;
+    width: 89%;
+    margin: 0px 2px;
+
+    @media screen and (min-width: $medium) {
+        width: 100%;
+        margin: 0px 0px;
+    }
+}

@@ -1,0 +1,27 @@
+.button {
+  display: inline-block;
+  position: relative;
+  padding: ($gapLarge / 5) ($gapLarge / 3);
+  background-color: $colorPrimary;
+  border: 1px solid $colorPrimary;
+  border-radius: $radiusBtn;
+  color: $white;
+  font-size: $textMedium;
+  text-decoration: none;
+  transition: all $speedFast ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: lighten($colorPrimary, 10%);
+    border-color: lighten($colorPrimary, 10%);
+    color: $white;
+  }
+}
+
+.button-icon {
+  display: inline-block;
+  margin-left: $gap;
+  vertical-align: top;
+  overflow: visible;
+}

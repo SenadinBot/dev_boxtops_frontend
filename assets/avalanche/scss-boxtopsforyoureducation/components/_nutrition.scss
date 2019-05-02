@@ -1,0 +1,114 @@
+.nutrition-serving-size {
+  padding-bottom: ($gap / 2);
+}
+
+.nutrition-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-top: 5px solid $colorPrimary;
+  font-size: $textNormal;
+
+  td {
+    padding: ($gap / 3);
+    vertical-align: top;
+  }
+
+  @media screen and (min-width: $medium) {
+    border-top: 10px solid $colorPrimary;
+  }
+}
+
+.nutrition-table-heading {
+  padding: ($gap / 1.5) ($gap / 3);
+  border-bottom: 2px solid $colorPrimary;
+  font-size: $textSmall;
+  vertical-align: top;
+}
+
+.nutrition-col-left {
+  width: 75%;
+  text-align: left;
+
+  .nutrition-add-column & {
+    width: 55%;
+  }
+}
+
+.nutrition-col-right {
+  width: 25%;
+  text-align: right;
+}
+
+.nutrition-daily-value {
+  & td {
+    width: 100%;
+    padding: ($gap / 2) ($gap / 3);
+    border-top: 3px solid $colorPrimary;
+    border-bottom: 2px solid $colorPrimary;
+    font-size: $textSmall;
+    text-align: right;
+  }
+
+  @media screen and (min-width: $medium) {
+    border-top: 6px solid $colorPrimary;
+  }
+}
+
+.nutrition-item-bold {
+  font-weight: $weightBold;
+
+  .nutrition-subitem & {
+    font-weight: $weightNormal;
+  }
+}
+
+.nutrition-subitem {
+  & td {
+    padding-left: $gap;
+  }
+}
+
+.nutrition-vitamin-table {
+  border-top: 3px solid $colorPrimary;
+
+  & table {
+    @extend .nutrition-table;
+    border: none;
+  }
+
+  @media screen and (min-width: $medium) {
+    border-top: 6px solid $colorPrimary;
+  }
+}
+
+.nutrition-vitamin-item {
+  position: relative;
+  width: 50%;
+
+  &:nth-child(2n) {
+    text-align: right;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      margin: -2px 0 0;
+      border-radius: 2px;
+      content: "";
+      font-size: 0;
+      display: block;
+      width: 4px;
+      height: 4px;
+      background: $colorPrimary;
+    }
+  }
+}
+
+.nutrition-disclaimer {
+  font-size: $textSmall;
+  border-top: 6px solid $colorPrimary;
+
+  @media screen and (min-width: $medium) {
+    border-top: 10px solid $colorPrimary;
+  }
+}

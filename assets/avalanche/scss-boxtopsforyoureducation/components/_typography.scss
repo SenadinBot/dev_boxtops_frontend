@@ -1,0 +1,89 @@
+.base-heading {
+  margin: 0;
+  padding: $gap 0;
+
+  @media screen and (min-width: $medium) {
+    padding: ($gapLarge / 3) 0;
+  }
+}
+
+h1 {
+  @extend .base-heading;
+  font-size: $textH1;
+
+  @media screen and (min-width: $medium) {
+    font-size: $textH1x;
+  }
+}
+
+h2 {
+  @extend .base-heading;
+  font-size: $textH2;
+  font-weight: $weightNormal;
+
+  @media screen and (min-width: $medium) {
+    font-size: $textH2x;
+  }
+}
+
+h3 {
+    @extend .base-heading;
+    color: $black;
+    font-size: $textH3;
+    font-weight: $weightNormal;
+
+    @media screen and (min-width: $medium) {
+        font-size: $textH3x;
+    }
+}
+
+h4 {
+    @extend .base-heading;
+    color: $black;
+    font-size: $textH4;
+    font-weight: $weightNormal;
+
+    @media screen and (min-width: $medium) {
+        font-size: $textH4x;
+    }
+}
+
+h5 {
+    @extend .base-heading;
+    color: $black;
+    font-size: $textH5;
+    font-weight: $weightNormal;
+
+    @media screen and (min-width: $medium) {
+        font-size: $textH5x;
+    }
+}
+
+h6 {
+  @extend .base-heading;
+  font-size: $textH6;
+  font-weight: $weightBold;
+
+  @media screen and (min-width: $medium) {
+    font-size: $textH6x;
+  }
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+
+  + p {
+    padding-top: $gap;
+  }
+
+  + h1,
+  + h2,
+  + h3,
+  + h4,
+  + h5,
+  + h6, {
+    padding-top: ($gap * 2);
+  }
+}

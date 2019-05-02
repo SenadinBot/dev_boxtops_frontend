@@ -1,0 +1,104 @@
+.promo-offers-container {
+    padding-top: 20px;
+    background-color: $colorPrimary;
+    text-align: center;
+    color: $white;
+    font-family: $fontBarlow;
+
+    .promo-offers-heading {
+        padding-top: 30px;
+        line-height: 36px;
+        font-size: 30px;
+        text-transform: uppercase;
+        font-family: $fontLilitaOne;
+
+        @media screen and (min-width: $medium) {
+            line-height: 50px;
+            font-size: 42px;
+            padding: 70px 0px 20px 0px;
+        }
+    }
+
+    .promo-offers-subheading {
+        padding: 0px 15px;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
+
+        @media screen and (min-width: $medium) {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+
+
+    .promo-offers-form-wrapper {
+        padding: 20px 0px;
+        display: inline-block;
+
+        @media screen and (max-width: $medium) {
+            padding: 20px 15px 0px 15px;
+            width: 100%;
+        }
+
+        .promo-offers-field-validation {
+            font-size: 16px;
+            color: $colorNavMenuHover;
+        }
+
+        .promo-offers-input-wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 10px 0px 5px 0px;
+
+            @media screen and (min-width: $medium) {
+                /*margin: 20px 300px 5px 300px;*/
+                width: 557px;
+            }
+
+            .promo-offers-input {
+                flex: 1 1 70%;
+                border: solid 1px lightgrey;
+                border-radius: 5px;
+                font-size: 16px;
+                color: #707070;
+                line-height: 30px;
+                height: 60px;
+                margin: 10px 15px;
+                padding-left: 17px;
+                margin: 11px 0px;
+                border-bottom-right-radius: 0px;
+                border-top-right-radius: 0px;
+
+                @media screen and (max-width: $medium) {
+                    border-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    border-top-right-radius: 4px;
+                    margin: 0px;
+                    flex: 1 1 100%;
+                }
+            }
+
+            .promo-offers-btn {
+                flex: 1 1 auto;
+                height: 60px;
+                margin: 10px 0px;
+                background-color: #FFCA00;
+                color: $colorPrimary;
+                font-family: $fontBarlow;
+                font-weight: bold;
+                font-size: 18px;
+                border-radius: 4px;
+
+                @media screen and (min-width: $medium) {
+                    height: 62px;
+                    width: 138px;
+                    border-radius: 4px;
+                    border-bottom-left-radius: 0px;
+                    border-top-left-radius: 0px;
+                    border-left: 0;
+                }
+            }
+        }
+    }
+}

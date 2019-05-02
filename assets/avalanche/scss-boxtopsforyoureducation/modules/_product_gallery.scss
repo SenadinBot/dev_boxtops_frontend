@@ -1,0 +1,50 @@
+.product-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.product-gallery-heading {
+  // Removing the outline is a terrible practice. But this element is non-clickable and focus is only used for properly setting focus when using smooth scroll + anchor link targeting.
+  outline: none;
+}
+
+.product-gallery-tile {
+  padding: 0 ($gap / 2) ($gapLarge / 3);
+
+  @media screen and (min-width: $medium) {
+    padding: 0 $gap ($gapLarge / 1.5);
+  }
+}
+
+.product-gallery-fourths {
+  width: (100% / 2);
+
+  @media screen and (min-width: $medium) {
+    width: (100% / 3);
+  }
+
+  @media screen and (min-width: $large) {
+    width: (100% / 4);
+  }
+}
+
+.product-gallery-thirds {
+  width: (100% / 2);
+
+  @media screen and (min-width: $large) {
+    width: (100% / 3);
+  }
+}
+
+.product-gallery-hr {
+  display: block;
+  height: 0;
+  margin: $gapLarge 0;
+  border: 0;
+  border-bottom: 2px solid $colorPrimary;
+
+  &:last-child {
+    display: none;
+  }
+}

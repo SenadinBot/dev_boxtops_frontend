@@ -1,0 +1,96 @@
+.feature-item-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.feature-item {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: ($gapLarge / 1.5);
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+
+    & img {
+        display:inline-block;
+    }
+
+    @media screen and (min-width: $medium) {
+        flex: 1 1 0%;
+        width: auto;
+        padding-right: ($gap * 2);
+        padding-bottom: 0;
+
+        &:last-child {
+            padding-right: 0 !important;
+        }
+        // Targets nested flexbox column bug in Edge
+        & img {
+            width: auto;
+        }
+    }
+    // Targets IE11 to fix flexbox column bug
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: block;
+    }
+}
+
+.howitworks .feature-text {
+    flex: 1 1 auto;
+    font-family: $fontBarlow;
+    font-size: 20px;
+    line-height: 28px;
+    color: $colorPrimary;
+    font-weight: 500;
+
+    @media screen and (max-width: $medium) {
+        font-size: 18px;
+    }
+}
+
+.howitworks .module-heading {
+    font-family: $fontBarlow;
+    font-size: 36px;
+    line-height: 43px;
+    color: $colorPrimary;
+    font-weight: 500;
+
+    @media screen and (max-width: $medium) {
+        font-size: 28px;
+    }
+}
+
+.feature-item.howitworks {
+
+    @media screen and (min-width: $medium) {
+        padding-right: 137px;
+    }
+}
+
+.feature-item-wrap.Center {
+
+    .feature-item.howitworks {
+
+        @media screen and (min-width: $medium) {
+            padding-right: 0px;
+        }
+    }
+}
+
+.feature-item.howitworks.lines-wrap {
+
+    hr {
+        border: 2px solid #fbbd32;
+        width: 100%;
+        margin-top: 35%;
+
+        @media screen and (max-width: $medium) {
+            display: none;
+        }
+    }
+}

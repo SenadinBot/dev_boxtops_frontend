@@ -3,21 +3,25 @@
 @import "bootstrap/theme";
 
 // Variables
-@import 'variables';
+@import '_vars';
 
 // Base
-@import 'base';
+@import '_base';
 
 // Fonts
-@import 'fonts';
+@import '_fonts';
 
 
 // Components
 
-@import 'components/header';
-@import 'components/footer';
-// @import 'components/common';
-// @import 'components/hero-banner';
+@import 'components/_footer';
+@import 'components/_header';
+@import 'components/_global';
+@import 'components/common';
+@import 'components/_special-hero-banner';
 // @import 'components/three-column-listing';
 // @import 'components/image-heading-text';
 // @import 'components/app-features';
+
+// Print Styles
+@import '_print';

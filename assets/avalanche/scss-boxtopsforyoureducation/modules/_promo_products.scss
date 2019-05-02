@@ -1,0 +1,29 @@
+.promo-products {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.promo-products-tile {
+  width: (100% / 2);
+  padding: 0 ($gap / 2) ($gapLarge / 3);
+
+  &:nth-child(n+3) {
+    padding: 0 ($gap / 2) 0;
+  }
+
+  @media screen and (min-width: $medium) {
+    width: (100% / 4);
+    padding: 0 $gap 0;
+
+    &:nth-child(n+3) {
+      padding: 0 $gap 0;
+    }
+  }
+}
+
+.promo-products-callout {
+  color: $colorPrimary;
+  font-weight: $weightBold;
+  text-transform: uppercase;
+}

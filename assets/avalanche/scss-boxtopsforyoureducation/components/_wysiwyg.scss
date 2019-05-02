@@ -1,0 +1,53 @@
+// The WP WYSIWYG editor offers a world of options to an author, along with a world of styling nightmares for CSS.
+// These declarations attempt to reduce the nightmare by targeting element selectors.
+// Wrap any WISIWYG component (and *ONLY* a WISIWYG component) in the .wysiwyg class to apply these element styles within that scope.
+
+.wysiwyg {
+  line-height: 1.5;
+  text-align: left;
+
+  // Unordered list with default custom colored bullet
+  ul {
+    margin: 0 0 0 $gap;
+    padding: 0;
+
+    & li {
+      padding: 0 0 ($gap / 2) $gap;
+      text-indent: ($gap * -1);
+      list-style: none;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &::before {
+        content: "\2022";
+        padding-right: ($gap / 2);
+        color: $colorAccent;
+        font-size: $textLarge;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 0 0 $gap;
+
+    @media screen and (min-width: $medium) {
+      padding: 0 0 ($gapLarge / 3);
+    }
+  }
+
+  // Manually applied by savvy authors within the WYSIWYG panel
+  .text-restrict {
+    max-width: $textWidth;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+}

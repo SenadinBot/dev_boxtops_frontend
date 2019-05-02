@@ -1,0 +1,86 @@
+.welcome-heading {
+    font-family: $fontLilitaOne;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 30px;
+    color: $colorPrimary;
+
+    @media screen and (min-width: $medium) {
+        text-align: left;
+        font-size: 42px;
+        line-height: 50px;
+        padding-top: 49px;
+        padding-bottom: 40px;
+    }
+}
+
+.welcome-img-text-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: $medium) {
+        justify-content: space-between;
+    }
+}
+
+.welcome-img {
+    flex: 0 1 auto;
+    padding-bottom: 30px;
+
+    @media screen and (min-width: $medium) {
+        padding-right: 69px;
+    }
+}
+
+.welcome-text-wrap {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: $textMedium;
+
+    @media screen and (min-width: $medium) {
+        flex: 1 1 0%;
+        text-align: left;
+        font-size: $textXLarge;
+    }
+}
+
+.welcome-name-user {
+    padding: 0px;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+.welcome-name-school {
+    font-size: 24px;
+    line-height: 32px;
+    padding: 19px 26px 26px 19px;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+
+    @media screen and (min-width: $medium) {
+        padding: 19px 100px 26px 0px;
+        font-size: 42px;
+        font-weight: bold;
+        line-height: 50px;
+    }
+}
+
+.welcome-button {
+    border-radius: 3px;
+    background-color: $colorNavMenuHover;
+    border-color: $colorNavMenuHover;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+}

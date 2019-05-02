@@ -1,0 +1,139 @@
+.recipes-banner {
+  padding: ($gapLarge / 2) $gap;
+  background-color: $white;
+  text-align: center;
+
+  @media screen and (min-width: $medium) {
+    padding: $gapLarge $gap;
+  }
+}
+
+.recipes-banner-inner {
+    font-family: Oswald;
+    max-width: $textWidth;
+    margin: 0 auto;
+}
+
+.recipes-banner-subheading {
+    padding: 0;
+    color: $colorPrimary;
+    font-family: $fontLilitaOne;
+    font-size: 42px;
+
+    @media screen and (max-width: $medium) {
+        font-size: 30px;
+    }
+
+    + p {
+        padding-top: ($gapLarge / 3);
+        color: $colorPrimary;
+        font-family: $fontBarlow;
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+.recipes {
+    background-color: $colorRecipeListining;
+}
+
+.recipes-filter {
+    margin: 0;
+    padding: 0 0 0;
+    font-size: $textMedium;
+    list-style: none;
+    text-align: center;
+    font-weight: 500;
+    font-family: $fontBarlow;
+}
+
+.recipes-gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: ($gapLarge / 2) 0;
+}
+
+.recipes-gallery-tile {
+  padding: 0 ($gap / 2) ($gapLarge / 3);
+
+  @media screen and (min-width: $medium) {
+    padding: 0 $gap ($gapLarge / 1.5);
+  }
+}
+
+.recipes-gallery-thirds {
+  width: 100%;
+
+  @media screen and (min-width: $small) {
+    width: (100% / 2);
+  }
+  @media screen and (min-width: $medium) {
+    width: (100% / 3);
+  }
+}
+
+.recipes-gallery-fourths {
+  width: 100%;
+
+  @media screen and (min-width: $small) {
+    width: (100% / 2);
+  }
+
+  @media screen and (min-width: $medium) {
+    width: (100% / 3);
+  }
+
+  @media screen and (min-width: $large) {
+    width: (100% / 4);
+  }
+}
+
+.recipes-tile-link {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  background-color: $white;
+  color: $black;
+  text-decoration: none;
+
+  // Needs set width for IE11 nested flex child image bug
+  & img {
+    width: 100%;
+  }
+
+  @media screen and (min-width: $medium) {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0);
+    transition: box-shadow $speedFast ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $black;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+}
+
+.recipes-tile-text {
+    padding: ($gap / 1.5) $gap ($gap * 1.5);
+    font-weight: $weightBold;
+    line-height: 24px;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 16px;
+}
+.full-width-container {
+    background: $colorRecipeListining;
+    margin-bottom: -45px;
+    padding-bottom: 120px;
+
+    @media screen and (min-width: $medium) {
+        margin-bottom: -50px;
+    }
+}
+
+.constrain.new
+{
+    padding-bottom:23px;
+}

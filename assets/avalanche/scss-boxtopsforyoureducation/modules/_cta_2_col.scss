@@ -1,0 +1,144 @@
+.cta-2-col-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    background-color: $colorTertiary;
+}
+
+.cta-2-col-flipped {
+    flex-flow: row-reverse wrap;
+}
+
+.cta-2-col-image {
+  flex: 0 1 auto;
+  width: 100%;
+  padding-bottom: ($gapLarge / 3);
+
+  @media screen and (min-width: $medium) {
+    padding: 0;
+    width: (100% / 2);
+  }
+}
+
+.cta-2-col-text {
+  flex: 1 1 0%;
+  padding: ($gap * 2);
+  text-align: center;
+}
+
+.cta2col .cta-2-col-flipped .img-text-text {
+    @media screen and (min-width: $medium) {
+        padding-left: 0px;
+        padding-right: 66px;
+    }
+}
+
+.cta2col .img-text-text {
+    @media screen and (min-width: $medium) {
+        padding-left: 66px;
+        padding-right: 0px;
+    }
+}
+
+.component-content.cta2col .module-title {
+    font-family: $fontLilitaOne;
+    font-size: $textXLarge;
+    /*text-transform: uppercase;*/
+    text-align: left;
+    padding-top: 30px;
+}
+
+.component-content.cta2col .module-heading {
+    font-family: $fontBarlow;
+    /*text-transform: uppercase;*/
+    text-align: left;
+    padding-top: 30px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 43px;
+
+    @media screen and (max-width: $medium) {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    &.bold-heading {
+        font-family: $fontLilitaOne;
+        line-height: 50px;
+        font-size: 42px;
+
+        @media screen and (max-width: $medium) {
+            font-size: 30px;
+        }
+    }
+}
+
+.component-content.cta2col .module-pad-bottom {
+    font-size: $textXSmall;
+    line-height: 1.5;
+    color: $colorPrimary;
+    font-family:$fontBarlow;
+    font-weight: 500;
+    line-height: 26px;
+
+    @media screen and (min-width: $medium) {
+        //padding-right: 30px;
+    }
+}
+
+.component-content.cta2col .button {
+    font-size: $textH2;
+    background-color: $colorNavMenuHover;
+    border-color: $colorNavMenuHover;
+    color: $colorPrimary;
+    font-family: $fontBarlow;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 20px 30px;
+}
+
+.cta2col .button:hover, .cta2col .button:focus, .cta2col .button:active {
+    background-color: $colorNavMenuHover;
+    border-color: $colorNavMenuHover;
+    color: $colorPrimary;
+}
+
+.component-content.cta2col .constrain {
+    padding: 40px 15px;
+
+    @media screen and (min-width: $medium) {
+        padding: 40px 0px;
+    }
+}
+
+.cta2col hr {
+    margin-top: 80px;
+}
+
+.cta2col .cta-2-col-button-icon {
+    margin-top: 0px;
+    margin-left: 50px;
+    float: right;
+}
+
+.cta2col .cta-2-col-button-icon path {
+    fill: $colorPrimary;
+}
+
+.cta2col .img-text-image{
+    @media screen and (min-width: $medium) {
+        flex: 0 1 35%;
+    }
+}
+
+.cta2col .ratio-1-2 .img-text-image{
+    @media screen and (min-width: $medium) {
+        flex: 0 1 50%;
+    }
+}
+
+.cta2col .img-text-wrap.ratio-1-2 {
+    align-items:center;
+}

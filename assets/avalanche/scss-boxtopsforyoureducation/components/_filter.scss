@@ -1,0 +1,42 @@
+.filter {
+  margin: 0;
+  padding: 0 0 ($gapLarge / 2);
+  font-size: $textMedium;
+  list-style: none;
+  text-align: center;
+}
+
+.filter-title {
+    display: inline-block;
+    margin: 0 $gap $gap;
+    border-bottom: 2px solid transparent;
+    color: $colorPrimary;
+    cursor: pointer;
+    transition: max-height 0.25s cubic-bezier(0, 0.7, 0, 1), opacity 0.2s ease-in-out;
+
+    &:focus,
+    &:hover,
+    &:active {
+        border-bottom: 2px solid $colorNavMenuHover;
+    }
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+.filter-current {
+    border-bottom: 2px solid $colorNavMenuHover;
+}
+
+.filter-hr {
+  display: block;
+  height: 0;
+  margin: 0 0 $gapLarge;
+  border: 0;
+  border-bottom: 2px solid $colorPrimary;
+
+  &:last-child {
+    display: none;
+  }
+}

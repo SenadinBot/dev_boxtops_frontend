@@ -1,0 +1,170 @@
+// Media query breakpoints
+$small: 480px;
+$medium: 768px;
+$large: 980px;
+$xlarge: 1172px;
+$xxlarge: 1400px;
+
+// Fonts
+$fontDefault: 'Roboto', 'Arial', sans-serif;
+$fontOswald: 'Oswald', sans-serif;
+$fontRubik: 'Rubik', sans-serif;
+$fontBarlow: 'Barlow', sans-serif;
+$fontLilitaOne: 'Lilita One', sans-serif;
+
+$brandonGrotesque: 'Brandon Grotesque Regular', sans-serif;
+$brandonGrotesqueLight: 'Brandon Grotesque Light', sans-serif;
+$brandonGrotesqueItalic: 'Brandon Grotesque Regular Italic', sans-serif;
+$brandonGrotesqueMedium: 'Brandon Grotesque Medium', sans-serif;
+$brandonGrotesqueBold: 'Brandon Grotesque Bold', sans-serif;
+$brandonGrotesqueBlack: 'Brandon Grotesque Black', sans-serif;
+
+// Text sizing
+$textXXSmall: 14px;
+$textXSmall: 16px;
+$textSmall: 17px;
+$textNormal: 19px;
+$textMedium: 21px;
+$textLarge: 27px;
+$textXLarge: 48px;
+
+$textH1: 30px;
+$textH1x: 60px;
+
+$textH2: 18px;
+$textH2x: 28px;
+
+$textH3: 24px;
+$textH3x: 36px;
+
+$textH4: 28px;
+$textH4x: 42px;
+
+$textH5: 22px;
+$textH5x: 24px;
+
+$textH6: 18px;
+$textH6x: 20px;
+
+// Font Weight
+$weightNormal: normal;
+$weightBold: bold;
+
+// Colors
+$black: #222;
+$white: #FFF;
+$colorPrimary: #2A3083;
+$colorSecondary: #E4F1FD;
+$colorFooter: #2A3083;
+$colorTertiary: #EFEFEF;
+$colorAccent: #7ED321;
+$colorFacebook: #3B5998;
+$colorTwitter: #1DA1F2;
+$colorPinterest: #C92228;
+$colorLightGrey: #CCCCCC;
+$colorGrey: #3D3E3F;
+$colorPlaceHolder: #707070;
+$colorBlueLinks: #1E8FE1;
+$colorInvalidAlert: #A21A19;
+
+$colorTextLinkColor: #00767a;
+$colorLoginLabelColor: #2F2F2F;
+$colorOrangeFooterHr: #F5A623;
+$colorNavMenuHover: #FFCA00;
+
+$colorRecipeListining: #00BAC0;
+
+$dark: #000000;
+$midnightBlue: #002e5d;
+$redRibbon: #E80A4D;
+
+// Speeds
+$speedFast: 250ms;
+$speedNormal: 500ms;
+$speedSlow: 1s;
+$speedXSlow: 2.5s;
+
+// Measurements based on design grid
+$maxWidth: 1400px;
+$contentWidth: 1172px; // Content width includes content padding
+$textWidth: 944px;
+$heroHeight: 500px;
+$ctaHeight: 350px;
+$headerHeightLg: 100px;
+$headerHeightSm: 75px;
+$toggleWidth: 30px;
+$toggleSpacing: 10px;
+$logoWidthLg: 160px; // SVG Logo size in header and footer
+$logoWidthSm: 155px; // Set with numeric value to ensure IE11 plays nice
+$productImgWidth: 460px;
+$socialSharing: 40px;
+$textboxHeight: 44px;
+
+// Spacing
+// The $gap value is your base value. $gapLarge is merely ($gap * 4), but is given its own variable for more straightforward usage.
+// Example scale usage:
+// 15px = $gap
+// 20px = ($gapLarge / 3)
+// 30px = ($gap * 2) || ($gapLarge / 2)
+// 40px = ($gapLarge / 1.5)
+// 60px = $gapLarge
+
+$gap: 15px;
+$gapLarge: 60px;
+$gapSignupHeader: 40px;
+$gapSignup: 20px;
+$gapCta3Column: 29px;
+
+// Border radius
+$radiusBtn: 2px;
+$radiusTile: 5px;
+$radiusTilex: 10px;
+$radiusInput: 5px;
+
+// Z-Indexing
+$zFlag: 1;
+$zFlagText: 2;
+$zHeader: 100;
+
+
+// Media Queries
+// Extra Small Devices, Mobile .visible-xs-*
+@mixin media-xs {
+    @media (max-width: 767px) {
+      @content;
+    }
+}
+@mixin media-xs-portrait {
+    @media (max-width: 767px) and (orientation: portrait) {
+      @content;
+    }
+}
+@mixin media-xs-landscape {
+  @media (max-width: 767px) and (orientation: landscape) {
+    @content;
+  }
+}
+// Small Devices, Tablet portrait .visible-sm-* 
+@mixin media-sm {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+}
+// Medium Devices, Tablet landscape .visible-md-*
+@mixin media-md {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+}
+// Large Devices, Desktop .visible-lg-* 
+@mixin media-lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+}
+// Extra Large Devices, Desktop .visible-xlg-* 
+@mixin media-xlg {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}

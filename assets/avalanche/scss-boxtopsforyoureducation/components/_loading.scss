@@ -1,0 +1,39 @@
+.loading-container {
+  position: relative;
+}
+
+.loading-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba( $colorSecondary, 0.75);
+}
+
+.loading-spinner {
+  width: ($gap * 6);
+  height: ($gap * 6);
+  margin: $gapLarge auto;
+
+  border-radius: 50%;
+  border-top: $gap solid rgba( $colorPrimary, 0.2 );
+  border-right: $gap solid rgba( $colorPrimary, 0.2 );
+  border-bottom: $gap solid rgba( $colorPrimary, 0.2 );
+  border-left: $gap solid $colorPrimary;
+
+  font-size: $textSmall;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation: spin $speedSlow infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
