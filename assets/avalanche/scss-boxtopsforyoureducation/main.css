@@ -6449,7 +6449,9 @@ img {
   background-repeat: no-repeat;
   background-size: cover; }
   .image-heading-text-container .image-heading-text-content {
-    padding: 115px 0 56.3px 0; }
+    padding: 115px 0 56.3px 0;
+    max-width: 1172px;
+    margin: 0 auto; }
     @media (min-width: 992px) and (max-width: 1199px) {
       .image-heading-text-container .image-heading-text-content {
         padding: 95px 10px 56.3px 10px; } }

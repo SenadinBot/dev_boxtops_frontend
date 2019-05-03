@@ -7,6 +7,8 @@
     background-size: cover;
     .image-heading-text-content {
         padding: 115px 0 56.3px 0;
+        max-width: $contentWidth;
+        margin: 0 auto;
         @include media-md {
             padding: 95px 10px 56.3px 10px;
         }
