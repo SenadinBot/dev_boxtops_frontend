@@ -6,34 +6,6 @@
         margin: 0 auto 0;
     }
 }
-.footer-social-wrap {
-    background: $midnightBlue;
-    flex: 1 1 100%;
-    text-align: center;
-    padding: 57px 0 71px 0;
-    @include media-md {
-        padding: 47px 0 61px 0;            
-    }
-    @include media-sm {
-        padding: 37px 0 41px 0;            
-    }
-    @include media-xs {
-        padding: 37px 0;
-    }
-    & img {
-        display: inline-block;
-        max-width: none;
-    }
-    p {
-        display: none;
-    }
-    a {
-        margin-right: 15px;
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
 .footer-wrap {
     display: flex;
     flex-flow: row wrap;

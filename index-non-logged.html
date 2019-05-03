@@ -31,7 +31,7 @@
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </button>
-                <ul id="navmenu" class="nav-menu">
+                <ul id="navmenu" class="nav-menu" style="display:none"> 
                     @foreach (var navItem in Model.NavigationItem.MainNavigation)
                     {
                     string css = Model.GetActiveMenuClass(navItem);
@@ -82,23 +82,16 @@
         </div>
     </div>
     <footer id="colophon" class="site-footer footer print-hide" role="contentinfo">
-        <div class="footer-social-wrap">
-            <div class="footer-social">
-                <div class="social-sharing">
-                    <a class="social-sharing-link" href="" target="_blank" rel="noopener">
-                        <img src="./assets/images/icons/footer-fcb.png" alt="Share on Facebook">
-                    </a>
-                    <a class="social-sharing-link" href="" target="_blank" rel="noopener">
-                        <img src="./assets/images/icons/footer-instagram.png" alt="Share on Instagram">
-                    </a>
-                    <a class="social-sharing-link" href="#" target="_blank" rel="noopener">
-                        <img src="./assets/images/icons/footer-youtube.png" alt="Pin it">
-                    </a>
-                </div>
-                <p>
-                    Share This Page
-                </p>
-            </div>
+        <div class="social-sharing">
+            <a class="social-sharing-link" href="" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-fcb.png" alt="Share on Facebook">
+            </a>
+            <a class="social-sharing-link" href="" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-instagram.png" alt="Share on Instagram">
+            </a>
+            <a class="social-sharing-link" href="#" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-youtube.png" alt="Pin it">
+            </a>
         </div>
         <div class="footer-wrap">
             <div class="footer-menu-wrapper">

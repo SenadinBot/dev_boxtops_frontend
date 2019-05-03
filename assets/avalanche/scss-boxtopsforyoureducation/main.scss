@@ -17,11 +17,12 @@
 @import 'components/_footer';
 @import 'components/_header';
 @import 'components/_global';
-@import 'components/common';
+@import 'components/_common';
 @import 'components/_special-hero-banner';
-// @import 'components/three-column-listing';
-// @import 'components/image-heading-text';
-// @import 'components/app-features';
+@import 'components/_social-sharing';
+@import 'components/_promo-offers';
+@import 'components/_app-features';
+@import 'components/_image-heading-text';
 
 // Print Styles
 @import '_print';

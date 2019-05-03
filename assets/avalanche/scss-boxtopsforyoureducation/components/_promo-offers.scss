@@ -1,103 +1,132 @@
 .promo-offers-container {
-    padding-top: 20px;
-    background-color: $colorPrimary;
-    text-align: center;
-    color: $white;
-    font-family: $fontBarlow;
-
-    .promo-offers-heading {
-        padding-top: 30px;
-        line-height: 36px;
-        font-size: 30px;
-        text-transform: uppercase;
-        font-family: $fontLilitaOne;
-
-        @media screen and (min-width: $medium) {
-            line-height: 50px;
-            font-size: 42px;
-            padding: 70px 0px 20px 0px;
-        }
-    }
-
-    .promo-offers-subheading {
-        padding: 0px 15px;
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 500;
-
-        @media screen and (min-width: $medium) {
-            font-size: 20px;
-            line-height: 28px;
-        }
-    }
-
-
-    .promo-offers-form-wrapper {
-        padding: 20px 0px;
+    position: relative;
+    padding: 10px 14px;
+    font-size: 0;
+    background-color: $white;
+    .custom-btn {
         display: inline-block;
-
-        @media screen and (max-width: $medium) {
-            padding: 20px 15px 0px 15px;
-            width: 100%;
+        margin-left: 12px;
+        padding: 6px 43.6px 5.7px 46.2px;
+        font-size: 18px;
+        z-index: 0;
+        @include media-xs {
+            font-size: 14.37px;
+            line-height: 16.37px;
+            padding: 8.2px 13.8px 8.9px 13.8px;
         }
-
-        .promo-offers-field-validation {
-            font-size: 16px;
-            color: $colorNavMenuHover;
+    }
+    i {
+        cursor: pointer;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s;
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        @include media-xs {
+            width: 20px;
+            height: 20px;
         }
-
-        .promo-offers-input-wrapper {
-            display: flex;
-            flex-flow: row wrap;
-            margin: 10px 0px 5px 0px;
-
-            @media screen and (min-width: $medium) {
-                /*margin: 20px 300px 5px 300px;*/
-                width: 557px;
+        @include media-xs {
+            top: 10px;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+        &:after {
+            display: block;
+            content: "";
+            background-image: url("../../../../assets/images/icons/blue-close.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 26px;
+            height: 26px;
+            display: block;
+            @include media-xs {
+                width: 20px;
+                height: 20px;
             }
-
-            .promo-offers-input {
-                flex: 1 1 70%;
-                border: solid 1px lightgrey;
-                border-radius: 5px;
-                font-size: 16px;
-                color: #707070;
-                line-height: 30px;
-                height: 60px;
-                margin: 10px 15px;
-                padding-left: 17px;
-                margin: 11px 0px;
-                border-bottom-right-radius: 0px;
-                border-top-right-radius: 0px;
-
-                @media screen and (max-width: $medium) {
-                    border-radius: 4px;
-                    border-bottom-right-radius: 4px;
-                    border-top-right-radius: 4px;
-                    margin: 0px;
-                    flex: 1 1 100%;
-                }
+        }
+    }
+    input {
+        font-family: $brandonGrotesque;
+        font-size: 18px;
+        line-height: 18px;
+        color: $midnightBlue;
+        background: $white;
+        border: 1px solid #ededed;
+        padding: 6px 13px;
+        width: 333px;
+        @include media-xs {
+            width: calc(100% - 138px);
+            font-size: 14px;
+            line-height: 14px;
+            padding: 7px 10px;
+        }
+        &.alert-error {
+            border: 2px solid #db0038;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: $midnightBlue;
+            font-family: $brandonGrotesque;
+            font-size: 18px;
+            line-height: 18px;
+            @include media-xs {
+                font-size: 14px;
+                line-height: 14px;
             }
-
-            .promo-offers-btn {
-                flex: 1 1 auto;
-                height: 60px;
-                margin: 10px 0px;
-                background-color: #FFCA00;
-                color: $colorPrimary;
-                font-family: $fontBarlow;
-                font-weight: bold;
-                font-size: 18px;
-                border-radius: 4px;
-
-                @media screen and (min-width: $medium) {
-                    height: 62px;
-                    width: 138px;
-                    border-radius: 4px;
-                    border-bottom-left-radius: 0px;
-                    border-top-left-radius: 0px;
-                    border-left: 0;
-                }
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: $midnightBlue;
+            font-family: $brandonGrotesque;
+            font-size: 18px;
+            line-height: 18px;
+            @include media-xs {
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+            color: $midnightBlue;
+            font-family: $brandonGrotesque;
+            font-size: 18px;
+            line-height: 18px;
+            @include media-xs {
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            color: $midnightBlue;
+            font-family: $brandonGrotesque;
+            font-size: 18px;
+            line-height: 18px;
+            @include media-xs {
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+    }
+    .promo-offers-subheading {
+        padding: 13px 0px 9px 0;
+        @include media-xs {
+            width: 90%;
+        }
+        span {
+            color: #39bcd9;
+            font-size: 18px;
+            line-height: 18px;
+            text-transform: uppercase;
+            font-family: $brandonGrotesqueMedium;
+            display: block;
+            @include media-xs {
+                line-height: 22px;
             }
         }
     }

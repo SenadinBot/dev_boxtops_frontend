@@ -18,8 +18,8 @@ $(document).ready(function () {
     });
 
     // Hide Sign Up Form
-    $('.close-sign-up').on('click', function () {
-        $(this).parents('.sign-up-container').slideUp();
+    $('.close-promo-offers').on('click', function () {
+        $(this).parents('.promo-offers-container').slideUp();
     });
 
     // Open Desktop Search

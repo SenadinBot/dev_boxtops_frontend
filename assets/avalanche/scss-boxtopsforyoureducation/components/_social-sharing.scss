@@ -1,30 +1,28 @@
 .social-sharing {
-    margin: 6px 0px 9px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media screen and (min-width: $medium) {
-        margin: 14px 0px;
+    background: $midnightBlue;
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 57px 0 71px 0;
+    @include media-md {
+        padding: 47px 0 61px 0;            
     }
-}
-
-.social-sharing-link {
-    display: inline-block;
-    height: auto;
-    margin: 0 17px;
-    border-radius: 2px;
-    color: #FFF;
-    text-decoration: none;
-    transition: background 250ms ease;
-    cursor: pointer;
-
-    @media screen and (min-width: $medium) {
-        margin: 0 6px;
+    @include media-sm {
+        padding: 37px 0 41px 0;            
     }
-
+    @include media-xs {
+        padding: 37px 0;
+    }
     & img {
-        display: block;
-        margin: 0 auto;
+        display: inline-block;
+        max-width: none;
+    }
+    p {
+        display: none;
+    }
+    a {
+        margin-right: 15px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }

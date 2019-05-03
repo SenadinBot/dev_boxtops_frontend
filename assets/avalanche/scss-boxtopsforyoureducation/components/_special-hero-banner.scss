@@ -106,13 +106,13 @@
             text-align: center;
             position: relative;
             flex: 1 1 67%;
-            padding: 0 220px 0 20px;
+            padding: 0 45px;
             @include media-sm {
                 top: initial;
                 -webkit-transform: none;
                 -moz-transform: none;
                 transform: none;
-                padding: 60px 0 75px 0;
+                padding: 60px 30px 75px 30px;
             }
             @include media-xs {
                 top: initial;
@@ -120,6 +120,9 @@
                 -moz-transform: none;
                 transform: none;
                 padding: 33px 0 34.2px 0;
+            }
+            @include media-md {
+                padding: 0 30px;
             }
             h2 {
                 margin-bottom: 8px;
@@ -156,8 +159,9 @@
         }
         .img-container {
             padding: 50px 35px 0 35px;
-            height: 456px;
+            height: 457px;
             flex: 1 1 33%;
+            overflow: hidden;
             @include media-xs {
                 display: none;
             }
@@ -178,7 +182,8 @@
             flex-flow: row wrap;
             align-items: center;
             justify-content: space-between;
-            max-width: $maxWidth;
+            max-width: $contentWidth;
+            margin: 0 auto;
         }
     }
     .banner-image {
