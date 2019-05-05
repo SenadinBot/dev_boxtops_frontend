@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Non logged</title>
+    <title>New Non logged</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +24,7 @@
                 <img src="./assets/images/logo.png" alt="Header Logo" class="header-logo">
             </a>
             <nav id="nav" class="nav" role="navigation">
+                <div class="mobile-search-icon"></div>
                 <button id="navtoggle" class="nav-toggle" aria-controls="navmenu" aria-label="Menu"
                     aria-expanded="false">
                     <span class="screen-reader-text">Menu</span>
@@ -31,45 +32,53 @@
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </button>
-                <ul id="navmenu" class="nav-menu" style="display:none"> 
-                    @foreach (var navItem in Model.NavigationItem.MainNavigation)
-                    {
-                    string css = Model.GetActiveMenuClass(navItem);
-                    <li id="@navItem.ID" class="">
-                        <a href="@navItem.GetItemUrl()">@navItem.InnerItem.GetNavigationTitle()</a>
-                    </li>
-                    }
-
+                <ul id="navmenu" class="nav-menu">
+                    <div class="non-logged-nav">
+                        <li id="@navItem.ID" class="">
+                            <a href="#">About</a>
+                        </li>
+                        <li id="@navItem.ID" class="">
+                            <a href="#">How to earn</a>
+                        </li>
+                        <li id="@navItem.ID" class="current-menu-item">
+                            <a href="#">Find Offers</a>
+                        </li>
+                        <li id="@navItem.ID">
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li id="navItem_sitesearch" class="search-icon-wrapper">
+                            <i class="fa-search-header"></i>
+                        </li>
+                    </div>
                     <div class="nav-registration-wrapper">
-                        @if (Model._pageContext.User.IsAuthenticated && !Model._pageContext.IsInSitecore())
-                        {
-                        string cssLogout = @Model.GetActiveMenuClassRegistration("log out");
-                        <li id="nav-reg-logout" class="@cssLogout">
-                            @Html.ActionLink("Logout", "Logout", "Navigation", new { returnUrl = Model.GetRedirectPage()
-                            }, new { @class = "" })
-                        </li>
-
-                        string cssMyAccount = @Model.GetActiveMenuClassRegistration("My account");
-                        <li id="nav-reg-my-account" class="@cssMyAccount">
-                            @Html.Sitecore().Field("My Account", Model._pageContext.Root, new { @class = "" })
-                        </li>
-                        }
-                        else
-                        {
-                        string cssMyLogIn = @Model.GetActiveMenuClassRegistration("log in");
-                        <li id="nav-reg-login" class="@cssMyLogIn">
-                            @Html.Sitecore().Field("Log in", Model._pageContext.Root, new { @class = "" })
-                        </li>
-
-                        string cssRegister = @Model.GetActiveMenuClassRegistration("Register");
-                        <li id="nav-reg-register" class="nav-reg-register @cssRegister">
-                            @Html.Sitecore().Field("Register", Model._pageContext.Root, new { @class =
-                            "nav-registration-btn" })
-                        </li>
-                        }
+                        <div class="login-content">
+                            <li id="nav-reg-register" class="nav-reg-registericon icon red-icon">
+                                <a href="#">Join free</a>
+                            </li>
+                            <li id="nav-reg-login" class="icon blue-icon">
+                                <a href="#">Log in</a>
+                            </li>
+                            <li id="nav-reg-coordinator-login" class="icon yellow-icon">
+                                <a href="#">Coordinator login</a>
+                            </li>
+                        </div>
                     </div>
                 </ul>
             </nav>
+            <!-- Header Search Container -->
+            <div class="header-search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button type="button"></button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search Box Tops" aria-label=""
+                            aria-describedby="basic-addon1">
+                        <button class="desktop-close-search"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Header Search Container -->
         </div>
     </header>
     <div class="site-content max-width">

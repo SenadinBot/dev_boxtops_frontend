@@ -1,34 +1,31 @@
 $(document).ready(function () {
 
     // Menu
-    $('.nav-icon').on('click', function () {
-        $('body').toggleClass('menu-open');
+    $('#navtoggle').on('click', function () {
+        $('.nav').toggleClass('open');
         $('body').removeClass('search-open');
+        $('body').toggleClass('menu-open');
     });
 
     // Mobile Search Open
-    $('.search-icon').on('click', function () {
+    $('.mobile-search-icon').on('click', function () {
         $('body').toggleClass('search-open');
+        $('.nav').removeClass('open');
         $('body').removeClass('menu-open');
     });
 
-    // Hide Adverb
-    $('.close-adverb').on('click', function () {
-        $(this).parents('.adverb-container').slideUp();
+    // Open/Close Desktop Search Open
+    $('.search-icon-wrapper').on('click', function () {
+        $('.header-search').slideDown();
+    });
+    $('.desktop-close-search').on('click', function () {
+        $('.header-search').slideUp();
     });
 
     // Hide Sign Up Form
     $('.close-promo-offers').on('click', function () {
         $(this).parents('.promo-offers-container').slideUp();
-    });
-
-    // Open Desktop Search
-    $(".fa-search-header").on('click', function () {
-        $(this).parents(".search-wrapper-header").toggleClass("opened");
-    });
-    $(".close-search-header").on('click', function () {
-        $(this).parents(".search-wrapper-header").removeClass("opened");
-        $(".search-wrapper-header input").val('');
+        $('body').removeClass('has-promo-offers');
     });
 
     // Check Mobile OS
@@ -41,4 +38,5 @@ $(document).ready(function () {
     else {
         $('.download-app').addClass('desktop-app');
     }
+    
 });

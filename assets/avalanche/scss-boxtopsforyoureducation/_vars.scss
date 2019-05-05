@@ -77,6 +77,7 @@ $colorRecipeListining: #00BAC0;
 $dark: #000000;
 $midnightBlue: #002e5d;
 $redRibbon: #E80A4D;
+$scooter: #39BCD9;
 
 // Speeds
 $speedFast: 250ms;
@@ -90,8 +91,8 @@ $contentWidth: 1172px; // Content width includes content padding
 $textWidth: 944px;
 $heroHeight: 500px;
 $ctaHeight: 350px;
-$headerHeightLg: 100px;
-$headerHeightSm: 75px;
+$headerHeightLg: 123px;
+$headerHeightSm: 70px;
 $toggleWidth: 30px;
 $toggleSpacing: 10px;
 $logoWidthLg: 160px; // SVG Logo size in header and footer
@@ -144,6 +145,12 @@ $zHeader: 100;
     @content;
   }
 }
+// Small Devices, Tablet portrait and mobile
+@mixin  media-xs-sm {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
 // Small Devices, Tablet portrait .visible-sm-* 
 @mixin media-sm {
     @media (min-width: 768px) and (max-width: 991px) {
@@ -155,6 +162,12 @@ $zHeader: 100;
     @media (min-width: 992px) and (max-width: 1199px) {
       @content;
     }
+}
+// Medium and Large Devices, Tablet landscape, Desktop
+@mixin media-md-lg {
+  @media (min-width: 992px) {
+    @content;
+  }
 }
 // Large Devices, Desktop .visible-lg-* 
 @mixin media-lg {

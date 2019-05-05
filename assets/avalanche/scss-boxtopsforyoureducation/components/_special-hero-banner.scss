@@ -1,6 +1,6 @@
 .hero-banner-container {
     &.landing-page-hero {
-        margin-top: -120.8px;
+        margin-top: -123px;
         min-height: 576px;
         @include media-xs {
             margin-top: -70px;
@@ -11,11 +11,11 @@
         }
         @include media-sm {
             min-height: 391.547px;
-            margin-top: -70px;
+            margin-top: -90px;
         }
         .hero-banner-content {
             text-align: center;
-            padding: 120.8px 0 79.7px 0;
+            padding: 123px 0 79.7px 0;
             position: relative;
             @include media-xs {
                 padding: 280px 0 40.5px 0;
@@ -75,7 +75,7 @@
                 }
             }
             h2 {
-                color: #39BCD9;
+                color: $scooter;
                 display: inline-block;
                 vertical-align: middle;
                 @include media-xs {

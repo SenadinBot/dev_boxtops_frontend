@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Landing page</title>
+    <title>New Landing page</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
 
 <body>
     <!-- Promo Subscribe Form -->
-    <section class="promo-offers-container max-width">
+    <section style="display: none" class="promo-offers-container max-width">
         <div class="promo-offers-form-wrapper">
             <div class="promo-offers-input-wrapper">
                 <input type="email" placeholder="Subscribe to Box Tops emails">
@@ -39,10 +39,8 @@
     <!-- End of Promo Subscribe Message -->
     <header id="masthead" class="header @headercss landing-page-header" role="banner">
         <div class="header-wrap">
-            <a href="#" rel="home">
-                <img src="./assets/images/logo.png" alt="Header Logo" class="header-logo">
-            </a>
             <nav id="nav" class="nav" role="navigation">
+                <div class="mobile-search-icon"></div>
                 <button id="navtoggle" class="nav-toggle" aria-controls="navmenu" aria-label="Menu"
                     aria-expanded="false">
                     <span class="screen-reader-text">Menu</span>
@@ -50,45 +48,50 @@
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </button>
-                <ul id="navmenu" class="nav-menu" style="display:none">
-                    @foreach (var navItem in Model.NavigationItem.MainNavigation)
-                    {
-                    string css = Model.GetActiveMenuClass(navItem);
-                    <li id="@navItem.ID" class="">
-                        <a href="@navItem.GetItemUrl()">@navItem.InnerItem.GetNavigationTitle()</a>
-                    </li>
-                    }
-
+                <ul id="navmenu" class="nav-menu">
+                    <div class="non-logged-nav">
+                        <li id="@navItem.ID" class="">
+                            <a href="#">About</a>
+                        </li>
+                        <li id="@navItem.ID" class="current-menu-item">
+                            <a href="#">How to earn</a>
+                        </li>
+                        <li id="@navItem.ID" class="">
+                            <a href="#">Find Offers</a>
+                        </li>
+                        <li id="navItem_sitesearch" class="search-icon-wrapper">
+                            <i class="fa-search-header"></i>
+                        </li>
+                    </div>
                     <div class="nav-registration-wrapper">
-                        @if (Model._pageContext.User.IsAuthenticated && !Model._pageContext.IsInSitecore())
-                        {
-                        string cssLogout = @Model.GetActiveMenuClassRegistration("log out");
-                        <li id="nav-reg-logout" class="@cssLogout">
-                            @Html.ActionLink("Logout", "Logout", "Navigation", new { returnUrl = Model.GetRedirectPage()
-                            }, new { @class = "" })
-                        </li>
-
-                        string cssMyAccount = @Model.GetActiveMenuClassRegistration("My account");
-                        <li id="nav-reg-my-account" class="@cssMyAccount">
-                            @Html.Sitecore().Field("My Account", Model._pageContext.Root, new { @class = "" })
-                        </li>
-                        }
-                        else
-                        {
-                        string cssMyLogIn = @Model.GetActiveMenuClassRegistration("log in");
-                        <li id="nav-reg-login" class="@cssMyLogIn">
-                            @Html.Sitecore().Field("Log in", Model._pageContext.Root, new { @class = "" })
-                        </li>
-
-                        string cssRegister = @Model.GetActiveMenuClassRegistration("Register");
-                        <li id="nav-reg-register" class="nav-reg-register @cssRegister">
-                            @Html.Sitecore().Field("Register", Model._pageContext.Root, new { @class =
-                            "nav-registration-btn" })
-                        </li>
-                        }
+                        <div class="login-content">
+                            <li id="nav-reg-register" class="nav-reg-registericon icon red-icon">
+                                <a href="#">Join free</a>
+                            </li>
+                            <li id="nav-reg-login" class="icon blue-icon">
+                                <a href="#">Log in</a>
+                            </li>
+                            <li id="nav-reg-coordinator-login" class="icon yellow-icon">
+                                <a href="#">Coordinator login</a>
+                            </li>
+                        </div>
                     </div>
                 </ul>
             </nav>
+            <!-- Header Search Container -->
+            <div class="header-search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button type="button"></button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search Box Tops" aria-label=""
+                            aria-describedby="basic-addon1">
+                        <button class="desktop-close-search"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Header Search Container -->
         </div>
     </header>
     <div class="site-content max-width">
@@ -165,16 +168,68 @@
                         </div>
                     </section>
                     <hr class="app-features-hr">
-                    <section class="image-heading-text-container" style="background-image: url('./assets/images/images/grey-background-image@2x.png')">
+                    <section class="image-heading-text-container"
+                        style="background-image: url('./assets/images/images/grey-background-image@2x.png')">
                         <div class="image-heading-text-content">
                             <img src="./assets/images/images/boxtops-clipped-image@2x.png" alt="Clipped Image">
                             <h2>STILL HAVE <br> CLIPPED BOX TOPS?</h2>
-                            <p><b>You can still clip them and send them to school.</b> Physical Box Tops clips are being
-                                phased
-                                out of production, but may continue to be found on many products throughout the store.
-                                Send your clipped Box Tops, along with any unexpired clips you may have at home, to your
-                                participating school.*
-                            </p>
+                            <div class="text-content">
+                                <p><b>You can still clip them and send them to school.</b> Physical Box Tops clips are
+                                    being
+                                    phased
+                                    out of production, but may continue to be found on many products throughout the
+                                    store.
+                                    Send your clipped Box Tops, along with any unexpired clips you may have at home, to
+                                    your
+                                    participating school.*
+                                </p>
+                            </div>
+                            <i>All valid Box Tops clips submitted per the Program Rules by a Coordinator(s) of (an)
+                                eligible, enrolled school(s) will be honored.</i>
+                        </div>
+                    </section>
+                    <section class="image-heading-text-container">
+                        <div class="image-heading-text-content">
+                            <img src="./assets/images/images/boxtops-clipped-image@2x.png" alt="Clipped Image">
+                            <h2>BOX TOPS CLIPS</h2>
+                            <h3>On Packages</h3>
+                            <div class="text-content">
+                                <p><b>You can still clip them and send them to school.</b> Physical Box Tops clips are
+                                    being
+                                    phased
+                                    out of production, but may continue to be found on many products throughout the
+                                    store.
+                                    Send your clipped Box Tops, along with any unexpired clips you may have at home, to
+                                    your
+                                    participating school.*
+                                </p>
+                            </div>
+                            <div class="column-icons-container">
+                                <div class="column-icons-item">
+                                    <div class="img-container">
+                                        <img src="./assets/images/icons/buy-icon@2x.png" alt="Column Icons Image">
+                                    </div>
+                                    <div class="column-icons-content">
+                                        <p><b>Buy</b> Box Tops products</p>
+                                    </div>
+                                </div>
+                                <div class="column-icons-item">
+                                    <div class="img-container">
+                                        <img src="./assets/images/icons/cut-icon@2x.png" alt="Column Icons Image">
+                                    </div>
+                                    <div class="column-icons-content">
+                                        <p><b>Cut</b> out the Box Top from each package</p>
+                                    </div>
+                                </div>
+                                <div class="column-icons-item">
+                                    <div class="img-container">
+                                        <img src="./assets/images/icons/send-icon.png" alt="Column Icons Image">
+                                    </div>
+                                    <div class="column-icons-content">
+                                        <p><b>Send</b> your Box Tops to school </p>
+                                    </div>
+                                </div>
+                            </div>
                             <i>All valid Box Tops clips submitted per the Program Rules by a Coordinator(s) of (an)
                                 eligible, enrolled school(s) will be honored.</i>
                         </div>

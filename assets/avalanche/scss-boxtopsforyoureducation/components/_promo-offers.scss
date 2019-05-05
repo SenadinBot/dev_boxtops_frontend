@@ -1,5 +1,5 @@
 .promo-offers-container {
-    position: relative;
+    position: fixed;
     padding: 10px 14px;
     font-size: 0;
     background-color: $white;
@@ -119,7 +119,7 @@
             width: 90%;
         }
         span {
-            color: #39bcd9;
+            color: $scooter;
             font-size: 18px;
             line-height: 18px;
             text-transform: uppercase;

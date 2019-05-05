@@ -4,54 +4,66 @@
     width: 100%;
     height: $headerHeightSm;
     color: $white;
-  
     display: flex;
     align-items: center;
-  
-    background: $colorPrimary;
+    background: $white;
     z-index: $zHeader;
-  
-    @media screen and (min-width: $medium) {
-      height: $headerHeightLg;
+    padding: 11px 25px 13px 12px;
+    @include media-lg {
+        width: $maxWidth;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: $headerHeightLg;
+        padding: 0;
     }
-  
-    @media screen and (min-width: $maxWidth) {
-      width: $maxWidth;
-      left: 50%;
-      transform: translate(-50%, 0);
+    @include media-md {
+        height: $headerHeightLg;
+        padding: 0;
+    }
+    @include media-sm {
+        height: 90px;
     }
     &.landing-page-header {
-       background-color: $midnightBlue;
+        background-color: $midnightBlue;
+        .logo-container {
+            display: none;
+        }
     }    
 }
-  
-  .header-wrap {
+.header-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: $contentWidth;
     margin: 0 auto;
-    padding: 10px 19px 10px 19px;
-  }
-  
-  .header-logo {
-      display: inline;
-      max-width: 75px;
-      height: auto;
-  
-      @media screen and (min-width: $medium) {
-          max-width: 100px;
-      }
-  }
-  
-  .secondary-header-logo {
-      display: none;
-      width: $logoWidthSm;
-      height: auto;
-  
-      @media screen and (min-width: 1025px) {
-          display: none;
-          width: $logoWidthLg;        
-      }
-  }
-  
+    padding: 15px 0 16px 0;
+    @include media-md {
+        padding: 15px 20px 16px 20px;
+    }
+    .nav {
+        width: 100%;
+        text-align: right;
+    }
+}  
+.header-logo {
+    display: inline;
+    max-width: 75px;
+    height: auto;
+    @include media-xs {
+        max-width: 50px;
+    }
+    @include media-md {
+        max-width: 100px;
+    }
+    @include media-lg {
+        max-width: 100px;
+    }
+}
+// .has-promo-offers {
+//     .header {
+//         top: 60px;
+//         -webkit-transition: 0.2s linear;
+//         -moz-transition: 0.2s linear;
+//         transition: 0.2s linear;
+//     }
+// }

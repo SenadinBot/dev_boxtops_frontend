@@ -22,7 +22,27 @@ h2 {
         line-height: 30px;
     }
 }
-
+h3 {
+    font-size: 25px;
+    line-height: 34.96px;
+    font-family: $brandonGrotesqueBlack;
+    color: $scooter;
+    margin: 0;
+    @include media-xs {
+        font-size: 20px;
+    }
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        text-decoration: none;
+        box-shadow: none;
+    }
+}
 // Buttons
 .custom-btn {
     background-color: $redRibbon;

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Homepage</title>
+    <title>New Homepage</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +24,7 @@
                 <img src="./assets/images/logo.png" alt="Header Logo" class="header-logo">
             </a>
             <nav id="nav" class="nav" role="navigation">
+                <div class="mobile-search-icon"></div>
                 <button id="navtoggle" class="nav-toggle" aria-controls="navmenu" aria-label="Menu"
                     aria-expanded="false">
                     <span class="screen-reader-text">Menu</span>
@@ -31,45 +32,52 @@
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </button>
-                <ul id="navmenu" class="nav-menu" style="display: none">
-                    @foreach (var navItem in Model.NavigationItem.MainNavigation)
-                    {
-                    string css = Model.GetActiveMenuClass(navItem);
-                    <li id="@navItem.ID" class="">
-                        <a href="@navItem.GetItemUrl()">@navItem.InnerItem.GetNavigationTitle()</a>
+                <ul id="navmenu" class="nav-menu">
+                    <!-- To show my account on mobile when user is logged in -->
+                    <li class="mobile-account-btn">
+                        <a href="#" class="account-btn">My Account</a>
                     </li>
-                    }
+                    <!-- End To show my account on mobile when user is logged in -->
 
+                    <li id="@navItem.ID" class="">
+                        <a href="#">About</a>
+                    </li>
+                    <li id="@navItem.ID" class="">
+                        <a href="#">How to earn</a>
+                    </li>
+                    <li id="@navItem.ID" class="current-menu-item">
+                        <a href="#">Find Offers</a>
+                    </li>
+                    <li id="@navItem.ID" class="">
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li id="navItem_sitesearch" class="search-icon-wrapper">
+                        <i class="fa-search-header"></i>
+                    </li>
                     <div class="nav-registration-wrapper">
-                        @if (Model._pageContext.User.IsAuthenticated && !Model._pageContext.IsInSitecore())
-                        {
-                        string cssLogout = @Model.GetActiveMenuClassRegistration("log out");
-                        <li id="nav-reg-logout" class="@cssLogout">
-                            @Html.ActionLink("Logout", "Logout", "Navigation", new { returnUrl = Model.GetRedirectPage()
-                            }, new { @class = "" })
-                        </li>
-
-                        string cssMyAccount = @Model.GetActiveMenuClassRegistration("My account");
                         <li id="nav-reg-my-account" class="@cssMyAccount">
-                            @Html.Sitecore().Field("My Account", Model._pageContext.Root, new { @class = "" })
+                            <a href="#" class="account-btn">My Account</a>
                         </li>
-                        }
-                        else
-                        {
-                        string cssMyLogIn = @Model.GetActiveMenuClassRegistration("log in");
-                        <li id="nav-reg-login" class="@cssMyLogIn">
-                            @Html.Sitecore().Field("Log in", Model._pageContext.Root, new { @class = "" })
+                        <li id="nav-reg-logout" class="@cssLogout logout-btn">
+                            <a href="#">Logout</a>
                         </li>
-
-                        string cssRegister = @Model.GetActiveMenuClassRegistration("Register");
-                        <li id="nav-reg-register" class="nav-reg-register @cssRegister">
-                            @Html.Sitecore().Field("Register", Model._pageContext.Root, new { @class =
-                            "nav-registration-btn" })
-                        </li>
-                        }
                     </div>
                 </ul>
             </nav>
+            <!-- Header Search Container -->
+            <div class="header-search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button type="button"></button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search Box Tops" aria-label=""
+                            aria-describedby="basic-addon1">
+                        <button type="button" class="desktop-close-search"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Header Search Container -->
         </div>
     </header>
     <div class="site-content max-width">
@@ -96,6 +104,50 @@
                                     <a href="#" class="scan-without-app-link visible-xs">SCAN WITHOUT THE APP</a>
                                 </div>
                             </div>
+                        </div>
+                    </section>
+                    <section class="constrain howitworks how-it-works-container">
+                        <h2>HOW IT WORKS</h2>
+                        <div class="feature-item-wrap">
+                            <div class="feature-item howitworks">
+                                <div class="img-container">
+                                    <img src="./assets/images/icons/buy-image.png" alt="How It Works Image">
+                                </div>
+                                <div class="feature-item-content">
+                                    <h2>Buy</h2>
+                                    <h3>Box tops products</h3>
+                                    <div class="feature-text">
+                                        <p><b>Look for the logo.</b> You can find it on hundreds of products you know and love!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-item howitworks">
+                                <div class="img-container">
+                                    <img src="./assets/images/icons/scan-image.png" alt="How It Works Image">
+                                </div>
+                                <div class="feature-item-content">
+                                    <h2>Scan</h2>
+                                    <h3>Your Receipt</h3>
+                                    <div class="feature-text">
+                                        <p><b>No more clipping.</b> Tap the scan button and snap a photo of your receipt within 14 days of purchase.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-item howitworks">
+                                <div class="img-container">
+                                    <img src="./assets/images/icons/earn-image@2x.png" alt="How It Works Image">
+                                </div>
+                                <div class="feature-item-content">
+                                    <h2>Earn</h2>
+                                    <h3>CASH FOR YOUR SCHOOL</h3>
+                                    <div class="feature-text">
+                                        <p><b>It’s that easy!</b> Box Tops earnings are identified and automatically updated online.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-app">
+                            <a href="#"><span>Download the app</span></a>
                         </div>
                     </section>
                 </div>
