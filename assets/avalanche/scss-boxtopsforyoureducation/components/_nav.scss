@@ -187,7 +187,6 @@
                 color: $midnightBlue;
                 &:after {
                     visibility: visible;
-                    width: 100%;
                 }
                 @include media-xs {
                     color: $white;
@@ -208,17 +207,23 @@
             &:after {
                 content: "";
                 position: absolute;
-                width: 0;
-                height: 2px;
-                bottom: -3px;
-                left: 0;
+                width: 15.36px;
+                height: 9.95px;
+                bottom: -16px;
+                left: 50%;
                 visibility: hidden;
-                -webkit-transition: all 0.3s ease-in-out 0s;
-                -moz-transition: all 0.3s ease-in-out 0s;
-                -ms-transition: all 0.3s ease-in-out 0s;
-                -o-transition: all 0.3s ease-in-out 0s;
-                transition: all 0.3s ease-in-out 0s;
-                background-color: $midnightBlue;
+                -webkit-transition: all 0.1s ease;
+                -moz-transition: all 0.1s ease;
+                -ms-transition: all 0.1s ease;
+                -o-transition: all 0.1s ease;
+                transition: all 0.1s ease;
+                // background-color: $midnightBlue;
+                background-image: url("../../../../assets/images/icons/orange-menu-icon@2x.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                transform: translateX(-50%);
                 @include media-xs {
                     display: none;
                 }
@@ -274,7 +279,6 @@
     .current-menu-item a {
         &:after {
             visibility: visible;
-            width: 100%;
         }
     }
     .search-icon-wrapper {
@@ -573,7 +577,7 @@
                     }
                 }
                 &:after {
-                    background-color: $white;
+                    // background-color: $white;
                     @include media-xs {
                         display: none;
                     }

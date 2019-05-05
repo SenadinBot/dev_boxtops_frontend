@@ -21,7 +21,10 @@
 @import 'components/_image-heading-text';
 @import 'components/_nav';
 @import 'components/_how-it-works';
-@import 'components/_featured-items';
+@import 'components/_featured-recipe-items';
+
+// Flexible Modules #
+@import 'modules/_feature';
 
 // Print Styles
 @import '_print';
