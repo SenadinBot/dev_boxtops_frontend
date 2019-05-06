@@ -10,7 +10,7 @@
     z-index: $zHeader;
     padding: 11px 25px 13px 12px;
     @include media-lg {
-        width: $maxWidth;
+        max-width: $maxWidth;
         left: 50%;
         transform: translate(-50%, 0);
         height: $headerHeightLg;
@@ -34,11 +34,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: $contentWidth;
+    max-width: $maxWidth;
+    width: 100%;
     margin: 0 auto;
     padding: 15px 0 16px 0;
     @include media-md {
         padding: 15px 20px 16px 20px;
+    }
+    @include media-lg {
+        padding: 15px 30px 16px 35px;
     }
     .nav {
         width: 100%;

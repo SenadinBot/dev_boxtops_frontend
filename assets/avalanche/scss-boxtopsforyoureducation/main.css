@@ -51,9 +51,9 @@ a {
   color: #FFF;
   font-family: "Brandon Grotesque Black", sans-serif;
   text-transform: uppercase;
-  font-size: 20px;
   line-height: 26.9px;
-  padding: 11.8px 36px 11.6px 36px;
+  font-size: 18px;
+  padding: 8px 34px;
   text-align: center;
   border-radius: 6px;
   letter-spacing: 0.8px;
@@ -95,6 +95,13 @@ a {
     -moz-transition: 0.2s linear;
     transition: 0.2s linear;
     border-radius: 6px; }
+  .custom-btn.blue-btn {
+    border: 1px solid #002e5d;
+    background-color: #002e5d; }
+    .custom-btn.blue-btn:hover {
+      color: #002e5d; }
+    .custom-btn.blue-btn:focus {
+      color: #002e5d; }
 
 .icon {
   position: relative; }
@@ -262,7 +269,7 @@ a {
   padding: 11px 25px 13px 12px; }
   @media (min-width: 1200px) {
     .header {
-      width: 1400px;
+      max-width: 1400px;
       left: 50%;
       transform: translate(-50%, 0);
       height: 123px;
@@ -283,12 +290,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1172px;
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 15px 0 16px 0; }
   @media (min-width: 992px) and (max-width: 1199px) {
     .header-wrap {
       padding: 15px 20px 16px 20px; } }
+  @media (min-width: 1200px) {
+    .header-wrap {
+      padding: 15px 30px 16px 35px; } }
   .header-wrap .nav {
     width: 100%;
     text-align: right; }
@@ -656,28 +667,34 @@ body {
 
 body.menu-open {
   overflow: hidden; }
-  body.menu-open .site-content:after {
-    content: "";
-    overflow: hidden;
-    background: #000;
-    opacity: 0.9;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0; }
+  body.menu-open .site-content {
+    position: relative; }
+    body.menu-open .site-content:after {
+      content: "";
+      overflow: hidden;
+      background: #000;
+      opacity: 0.9;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9; }
 body.search-open {
   overflow: hidden; }
-  body.search-open .site-content:after {
-    content: "";
-    overflow: hidden;
-    background: #000;
-    opacity: 0.9;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0; }
+  body.search-open .site-content {
+    position: relative; }
+    body.search-open .site-content:after {
+      content: "";
+      overflow: hidden;
+      background: #000;
+      opacity: 0.9;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9; }
   body.search-open .header:after {
     content: "";
     overflow: hidden;
@@ -687,7 +704,8 @@ body.search-open {
     height: 70px;
     position: absolute;
     top: 0;
-    left: 0; }
+    left: 0;
+    z-index: 9; }
     @media (min-width: 768px) and (max-width: 991px) {
       body.search-open .header:after {
         height: 90px; } }
@@ -872,6 +890,9 @@ body.search-open {
   height: 100%;
   width: 100%;
   position: relative; }
+.hero-banner-container .custom-btn {
+  font-size: 20px;
+  padding: 11.8px 36px 11.6px 36px; }
 
 .social-sharing {
   background: #002e5d;
@@ -898,10 +919,10 @@ body.search-open {
       margin-right: 0; }
 
 .promo-offers-container {
-  position: fixed;
   padding: 10px 14px;
   font-size: 0;
-  background-color: #FFF; }
+  background-color: #FFF;
+  position: relative; }
   .promo-offers-container .custom-btn {
     display: inline-block;
     margin-left: 12px;
@@ -1006,20 +1027,29 @@ body.search-open {
           font-size: 14px;
           line-height: 14px; } }
   .promo-offers-container .promo-offers-subheading {
-    padding: 13px 0px 9px 0; }
+    padding: 7px 0 3px 0; }
     @media (max-width: 767px) {
       .promo-offers-container .promo-offers-subheading {
-        width: 90%; } }
+        width: 90%;
+        padding: 11px 0 3px 0; } }
     .promo-offers-container .promo-offers-subheading span {
       color: #39BCD9;
-      font-size: 18px;
-      line-height: 18px;
+      font-size: 30px;
+      line-height: 30px;
+      font-family: "Brandon Grotesque Black", sans-serif;
       text-transform: uppercase;
-      font-family: "Brandon Grotesque Medium", sans-serif;
       display: block; }
       @media (max-width: 767px) {
         .promo-offers-container .promo-offers-subheading span {
-          line-height: 22px; } }
+          font-size: 16px;
+          line-height: 22px;
+          font-family: "Brandon Grotesque Medium", sans-serif; } }
+
+.has-promo-offers .header {
+  top: 60px; }
+  @media (max-width: 767px) {
+    .has-promo-offers .header {
+      top: 56px; } }
 
 .app-features-container {
   border-bottom: 1px solid #002e5d;
@@ -1554,6 +1584,12 @@ body.search-open {
         text-decoration: none;
         outline: none;
         color: #002e5d; }
+        @media (max-width: 767px) {
+          .nav-menu li a:focus {
+            color: #FFF; } }
+        @media (min-width: 768px) and (max-width: 991px) {
+          .nav-menu li a:focus {
+            color: #FFF; } }
       .nav-menu li a:active {
         text-decoration: none;
         outline: none; }
@@ -1701,6 +1737,12 @@ body.search-open {
     text-align: right;
     padding-left: 30px;
     border-left: 1px solid rgba(0, 46, 93, 0.25); }
+    @media (min-width: 1200px) {
+      .nav-menu .login-content {
+        margin-right: -30px; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .nav-menu .login-content {
+        margin-right: -20px; } }
     @media (min-width: 768px) and (max-width: 991px) {
       .nav-menu .login-content {
         border-left: none;
@@ -1763,7 +1805,11 @@ body.search-open {
           -ms-transition: all 0.3s ease-in-out 0s;
           -o-transition: all 0.3s ease-in-out 0s;
           transition: all 0.3s ease-in-out 0s;
-          background-color: #002e5d; }
+          background-color: #002e5d;
+          background-image: none;
+          -webkit-transform: none;
+          -moz-transform: none;
+          transform: none; }
           @media (max-width: 767px) {
             .nav-menu .login-content li a:after {
               display: none; } }
@@ -1885,6 +1931,8 @@ body.search-open {
     .landing-page-header .nav-menu .login-content {
       border-left: none;
       border-bottom: 1px solid #F0F0F0; } }
+  .landing-page-header .nav-menu .login-content li a:after {
+    background-color: #FFF; }
 .landing-page-header .mobile-search-icon:before {
   background-image: url("../../../../assets/images/icons/white-mobile-search-icon.png"); }
 .landing-page-header .nav-toggle span:nth-child(2),
@@ -1988,10 +2036,14 @@ body.search-open {
   .header-search {
     display: none;
     position: absolute;
-    width: 71.5%;
+    width: 75%;
     background-color: #FFF;
     top: 0;
-    height: 110px; } }
+    height: 123px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%); } }
   @media (min-width: 992px) and (min-width: 992px) and (max-width: 1199px) {
     .header-search {
       width: 81.5%; } }
@@ -2027,20 +2079,21 @@ body.search-open {
           box-shadow: none; }
     .header-search button {
       position: absolute;
-      right: 165px;
-      top: 45px;
+      right: 125px;
+      top: 27px;
       background-color: transparent;
       border: none;
       -webkit-box-shadow: none;
       box-shadow: none;
-      padding: 0; }
+      padding: 0;
+      cursor: pointer; }
       .header-search button:before {
         content: "";
         background-image: url("../../../../assets/images/icons/desktop-search.png");
         background-repeat: no-repeat;
         background-size: cover;
-        width: 24px;
-        height: 24px;
+        width: 63px;
+        height: 72px;
         display: block; }
       .header-search button:hover, .header-search button:focus, .header-search button:active {
         outline: none;
@@ -2051,7 +2104,7 @@ body.search-open {
   position: relative;
   display: inline-block;
   width: 106px;
-  height: 110px;
+  height: 123px;
   background-color: #FFF;
   right: 0;
   top: 0;
@@ -2068,7 +2121,7 @@ body.search-open {
     display: block;
     margin: 0 auto;
     position: relative;
-    top: -3px;
+    top: 0;
     cursor: pointer;
     -webkit-transition: 0.2s linear;
     -moz-transition: 0.2s linear;
@@ -2312,6 +2365,93 @@ body.search-open .header-search {
   @media (max-width: 767px) {
     .feature-section h2 {
       padding: 0 20px; } }
+
+.error-page-container {
+  background-color: #E80A4D;
+  height: 100%;
+  min-height: 682px; }
+  @media (max-width: 767px) {
+    .error-page-container {
+      min-height: 450px; } }
+  .error-page-container .error-page-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1172px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px; }
+    .error-page-container .error-page-content h2 {
+      display: block;
+      flex: 1 1 100%;
+      margin-bottom: 10px; }
+    .error-page-container .error-page-content h3 {
+      display: block;
+      flex: 1 1 100%;
+      color: #FFF;
+      line-height: 38px;
+      margin-bottom: 25px; }
+    .error-page-container .error-page-content a {
+      display: inline-block;
+      margin: 0 auto; }
+
+.total-schools-earning-container {
+  text-align: center;
+  padding: 44px 0 69px 0;
+  position: relative;
+  background-color: #FFF; }
+  @media (max-width: 767px) {
+    .total-schools-earning-container {
+      padding: 39px 0; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .total-schools-earning-container {
+      padding: 60px 0; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .total-schools-earning-container {
+      padding: 40px 0; } }
+  .total-schools-earning-container:before {
+    content: "";
+    width: 71.7px;
+    height: 13.65px;
+    background-image: url(../../../assets/images/icons/color-icons.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .total-schools-earning-container span {
+    font-size: 100px;
+    line-height: normal;
+    color: #002e5d;
+    text-transform: uppercase;
+    font-family: "Brandon Grotesque Black", sans-serif;
+    margin-bottom: -3px;
+    display: inline-block; }
+    @media (max-width: 767px) {
+      .total-schools-earning-container span {
+        font-size: 42px; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .total-schools-earning-container span {
+        font-size: 92px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .total-schools-earning-container span {
+        font-size: 72px; } }
+  .total-schools-earning-container p {
+    font-size: 22px;
+    line-height: 26.4px;
+    color: #002e5d; }
+    @media (max-width: 767px) {
+      .total-schools-earning-container p {
+        font-size: 16px;
+        line-height: 19.2px;
+        width: 80%;
+        margin: 0 auto; } }
+  .total-schools-earning-container.bottom-border {
+    border-bottom: 1px solid #002e5d; }
 
 .feature-item-wrap {
   display: flex;

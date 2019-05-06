@@ -26,17 +26,37 @@ $(document).ready(function () {
     $('.close-promo-offers').on('click', function () {
         $(this).parents('.promo-offers-container').slideUp();
         $('body').removeClass('has-promo-offers');
+        $(window).scroll(function () {
+            $('body').removeClass('has-promo-offers');
+        });
     });
 
     // Check Mobile OS
-    if ( navigator.userAgent.match(/Android/i) ) {
+    if (navigator.userAgent.match(/Android/i)) {
         $('.download-app').addClass('android-app');
-    } 
-    else if ( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
+    }
+    else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
         $('.download-app').addClass('ios-app');
-    } 
+    }
     else {
         $('.download-app').addClass('desktop-app');
     }
-    
+
+    // Check Subscribe Form
+    if ($('.promo-offers-container').length) {
+        $('body').addClass('has-promo-offers');
+        console.log(true);
+        $(window).scroll(function () {
+            var winOffset = document.documentElement.scrollTop || document.body.scrollTop;
+            if (winOffset > 59) {
+                $('body').removeClass('has-promo-offers');
+            } else {
+                $('body').addClass('has-promo-offers');
+            }
+        });
+    }
+    else {
+        $('body').removeClass('has-promo-offers');
+    }
+
 });

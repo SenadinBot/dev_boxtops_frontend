@@ -1,8 +1,8 @@
 .promo-offers-container {
-    position: fixed;
     padding: 10px 14px;
     font-size: 0;
     background-color: $white;
+    position: relative;
     .custom-btn {
         display: inline-block;
         margin-left: 12px;
@@ -114,20 +114,35 @@
         }
     }
     .promo-offers-subheading {
-        padding: 13px 0px 9px 0;
+        // padding: 13px 0px 9px 0;
+        padding: 7px 0 3px 0;
         @include media-xs {
             width: 90%;
+            padding: 11px 0 3px 0;
         }
         span {
             color: $scooter;
-            font-size: 18px;
-            line-height: 18px;
+            // font-size: 18px;
+            // line-height: 18px;
+            // font-family: $brandonGrotesqueMedium;
+            font-size: 30px;
+            line-height: 30px;
+            font-family: $brandonGrotesqueBlack;
             text-transform: uppercase;
-            font-family: $brandonGrotesqueMedium;
             display: block;
             @include media-xs {
+                font-size: 16px;
                 line-height: 22px;
+                font-family: $brandonGrotesqueMedium;
             }
+        }
+    }
+}
+.has-promo-offers {
+    .header {
+        top: 60px;
+        @include media-xs {
+            top: 56px;
         }
     }
 }

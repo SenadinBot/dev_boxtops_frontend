@@ -1,0 +1,61 @@
+.total-schools-earning-container {
+    text-align: center;
+    padding: 44px 0 69px 0;
+    position: relative;
+    background-color: $white;
+    @include media-xs {
+        padding: 39px 0;
+    }
+    @include media-sm {
+        padding: 60px 0;
+    }
+    @include media-sm {
+        padding: 40px 0;
+    }
+    &:before {
+        content: "";
+        width: 71.7px;
+        height: 13.65px;
+        background-image: url(../../../assets/images/icons/color-icons.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    span {
+        font-size: 100px;
+        line-height: normal;
+        color: $midnightBlue;
+        text-transform: uppercase;
+        font-family: $brandonGrotesqueBlack;
+        margin-bottom: -3px;
+        display: inline-block;
+        @include media-xs {
+            font-size: 42px;
+        }
+        @include media-md {
+            font-size: 92px;
+        }
+        @include media-sm {
+            font-size: 72px;
+        }
+    }
+    p {
+        font-size: 22px;
+        line-height: 26.4px;
+        color: $midnightBlue;
+        @include media-xs {
+            font-size: 16px;
+            line-height: 19.2px;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    &.bottom-border {
+        border-bottom: 1px solid $midnightBlue;
+    }
+}
