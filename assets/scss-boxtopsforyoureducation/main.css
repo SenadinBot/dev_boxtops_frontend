@@ -456,7 +456,7 @@ body {
     .adverb-container i:after {
       display: block;
       content: "";
-      background-image: url("../../../../assets/images/icons/blue-close.png");
+      background-image: url("../../../assets/images/icons/blue-close.png");
       background-repeat: no-repeat;
       background-size: cover;
       width: 24px;
@@ -539,7 +539,7 @@ body {
     .sign-up-container i:after {
       display: block;
       content: "";
-      background-image: url("../../../../assets/images/icons/blue-close.png");
+      background-image: url("../../../assets/images/icons/blue-close.png");
       background-repeat: no-repeat;
       background-size: cover;
       width: 26px;
@@ -620,7 +620,7 @@ body {
   margin: 0 auto;
   width: 130px;
   height: 43px;
-  background-image: url("../../../../assets/images/icons/app-icon.png"); }
+  background-image: url("../../../assets/images/icons/app-icon.png"); }
 .ios-app a span {
   display: none; }
 
@@ -635,9 +635,25 @@ body {
   margin: 0 auto;
   width: 142px;
   height: 43px;
-  background-image: url("../../../../assets/images/icons/play-icon.png"); }
+  background-image: url("../../../assets/images/icons/play-icon.png"); }
 .android-app a span {
   display: none; }
+
+@media (max-width: 767px) {
+  .download-app {
+    margin-top: 35px; } }
+
+.ios-android-container {
+  font-size: 0; }
+  @media (max-width: 767px) {
+    .ios-android-container {
+      margin-top: 35px; } }
+  .ios-android-container .ios-app {
+    display: inline-block;
+    margin: 0 5px; }
+  .ios-android-container .android-app {
+    display: inline-block;
+    margin: 0 5px; }
 
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -876,7 +892,11 @@ body.search-open {
     font-size: 16px;
     line-height: 29.97px;
     margin-top: 20px;
-    font-family: "Brandon Grotesque Bold", sans-serif; }
+    font-family: "Brandon Grotesque Bold", sans-serif;
+    display: none; }
+    @media (max-width: 767px) {
+      .hero-banner-container.logged-page-hero .scan-without-app-link {
+        display: block; } }
   .hero-banner-container.logged-page-hero .hero-banner-inner-container {
     display: flex;
     flex-flow: row wrap;
@@ -916,7 +936,9 @@ body.search-open {
   .social-sharing a {
     margin-right: 15px; }
     .social-sharing a:last-child {
-      margin-right: 0; }
+      margin-right: 0;
+      position: relative;
+      top: -3px; }
 
 .promo-offers-container {
   padding: 10px 14px;
@@ -956,7 +978,7 @@ body.search-open {
     .promo-offers-container i:after {
       display: block;
       content: "";
-      background-image: url("../../../../assets/images/icons/blue-close.png");
+      background-image: url("../../../assets/images/icons/blue-close.png");
       background-repeat: no-repeat;
       background-size: cover;
       width: 26px;
@@ -1321,7 +1343,7 @@ body.search-open {
         vertical-align: top; }
         .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item:after {
           content: "";
-          background-image: url("../../../../assets/images/icons/column-arrow@2x.png");
+          background-image: url("../../../assets/images/icons/column-arrow@2x.png");
           background-repeat: no-repeat;
           background-size: cover;
           width: 43px;
@@ -1606,7 +1628,7 @@ body.search-open {
         -ms-transition: all 0.1s ease;
         -o-transition: all 0.1s ease;
         transition: all 0.1s ease;
-        background-image: url("../../../../assets/images/icons/orange-menu-icon@2x.png");
+        background-image: url("../../../assets/images/icons/orange-menu-icon@2x.png");
         background-repeat: no-repeat;
         background-size: cover;
         -webkit-transform: translateX(-50%);
@@ -1678,7 +1700,7 @@ body.search-open {
       height: 20px;
       background-repeat: no-repeat;
       background-size: cover;
-      background-image: url("../../../../assets/images/icons/mobile-search-icon.png");
+      background-image: url("../../../assets/images/icons/mobile-search-icon.png");
       display: block; }
     .nav-menu .search-icon-wrapper i.fa-search-header:hover {
       opacity: 0.8; }
@@ -1920,7 +1942,7 @@ body.search-open {
     .landing-page-header .nav-menu li a:after {
       display: none; } }
 .landing-page-header .nav-menu li.search-icon-wrapper i:after {
-  background-image: url("../../../../assets/images/icons/white-mobile-search-icon.png"); }
+  background-image: url("../../../assets/images/icons/white-mobile-search-icon.png"); }
 .landing-page-header .nav-menu .login-content {
   border-left: 1px solid rgba(255, 255, 255, 0.25); }
   @media (min-width: 768px) and (max-width: 991px) {
@@ -1934,7 +1956,7 @@ body.search-open {
   .landing-page-header .nav-menu .login-content li a:after {
     background-color: #FFF; }
 .landing-page-header .mobile-search-icon:before {
-  background-image: url("../../../../assets/images/icons/white-mobile-search-icon.png"); }
+  background-image: url("../../../assets/images/icons/white-mobile-search-icon.png"); }
 .landing-page-header .nav-toggle span:nth-child(2),
 .landing-page-header .nav-toggle span:nth-child(3),
 .landing-page-header .nav-toggle span:nth-child(4) {
@@ -1950,7 +1972,7 @@ body.search-open {
   .mobile-search-icon:before {
     display: block;
     content: "";
-    background-image: url("../../../../assets/images/icons/mobile-search-icon.png");
+    background-image: url("../../../assets/images/icons/mobile-search-icon.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 21px;
@@ -2023,7 +2045,7 @@ body.search-open {
 @media (max-width: 991px) {
       .header-search button:before {
         content: "";
-        background-image: url("../../../../assets/images/icons/blue-icon.png");
+        background-image: url("../../../assets/images/icons/blue-icon.png");
         background-repeat: no-repeat;
         background-size: cover;
         width: 10.1px;
@@ -2089,7 +2111,7 @@ body.search-open {
       cursor: pointer; }
       .header-search button:before {
         content: "";
-        background-image: url("../../../../assets/images/icons/desktop-search.png");
+        background-image: url("../../../assets/images/icons/desktop-search.png");
         background-repeat: no-repeat;
         background-size: cover;
         width: 63px;
@@ -2115,7 +2137,7 @@ body.search-open {
     content: "";
     width: 44px;
     height: 45px;
-    background-image: url("../../../../assets/images/icons/grey-close@2x.png");
+    background-image: url("../../../assets/images/icons/grey-close@2x.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
@@ -2456,6 +2478,126 @@ body.search-open .header-search {
         margin: 0 auto; } }
   .total-schools-earning-container.bottom-border {
     border-bottom: 1px solid #002e5d; }
+
+.consumer-earning-bar-container {
+  background-color: #002e5d;
+  text-align: center; }
+  .consumer-earning-bar-container .consumer-earning-bar-wrapper {
+    max-width: 1172px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    padding: 30px 0 38px 0; }
+    .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item {
+      position: relative;
+      flex: 1 1 0%;
+      width: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center; }
+      @media (max-width: 767px) {
+        .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item {
+          flex: 1 1 100%;
+          margin-bottom: 30px;
+          padding-bottom: 35px; } }
+      .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:after {
+        content: "";
+        width: 16.46px;
+        height: 82.31px;
+        background-image: url(../../../assets/images/icons/right-color-icons.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%); }
+        @media (max-width: 767px) {
+          .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:after {
+            background-image: url(../../../assets/images/icons/color-icons.png);
+            top: initial;
+            bottom: 0;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            transform: translateX(-50%);
+            width: 71.79px;
+            height: 13.65px; } }
+      @media (max-width: 767px) {
+        .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:nth-last-child(2) {
+          margin-bottom: 0; } }
+      .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:nth-last-child(2):after {
+        display: none; }
+      .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:last-child:after {
+        display: none; }
+      .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span {
+        display: block;
+        color: #FFF; }
+        .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.title {
+          font-family: "Brandon Grotesque Regular", sans-serif;
+          font-size: 22px;
+          line-height: 22px;
+          padding-bottom: 5px; }
+          @media (min-width: 992px) and (max-width: 1199px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.title {
+              font-size: 18px;
+              line-height: 18px; } }
+          @media (min-width: 768px) and (max-width: 991px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.title {
+              font-size: 16px;
+              line-height: 16px; } }
+          @media (max-width: 767px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.title {
+              font-size: 20px;
+              line-height: 20px; } }
+        .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.text {
+          font-size: 28px;
+          line-height: 36px;
+          font-family: "Brandon Grotesque Medium", sans-serif;
+          text-transform: uppercase;
+          width: 92%; }
+          @media (max-width: 767px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.text {
+              width: 85%;
+              font-size: 24px;
+              line-height: 28px; } }
+          @media (min-width: 992px) and (max-width: 1199px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.text {
+              font-size: 24px;
+              line-height: 30px; } }
+          @media (min-width: 768px) and (max-width: 991px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.text {
+              font-size: 18px;
+              line-height: 24px;
+              width: 90%; } }
+        .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number {
+          font-family: "Brandon Grotesque Bold", sans-serif;
+          font-size: 80px;
+          line-height: 72px; }
+          @media (min-width: 992px) and (max-width: 1199px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number {
+              font-size: 60px;
+              line-height: 54px; } }
+          @media (min-width: 768px) and (max-width: 991px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number {
+              font-size: 54px;
+              line-height: 50px; } }
+          @media (max-width: 767px) {
+            .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number {
+              font-size: 48px;
+              line-height: 44px; } }
+    .consumer-earning-bar-container .consumer-earning-bar-wrapper .btn-container {
+      flex: 1 1 100%;
+      margin-top: 30px; }
+      @media (max-width: 767px) {
+        .consumer-earning-bar-container .consumer-earning-bar-wrapper .btn-container {
+          margin-top: 0; } }
+      .consumer-earning-bar-container .consumer-earning-bar-wrapper .btn-container .custom-btn {
+        display: inline-block;
+        margin: 0 auto; }
 
 .feature-item-wrap {
   display: flex;

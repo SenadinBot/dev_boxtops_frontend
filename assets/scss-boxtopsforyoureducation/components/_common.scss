@@ -41,7 +41,7 @@
         &:after {
             display: block;
             content: "";
-            background-image: url("../../../../assets/images/icons/blue-close.png");
+            background-image: url("../../../assets/images/icons/blue-close.png");
             background-repeat: no-repeat;
             background-size: cover;
             width: 24px;
@@ -132,7 +132,7 @@
         &:after {
             display: block;
             content: "";
-            background-image: url("../../../../assets/images/icons/blue-close.png");
+            background-image: url("../../../assets/images/icons/blue-close.png");
             background-repeat: no-repeat;
             background-size: cover;
             width: 26px;
@@ -230,7 +230,7 @@
             margin: 0 auto;
             width: 130px;
             height: 43px;
-            background-image: url("../../../../assets/images/icons/app-icon.png");
+            background-image: url("../../../assets/images/icons/app-icon.png");
         }
         span {
             display: none;
@@ -250,11 +250,30 @@
             margin: 0 auto;
             width: 142px;
             height: 43px;
-            background-image: url("../../../../assets/images/icons/play-icon.png");
+            background-image: url("../../../assets/images/icons/play-icon.png");
         }
         span {
             display: none;
         }
+    }
+}
+.download-app {
+    @include media-xs {
+        margin-top: 35px;
+    }
+}
+.ios-android-container {
+    font-size: 0;
+    @include media-xs {
+        margin-top: 35px;
+    }
+    .ios-app {
+        display: inline-block;
+        margin: 0 5px;
+    }
+    .android-app {
+        display: inline-block;
+        margin: 0 5px;
     }
 }
 .screen-reader-text {

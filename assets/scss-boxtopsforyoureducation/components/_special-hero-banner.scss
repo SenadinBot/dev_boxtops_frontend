@@ -176,6 +176,10 @@
             line-height: 29.97px;
             margin-top: 20px;
             font-family: $brandonGrotesqueBold;
+            display: none;
+            @include media-xs {
+                display: block;
+            }
         }
         .hero-banner-inner-container {
             display: flex;

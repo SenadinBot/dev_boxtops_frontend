@@ -224,7 +224,7 @@
                 -o-transition: all 0.1s ease;
                 transition: all 0.1s ease;
                 // background-color: $midnightBlue;
-                background-image: url("../../../../assets/images/icons/orange-menu-icon@2x.png");
+                background-image: url("../../../assets/images/icons/orange-menu-icon@2x.png");
                 background-repeat: no-repeat;
                 background-size: cover;
                 -webkit-transform: translateX(-50%);
@@ -309,7 +309,7 @@
                     height: 20px;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-image: url("../../../../assets/images/icons/mobile-search-icon.png");
+                    background-image: url("../../../assets/images/icons/mobile-search-icon.png");
                     display: block;
                 }
                 &:hover {
@@ -605,7 +605,7 @@
             &.search-icon-wrapper {
                 i {
                     &:after {
-                        background-image: url("../../../../assets/images/icons/white-mobile-search-icon.png");
+                        background-image: url("../../../assets/images/icons/white-mobile-search-icon.png");
                     }
                 }
             }
@@ -631,7 +631,7 @@
     }
     .mobile-search-icon {
         &:before {
-            background-image: url("../../../../assets/images/icons/white-mobile-search-icon.png");
+            background-image: url("../../../assets/images/icons/white-mobile-search-icon.png");
         }
     }
     .nav-toggle {
@@ -652,7 +652,7 @@
     &:before {
         display: block;
         content: "";
-        background-image: url("../../../../assets/images/icons/mobile-search-icon.png");
+        background-image: url("../../../assets/images/icons/mobile-search-icon.png");
         background-repeat: no-repeat;
         background-size: cover;
         width: 21px;
@@ -728,7 +728,7 @@
             }
             &:before {
                 content: "";
-                background-image: url("../../../../assets/images/icons/blue-icon.png");
+                background-image: url("../../../assets/images/icons/blue-icon.png");
                 background-repeat: no-repeat;
                 background-size: cover;
                 width: 10.1px;
@@ -798,7 +798,7 @@
             cursor: pointer;
             &:before {
                 content: "";
-                background-image: url("../../../../assets/images/icons/desktop-search.png");
+                background-image: url("../../../assets/images/icons/desktop-search.png");
                 background-repeat: no-repeat;
                 background-size: cover;
                 width: 63px;
@@ -831,7 +831,7 @@
             content: "";
             width: 44px;
             height: 45px;
-            background-image: url("../../../../assets/images/icons/grey-close@2x.png");
+            background-image: url("../../../assets/images/icons/grey-close@2x.png");
             background-repeat: no-repeat;
             background-size: cover;
             display: block;
