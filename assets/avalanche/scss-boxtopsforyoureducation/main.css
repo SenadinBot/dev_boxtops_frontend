@@ -2410,6 +2410,10 @@ body.search-open .header-search {
   @media (min-width: 768px) and (max-width: 991px) {
     .total-schools-earning-container {
       padding: 40px 0; } }
+  .total-schools-earning-container.add-top-icon:before {
+    display: block; }
+  .total-schools-earning-container:before {
+    display: none; }
   .total-schools-earning-container:before {
     content: "";
     width: 71.7px;

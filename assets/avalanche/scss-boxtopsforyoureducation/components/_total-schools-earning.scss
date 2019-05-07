@@ -12,6 +12,14 @@
     @include media-sm {
         padding: 40px 0;
     }
+    &.add-top-icon {
+        &:before {
+            display: block;
+        }
+    }
+    &:before {
+        display: none;
+    }
     &:before {
         content: "";
         width: 71.7px;
