@@ -1,0 +1,89 @@
+.heading-text-button-container {
+    text-align: center;
+    position: relative;
+    padding: 0;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $midnightBlue;
+    .heading-text-button-content {
+        color: $white;
+        text-align: center;
+        padding: 80px 0;
+        max-width: $contentWidth;
+        margin: 0 auto;
+        @include media-sm {
+            padding: 70px 0;
+        }
+        @include media-xs {
+            padding: 40px 0;
+        }
+        h2 {
+            color: #39BCD9;
+            text-transform: uppercase;
+            line-height: 40px;
+            @include media-xs {
+                line-height: 30px;
+            }
+        }
+        h3 {
+            color: $white;
+        }
+        .module-text {
+            width: 71%;
+            margin: 19px auto 0 auto;
+            @include media-xs {
+                width: 75%;
+            }
+            @include media-sm {
+                width: 85%;
+                margin: 10px auto 0 auto;
+            }
+            p {
+                font-size: 22px;
+                line-height: 26.4px;
+                @include media-xs {
+                    font-size: 20px;
+                }
+            }
+            i, 
+            em {
+                font-family: $brandonGrotesqueItalic;
+                font-size: 14px;
+                line-height: 20px;
+                @include media-xs {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+            b {
+                font-family: $brandonGrotesqueBold;
+            }
+        }
+        .custom-btn {
+            margin-top: 24px;
+            font-size: 20px;
+            line-height: 26.9px;
+            padding: 12px 34px;
+        }
+    }
+    &.small-headign-text-container {
+        .heading-text-button-content {
+            padding: 20px 0;
+            @include media-xs {
+                padding: 22px 20px;
+            }
+            span {
+                color: $midnightBlue;
+                font-size: 22px;
+                line-height: 26.4px;
+                font-family: $brandonGrotesqueBold;
+                span {
+                    color: $redRibbon;
+                    position: relative;
+                    top: -1px;
+                }
+            }
+        }
+    }
+}

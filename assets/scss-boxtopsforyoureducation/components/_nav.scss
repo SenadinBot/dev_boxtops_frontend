@@ -92,6 +92,7 @@
         display: flex;
         flex-flow: column;
         width: 60%;
+        right: -100%;
     }
     @include media-xs {
         display: flex;
@@ -99,6 +100,7 @@
         // width: 90%;
         width: 328px;
         overflow-y: auto;
+        right: -100%;
     }
     @include media-xs-landscape {
         height: 100vh;
@@ -322,6 +324,7 @@
         max-height: 1000px;
         opacity: 1;
         transition: max-height 0.3s ease-in-out, opacity 0.25s ease-in-out;
+        right: 0;
     }
     .nav-registration-wrapper {
         display: inline-block;
