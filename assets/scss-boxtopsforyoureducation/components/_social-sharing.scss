@@ -2,12 +2,13 @@
     background: $midnightBlue;
     flex: 1 1 100%;
     text-align: center;
-    padding: 57px 0 71px 0;
+    padding: 57px 0;
+    font-size: 0;
     @include media-md {
-        padding: 47px 0 61px 0;            
+        padding: 47px 0;            
     }
     @include media-sm {
-        padding: 37px 0 41px 0;            
+        padding: 37px 0;            
     }
     @include media-xs {
         padding: 37px 0;

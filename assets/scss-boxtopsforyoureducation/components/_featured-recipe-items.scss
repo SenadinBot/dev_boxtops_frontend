@@ -6,7 +6,35 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #FFF;
-    padding-top: 70px;
+    padding-top: 76px;
+    @include media-sm {
+        padding-top: 60px;
+    }
+    @include media-xs {
+        padding-top: 55px;
+    }
+    &:before {
+        content: "";
+        width: 71.7px;
+        height: 13.65px;
+        background-image: url("../../../assets/images/icons/color-icons.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    &.add-top-icon {
+        &:before {
+            display: block;
+        }
+    }
+    &:before {
+        display: none;
+    }
     &.background-image-feature {
         padding-top: 115px;
         padding-bottom: 25px;
@@ -168,6 +196,40 @@
     h2 {
         @include media-xs {
             padding: 0 20px;
+        }
+    }
+    .load-more {
+        position: relative;
+        font-size: 18px;
+        line-height: 18px;
+        font-family: $brandonGrotesqueBold;
+        color: $midnightBlue;
+        text-transform: uppercase;
+        display: inline-block;
+        @include media-xs {
+            font-size: 16px;
+            line-height: 16px;
+        }
+        &:hover {
+            &:before {
+                visibility: visible;
+                width: 100%;
+            }
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            visibility: hidden;
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            -moz-transition: all 0.3s ease-in-out 0s;
+            -ms-transition: all 0.3s ease-in-out 0s;
+            -o-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+            background-color: $midnightBlue;
         }
     }
 }

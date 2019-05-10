@@ -1,0 +1,157 @@
+.search-result-container {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: $contentWidth;
+    margin: 0 auto;
+    padding: 75px 15px;
+    @include media-xs {
+        padding: 35px 20px;
+    }
+    .search-result-content {
+        flex: 1 1 74%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        text-align: left;
+        @include media-xs {
+            flex: 1 1 100%;
+            margin-bottom: 30px;
+        }
+        .search-result-filter {
+            margin-bottom: 75px;
+            font-size: 0;
+            @include media-sm {
+                margin-bottom: 50px;
+            }
+            @include media-xs {
+                margin-bottom: 40px;
+            }
+            .styled-select {
+                background: url("../../../assets/images/icons/select-arrow@2x.png") no-repeat 93% 16px/15px 10px;
+                width: 180px;
+                display: inline-block;
+                vertical-align: middle;
+                select {
+                    border: 1px solid #E1E1E1 !important;
+                    border-radius: 5px;
+                    background: transparent;
+                    border: none;
+                    font-size: 14px;
+                    color: $midnightBlue;
+                    font-family: $brandonGrotesqueBold;
+                    font-size: 18px;
+                    line-height: 18px;
+                    width: 100%;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    padding: 10px 30px 10px 10px;
+                    &::-ms-expand {
+                        display: none;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            .form-group {
+                margin: 0;
+                label {
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-family: $brandonGrotesqueBold;
+                    font-size: 22px;
+                    line-height: 29.97px;
+                    margin-right: 25px;
+                    color: $midnightBlue;
+                    text-transform: uppercase;
+                    @include media-xs {
+                        font-size: 20px;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+        .search-result-item-container {
+            width: 80%;
+            @include media-xs {
+                width: 100%;
+            }
+            @include media-sm {
+                width: 90%;
+            }
+            @include media-md {
+                width: 90%;
+            }
+            .search-result-item {
+                margin-bottom: 55px;
+                @include media-xs {
+                    margin-bottom: 35px;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                a {
+                    &:hover {
+                        span {
+                            &:before {
+                                visibility: visible;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    span {
+                        color: $redRibbon;
+                        position: relative;
+                        font-family: $brandonGrotesqueBold;
+                        font-size: 22px;
+                        line-height: 24px;
+                        text-transform: uppercase;
+                        display: inline-block;
+                        margin-bottom: 2px;
+                        @include media-xs {
+                            font-size: 20px;
+                        }  
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            width: 0;
+                            height: 1px;
+                            bottom: 1px;
+                            left: 0;
+                            visibility: hidden;
+                            -webkit-transition: all 0.3s ease-in-out 0s;
+                            -moz-transition: all 0.3s ease-in-out 0s;
+                            -ms-transition: all 0.3s ease-in-out 0s;
+                            -o-transition: all 0.3s ease-in-out 0s;
+                            transition: all 0.3s ease-in-out 0s;
+                            background-color: $redRibbon;
+                        }
+                    }
+                    p {
+                        display: block;
+                        color: $midnightBlue;
+                        font-family: $brandonGrotesqueLight;
+                        font-size: 22px;
+                        line-height: 24px;   
+                        @include media-xs {
+                            font-size: 20px;
+                        }                    
+                    }
+                }
+            }
+        }
+    }
+    .adverb-content {
+        height: 100px;
+        flex: 1 1 26%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        @include media-xs {
+            flex: 1 1 100%;
+        }
+    }
+}

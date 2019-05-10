@@ -49,6 +49,9 @@
                     margin-bottom: 5px;
                     display: block;
                 }
+                @include media-sm {
+                    margin-right: 20px;
+                }
                 a {
                     color: $white;
                     position: relative;

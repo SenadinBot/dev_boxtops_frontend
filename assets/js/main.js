@@ -67,5 +67,34 @@ jQuery(function ($) {
             $('body').removeClass('has-promo-offers');
         }
 
+        // Load more for Multiple  Columns Component
+        var indexColumns = 0;
+
+        $("#loadColumnsBtn").click(function () {
+            indexColumns++;
+            var selector = "columnRow-" + indexColumns;
+            document.getElementById(selector).removeAttribute("style");
+
+            selector = "columnRow-" + indexColumns + 1;
+            if (document.getElementById(selector) == null) {
+                document.getElementById("loadColumnsBtn").setAttribute("style", "display:none")
+            }
+        });
+
+        //Load more for Video section
+        var indexVideos = 0;
+
+        $("#loadVideoBtn").click(function () {
+            
+            var selector = "columnVideoRow-" + indexVideos;
+            document.getElementById(selector).removeAttribute("style");
+            indexVideos++;
+
+            selector = "columnVideoRow-" + indexVideos;
+            if (document.getElementById(selector) == null) {
+                document.getElementById("loadVideoBtn").setAttribute("style", "display:none")
+            }
+        });  
+
     });
 });

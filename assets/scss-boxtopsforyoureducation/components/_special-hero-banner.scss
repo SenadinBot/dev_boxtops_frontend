@@ -1,13 +1,13 @@
 .hero-banner-container {
     &.landing-page-hero {
         margin-top: -123px;
-        min-height: 576px;
+        min-height: 569px;
         @include media-xs {
             margin-top: -70px;
             min-height: auto;
         }
         @include media-md {
-            min-height: 451.547px;
+            min-height: 448.547px;
         }
         @include media-sm {
             min-height: 391.547px;

@@ -77,13 +77,8 @@ a {
     }
     &:focus {
         text-decoration: none;
-        color: $redRibbon;
         outline: 0;
-        &:before {
-            -webkit-transform: scale(1);
-            -moz-transform: scale(1);
-            transform: scale(1);
-        }
+        color: $white;
     }
     &:active {
         outline: 0;
