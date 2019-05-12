@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generic Page</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="description"
+        content="This is an example of a meta description. This will often show up in search results.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
+
+    <!-- Styles -->
+    <link href="/assets/scss-boxtopsforyoureducation/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header id="masthead" class="header @headercss" role="banner">
+        <div class="header-wrap">
+            <a href="#" rel="home">
+                <img src="./assets/images/logo.png" alt="Header Logo" class="header-logo">
+            </a>
+            <nav id="nav" class="nav" role="navigation">
+                <div class="mobile-search-icon"></div>
+                <button id="navtoggle" class="nav-toggle" aria-controls="navmenu" aria-label="Menu"
+                    aria-expanded="false">
+                    <span class="screen-reader-text">Menu</span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                <ul id="navmenu" class="nav-menu">
+                    <!-- To show my account on mobile when user is logged in -->
+                    <li class="mobile-account-btn">
+                        <a href="#" class="account-btn">My Account</a>
+                    </li>
+                    <!-- End To show my account on mobile when user is logged in -->
+
+                    <li id="@navItem.ID" class="">
+                        <a href="#">About</a>
+                    </li>
+                    <li id="@navItem.ID" class="">
+                        <a href="#">How to earn</a>
+                    </li>
+                    <li id="@navItem.ID" class="current-menu-item">
+                        <a href="#">Find Offers</a>
+                    </li>
+                    <li id="@navItem.ID" class="">
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li id="navItem_sitesearch" class="search-icon-wrapper">
+                        <i class="fa-search-header"></i>
+                    </li>
+                    <div class="nav-registration-wrapper">
+                        <li id="nav-reg-my-account" class="@cssMyAccount">
+                            <a href="#" class="account-btn">My Account</a>
+                        </li>
+                        <li id="nav-reg-logout" class="@cssLogout logout-btn">
+                            <a href="#">Logout</a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+            <!-- Header Search Container -->
+            <div class="header-search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button type="button"></button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search Box Tops" aria-label=""
+                            aria-describedby="basic-addon1">
+                        <button type="button" class="desktop-close-search"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Header Search Container -->
+        </div>
+    </header>
+    <div class="site-content max-width">
+        <div class="content-area">
+            <div class="site-main">
+                <div class="modules">
+                    <!-- Heading Text Button -->
+                    <section class="heading-text-button-container" style="background-image: url('')">
+                        <div class="heading-text-button-content">
+                            <h2>Page Headline</h2>
+                        </div>
+                    </section>
+                    <!-- End of Image Heading Text -->
+                    <!-- Generic Page Container -->
+                    <section class="generic-page-container">
+                        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. <a class="#">All links within text are pink</a> primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. </p>
+                        <span class="subhead">Subhead</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu.</p>
+                        <ul>
+                            <li>A bulleted list would look like this.</li>
+                            <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</li>
+                            <li>Curae; Proin vel ante a orci tempus eleifend ut et magna.</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</li>
+                            <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</li>
+                        </ul>
+                        <span class="subhead">Subhead</span>
+                        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. <a class="#">All links within text are pink</a> primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu.</p>
+                    </section>
+                    <!-- End of Generic Page Container -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="colophon" class="site-footer footer print-hide" role="contentinfo">
+        <div class="social-sharing">
+            <a class="social-sharing-link" href="" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-fcb.png" alt="Share on Facebook">
+            </a>
+            <a class="social-sharing-link" href="" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-instagram.png" alt="Share on Instagram">
+            </a>
+            <a class="social-sharing-link" href="#" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-youtube.png" alt="Pin it">
+            </a>
+        </div>
+        <div class="footer-wrap">
+            <div class="footer-menu-wrapper">
+                <ul id="footermenu" class="footer-menu">
+                    <li id="menu-item-0">
+                        <a target="_blank" rel="noopener" href="#">FAQs</a>
+                    </li>
+                    <li id="menu-item-1">
+                        <a target="_blank" rel="noopener" href="#"> Contact Us</a>
+                    </li>
+                    <li id="menu-item-2">
+                        <a target="_blank" rel="noopener" href="#"> Español</a>
+                    </li>
+                    <li id="menu-item-3">
+                        <a target="" rel="noopener" href="#">Privacy Policy</a>
+                    </li>
+                    <li id="menu-item-4">
+                        <a target="_blank" rel="noopener" href="#">Legal Terms</a>
+                    </li>
+                    <li id="menu-item-5">
+                        <a target="" rel="noopener" href="">Official Rules</a>
+                    </li>
+                    <li id="menu-item-6">
+                        <a target="" rel="noopener" href="">Ad Choices</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-copyright">© General Mills</div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+</body>
+
+</html>

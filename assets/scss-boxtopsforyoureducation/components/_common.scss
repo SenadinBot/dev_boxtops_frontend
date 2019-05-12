@@ -264,6 +264,7 @@
 }
 .ios-android-container {
     font-size: 0;
+    text-align: center;
     @include media-xs {
         margin-top: 35px;
     }

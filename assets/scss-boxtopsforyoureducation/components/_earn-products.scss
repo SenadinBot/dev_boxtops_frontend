@@ -1,0 +1,210 @@
+.earn-product-container {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: $contentWidth;
+    margin: 0 auto;
+    padding: 80px 15px 20px 15px;
+    position: relative;
+    @include media-xs {
+        padding: 45px 10px 20px 10px;
+    }
+    @include media-sm {
+        padding: 50px 15px 20px 15px;
+    }
+    @include media-md {
+        padding: 60px 15px 20px 15px;
+    }
+    &:before {
+        display: none;
+        content: "";
+        width: 71.7px;
+        height: 13.65px;
+        background-image: url("../../../assets/images/icons/color-icons.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    &.add-top-icon {
+        &:before {
+            display: block;
+        }
+    }
+    .earn-product-item {
+        flex: 1 1 50%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        text-align: left;
+        @include media-xs {
+            flex: 1 1 100%;
+            margin-bottom: 15px;
+        }
+        &.adverb {
+            padding-bottom: 40px;
+            @include media-xs {
+                padding-bottom: 20px;
+            }
+            .img-container {
+                text-align: center;
+                display: block;
+                margin: 0 auto;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+        &.active {
+            margin-bottom: 0;
+            .earn-product-item-content {
+                .earn-product-item-heading {
+                    .mobile-click {
+                        &:after {
+                            background-image: url("../../../assets/images/earn-icons/-@1X.png");
+                            width: 10px;
+                            height: 4px;
+                        }
+                    }
+                }
+                .earn-product-item-list {
+                    display: block;
+                }
+            }
+        }
+        .earn-product-item-content {
+            width: 90%;
+            @include media-xs {
+                width: 100%;
+            }
+            @include media-sm {
+                width: 95%;
+            }
+            @include media-md {
+                width: 95%;
+            }
+            .earn-product-item-heading {
+                font-size: 0;
+                background-color: #F0F0F0;
+                padding: 7px 10px;
+                position: relative;
+                img {
+                    width: 52px;
+                    height: 52px;
+                    margin-right: 10px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                span {
+                    display: inline-block;
+                    font-family: $brandonGrotesqueBold;
+                    text-transform: uppercase;
+                    font-size: 25px;
+                    line-height: 30px;
+                    color: $midnightBlue;
+                    vertical-align: middle;
+                    @include media-xs {
+                        font-size: 20px;
+                        line-height: 24px;  
+                    }
+                }
+                .mobile-click {
+                    display: none;
+                    @include media-xs {
+                        display: block;
+                    }
+                    width: 16px;
+                    height: 43px;
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -moz-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    &:after {
+                        content: "";
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        display: block;
+                        background-image: url("../../../assets/images/earn-icons/+@1X.png");
+                        width: 16px;
+                        height: 16px;
+                        -webkit-transition: all 0.2s ease;
+                        -moz-transition: all 0.2s ease;
+                        -o-transition: all 0.2s ease;
+                        transition: all 0.2s ease;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        -webkit-transform: translate(-50%, -50%);
+                        -moz-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+            .earn-product-item-list {
+                padding: 32px 5px 25px 75px;
+                @include media-xs {
+                display: none;
+                padding: 26px 5px 15px 12px;
+                -webkit-transition: all 0.3s ease-in-out 0s;
+                -moz-transition: all 0.3s ease-in-out 0s;
+                -ms-transition: all 0.3s ease-in-out 0s;
+                -o-transition: all 0.3s ease-in-out 0s;
+                transition: all 0.3s ease-in-out 0s;
+                }
+                @include media-md {
+                    padding: 32px 5px 25px 55px;
+                }
+                @include media-sm {
+                    padding: 32px 5px 25px 35px;
+                }
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        font-size: 18px;
+                        line-height: 21.6px;
+                        font-family: $brandonGrotesqueLight;
+                        color: $midnightBlue;
+                        margin-bottom: 10px;
+                        @include media-xs {
+                            font-size: 16px;
+                            line-height: 21.6px;
+                        }
+                        a {
+                            position: relative;
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                width: 0;
+                                height: 1px;
+                                bottom: 1px;
+                                left: 0;
+                                visibility: hidden;
+                                -webkit-transition: all 0.3s ease-in-out 0s;
+                                -moz-transition: all 0.3s ease-in-out 0s;
+                                -ms-transition: all 0.3s ease-in-out 0s;
+                                -o-transition: all 0.3s ease-in-out 0s;
+                                transition: all 0.3s ease-in-out 0s;
+                                background-color: $midnightBlue;
+                            }
+                            &:hover {
+                                &:before {
+                                    visibility: visible;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

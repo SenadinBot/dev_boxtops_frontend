@@ -1,0 +1,180 @@
+.coord-intro-container {
+    margin: 0 auto;
+    max-width: $maxWidth;
+    background: $midnightBlue;
+    text-align: center;
+    padding: 17px 0 30px 0;
+    @include media-xs {
+        padding: 15px 0;
+    }
+    span {
+        font-family: $brandonGrotesque;
+        font-size: 22px;
+        line-height: 26.4px;
+        color: $white;
+        @include media-xs {
+            font-size: 16px;
+            line-height: 19.2px;
+        }
+        b {
+            font-family: $brandonGrotesqueBold;
+            position: relative;
+            &:first-child {
+                padding-right: 20px;
+                &:after {
+                    content: "";
+                    height: 25px;
+                    width: 1px;
+                    position: absolute;
+                    top: 6px;
+                    right: 6px;
+                    background: $white;
+                    @include media-xs {
+                        display: none;
+                    }
+                    @include media-sm {
+                        height: 20px;
+                    }
+                }
+                @include media-xs {
+                    position: relative;
+                    top: 2px;
+                    display: block;
+                }
+            }
+        }
+        @include media-sm {
+            font-size: 18px;
+            line-height: 24.4px;        
+        }
+    }
+}
+.coord-mobile-nav {
+    display: none;
+    @include media-xs {
+        display: block;
+    }
+    .coord-mobile-container {
+        background-color: $white;
+        font-size: 0;
+        padding-top: 15px;
+    }
+    a {
+        margin-bottom: 15px;
+    }
+    .img-container {
+        width: 52px;
+        height: 52px;
+        margin-right: 13px;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 8px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .coord-mobile-item {
+        display: inline-block;
+        width: calc(100% - 75px);
+        vertical-align: top;
+        padding-right: 10px;
+        span {
+            text-transform: uppercase;
+            font-family: $brandonGrotesqueBold;
+            font-size: 18px;
+            line-height: 21.6px;
+            color: $midnightBlue;
+        }
+        p {
+            font-size: 18px;
+            line-height: 21.6px;
+            color: $midnightBlue;
+            text-transform: initial;
+            position: relative;
+            top: -5px;
+        }
+    }
+}
+.coord-tab-container {
+    margin: 0 auto;
+    max-width: $contentWidth;
+    background: $white;
+    @include media-xs {
+        display: none;
+    }
+    .feature-item {
+        text-align: center;
+        padding: 40px 0 57px 0;
+        a {
+            .img-container {
+                width: 52px;
+                height: 52px;
+                margin: 0 auto 15px auto;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            .feature-item-content {
+                span {
+                    position: relative;
+                    text-transform: uppercase;
+                    font-family: $brandonGrotesqueBold;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    color: $midnightBlue;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 1px;
+                        bottom: 1px;
+                        left: 0;
+                        visibility: hidden;
+                        -webkit-transition: all 0.3s ease-in-out 0s;
+                        -moz-transition: all 0.3s ease-in-out 0s;
+                        -ms-transition: all 0.3s ease-in-out 0s;
+                        -o-transition: all 0.3s ease-in-out 0s;
+                        transition: all 0.3s ease-in-out 0s;
+                        background-color: $midnightBlue;
+                    }
+                }
+                p {
+                    color: $midnightBlue;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    width: 84%;
+                    margin: 2px auto 0 auto;
+                }
+            }
+            &:hover {
+                .feature-item-content {
+                    span {
+                        &:before {
+                            visibility: visible;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &.active {
+            position: relative;
+            &:after {
+                content: "";
+                background-image: url("../../../assets/images/cord-icons/active-icon.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 240px;
+                height: 28px;;
+                position: absolute;
+                top: -17px;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

@@ -101,11 +101,13 @@
         width: 328px;
         overflow-y: auto;
         right: -100%;
-    }
-    @include media-xs-landscape {
         height: 100vh;
         padding-bottom: calc(30% + 50px);
     }
+    // @include media-xs-landscape {
+    //     height: 100vh;
+    //     padding-bottom: calc(30% + 50px);
+    // }
     li {
         list-style: none;
         display: inline-block;

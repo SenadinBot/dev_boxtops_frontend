@@ -53,7 +53,6 @@ jQuery(function ($) {
         // Check Subscribe Form
         if ($('.promo-offers-container').length) {
             $('body').addClass('has-promo-offers');
-            console.log(true);
             $(window).scroll(function () {
                 var winOffset = document.documentElement.scrollTop || document.body.scrollTop;
                 if (winOffset > 59) {
@@ -95,6 +94,12 @@ jQuery(function ($) {
                 document.getElementById("loadVideoBtn").setAttribute("style", "display:none")
             }
         });  
+
+        // Show/Hide Earn Product Content
+        $(".earn-product-item-heading").on("click", function() {
+            $(this).parents('.earn-product-item').siblings().removeClass('active');
+            $(this).parents('.earn-product-item').toggleClass('active');
+        });
 
     });
 });
