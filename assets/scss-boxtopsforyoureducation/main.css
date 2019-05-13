@@ -178,7 +178,8 @@ a {
       padding: 47.4px 19px 45.4px 19px; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .footer-wrap {
-      padding: 37.4px 19px 35.4px 19px; } }
+      text-align: center;
+      padding: 37.4px 0; } }
   @media (max-width: 767px) {
     .footer-wrap {
       text-align: center;
@@ -188,12 +189,18 @@ a {
     @media (max-width: 767px) {
       .footer-wrap .footer-menu-wrapper {
         flex: 1 1 100%; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .footer-wrap .footer-menu-wrapper {
+        flex: 1 1 100%; } }
     .footer-wrap .footer-menu-wrapper .footer-menu {
       text-align: left;
       padding: 0;
       margin: 0;
       font-size: 0; }
       @media (max-width: 767px) {
+        .footer-wrap .footer-menu-wrapper .footer-menu {
+          text-align: center; } }
+      @media (min-width: 768px) and (max-width: 991px) {
         .footer-wrap .footer-menu-wrapper .footer-menu {
           text-align: center; } }
       .footer-wrap .footer-menu-wrapper .footer-menu li {
@@ -208,7 +215,9 @@ a {
             display: block; } }
         @media (min-width: 768px) and (max-width: 991px) {
           .footer-wrap .footer-menu-wrapper .footer-menu li {
-            margin-right: 20px; } }
+            margin-right: 0;
+            margin-bottom: 5px;
+            display: block; } }
         .footer-wrap .footer-menu-wrapper .footer-menu li a {
           color: #FFF;
           position: relative;
@@ -237,8 +246,8 @@ a {
               width: 100%; }
           @media (min-width: 768px) and (max-width: 991px) {
             .footer-wrap .footer-menu-wrapper .footer-menu li a {
-              font-size: 14px;
-              line-height: 18.2px; } }
+              font-size: 18px;
+              line-height: 24px; } }
           @media (max-width: 767px) {
             .footer-wrap .footer-menu-wrapper .footer-menu li a {
               line-height: 24px; } }
@@ -250,6 +259,11 @@ a {
     font-family: "Brandon Grotesque Regular", sans-serif;
     text-align: right; }
     @media (max-width: 767px) {
+      .footer-wrap .footer-copyright {
+        flex: 1 1 100%;
+        text-align: center;
+        margin-top: 30px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
       .footer-wrap .footer-copyright {
         flex: 1 1 100%;
         text-align: center;

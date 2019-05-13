@@ -19,7 +19,8 @@
         padding: 47.4px 19px 45.4px 19px;
     }
     @include media-sm {
-        padding: 37.4px 19px 35.4px 19px;
+        text-align: center;
+        padding: 37.4px 0;
     }
     @include media-xs {
         text-align: center;
@@ -30,12 +31,18 @@
         @include media-xs {
             flex: 1 1 100%;
         }
+        @include media-sm {
+            flex: 1 1 100%;
+        }
         .footer-menu {
             text-align: left;
             padding: 0;
             margin: 0;
             font-size: 0;
             @include media-xs {
+                text-align: center;
+            }
+            @include media-sm {
                 text-align: center;
             }
             li {
@@ -50,7 +57,9 @@
                     display: block;
                 }
                 @include media-sm {
-                    margin-right: 20px;
+                    margin-right: 0;
+                    margin-bottom: 5px;
+                    display: block;
                 }
                 a {
                     color: $white;
@@ -84,8 +93,8 @@
                         }
                     }
                     @include media-sm {
-                        font-size: 14px;
-                        line-height: 18.2px;
+                        font-size: 18px;
+                        line-height: 24px;
                     }
                     @include media-xs {
                         line-height: 24px;
@@ -102,6 +111,11 @@
         font-family: $brandonGrotesque;
         text-align: right;
         @include media-xs {
+            flex: 1 1 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+        @include media-sm {
             flex: 1 1 100%;
             text-align: center;
             margin-top: 30px;
