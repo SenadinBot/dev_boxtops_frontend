@@ -5,6 +5,7 @@
     margin: 0 auto;
     padding: 80px 15px 20px 15px;
     position: relative;
+    overflow: hidden;
     @include media-xs {
         padding: 45px 10px 20px 10px;
     }
@@ -239,6 +240,8 @@
             font-family: $brandonGrotesque;
             display: block;
             margin-bottom: 25px;
+            width: 100%;
+            text-align: center;
             @include media-xs {
                 font-size: 20px;
                 line-height: 24px;
@@ -280,6 +283,23 @@
         padding: 0 20px 41px 25px;
         text-align: left;
         margin-bottom: 36px;
+        position: relative;
+        @include media-xs {
+            border-bottom: none;
+        }
+        &:after {
+            display: none;
+            content: "";
+            background: $midnightBlue;
+            width: calc(100% + 20px);
+            height: 1px;
+            position: absolute;
+            bottom: -1px;
+            left: -10px;
+            @include media-xs {
+                display: block;
+            }
+        }
         .img-container {
             width: 167px;
             height: 167px;
@@ -460,12 +480,160 @@
             border: none;
             border-bottom: 1px solid $midnightBlue;
             @include media-xs {
-                margin: 20px 0;
+                margin: 20px 0px 20px -10px;
+                width: calc(100% + 20px);
             }
         }
         .ios-android-container {
             @include media-xs {
                 margin-top: 0;
+            }
+        }
+    }
+}
+hr {
+    &.full-width {
+        display: block;
+        width: $maxWidth;
+        border: none;
+        border-bottom: 1px solid $midnightBlue;
+        position: absolute;
+        left: 50%;
+        bottom: 30%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+        @include media-xs {
+            margin: 15px -10px 20px -10px;
+            width: calc(100% + 20px);
+            position: relative;
+            bottom: initial;
+            left: initial;
+            -webkit-transform: none;
+            -moz-transform: none;
+            transform: none;
+        }
+        @include media-sm {
+            bottom: 26%;
+        }
+        @include media-md {
+            bottom: 28%;
+        }
+    }
+}
+.disclaimer-container {
+    margin-bottom: 75px;
+    @include media-xs {
+        margin-bottom: 45px;
+    }
+    span {
+        color: $midnightBlue;
+        font-family: $brandonGrotesque;
+        font-size: 14px;
+        line-height: 16.8px;
+        display: block;
+        word-break: break-all;
+        @include media-xs {
+            font-size: 12px;
+            line-height: 14.4px;
+            text-align: left;
+        }
+    }
+}
+.offer-sweeps-details-content {
+    font-size: 0;
+    display: block;
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 83px;
+    @include media-sm {
+        margin-bottom: 53px;
+    }
+    @include media-xs {
+        margin-bottom: 10px;
+        padding: 0 10px;
+    }
+    .img-container {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        position: relative;
+        @include media-xs {
+            width: 100%;
+            display: block;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+        img {
+            margin: 0 auto;
+        }
+        &:after {
+            display: none;
+            content: "";
+            background: $midnightBlue;
+            width: calc(100% + 40px);
+            height: 1px;
+            position: absolute;
+            left: -20px;
+            bottom: 0;
+            @include media-xs {
+                display: block;
+            }
+        }
+        h5 {
+            font-family: $brandonGrotesque;
+            font-size: 18px;
+            line-height: 26px;
+            color: $midnightBlue;
+            display: block;
+            margin: 15px auto 17px auto;
+            width: 50%;
+            @include media-xs {
+                font-size: 20px;
+                line-height: 29px;
+                width: 100%;
+            }
+            @include media-sm {
+                width: 80%;
+            }
+            @include media-md {
+                width: 60%;
+            }
+        }
+        span {
+            font-family: $brandonGrotesqueItalic;
+            font-size: 18px;
+            line-height: 26px;
+            color: $midnightBlue;
+            display: block;
+            @include media-xs {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+    .offer-form {
+        display: inline-block;
+        width: 50%;
+        text-align: left;
+        vertical-align: top;
+        padding-left: 50px;
+        margin-bottom: 85px;
+        @include media-xs {
+            padding-left: 0;
+            width: 100%;
+            margin-bottom: 0;
+        }
+        .custom-btn {
+            width: 184px;
+            margin: 0 auto;
+            display: block;
+            position: relative;
+            left: -10px;
+            @include media-xs {
+                left: 0;
+                margin: initial;
             }
         }
     }

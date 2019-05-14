@@ -1,9 +1,7 @@
 .hero-banner-container {
     &.landing-page-hero {
-        margin-top: -123px;
         min-height: 569px;
         @include media-xs {
-            margin-top: -70px;
             min-height: auto;
         }
         @include media-md {
@@ -11,7 +9,6 @@
         }
         @include media-sm {
             min-height: 391.547px;
-            margin-top: -90px;
         }
         .hero-banner-content {
             text-align: center;

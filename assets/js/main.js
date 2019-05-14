@@ -98,13 +98,36 @@ jQuery(function ($) {
             if (parent.children(selector).length == 0) {
                 $(this).attr("style", "display:none")
             }
-        });   
+        });
 
         // Show/Hide Earn Product Content
-        $(".earn-product-item-heading").on("click", function() {
+        $(".earn-product-item-heading").on("click", function () {
             $(this).parents('.earn-product-item').siblings().removeClass('active');
             $(this).parents('.earn-product-item').toggleClass('active');
         });
+
+        // Tabs to Accordion
+        $(".tab-content").hide();
+        $(".tab-content:first").show();
+        $(".custom-tabs li").click(function () {
+            $(".tab-content").hide();
+            var activeTab = $(this).attr("rel");
+            $("#" + activeTab).fadeIn();
+            $(".custom-tabs li").removeClass("active");
+            $(this).addClass("active");
+            $(".tab-heading").removeClass("d-active");
+            $(".tab-heading[rel^='" + activeTab + "']").addClass("d-active");
+        });
+        $(".tab-heading").click(function () {
+            $(".tab-content").hide();
+            var d_activeTab = $(this).attr("rel");
+            $("#" + d_activeTab).fadeIn();
+            $(".tab-heading").removeClass("d-active");
+            $(this).addClass("d-active");
+            $(".custom-tabs li").removeClass("active");
+            $(".custom-tabs li[rel^='" + d_activeTab + "']").addClass("active");
+        });
+
 
     });
 });

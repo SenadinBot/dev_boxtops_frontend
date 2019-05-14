@@ -36,8 +36,16 @@
         }
         h2 {
             text-transform: uppercase;
-            margin-bottom: 43.4px;
+            width: 42%;
+            margin: 0 auto 43.4px auto;
+            @include media-md {
+                width: 50%;
+            }
+            @include media-md {
+                width: 60%;
+            }
             @include media-xs {
+                width: 90%;
                 font-size: 20px;
                 line-height: 24.03px;
                 margin-bottom: 10px;

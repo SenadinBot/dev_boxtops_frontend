@@ -1,0 +1,329 @@
+.box-tops-goals-container {
+    text-align: center;
+    background-color: #39BCD9;
+    .box-tops-goals-content {
+        margin: 0 auto;
+        max-width: $contentWidth;
+        padding: 15px 0 21px 0;
+        @include media-sm {
+            padding: 11px 0 17px 0;
+        }
+        @include media-xs {
+            padding: 30px 60px;
+        }
+    }
+    span {
+        display: block;
+        color: $midnightBlue;
+        &.intro {
+            font-family: $brandonGrotesque;
+            font-size: 22px;
+            line-height: 30px;  
+            @include media-xs {
+                font-size: 20px;
+                line-height: 24px;
+            }          
+        }
+        &.description {
+            font-family: $brandonGrotesqueBold;
+            font-size: 30px;
+            line-height: 38px;
+            @include media-sm {
+                font-size: 28px;
+                line-height: 34px;
+            }
+            @include media-xs {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+.school-earning-activity-container {
+    margin: 0 auto;
+    max-width: $contentWidth;
+    padding: 80px 15px 82px 15px;
+    @include media-xs {
+        padding: 48px 15px;
+    }
+    .custom-tabs {
+        margin: 0;
+        padding: 0;
+        float: left;
+        list-style: none;
+        width: 100%;
+        @include media-xs {
+            display: none;
+        }
+        li {
+            float: left;
+            margin: 0;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            font-family: $brandonGrotesqueBlack;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 26.9px;
+            text-align: center;
+            width: 274.71px;
+            color: $midnightBlue;
+            background-color: #F0F0F0;
+            padding: 16px 10px 7px 10px;
+            &:first-child {
+                margin-right: 10px;
+            }
+            &:hover {
+                background-color: #39BCD9;
+                color: #fff;
+            }
+            &.active {
+                background-color: #39BCD9;
+                color: #fff;
+                display: block;
+            }
+            @include media-sm {
+                width: 214.71px;
+            }
+        }
+    }
+    .tab-container {
+        border: 7px solid #39BCD9;
+        clear: both;
+        background: #fff;
+        @include media-xs {
+            border: none;
+        }
+        .tab-content {
+            display: none;
+            @include media-xs {
+                border: 5px solid #39BCD9;
+            }
+        }
+        .tab-heading {
+            background-color: #39BCD9;
+            color: #fff;
+            margin: 0;
+            padding: 20px 25px 16px 25px; 
+            display: block;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            display: none;
+            position: relative;
+            font-family: $brandonGrotesqueBlack;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 26.9px;
+            @include media-xs {
+                display: block;
+            }
+            &:nth-child(3) {
+                margin-top: 7px;
+            }
+            &:after {
+                content: "";
+                background-image: url("../../../assets/images/icons/tab-plus@2x.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 16px;
+                height: 43px;
+                position: absolute;
+                top: 10px;
+                right: 24px;
+            }
+        }
+        .d-active {
+            &:after {
+                background-image: url("../../../assets/images/icons/tab-minus@2x.png");
+                width: 10px;
+                top: 8px;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            thead {
+                tr {
+                    th {
+                        font-family: $brandonGrotesqueBold;
+                        font-size: 16px;
+                        line-height: 14px;
+                        text-transform: uppercase;
+                        color: $midnightBlue;
+                        text-align: left;
+                        padding: 17px 15px;
+                        &:last-child {
+                            text-align: right;
+                        }
+                        @include media-xs {
+                            font-size: 12px;
+                            line-height: 10px;
+                            padding: 13px 10px;
+                        }
+                        span {
+                            @include media-xs {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        font-family: $brandonGrotesque;
+                        font-size: 16px;
+                        line-height: 14px;
+                        color: $midnightBlue;
+                        text-align: left;
+                        padding: 17px 15px;
+                        &:last-child {
+                            text-align: right;
+                        }
+                        @include media-xs {
+                            font-size: 12px;
+                            line-height: 10px;
+                            padding: 13px 10px;
+                            vertical-align: top;
+                        }
+                    }
+                    &:nth-child(odd) {
+                        background-color: #F0F0F0;
+                    }
+                }
+            }
+        }
+    }
+    .earnings-result-container {
+        background-color: $midnightBlue;
+        .form-group {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 45px;
+            @include media-sm {
+                margin-right: 20px;
+            }
+            @include media-md {
+                margin-right: 30px;
+            }
+            @include media-xs {
+                margin-right: 0;
+                margin-bottom: 20px;
+                display: block;
+            }
+            .select {
+                width: 180px;
+                @include media-sm {
+                    width: 150px;
+                }
+                @include media-md {
+                    width: 160px;
+                }
+                select {
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    @include media-sm {
+                        font-size: 16px;
+                    }
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &.school-result {
+            padding: 34px 40px 26px 40px;
+            @include media-sm {
+                padding: 40px 10px 36px 15px;
+            }
+            @include media-md {
+                padding: 34px 20px 26px 15px;
+            }
+            @include media-xs {
+                text-align: center;
+            }
+            span {
+                display: inline-block;
+                color: #fff;
+                vertical-align: middle;
+                @include media-xs {
+                    display: block;
+                }
+                &.intro {
+                    font-family: $brandonGrotesqueBlack;
+                    font-size: 25px;
+                    line-height: 30px;
+                    position: relative;
+                    top: 2px;
+                    margin-right: 32px;
+                    @include media-xs {
+                        font-size: 18px;
+                        line-height: 20px;
+                        margin-right: 0;
+                        top: 0;
+                        margin: 0 auto 20px auto;
+                        width: 80%;
+                    }
+                    @include media-sm {
+                        font-size: 20px;
+                        line-height: 22px;
+                        margin-right: 15px;
+                    }
+                    @include media-md {
+                        margin-right: 20px;
+                    }
+                }
+                &.result {
+                    font-family: $brandonGrotesqueBold;
+                    font-size: 60px;
+                    line-height: 56px;
+                    @include media-xs {
+                        font-size: 48px;
+                        line-height: 46px;
+                    }
+                    @include media-sm {
+                        font-size: 40px;
+                        line-height: 36px;
+                    }
+                }
+            }
+        }
+        &.your-result {
+            text-align: center;
+            padding: 18px 0 20px 0;
+            @include media-xs {
+                padding: 15px 0;
+            }
+            span {
+                color: #fff;
+                display: block;
+                &.intro {
+                    font-family: $brandonGrotesque;
+                    font-size: 20px;
+                    line-height: 28px;
+                    @include media-xs {
+                        font-size: 16px;
+                        line-height: 23px;
+                    }
+                }
+                &.result {
+                    font-family: $brandonGrotesqueBold;
+                    font-size: 50px;
+                    line-height: 50px;
+                    @include media-xs {
+                        font-size: 48px;
+                    }
+                }
+            }
+        }
+    }
+}

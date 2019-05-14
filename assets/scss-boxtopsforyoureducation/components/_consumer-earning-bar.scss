@@ -132,4 +132,23 @@
             }
         }
     }
+    &.school-earning-bar {
+        .consumer-earning-bar-wrapper {
+            padding: 38px 0 46px 0;
+            @include media-md {
+                padding: 33px 0 41px 0;
+            }
+            @include media-sm {
+                padding: 28px 0 36px 0;
+            }
+            .consumer-earning-bar-item {
+                &:last-child {
+                    @include media-xs {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        } 
+    }
 }
