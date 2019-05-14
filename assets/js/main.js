@@ -67,33 +67,38 @@ jQuery(function ($) {
         }
 
         // Load more for Multiple  Columns Component
-        var indexColumns = 0;
+        $(".loadColumnsBtn").click(function () {
+            var parent = $(this).parent();
+            var index = parent.data("index");
+            index++;
+            var selector = ".columnRow-" + index;
 
-        $("#loadColumnsBtn").click(function () {
-            indexColumns++;
-            var selector = "columnRow-" + indexColumns;
-            document.getElementById(selector).removeAttribute("style");
+            var child = parent.children(selector);
+            child.removeAttr("style");
 
-            selector = "columnRow-" + indexColumns + 1;
-            if (document.getElementById(selector) == null) {
-                document.getElementById("loadColumnsBtn").setAttribute("style", "display:none")
+            selector = ".columnRow-" + index + 1;
+            if (parent.children(selector).length == 0) {
+                $(this).attr("style", "display:none")
             }
         });
 
         //Load more for Video section
-        var indexVideos = 0;
+        $(".loadVideoBtn").click(function () {
+            var parent = $(this).parent();
+            var index = parent.data("index");
 
-        $("#loadVideoBtn").click(function () {
-            
-            var selector = "columnVideoRow-" + indexVideos;
-            document.getElementById(selector).removeAttribute("style");
-            indexVideos++;
+            var selector = ".columnVideoRow-" + index;
+            var child = parent.children(selector);
+            child.removeAttr("style");
 
-            selector = "columnVideoRow-" + indexVideos;
-            if (document.getElementById(selector) == null) {
-                document.getElementById("loadVideoBtn").setAttribute("style", "display:none")
+            index++;
+            parent.data("index", index);
+
+            selector = ".columnVideoRow-" + index;
+            if (parent.children(selector).length == 0) {
+                $(this).attr("style", "display:none")
             }
-        });  
+        });   
 
         // Show/Hide Earn Product Content
         $(".earn-product-item-heading").on("click", function() {

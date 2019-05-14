@@ -1,0 +1,472 @@
+.offers-container {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: $contentWidth;
+    margin: 0 auto;
+    padding: 80px 15px 20px 15px;
+    position: relative;
+    @include media-xs {
+        padding: 45px 10px 20px 10px;
+    }
+    @include media-sm {
+        padding: 50px 15px 20px 15px;
+    }
+    @include media-md {
+        padding: 60px 15px 20px 15px;
+    }
+    &:before {
+        display: none;
+        content: "";
+        width: 71.7px;
+        height: 13.65px;
+        background-image: url("../../../assets/images/icons/color-icons.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    &.add-top-icon {
+        &:before {
+            display: block;
+        }
+    }
+    .sweepstakes-winners-content {
+        flex: 1 1 66.666%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        text-align: left;
+        @include media-xs {
+            flex: 1 1 100%;
+            margin-bottom: 15px;
+        }
+        @include media-sm {
+            flex: 1 1 100%;
+            margin-bottom: 15px;
+        }
+    }
+    .redeem-code-content {
+        flex: 1 1 66.666%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        text-align: center;
+        margin-bottom: 150px;
+        @include media-xs {
+            flex: 1 1 100%;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+        @include media-sm {
+            flex: 1 1 100%;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+    }
+    .offer-details-content {
+        flex: 1 1 66.666%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        text-align: center;
+        margin-bottom: 150px;
+        @include media-xs {
+            flex: 1 1 100%;
+            margin-bottom: 50px;
+        }
+        @include media-sm {
+            flex: 1 1 100%;
+            margin-bottom: 50px;
+        }
+    }
+    .adverb-content {
+        flex: 1 1 33.333%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        text-align: left;
+        @include media-xs {
+            flex: 1 1 100%;
+        }
+        @include media-sm {
+            flex: 1 1 100%;
+        }
+        .img-container {
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+        }
+        &.full-width {
+            flex: 1 1 100%;
+            margin-bottom: 60px;
+            @include media-xs {
+                margin-bottom: 10px;
+            }
+            @include media-sm {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+.sweepstakes-winners-content {
+    .cta-2-col-wrap {
+        width: 100%;
+        border-bottom: 1px solid $midnightBlue;
+        font-size: 0;
+        padding-bottom: 34px;
+        margin-bottom: 42px;
+        @include media-xs {
+            padding-bottom: 25px;
+            margin-bottom: 26px; 
+        }
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 17px;
+        }
+        .cta-2-col-image {
+            width: 150px;
+            height: 150px;
+            vertical-align: top;
+            display: inline-block;
+            @include media-xs {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin-bottom: 25px;
+            }
+            img {
+                margin: 0 auto;
+            }
+        }
+        .cta-2-col-text {
+            display: inline-block;
+            padding-left: 20px;
+            @include media-xs {
+                display: block;
+                padding: 0 15px;
+            }
+            @include media-md {
+                width: calc(100% - 150px);
+            }
+            h5 {
+                color: #39BCD9;
+                text-transform: uppercase;
+                line-height: 18px;
+                margin-bottom: 20px;
+                @include media-xs {
+                    font-size: 14px;
+                    line-height: 16.8px;
+                }
+            }
+            b {
+                font-family: $brandonGrotesqueBold;
+                font-size: 18px;
+                line-height: 24px;
+                color: $midnightBlue;
+                @include media-xs {
+                    font-size: 14px;
+                    line-height: 16.8px;
+                }
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0 0 0 12px;
+                li {
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $midnightBlue;
+                    font-family: $brandonGrotesque;
+                    position: relative;
+                    margin-bottom: 0;
+                    @include media-xs {
+                        font-size: 14px;
+                        line-height: 16.8px;
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    &:before {
+                        content: "";
+                        width: 3.5px;
+                        height: 3.5px;
+                        position: absolute;
+                        top: 9px;
+                        left: -10px;
+                        background: $midnightBlue;
+                        border-radius: 200%;
+                    }
+                }
+            }
+        }
+    }
+}
+.redeem-code-content {
+    text-align: center;
+    .redeem-code-intro {
+        width: 88%;
+        margin: 0 auto 28px auto;
+        @include media-sm {
+            width: 94%;
+        }
+        p {
+            font-size: 22px;
+            line-height: 26.4px;
+            color: $midnightBlue;
+            @include media-xs {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+    }
+    .form-group {
+        margin-bottom: 25px;
+        @include media-xs {
+            margin-bottom: 30px;
+        }
+        label {
+            font-size: 22px;
+            line-height: 26.4px;
+            color: $midnightBlue;
+            font-family: $brandonGrotesque;
+            display: block;
+            margin-bottom: 25px;
+            @include media-xs {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        input {
+            border: 1px solid #E1E1E1;
+            width: 450px;
+            display: block;
+            margin: 0 auto;
+            font-size: 22px;
+            line-height: 22px;
+            padding: 12px 15px 15px 15px;
+            color: $midnightBlue;
+            font-family: $brandonGrotesque;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            @include media-xs {
+                width: 100%;
+                padding: 4px 15px 4px 15px;
+            }
+        }
+    }
+    .custom-btn {
+        display: block;
+        width: 274px;
+        padding: 12px 34px;
+        margin: 0 auto;
+        @include media-xs {
+            width: 100%;
+        }
+    }
+}
+.offer-details-content {
+    .offer-details-info {
+        border-bottom: 1px solid $midnightBlue;
+        padding: 0 20px 41px 25px;
+        text-align: left;
+        margin-bottom: 36px;
+        .img-container {
+            width: 167px;
+            height: 167px;
+            vertical-align: top;
+            display: inline-block;
+            img {
+                margin: 0 auto;
+            }
+            @include media-xs {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .offer-info {
+            vertical-align: top;
+            padding-left: 25px;
+            padding-top: 20px;
+            display: inline-block;
+            width: calc(100% - 245px);
+            @include media-xs {
+                padding-left: 0;
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+            @include media-md {
+                width: calc(100% - 172px);
+                padding-left: 15px;
+            }
+            h3 {
+                font-family: $brandonGrotesqueBold;
+                text-transform: uppercase;
+                line-height: 26px;
+                @include media-xs {
+                    line-height: 29px;
+                }
+            }
+            .description {
+                min-height: 48px;
+                @include media-xs {
+                    min-height: 90px;
+                }
+                p {
+                    color: $midnightBlue;
+                    font-size: 22px;
+                    line-height: 22px;
+                    @include media-xs {
+                        font-size: 20px;
+                        line-height: 29px;
+                    }
+                }
+            }
+            span {
+                color: $midnightBlue;
+                font-family: $brandonGrotesque;
+                font-size: 14px;
+                line-height: 14px;
+                display: block;
+                @include media-xs {
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+    h5 {
+        text-transform: uppercase;
+        color: $midnightBlue;
+        margin: 0 auto;
+        width: 35%;
+        line-height: 21.6px;
+        margin-bottom: 15px;
+        @include media-xs {
+            width: 75%;
+            font-size: 16px;
+            line-height: 19.2px;
+        }
+        @include media-md {
+            width: 45%;
+        }
+    }
+    .ios-android-container {
+        @include media-xs {
+            margin-top: 0;
+        }
+    }
+}
+.offer-scan-content {
+    font-size: 0;
+    display: block;
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 83px;
+    @include media-sm {
+        margin-bottom: 53px;
+    }
+    @include media-xs {
+        margin-bottom: 10px;
+        padding: 0;
+    }
+    .img-container {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        @include media-xs {
+            width: 100%;
+            display: block;
+            margin-bottom: 5px;
+        }
+        img {
+            margin: 0 auto;
+        }
+    }
+    .offer-scan-info {
+        display: inline-block;
+        width: 50%;
+        text-align: left;
+        vertical-align: top;
+        padding-left: 50px;
+        @include media-xs {
+            width: 100%;
+            display: block;
+            padding-left: 0;
+        }
+        @include media-sm {
+            padding-left: 30px;
+        }
+        h2 {
+            font-family: $brandonGrotesqueLight;
+            color: $midnightBlue;
+            line-height: 54px;
+            text-transform: initial;
+            position: relative;
+            top: -11px;
+            @include media-xs {
+                top: 0;
+                font-size: 20px;
+                line-height: 29px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            @include media-sm {
+                line-height: 48px;
+            }
+        }
+        span {
+            color: $midnightBlue;
+            font-family: $brandonGrotesqueItalic;
+            font-size: 18px;
+            line-height: 26px;
+            display: block;
+            margin-bottom: 24px;
+            @include media-xs {
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+        }
+        .disclaimer {
+            span {
+                color: $midnightBlue;
+                font-family: $brandonGrotesque;
+                font-size: 14px;
+                line-height: 16.8px;
+                display: block;
+                word-break: break-all;
+                @include media-xs {
+                    font-size: 12px;
+                    line-height: 14.4px;
+                    text-align: left;
+                }
+            }
+        }
+        hr {
+            margin: 38px 0 35px 0;
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid $midnightBlue;
+            @include media-xs {
+                margin: 20px 0;
+            }
+        }
+        .ios-android-container {
+            @include media-xs {
+                margin-top: 0;
+            }
+        }
+    }
+}

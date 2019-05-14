@@ -50,9 +50,9 @@
     }
 }
 .coord-mobile-nav {
-    display: none;
+    display: none !important;
     @include media-xs {
-        display: block;
+        display: block !important;
     }
     .coord-mobile-container {
         background-color: $white;
