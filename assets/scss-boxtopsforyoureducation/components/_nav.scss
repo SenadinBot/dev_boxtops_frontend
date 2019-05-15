@@ -750,17 +750,22 @@
         position: absolute;
         width: 75%;
         background-color: $white;
-        top: 0;
-        height: 123px;
+        top: 124px;
+        height: 101px;
         left: 50%;
         -webkit-transform: translateX(-50%);
         -moz-transform: translateX(-50%);
         transform: translateX(-50%);
         @include media-md {
-            width: 81.5%;
+            width: 65.5%;
         }
         .form-group {
             margin: 0;
+            .input-group {
+                margin-bottom: 0;
+                width: auto;
+                display: block;
+            }
             input {
                 border-radius: 0;
                 border: none;
@@ -770,20 +775,32 @@
                 font-family: $brandonGrotesque;
                 font-size: 39px;
                 line-height: normal;
-                padding: 27px 85px 27px 30px;
+                padding: 22.5px 85px 22.5px 30px;
                 -webkit-box-shadow: none;
                 box-shadow: none;
                 &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
                     color: #a6a6a6;
+                    font-family: $brandonGrotesque;
+                    font-size: 39px;
+                    line-height: normal;
                 }
                 &::-moz-placeholder { /* Firefox 19+ */
                     color: #a6a6a6;
+                    font-family: $brandonGrotesque;
+                    font-size: 39px;
+                    line-height: normal;
                 }
                 &:-ms-input-placeholder { /* IE 10+ */
                     color: #a6a6a6;
+                    font-family: $brandonGrotesque;
+                    font-size: 39px;
+                    line-height: normal;
                 }
                 &:-moz-placeholder { /* Firefox 18- */
                     color: #a6a6a6;
+                    font-family: $brandonGrotesque;
+                    font-size: 39px;
+                    line-height: normal;
                 }
                 &:focus {
                     outline: none;
@@ -794,7 +811,7 @@
         button {
             position: absolute;
             right: 125px;
-            top: 27px;
+            top: 16px;
             background-color: transparent;
             border: none;
             -webkit-box-shadow: none;
@@ -824,7 +841,7 @@
         position: relative;
         display: inline-block;
         width: 106px;
-        height: 123px;
+        height: 101px;
         background-color: $white;
         right: 0;
         top: 0;

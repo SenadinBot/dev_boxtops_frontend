@@ -1,0 +1,89 @@
+.custom-template-component {
+    max-width: $maxWidth;
+    position: relative;
+    padding: 0;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #FFF;
+    padding: 78px 0 40px 0;
+    @include media-xs {
+        padding: 45px 0 10px 0;
+    }
+    &:before {
+        display: none;
+        content: "";
+        width: 71.7px;
+        height: 13.65px;
+        background-image: url("../../../assets/images/icons/color-icons.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    &.add-top-icon {
+        &:before {
+            display: block;
+        }
+    }
+    .custom-template-content {
+        text-align: center;
+        max-width: $contentWidth;
+        margin: 0 auto;
+        @include media-xs {
+            padding: 0 10px;
+        }
+        img {
+            margin: 0 auto 40px auto;
+            @include media-xs {
+                margin: 0 auto 20px auto;
+            }
+        }
+        h2 {
+            @include media-xs {
+                font-size: 30px;
+                line-height: 36px;
+            }
+        }
+        h3 {
+            margin-top: 2px;
+            @include media-xs {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        p {
+            font-size: 22px;
+            line-height: 26.4px;
+            color: $midnightBlue;
+            @include media-xs {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        .custom-btn {
+            margin-bottom: 40px;
+            @include media-xs {
+                width: 100%;
+            }
+        }
+        .text-content {
+            width: 79%;
+            margin: 22px auto 35px auto;
+            @include media-xs {
+                margin: 12px auto 35px auto;
+                width: 95%;
+            }
+            @include media-sm {
+                width: 85%;
+            }
+            @include media-md {
+                width: 85%;
+            }
+        }
+    }
+}
