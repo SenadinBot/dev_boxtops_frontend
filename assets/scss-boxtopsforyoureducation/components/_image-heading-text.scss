@@ -177,4 +177,125 @@
             }   
         }
     }
+    .two-column-image-heading-text-container {
+        max-width: $contentWidth;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row wrap;
+        .two-column-image-heading-text-content {
+            text-align: center;
+            padding: 115px 0 56.3px 0;
+            flex: 1 1 0%;
+            width: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center; 
+            position: relative;       
+            @include media-md {
+                padding: 95px 10px 56.3px 10px;
+            }
+            @include media-sm {
+                padding: 100px 20px 46.3px 20px;
+                flex: 1 1 100%;
+            }
+            @include media-xs {
+                padding: 100px 20px 46.3px 20px;
+                flex: 1 1 100%;
+            }
+            &:first-child {
+                @include media-xs {
+                    padding-bottom: 25px;
+                }
+                &:after {
+                    content: "";
+                    background: $midnightBlue;
+                    height: 69%;
+                    width: 1px;
+                    position: absolute;
+                    right: 0;
+                    top: 115px;
+                    @include media-xs {
+                        height: 1px;
+                        width: calc(100% - 40px);
+                        top: initial;
+                        left: 20px;
+                        bottom: 0;
+                    }
+                    @include media-sm {
+                        height: 1px;
+                        width: calc(100% - 40px);
+                        top: initial;
+                        left: 20px;
+                        bottom: 0;
+                    }
+                }
+            }
+            &:last-child {
+                @include media-xs {
+                    padding: 21px 0 36px 0;
+                }
+                @include media-sm {
+                    padding-top: 46px;
+                }
+            }
+            h2 {
+                line-height: 30px;
+                margin-bottom: 30px;
+                @include media-xs {
+                    font-size: 30px;
+                    margin-bottom: 25px;
+                }
+                span {
+                    display: block;
+                    color: #39BCD9;
+                    font-size: 25px;
+                    line-height: 30px;
+                    @include media-xs {
+                        font-family: 20px;
+                    }
+                }
+            }
+            p {
+                font-size: 18px;
+                line-height: 26px;
+                color: $midnightBlue;
+                margin-bottom: 16px;
+                @include media-xs {
+                    font-size: 16px;
+                    line-height: 23px;
+                    margin-bottom: 10px;
+                }
+                b {
+                    font-family: $brandonGrotesqueBold;
+                }
+            }
+            i {
+                font-family: $brandonGrotesqueItalic;
+                color: $midnightBlue;
+                font-size: 14px;
+                line-height: 20px;
+                @include media-xs {
+                    font-family: 12px;
+                    line-height: 18px;
+                }
+            }
+            img {
+                max-width: 264px;
+                max-height: 180px;
+                margin: 0 auto 25px auto;
+                display: block;
+                @include media-xs {
+                    max-width: 201px;
+                    max-height: initial;
+                }
+            }
+            .text-container {
+                width: 80%;
+                @include media-md {
+                    width: 91%;
+                }
+            }
+        }
+    }
 }

@@ -371,7 +371,8 @@ img {
 .max-width {
   max-width: 1400px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  overflow: hidden; }
 
 .constrain {
   max-width: 1172px;
@@ -1468,6 +1469,113 @@ body.search-open {
                 .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p b {
                   font-size: 20px;
                   line-height: 30px; } }
+  .image-heading-text-container .two-column-image-heading-text-container {
+    max-width: 1172px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap; }
+    .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content {
+      text-align: center;
+      padding: 115px 0 56.3px 0;
+      flex: 1 1 0%;
+      width: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative; }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content {
+          padding: 95px 10px 56.3px 10px; } }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content {
+          padding: 100px 20px 46.3px 20px;
+          flex: 1 1 100%; } }
+      @media (max-width: 767px) {
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content {
+          padding: 100px 20px 46.3px 20px;
+          flex: 1 1 100%; } }
+      @media (max-width: 767px) {
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content:first-child {
+          padding-bottom: 25px; } }
+      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content:first-child:after {
+        content: "";
+        background: #002e5d;
+        height: 69%;
+        width: 1px;
+        position: absolute;
+        right: 0;
+        top: 115px; }
+        @media (max-width: 767px) {
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content:first-child:after {
+            height: 1px;
+            width: calc(100% - 40px);
+            top: initial;
+            left: 20px;
+            bottom: 0; } }
+        @media (min-width: 768px) and (max-width: 991px) {
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content:first-child:after {
+            height: 1px;
+            width: calc(100% - 40px);
+            top: initial;
+            left: 20px;
+            bottom: 0; } }
+      @media (max-width: 767px) {
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content:last-child {
+          padding: 21px 0 36px 0; } }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content:last-child {
+          padding-top: 46px; } }
+      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content h2 {
+        line-height: 30px;
+        margin-bottom: 30px; }
+        @media (max-width: 767px) {
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content h2 {
+            font-size: 30px;
+            margin-bottom: 25px; } }
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content h2 span {
+          display: block;
+          color: #39BCD9;
+          font-size: 25px;
+          line-height: 30px; }
+          @media (max-width: 767px) {
+            .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content h2 span {
+              font-family: 20px; } }
+      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content p {
+        font-size: 18px;
+        line-height: 26px;
+        color: #002e5d;
+        margin-bottom: 16px; }
+        @media (max-width: 767px) {
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content p {
+            font-size: 16px;
+            line-height: 23px;
+            margin-bottom: 10px; } }
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content p b {
+          font-family: "Brandon Grotesque Bold", sans-serif; }
+      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content i {
+        font-family: "Brandon Grotesque Regular Italic", sans-serif;
+        color: #002e5d;
+        font-size: 14px;
+        line-height: 20px; }
+        @media (max-width: 767px) {
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content i {
+            font-family: 12px;
+            line-height: 18px; } }
+      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content img {
+        max-width: 264px;
+        max-height: 180px;
+        margin: 0 auto 25px auto;
+        display: block; }
+        @media (max-width: 767px) {
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content img {
+            max-width: 201px;
+            max-height: initial; } }
+      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content .text-container {
+        width: 80%; }
+        @media (min-width: 992px) and (max-width: 1199px) {
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content .text-container {
+            width: 91%; } }
 
 .nav-toggle {
   display: block;
@@ -3483,8 +3591,7 @@ body.search-open .header-search {
   max-width: 1172px;
   margin: 0 auto;
   padding: 80px 15px 20px 15px;
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
   @media (max-width: 767px) {
     .offers-container {
       padding: 45px 10px 20px 10px; } }
@@ -3572,19 +3679,6 @@ body.search-open .header-search {
     @media (min-width: 768px) and (max-width: 991px) {
       .offers-container .adverb-content {
         flex: 1 1 100%; } }
-    .offers-container .adverb-content .img-container {
-      text-align: center;
-      display: block;
-      margin: 0 auto; }
-    .offers-container .adverb-content.full-width {
-      flex: 1 1 100%;
-      margin-bottom: 60px; }
-      @media (max-width: 767px) {
-        .offers-container .adverb-content.full-width {
-          margin-bottom: 10px; } }
-      @media (min-width: 768px) and (max-width: 991px) {
-        .offers-container .adverb-content.full-width {
-          margin-bottom: 40px; } }
 
 .sweepstakes-winners-content .cta-2-col-wrap {
   width: 100%;
@@ -3823,100 +3917,6 @@ body.search-open .header-search {
   .offer-details-content .ios-android-container {
     margin-top: 0; } }
 
-.offer-scan-content {
-  font-size: 0;
-  display: block;
-  width: 100%;
-  padding: 0 15px;
-  margin-bottom: 83px; }
-  @media (min-width: 768px) and (max-width: 991px) {
-    .offer-scan-content {
-      margin-bottom: 53px; } }
-  @media (max-width: 767px) {
-    .offer-scan-content {
-      margin-bottom: 10px;
-      padding: 0; } }
-  .offer-scan-content .img-container {
-    width: 50%;
-    display: inline-block;
-    vertical-align: top; }
-    @media (max-width: 767px) {
-      .offer-scan-content .img-container {
-        width: 100%;
-        display: block;
-        margin-bottom: 5px; } }
-    .offer-scan-content .img-container img {
-      margin: 0 auto; }
-  .offer-scan-content .offer-scan-info {
-    display: inline-block;
-    width: 50%;
-    text-align: left;
-    vertical-align: top;
-    padding-left: 50px; }
-    @media (max-width: 767px) {
-      .offer-scan-content .offer-scan-info {
-        width: 100%;
-        display: block;
-        padding-left: 0; } }
-    @media (min-width: 768px) and (max-width: 991px) {
-      .offer-scan-content .offer-scan-info {
-        padding-left: 30px; } }
-    .offer-scan-content .offer-scan-info h2 {
-      font-family: "Brandon Grotesque Light", sans-serif;
-      color: #002e5d;
-      line-height: 54px;
-      text-transform: initial;
-      position: relative;
-      top: -11px; }
-      @media (max-width: 767px) {
-        .offer-scan-content .offer-scan-info h2 {
-          top: 0;
-          font-size: 20px;
-          line-height: 29px;
-          text-align: center;
-          margin-bottom: 20px; } }
-      @media (min-width: 768px) and (max-width: 991px) {
-        .offer-scan-content .offer-scan-info h2 {
-          line-height: 48px; } }
-    .offer-scan-content .offer-scan-info span {
-      color: #002e5d;
-      font-family: "Brandon Grotesque Regular Italic", sans-serif;
-      font-size: 18px;
-      line-height: 26px;
-      display: block;
-      margin-bottom: 24px; }
-      @media (max-width: 767px) {
-        .offer-scan-content .offer-scan-info span {
-          font-size: 14px;
-          line-height: 20px;
-          text-align: center;
-          margin-bottom: 15px; } }
-    .offer-scan-content .offer-scan-info .disclaimer span {
-      color: #002e5d;
-      font-family: "Brandon Grotesque Regular", sans-serif;
-      font-size: 14px;
-      line-height: 16.8px;
-      display: block;
-      word-break: break-all; }
-      @media (max-width: 767px) {
-        .offer-scan-content .offer-scan-info .disclaimer span {
-          font-size: 12px;
-          line-height: 14.4px;
-          text-align: left; } }
-    .offer-scan-content .offer-scan-info hr {
-      margin: 38px 0 35px 0;
-      display: block;
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid #002e5d; }
-      @media (max-width: 767px) {
-        .offer-scan-content .offer-scan-info hr {
-          margin: 20px 0px 20px -10px;
-          width: calc(100% + 20px); } }
-    @media (max-width: 767px) {
-      .offer-scan-content .offer-scan-info .ios-android-container {
-        margin-top: 0; } }
-
 hr.full-width {
   display: block;
   width: 1400px;
@@ -3946,10 +3946,31 @@ hr.full-width {
       bottom: 28%; } }
 
 .disclaimer-container {
-  margin-bottom: 75px; }
+  position: relative;
+  margin-top: 40px;
+  padding-top: 39px; }
   @media (max-width: 767px) {
     .disclaimer-container {
-      margin-bottom: 45px; } }
+      margin-top: 23px;
+      padding-top: 22px; } }
+  .disclaimer-container:before {
+    content: "";
+    background-color: #002e5d;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    @media (max-width: 767px) {
+      .disclaimer-container:before {
+        width: calc(100% + 40px);
+        left: -20px; } }
+  .disclaimer-container.full-width:before {
+    width: 1400px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%); }
   .disclaimer-container span {
     color: #002e5d;
     font-family: "Brandon Grotesque Regular", sans-serif;
@@ -3963,34 +3984,39 @@ hr.full-width {
         line-height: 14.4px;
         text-align: left; } }
 
-.offer-sweeps-details-content {
+.offer-content-wrapper {
   font-size: 0;
   display: block;
   width: 100%;
   padding: 0 15px;
-  margin-bottom: 83px; }
+  margin-bottom: 58px; }
   @media (min-width: 768px) and (max-width: 991px) {
-    .offer-sweeps-details-content {
+    .offer-content-wrapper {
       margin-bottom: 53px; } }
   @media (max-width: 767px) {
-    .offer-sweeps-details-content {
+    .offer-content-wrapper {
       margin-bottom: 10px;
       padding: 0 10px; } }
-  .offer-sweeps-details-content .img-container {
+  .offer-content-wrapper .img-container {
     width: 50%;
     display: inline-block;
     vertical-align: top;
     text-align: center;
     position: relative; }
     @media (max-width: 767px) {
-      .offer-sweeps-details-content .img-container {
+      .offer-content-wrapper .img-container {
         width: 100%;
         display: block;
-        margin-bottom: 15px;
-        padding-bottom: 15px; } }
-    .offer-sweeps-details-content .img-container img {
+        margin-bottom: 5px; } }
+    .offer-content-wrapper .img-container img {
       margin: 0 auto; }
-    .offer-sweeps-details-content .img-container:after {
+    @media (max-width: 767px) {
+      .offer-content-wrapper .img-container.add-bottom-border {
+        margin-bottom: 15px;
+        padding-bottom: 15px; }
+        .offer-content-wrapper .img-container.add-bottom-border:after {
+          display: block; } }
+    .offer-content-wrapper .img-container:after {
       display: none;
       content: "";
       background: #002e5d;
@@ -3999,10 +4025,7 @@ hr.full-width {
       position: absolute;
       left: -20px;
       bottom: 0; }
-      @media (max-width: 767px) {
-        .offer-sweeps-details-content .img-container:after {
-          display: block; } }
-    .offer-sweeps-details-content .img-container h5 {
+    .offer-content-wrapper .img-container h5 {
       font-family: "Brandon Grotesque Regular", sans-serif;
       font-size: 18px;
       line-height: 26px;
@@ -4011,48 +4034,115 @@ hr.full-width {
       margin: 15px auto 17px auto;
       width: 50%; }
       @media (max-width: 767px) {
-        .offer-sweeps-details-content .img-container h5 {
+        .offer-content-wrapper .img-container h5 {
           font-size: 20px;
           line-height: 29px;
-          width: 100%; } }
+          width: 100%;
+          margin: 10px auto 17px auto; } }
       @media (min-width: 768px) and (max-width: 991px) {
-        .offer-sweeps-details-content .img-container h5 {
+        .offer-content-wrapper .img-container h5 {
           width: 80%; } }
       @media (min-width: 992px) and (max-width: 1199px) {
-        .offer-sweeps-details-content .img-container h5 {
+        .offer-content-wrapper .img-container h5 {
           width: 60%; } }
-    .offer-sweeps-details-content .img-container span {
+    .offer-content-wrapper .img-container span {
       font-family: "Brandon Grotesque Regular Italic", sans-serif;
       font-size: 18px;
       line-height: 26px;
       color: #002e5d;
       display: block; }
       @media (max-width: 767px) {
-        .offer-sweeps-details-content .img-container span {
+        .offer-content-wrapper .img-container span {
           font-size: 14px;
           line-height: 20px; } }
-  .offer-sweeps-details-content .offer-form {
+  .offer-content-wrapper .offer-form {
     display: inline-block;
     width: 50%;
     text-align: left;
     vertical-align: top;
     padding-left: 50px;
-    margin-bottom: 85px; }
+    margin-bottom: 35px; }
     @media (max-width: 767px) {
-      .offer-sweeps-details-content .offer-form {
+      .offer-content-wrapper .offer-form {
         padding-left: 0;
         width: 100%;
         margin-bottom: 0; } }
-    .offer-sweeps-details-content .offer-form .custom-btn {
+    .offer-content-wrapper .offer-form .custom-btn {
       width: 184px;
       margin: 0 auto;
       display: block;
       position: relative;
       left: -10px; }
       @media (max-width: 767px) {
-        .offer-sweeps-details-content .offer-form .custom-btn {
+        .offer-content-wrapper .offer-form .custom-btn {
           left: 0;
           margin: initial; } }
+  .offer-content-wrapper .offer-scan-info {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    vertical-align: top;
+    padding-left: 50px; }
+    @media (max-width: 767px) {
+      .offer-content-wrapper .offer-scan-info {
+        width: 100%;
+        display: block;
+        padding-left: 0; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .offer-content-wrapper .offer-scan-info {
+        padding-left: 30px; } }
+    .offer-content-wrapper .offer-scan-info h2 {
+      font-family: "Brandon Grotesque Light", sans-serif;
+      color: #002e5d;
+      line-height: 54px;
+      text-transform: initial;
+      position: relative;
+      top: -11px; }
+      @media (max-width: 767px) {
+        .offer-content-wrapper .offer-scan-info h2 {
+          top: 0;
+          font-size: 20px;
+          line-height: 29px;
+          text-align: center;
+          margin-bottom: 15px; } }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .offer-content-wrapper .offer-scan-info h2 {
+          line-height: 48px; } }
+    .offer-content-wrapper .offer-scan-info > span {
+      color: #002e5d;
+      font-family: "Brandon Grotesque Regular Italic", sans-serif;
+      font-size: 18px;
+      line-height: 26px;
+      display: block;
+      margin-bottom: 24px; }
+      @media (max-width: 767px) {
+        .offer-content-wrapper .offer-scan-info > span {
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          margin-bottom: 15px; } }
+    @media (max-width: 767px) {
+      .offer-content-wrapper .offer-scan-info .ios-android-container {
+        margin-top: 0; } }
+
+.adverb-content {
+  width: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  padding-bottom: 82px; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .adverb-content {
+      padding-bottom: 62px; } }
+  @media (max-width: 767px) {
+    .adverb-content {
+      padding-bottom: 42px; } }
+  .adverb-content .img-container {
+    text-align: center;
+    display: block;
+    margin: 0 auto; }
+  .adverb-content.full-width {
+    flex: 1 1 100%; }
 
 .form-group {
   font-size: 0; }
@@ -4651,6 +4741,93 @@ hr.full-width {
       @media (min-width: 992px) and (max-width: 1199px) {
         .custom-template-component .custom-template-content .text-content {
           width: 85%; } }
+
+.unsubscribe-page-container {
+  background-color: #E80A4D;
+  height: 100%;
+  min-height: 682px; }
+  @media (max-width: 767px) {
+    .unsubscribe-page-container {
+      min-height: 450px; } }
+  .unsubscribe-page-container .unsubscribe-page-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1172px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px; }
+    .unsubscribe-page-container .unsubscribe-page-content h2 {
+      display: block;
+      flex: 1 1 100%;
+      margin-bottom: 22px; }
+    .unsubscribe-page-container .unsubscribe-page-content h3 {
+      display: block;
+      flex: 1 1 100%;
+      color: #FFF;
+      line-height: 38px;
+      margin-bottom: 25px; }
+    .unsubscribe-page-container .unsubscribe-page-content p {
+      display: block;
+      width: 100%;
+      color: #fff;
+      font-size: 22px;
+      line-height: 26.4px;
+      margin-bottom: 25px; }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .unsubscribe-page-container .unsubscribe-page-content p {
+          padding: 0 20px; } }
+      @media (max-width: 767px) {
+        .unsubscribe-page-container .unsubscribe-page-content p {
+          font-size: 20px;
+          line-height: 24px;
+          padding: 0 15px; } }
+    .unsubscribe-page-container .unsubscribe-page-content span {
+      display: block;
+      width: 100%;
+      color: #fff;
+      font-family: "Brandon Grotesque Black", sans-serif;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 26.9x; }
+      @media (max-width: 767px) {
+        .unsubscribe-page-container .unsubscribe-page-content span {
+          font-size: 16px;
+          line-height: 24px; } }
+    .unsubscribe-page-container .unsubscribe-page-content .btn-container {
+      margin-bottom: 25px;
+      display: block;
+      width: 100%; }
+    .unsubscribe-page-container .unsubscribe-page-content a {
+      display: inline-block;
+      margin: 0 auto; }
+      .unsubscribe-page-container .unsubscribe-page-content a.change-mail {
+        color: #fff;
+        font-family: "Brandon Grotesque Bold", sans-serif;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 24px;
+        position: relative; }
+        .unsubscribe-page-container .unsubscribe-page-content a.change-mail:hover:before {
+          visibility: visible;
+          width: 100%; }
+        .unsubscribe-page-container .unsubscribe-page-content a.change-mail:before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 1px;
+          bottom: -2px;
+          left: 0;
+          visibility: hidden;
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -moz-transition: all 0.3s ease-in-out 0s;
+          -ms-transition: all 0.3s ease-in-out 0s;
+          -o-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+          background-color: #ffffff; }
+    .unsubscribe-page-container .unsubscribe-page-content .form-group {
+      margin: 0 auto 10px auto; }
 
 .feature-item-wrap {
   display: flex;
