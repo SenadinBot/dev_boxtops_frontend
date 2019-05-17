@@ -232,6 +232,9 @@
                 }
             }
             &:last-child {
+                &:after {
+                    display: none;
+                }
                 @include media-xs {
                     padding: 21px 0 36px 0;
                 }
