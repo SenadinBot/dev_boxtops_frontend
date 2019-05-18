@@ -68,17 +68,17 @@
         position: relative;
         width: 100%;
 
-        &--open:after {
+        &--open:before {
             display: block;
             position: absolute;
             left: 50%;
-            top: calc(220px + 82px); // Using "top" for IE compatibility.
+            top: -4rem; // Using "top" for IE compatibility.
             width: 0;
             height: 0;
             margin-left: calc(-48px/2);
             border-left: 24px solid transparent;
             border-right: 24px solid transparent;
-            border-bottom: 24px solid #FFF;
+            border-top: 24px solid #fff;
             animation: fadeIn 1s;
             content: '';
 

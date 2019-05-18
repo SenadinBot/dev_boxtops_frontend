@@ -9,7 +9,7 @@
     .heading-text-button-content {
         color: $white;
         text-align: center;
-        padding: 80px 0;
+        padding: 75px 0 80px 0;
         max-width: $contentWidth;
         margin: 0 auto;
         @include media-sm {
@@ -32,7 +32,7 @@
         }
         .module-text {
             width: 71%;
-            margin: 19px auto 0 auto;
+            margin: 17px auto 0 auto;
             @include media-xs {
                 width: 75%;
             }
@@ -97,6 +97,58 @@
            font-size: 22px;
            line-height: 26.4px;
            color: $white; 
+        }
+    }
+    &.registration-heading {
+        background-color: #39BCD9;
+        .heading-text-button-content {
+            h2 {
+                color: $midnightBlue;
+                margin: 0 auto;
+                width: 40%;
+                @include media-xs {
+                    width: 100%;
+                }
+                @include media-sm {
+                    width: 50%;
+                }
+            }
+            .module-text {
+                p {
+                    color: $midnightBlue;                    
+                }
+            }
+            a {
+                text-transform: uppercase;
+                color: $redRibbon;
+                position: relative;
+                font-size: 16px;
+                line-height: 24px;
+                font-family: $brandonGrotesqueBold;
+                margin-top: 20px;
+                display: inline-block;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    bottom: -2px;
+                    left: 0;
+                    visibility: hidden;
+                    -webkit-transition: all 0.3s ease-in-out 0s;
+                    -moz-transition: all 0.3s ease-in-out 0s;
+                    -ms-transition: all 0.3s ease-in-out 0s;
+                    -o-transition: all 0.3s ease-in-out 0s;
+                    transition: all 0.3s ease-in-out 0s;
+                    background-color: $redRibbon;
+                }
+                &:hover {
+                    &:before {
+                        visibility: visible;
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }

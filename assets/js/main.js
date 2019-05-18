@@ -1,3 +1,6 @@
+var searchIcon = jQuery(".searchIcon");
+var searchTextBox = jQuery(".searchText");
+
 jQuery(function ($) {
     $(document).ready(function () {
 
@@ -15,7 +18,6 @@ jQuery(function ($) {
             $('body').removeClass('menu-open');
         });
         $('.site-content').on('click', function (e) {
-            console.log('test');
             if ($(e.target).is('.header-search') === false) {
                 $('body').removeClass('search-open');
 
@@ -128,6 +130,221 @@ jQuery(function ($) {
             $(".custom-tabs li[rel^='" + d_activeTab + "']").addClass("active");
         });
 
+        // Registration Step Wizard
+        var navListItems = $('div.setup-panel div a'),
+            allWells = $('.step-content'),
+            allNextBtn = $('.nextBtn'),
+            allPrevBtn = $('.prevBtn');
 
+        allWells.hide();
+
+        navListItems.click(function (e) {
+            e.preventDefault();
+            var $target = $($(this).attr('href')),
+                $item = $(this);
+
+            if (!$item.hasClass('disabled')) {
+                $item.addClass('active-step');
+                $item.parent().addClass('active-stepwizard');
+                allWells.hide();
+                $target.show();
+                $target.find('input:eq(0)').focus();
+            }
+        });
+
+        allPrevBtn.click(function () {
+            var curStep = $(this).closest(".step-content"),
+                curStepBtn = curStep.attr("id"),
+                prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+            $('div.setup-panel div a[href="#' + curStepBtn + '"]').removeClass('active-step');
+            $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().removeClass('active-stepwizard');
+            prevStepWizard.removeAttr('disabled').trigger('click');
+        });
+
+        allNextBtn.click(function () {
+            var curStep = $(this).closest(".step-content"),
+                curStepBtn = curStep.attr("id"),
+                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                curInputs = curStep.find("input[type='text'],input[type='url'], input[type='email'], input[type='password']"),
+                isValid = true;
+
+            $(".form-group").removeClass("has-error");
+            for (var i = 0; i < curInputs.length; i++) {
+                if (!curInputs[i].validity.valid) {
+                    isValid = false;
+                    $(curInputs[i]).closest(".form-group").addClass("has-error");
+                }
+            }
+
+            if (isValid) {
+                nextStepWizard.removeAttr('disabled').trigger('click');
+            }
+        });
+
+        $('.getSchools').click(function () {
+            var curStep = $(this).closest(".step-content"),
+                curInputs = curStep.find("input[type='text'],input[type='url'], input[type='email'], input[type='password']");
+            $(".form-group").removeClass("has-error");
+            isValid = true;
+            for (var i = 0; i < curInputs.length; i++) {
+                if (!curInputs[i].validity.valid) {
+                    isValid = false;
+                    $(curInputs[i]).closest(".form-group").addClass("has-error");
+                }
+            }
+            if (isValid) {
+                $(this).parents('.step-content').addClass('show-school-container');
+            }
+        });
+
+        $('div.setup-panel div a.active-step, div.setup-panel div .active-stepwizard').trigger('click');
     });
 });
+
+/**
+ * Video Galerry 
+ * --------------------------------------------------
+ * This closure holds the views for the
+ * Video Gallery components.
+ */
+(function (jQuery) {
+
+    'use strict';
+
+    /**
+     * The "Video Gallery" view.
+     * 
+     * @param {Element} gallery
+     */
+    function View(gallery) {
+        this.$el = jQuery(gallery)
+        this.$feeder = this.$el.find('.video-gallery-feeder')
+        this.$cards = this.$el.find('.video-gallery-card')
+        this.$viewport = this.$el.find('.video-gallery-viewport')
+        this.$iframes = this.$el.find('iframe')
+        this.index = 0
+
+        this.$feeder.on('click', this.onFeederClick.bind(this))
+        this.$cards.on('click', this.onCardClick.bind(this))
+
+        this.$el.find('.video-gallery-viewport-close').on('click', this.closePlayer.bind(this))
+    }
+
+    /**
+     * Handle the "Load More" click.
+     * 
+     * @param {jQuery.Event} event
+     */
+    View.prototype.onFeederClick = function (event) {
+        event.preventDefault()
+
+        this.index += 1
+
+        this.getWrapperByIndex(this.index).addClass('feature-item-wrap--visible')
+
+        if (!this.getWrapperByIndex(this.index + 1).get(0)) {
+            this.$feeder.hide()
+        }
+    };
+
+    /**
+     * Handle the "Card Thumbnail" click.
+     * 
+     * @param {jQuery.Event} event
+     */
+    View.prototype.onCardClick = function (event) {
+        event.preventDefault()
+
+        var $card = jQuery(event.currentTarget)
+        var $player = jQuery(`#${$card.attr('data-player')}`)
+
+        if ($card.data('open')) {
+            return
+        }
+
+        this.closePlayer()
+
+        $card.data('open', true).toggleClass('video-gallery-card--open', true)
+        $player.toggleClass('video-gallery-viewport--open', true)
+
+        if (Util.isOnMobile()) {
+            $player.get(0).scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            })
+        }
+    };
+
+    /**
+     * Return a "Player Wrapper" based on the index.
+     * 
+     * @param {Number} index
+     */
+    View.prototype.getWrapperByIndex = function (index) {
+        return this.$el.find('.feature-item-wrap').eq(index);
+    };
+
+    /**
+     * Close all video players from the element context.
+     */
+    View.prototype.closePlayer = function () {
+        this.$cards.data('open', false).toggleClass('video-gallery-card--open', false)
+        this.$viewport.toggleClass('video-gallery-viewport--open', false)
+
+        this.$iframes.each(function () {
+            this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
+        })
+    };
+
+    /**
+     * Util
+     */
+    var Util = {
+        /**
+         * Detect if the device is a mobile.
+         * 
+         * @return {Boolean}
+         */
+        isOnMobile: function () {
+            return (navigator.userAgent.match(/Android/i) ||
+                navigator.userAgent.match(/webOS/i) ||
+                navigator.userAgent.match(/iPhone/i) ||
+                navigator.userAgent.match(/iPad/i) ||
+                navigator.userAgent.match(/iPod/i) ||
+                navigator.userAgent.match(/BlackBerry/i) ||
+                navigator.userAgent.match(/Windows Phone/i)
+            )
+        }
+    }
+
+    //
+    // Initialize
+
+    jQuery(document).ready(function () {
+        jQuery('.video-gallery').each(function (index, gallery) {
+            return new View(gallery);
+        })
+    });
+
+    searchIcon.on("click", function () {
+        DoSearch();
+    })
+
+    searchTextBox.keydown(function (e) {
+        if (e.keyCode == 13) {
+            DoSearch();
+        }
+    });
+
+
+    var DoSearch = function () {
+        if (!isEmptyOrSpaces(searchTextBox.val())) {
+            location.href = "/search?q=" + searchTextBox.val();
+        }
+    }
+
+    function isEmptyOrSpaces(str) {
+        return str === null || str.match(/^ *$/) !== null;
+    }
+
+})(jQuery)

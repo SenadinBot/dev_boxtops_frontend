@@ -1,0 +1,20 @@
+.login-header {
+    @include media-lg {
+        display: none;
+    }
+    @include media-md {
+        display: none;
+    }
+}
+.login-site-content {
+    background-color: $midnightBlue;
+    @include media-lg {
+        margin-top: 0;        
+    }
+    @include media-md {
+        margin-top: 0;        
+    }
+}
+.login-container {
+    background-color: $midnightBlue;
+}
