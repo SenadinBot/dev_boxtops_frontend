@@ -65,6 +65,7 @@ a {
     z-index: 1;
     border: 1px solid $redRibbon;
     display: inline-block;
+    cursor: pointer;
     &:hover {
         text-decoration: none;
         color: $redRibbon;
@@ -79,6 +80,11 @@ a {
         text-decoration: none;
         outline: 0;
         color: $redRibbon;
+        &:before {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            transform: scale(1);
+        }
     }
     &:active {
         outline: 0;
@@ -105,9 +111,27 @@ a {
         background-color: $midnightBlue;
         &:hover {
             color: $midnightBlue;
+            &:before {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                transform: scale(1);
+            }
         }
         &:focus {
             color: $midnightBlue;
+            &:before {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+    }
+    &.join-free {
+        background-color: #fff;
+        color: $redRibbon;
+        border: 2px solid $redRibbon;
+        &:hover {
+            background-color: $redRibbon;
         }
     }
 }
@@ -143,4 +167,7 @@ a {
             background-image: url("../../../assets/images/icons/yellow-icon.png");            
         }
     }
+}
+.hidden {
+    display: none !important;
 }

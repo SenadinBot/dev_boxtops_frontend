@@ -606,13 +606,6 @@ hr {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    padding-bottom: 82px;
-    @include media-sm {
-        padding-bottom: 62px;
-    }
-    @include media-xs {
-        padding-bottom: 42px;
-    }
     .img-container {
         text-align: center;
         display: block;

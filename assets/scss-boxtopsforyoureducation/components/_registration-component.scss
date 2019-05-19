@@ -232,14 +232,14 @@
                         font-size: 14px;
                         line-height: 18px;
                         font-family: $brandonGrotesqueLight;
-                        color: #ff0000;
+                        color: #a21a19;
                     }
                     &.has-error {
                         span {
                             display: block;
                         }
                         input {
-                            border-color: #ff0000;
+                            border-color: #a21a19;
                         }
                     }
                     label {

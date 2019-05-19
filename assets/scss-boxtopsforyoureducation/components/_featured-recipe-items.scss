@@ -46,8 +46,16 @@
             padding-top: 85px;
             padding-bottom: 0;
         }
-        @include media-xs {
-            padding-top: 95px;
+    }
+    &.more-rows {
+        .constrain {
+            padding-bottom: 0;
+        }
+        .custom-btn {
+            margin: 41px 0 56px 0;
+            @include media-xs {
+                margin: 41px 0 0 0;
+            }
         }
     }
     .feature-item-wrap {
@@ -197,6 +205,9 @@
         @include media-xs {
             padding: 0 20px;
         }
+    }
+    h3 {
+        text-transform: uppercase;
     }
     .load-more {
         position: relative;

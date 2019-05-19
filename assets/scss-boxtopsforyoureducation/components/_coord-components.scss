@@ -1,9 +1,9 @@
 .coord-intro-container {
     margin: 0 auto;
     max-width: $maxWidth;
-    background: $midnightBlue;
+    background: #00182D;
     text-align: center;
-    padding: 17px 0 30px 0;
+    padding: 16px 0 16px 0;
     @include media-xs {
         padding: 15px 0;
     }
@@ -100,12 +100,105 @@
     margin: 0 auto;
     max-width: $contentWidth;
     background: $white;
+    position: relative;
+    &:before {
+        content: "";
+        background-color: #00182D;
+        height: 15px;
+        max-width: $maxWidth;
+        width: $maxWidth;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
     @include media-xs {
         display: none;
     }
+    &.no-app-page {
+        display: block;
+        &:before {
+            display: none;
+        }
+        .feature-item-wrap {
+            position: relative;
+            @include media-xs {
+                margin-bottom: 40px;
+                padding: 35px 23px 0 23px;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: $midnightBlue;
+                }
+            }
+        }
+        .feature-item { 
+            padding: 40px 0 57px 0;
+            @include media-xs {
+                padding: 0 0 30px 0;
+                align-items: initial;
+            }
+            &.active {
+                &:after {
+                    display: none;
+                }
+            }
+            a {
+                .img-container {
+                    @include media-xs {
+                        margin: 0;
+                        width: 52px;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                }
+                .feature-item-content {
+                    @include media-xs {
+                        display: inline-block;
+                        text-align: left;
+                        width: calc(100% - 60px);
+                        padding-left: 13px;
+                        vertical-align: top;
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .receipt-scan-container {
+            @include media-xs {
+                display: block;
+            }
+        }
+    }
+    .receipt-scan-container {
+        display: none;
+        text-align: center;
+        .scan-without-app-link {
+            text-transform: uppercase;
+            color: $midnightBlue;
+            font-size: 16px;
+            line-height: 29.97px;
+            margin-top: 20px;
+            font-family: $brandonGrotesqueBold;
+            display: block;
+        }
+        h2 {
+            width: 60%;
+            margin: 0 auto 20px auto;
+        }
+
+    }
     .feature-item {
         text-align: center;
-        padding: 40px 0 57px 0;
+        padding: 55px 0 57px 0;
         a {
             .img-container {
                 width: 52px;
@@ -169,7 +262,7 @@
                 width: 240px;
                 height: 28px;;
                 position: absolute;
-                top: -17px;
+                top: 0;
                 left: 50%;
                 -webkit-transform: translateX(-50%);
                 -moz-transform: translateX(-50%);

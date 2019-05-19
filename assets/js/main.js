@@ -1,5 +1,10 @@
 var searchIcon = jQuery(".searchIcon");
 var searchTextBox = jQuery(".searchText");
+var sortBySelect = jQuery(".sortBySelect");
+var skipField = jQuery(".skip");
+var searchTerm = jQuery(".searchTerm");
+var searchPageId = jQuery(".pageId");
+var showMoreButton = jQuery(".showMoreBtn");
 
 jQuery(function ($) {
     $(document).ready(function () {
@@ -345,6 +350,57 @@ jQuery(function ($) {
 
     function isEmptyOrSpaces(str) {
         return str === null || str.match(/^ *$/) !== null;
+    }
+
+    /*Search Ajax*/
+
+    sortBySelect.on("change", function () {
+        searchManager.DoSorting();
+    })
+
+    showMoreButton.on("click", function () {
+        searchManager.ShowMore();
+    })
+
+    var searchManager = {
+        DoSorting: function () {
+            skipField.val(0);
+            jQuery(".search-result-item-container").html("");
+            this.fetchResults();
+        },
+        ShowMore: function () {
+            var temp = parseInt(skipField.val()) + 1;
+            skipField.val(temp);
+            this.fetchResults();
+        },
+        fetchResults : function () {
+            var term = searchTerm.val();
+            var skip = skipField.val();
+            var pId = searchPageId.val();
+            var sortBy = sortBySelect.val();
+            jQuery.get("/search/getsearchresults?pageid=" + pId + "&term=" + term + "&sortby=" + sortBy + "&skip=" + skip, function (data) {
+
+                if (data.HideShowMoreButton) {
+                    showMoreButton.addClass("hidden");
+                }
+                else {
+                    showMoreButton.removeClass("hidden");
+                }
+                var html = jQuery(".search-result-item-container").html();
+                for (var i = 0; i < data.Results.length; i++) {
+                    html += searchManager.buildHtml(data.Results[i]);
+                }
+                jQuery(".search-result-item-container").html(html);
+            })
+
+        },
+        buildHtml: function (data) {
+            var elementHtml = '<div class="search-result-item">';
+            elementHtml += '<a href="' + data.Url + '">';
+            elementHtml += '<span>' + data.Title + '</span>';
+            elementHtml += '<p>' + data.Description + '</p></a></div>';
+            return elementHtml;
+        }
     }
 
 })(jQuery)

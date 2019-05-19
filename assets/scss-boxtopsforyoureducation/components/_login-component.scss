@@ -1,20 +1,270 @@
-.login-header {
-    @include media-lg {
-        display: none;
+.login-reset-body {
+    .login-header {
+        @include media-lg {
+            display: none;
+        }
+        @include media-md {
+            display: none;
+        }
     }
-    @include media-md {
+    .site-content {
+        background-color: $midnightBlue;
+        @include media-lg {
+            margin-top: 0;        
+        }
+        @include media-md {
+            margin-top: 0;        
+        }
+    }
+    .social-sharing {
         display: none;
     }
 }
-.login-site-content {
-    background-color: $midnightBlue;
-    @include media-lg {
-        margin-top: 0;        
+.new-login-container {
+    text-align: center;
+    padding-top: 120px;
+    min-height: 100vh;
+    @include media-xs {
+        min-height: auto;
+        padding: 25px 0 40px 0;
+        
+    }
+    @include media-sm {
+        min-height: 800px;
     }
     @include media-md {
-        margin-top: 0;        
+        min-height: 850px;
     }
-}
-.login-container {
-    background-color: $midnightBlue;
+    .back-btn {
+        @include media-sm {
+            display: none;
+        }
+        @include media-xs {
+            display: none;
+        }
+        color: #fff;
+        font-size: 14px;
+        line-height: 16.8px;
+        position: absolute;
+        top: 55px;
+        left: 50px;
+        text-transform: uppercase;
+        &:hover {
+            &:before {
+                visibility: visible;
+                width: 100%;
+            }
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            visibility: hidden;
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            -moz-transition: all 0.3s ease-in-out 0s;
+            -ms-transition: all 0.3s ease-in-out 0s;
+            -o-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+            background-color: #fff;
+        }
+    }
+    .login-image {
+        width: 290.38px;
+        height: 290.38px;
+        background: #fff;
+        border-radius: 100%;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 29px 41.7px 29px;
+        @include media-md {
+            width: 170.38px;
+            height: 170.38px;
+            margin: 0 24px 32.7px 24px;
+        }
+        @include media-sm {
+            width: 125.38px;
+            height: 125.38px;
+            margin: 0 15px 32.7px 15px;
+        }
+        @include media-xs {
+            width: 184px;
+            height: 184px;
+            margin: 0px 0 30px 0;
+        }
+        img {
+            width: 178px;
+            height: 163px;
+            background: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            @include media-xs {
+                width: 113px;
+                height: 103px;
+            }
+            @include media-sm {
+                width: 85px;
+                height: 70px;
+            }
+            @include media-md {
+                width: 113px;
+                height: 98px;
+            }
+        }
+    }
+    .login-text {
+        p {
+            color: #ffffff;
+            font-size: 22px;
+            line-height: 22px;
+            @include media-xs {
+                line-height: 24px;
+                font-size: 20px;
+                padding: 0 20px;
+            }
+        }
+    }
+    .login-heading {
+        margin-bottom: 25px;
+        h2 {
+            color: #39BCD9;
+        }
+    }
+    .login-form-wrapper {
+        width: 300px;
+        margin: 35px auto 0 auto;
+        @include media-xs {
+            width: 280px;
+        }
+        input {
+            font-family: $brandonGrotesque;
+            color: $midnightBlue;
+            font-size: 22px;
+            line-height: 26.4px;
+            border: none;
+            width: 100%;
+            padding: 7px 10px;
+            border: 1px solid $midnightBlue;
+            @include media-xs {
+                display: block;
+                font-size: 20px;
+                line-height: 24px;
+            }
+            &:focus {
+                outline: none;
+            }
+            &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                font-family: $brandonGrotesque;
+                color: $midnightBlue;
+                font-size: 22px;
+                line-height: 26.4px;
+                @include media-xs {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+            &::-moz-placeholder { /* Firefox 19+ */
+                font-family: $brandonGrotesque;
+                color: $midnightBlue;
+                font-size: 22px;
+                line-height: 26.4px;
+                @include media-xs {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+            &:-ms-input-placeholder { /* IE 10+ */
+                font-family: $brandonGrotesque;
+                color: $midnightBlue;
+                font-size: 22px;
+                line-height: 26.4px;
+                @include media-xs {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+            &:-moz-placeholder { /* Firefox 18- */
+                font-family: $brandonGrotesque;
+                color: $midnightBlue;
+                font-size: 22px;
+                line-height: 26.4px;
+                @include media-xs {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+            &.input-validation-error {
+                border: 1px solid #a21a19
+            }
+        }
+        .login-field-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        #reset-btn {
+            margin-top: 10px;
+        }
+        #login-btn {
+            margin-top: 20px;
+        }
+        .login-field-validation {
+            display: none;
+            position: absolute;
+            top: 3px;
+            right: 8px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #a21a19;
+            font-family: $brandonGrotesque;
+            text-align: left;
+            &.field-validation-error {
+                display: block;
+            }
+        }
+        .custom-btn {
+            width: 100%;
+        }
+    }
+    .login-forgot-password-wrapper {
+        margin: 25px 0 34px 0;
+        @include media-xs {
+            margin: 15px 0;
+        }
+        a {
+            font-family: $brandonGrotesqueBlack;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 26.9px;
+            color: #fff;
+            position: relative;
+            &:hover {
+                &:before {
+                    visibility: visible;
+                    width: 100%;
+                }
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 1px;
+                bottom: -2px;
+                left: 0;
+                visibility: hidden;
+                -webkit-transition: all 0.3s ease-in-out 0s;
+                -moz-transition: all 0.3s ease-in-out 0s;
+                -ms-transition: all 0.3s ease-in-out 0s;
+                -o-transition: all 0.3s ease-in-out 0s;
+                transition: all 0.3s ease-in-out 0s;
+                background-color: #fff;
+            }
+        }
+    }
 }
