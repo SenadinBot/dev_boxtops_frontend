@@ -305,10 +305,10 @@
         }
         .column-icons-container {
             margin: 25px 0 17.8px 0;
+            padding: 0 20px;
             width: 100%;
             @include media-xs {
                 margin: 25px 0 20px 0;
-                padding: 0 20px;
             }
             .column-icons-item {
                 display: inline-block;
@@ -386,6 +386,9 @@
                     p {
                         margin: 0;
                         width: auto;
+                        font-size: 22px;
+                        line-height: 28px;
+                        color: $midnightBlue;
                         @include media-sm {
                             font-size: 18px;
                             line-height: 26px;
