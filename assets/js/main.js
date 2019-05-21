@@ -9,6 +9,13 @@ var showMoreButton = jQuery(".showMoreBtn");
 jQuery(function ($) {
     $(document).ready(function () {
 
+        // Login/Reset Password Content
+        if($('.login-site-content').length) {
+            $('body').addClass('login-reset-body');
+        } else {
+            $('body').removeClass('login-reset-body');
+        }
+
         // Menu
         $('#navtoggle').on('click', function () {
             //$('.nav').toggleClass('open');
