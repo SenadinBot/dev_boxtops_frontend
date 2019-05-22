@@ -547,6 +547,30 @@ hr {
                 margin: initial;
             }
         }
+        .form-group {
+            position: relative;
+            span {
+                display: none;
+                position: absolute;
+                top: 3px;
+                right: 10px;
+                font-size: 14px;
+                line-height: 18px;
+                font-family: $brandonGrotesqueLight;
+                color: #a21a19;
+            }
+            &.has-error {
+                span {
+                    display: block;
+                }
+                input {
+                    border-color: #a21a19;
+                }
+            }
+            .input-group {
+                position: relative;
+            }
+        }
     }
     .offer-scan-info {
         display: inline-block;

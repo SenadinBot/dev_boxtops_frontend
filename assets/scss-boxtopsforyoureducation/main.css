@@ -4321,6 +4321,23 @@ hr.full-width {
         .offer-content-wrapper .offer-form .custom-btn {
           left: 0;
           margin: initial; } }
+    .offer-content-wrapper .offer-form .form-group {
+      position: relative; }
+      .offer-content-wrapper .offer-form .form-group span {
+        display: none;
+        position: absolute;
+        top: 3px;
+        right: 10px;
+        font-size: 14px;
+        line-height: 18px;
+        font-family: "Brandon Grotesque Light", sans-serif;
+        color: #a21a19; }
+      .offer-content-wrapper .offer-form .form-group.has-error span {
+        display: block; }
+      .offer-content-wrapper .offer-form .form-group.has-error input {
+        border-color: #a21a19; }
+      .offer-content-wrapper .offer-form .form-group .input-group {
+        position: relative; }
   .offer-content-wrapper .offer-scan-info {
     display: inline-block;
     width: 50%;

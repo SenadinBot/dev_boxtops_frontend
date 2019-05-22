@@ -114,6 +114,38 @@ jQuery(function ($) {
             }
         });
 
+        //Forgot Password form validation
+        $("#reset-btn").on("click", function (e) {
+            e.preventDefault();
+            var email = $("#email").val();
+            if (email.length == 0 || !validateEmail(email)) {
+                $("#email").addClass("input-validation-error");
+                $("#email").next().removeClass("hidden");
+            } else {
+                $("#email").removeClass("input-validation-error");
+                $("#email").next().addClass("hidden");
+
+                jQuery.post("/ForgotPassword/SubmitForm", $("#forgotPasswordForm").serialize(), function (data) {
+                    $("#forgotPasswordBody").addClass("hidden");
+                    $("#formWrapper").addClass("hidden");
+
+                    if (data["status"] == true) {
+                        $("#forgotPasswordSuccessMessage").removeClass("hidden");
+                    } else {
+                        $("#forgotPasswordErrorMessage").removeClass("hidden");
+
+                    }
+
+                });
+            }
+
+        });
+
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        
         // Show/Hide Earn Product Content
         $(".earn-product-item-heading").on("click", function () {
             $(this).parents('.earn-product-item').siblings().removeClass('active');
