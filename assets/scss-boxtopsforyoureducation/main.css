@@ -1575,7 +1575,8 @@ body.search-open {
             font-size: 16px;
             line-height: 23px;
             margin-bottom: 10px; } }
-        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content p b {
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content p b,
+        .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content p strong {
           font-family: "Brandon Grotesque Bold", sans-serif; }
       .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content i {
         font-family: "Brandon Grotesque Regular Italic", sans-serif;
@@ -1689,13 +1690,15 @@ body.search-open {
               .image-heading-text-container .two-column-image-heading-text-container .column-icons-container .column-icons-item .column-icons-content p {
                 font-size: 22px;
                 line-height: 31px; } }
-            .image-heading-text-container .two-column-image-heading-text-container .column-icons-container .column-icons-item .column-icons-content p b {
+            .image-heading-text-container .two-column-image-heading-text-container .column-icons-container .column-icons-item .column-icons-content p b,
+            .image-heading-text-container .two-column-image-heading-text-container .column-icons-container .column-icons-item .column-icons-content p strong {
               text-transform: uppercase;
               font-family: "Brandon Grotesque Bold", sans-serif;
               font-size: 25px;
               line-height: 36px; }
               @media (min-width: 768px) and (max-width: 991px) {
-                .image-heading-text-container .two-column-image-heading-text-container .column-icons-container .column-icons-item .column-icons-content p b {
+                .image-heading-text-container .two-column-image-heading-text-container .column-icons-container .column-icons-item .column-icons-content p b,
+                .image-heading-text-container .two-column-image-heading-text-container .column-icons-container .column-icons-item .column-icons-content p strong {
                   font-size: 20px;
                   line-height: 30px; } }
 
