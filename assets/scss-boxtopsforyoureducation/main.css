@@ -5718,25 +5718,33 @@ hr.full-width {
           text-align: left;
           flex-grow: 1;
           flex-basis: calc(100% / 3);
-          flex: 1 0 30%; }
+          flex: 1 0 30%;
+          margin-bottom: 65px; }
           @media (max-width: 767px) {
             .registration-step-container .stepcontent-container .step-content .school-select-container .school-select {
               flex: 1 0 100%;
               margin-bottom: 10px; } }
-          .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:first-child {
-            margin-bottom: 65px; }
+          @media (min-width: 768px) and (max-width: 991px) {
+            .registration-step-container .stepcontent-container .step-content .school-select-container .school-select {
+              margin-bottom: 30px; } }
+          @media (min-width: 992px) and (max-width: 1199px) {
+            .registration-step-container .stepcontent-container .step-content .school-select-container .school-select {
+              margin-bottom: 45px; } }
+          .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:nth-last-child(3) {
+            margin-bottom: 0; }
             @media (max-width: 767px) {
-              .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:first-child {
+              .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:nth-last-child(3) {
                 margin-bottom: 10px; } }
-            @media (min-width: 768px) and (max-width: 991px) {
-              .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:first-child {
-                margin-bottom: 30px; } }
-            @media (min-width: 992px) and (max-width: 1199px) {
-              .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:first-child {
-                margin-bottom: 45px; } }
-          @media (max-width: 767px) {
-            .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:last-child {
-              margin-bottom: 0; } }
+          .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:nth-last-child(2) {
+            margin-bottom: 0; }
+            @media (max-width: 767px) {
+              .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:nth-last-child(2) {
+                margin-bottom: 10px; } }
+          .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:last-child {
+            margin-bottom: 0; }
+            @media (max-width: 767px) {
+              .registration-step-container .stepcontent-container .step-content .school-select-container .school-select:last-child {
+                margin-bottom: 0; } }
           .registration-step-container .stepcontent-container .step-content .school-select-container .school-select span {
             display: block;
             font-size: 18px;

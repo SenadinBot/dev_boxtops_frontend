@@ -205,7 +205,7 @@ jQuery(function ($) {
             prevStepWizard.removeAttr('disabled').trigger('click');
         });
 
-        allNextBtn.click(function () {
+        $("body").on("click", ".nextBtn", function () {
             var curStep = $(this).closest(".step-content"),
                 curStepBtn = curStep.attr("id"),
                 nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
@@ -237,12 +237,32 @@ jQuery(function ($) {
                 }
             }
             if (isValid) {
+                getSchools();
                 $(this).parents('.step-content').addClass('show-school-container');
             }
         });
 
         $('div.setup-panel div a.active-step, div.setup-panel div .active-stepwizard').trigger('click');
     });
+
+    function getSchools() {
+        var text = $("#text").val()
+
+        $.get("/Registration/searchschools?keyword=" + text, function (data) {
+            var htmlData = "";
+            for (var i = 0; i < data.list.length; i++) {
+
+                htmlData += "<div class='school-select'>" +
+                    "<span>" + data.list[i].SchoolName + "</span>" +
+                    "<p>" + data.list[i].Address + "</p>" +
+                    "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" +
+                    "<button class='nextBtn' data-schoolId='" + data.list[i].GmilId + "'>SELECT THIS SCHOOL</button>" +
+                    "</div >"
+            }
+            $(".school-select-container").append(htmlData)
+            console.log("Data: ", data);
+        });
+    }
 });
 
 /**
