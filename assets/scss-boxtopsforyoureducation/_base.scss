@@ -171,3 +171,131 @@ a {
 .hidden {
     display: none !important;
 }
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+        tr {
+            th {
+                font-family: $brandonGrotesqueBold;
+                font-size: 16px;
+                line-height: 14px;
+                text-transform: uppercase;
+                color: $midnightBlue;
+                text-align: left;
+                padding: 17px 15px;
+                &:last-child {
+                    text-align: right;
+                }
+                @include media-xs {
+                    font-size: 12px;
+                    line-height: 10px;
+                    padding: 13px 10px;
+                }
+                span {
+                    @include media-xs {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                font-family: $brandonGrotesque;
+                font-size: 16px;
+                line-height: 14px;
+                color: $midnightBlue;
+                text-align: left;
+                padding: 17px 15px;
+                &:last-child {
+                    text-align: right;
+                }
+                @include media-xs {
+                    font-size: 12px;
+                    line-height: 10px;
+                    padding: 13px 10px;
+                    vertical-align: top;
+                }
+            }
+            &:nth-child(odd) {
+                background-color: #F0F0F0;
+            }
+        }
+    }
+}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+    &.is-visible {
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: block;
+        .modal-overlay {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+        }
+        .modal-wrapper {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+            transition: -webkit-transform .3s ease;
+            transition: transform .3s ease;
+            transition: transform .3s ease,-webkit-transform .3s ease;
+        }
+    }
+    .modal-overlay {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: hsla(0, 0, 0, 0.9);
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 0.3s, opacity 0.3s;
+    }
+    .modal-wrapper {
+        position: relative;
+        margin: 100px auto;
+        width: 802px;
+        z-index: 9999;
+        background-color: #fff;
+        -webkit-transform: translate(0, -25%);
+        transform: translate(0, -25%);
+        transition: -webkit-transform .3s ease;
+        transition: transform .3s ease;
+        transition: transform .3s ease,-webkit-transform .3s ease;
+        @include media-xs {
+            margin: 20px auto;
+            width: calc(100% - 22px);
+        }
+        @include media-sm {
+            width: calc(100% - 22px);
+        }
+        .modal-header {
+            padding: 10px;
+            text-align: right;
+            img {
+                display: inline-block;
+                cursor: pointer;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                transition: all .3s ease;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

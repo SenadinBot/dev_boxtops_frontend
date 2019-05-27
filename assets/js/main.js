@@ -10,7 +10,7 @@ jQuery(function ($) {
     $(document).ready(function () {
 
         // Login/Reset Password Content
-        if($('.login-site-content').length) {
+        if ($('.login-site-content').length) {
             $('body').addClass('login-reset-body');
         } else {
             $('body').removeClass('login-reset-body');
@@ -145,7 +145,7 @@ jQuery(function ($) {
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         }
-        
+
         // Show/Hide Earn Product Content
         $(".earn-product-item-heading").on("click", function () {
             $(this).parents('.earn-product-item').siblings().removeClass('active');
@@ -243,6 +243,16 @@ jQuery(function ($) {
         });
 
         $('div.setup-panel div a.active-step, div.setup-panel div .active-stepwizard').trigger('click');
+
+        // Custom Modal
+        $('.details-td').on('click', function (e) {
+            e.preventDefault();
+            $('.modal').addClass('is-visible');
+        });
+        $('.modal-close').on('click', function (e) {
+            e.preventDefault();
+            $('.modal').removeClass('is-visible');
+        });
     });
 
     function getSchools() {
@@ -432,7 +442,7 @@ jQuery(function ($) {
             skipField.val(temp);
             this.fetchResults();
         },
-        fetchResults : function () {
+        fetchResults: function () {
             var term = searchTerm.val();
             var skip = skipField.val();
             var pId = searchPageId.val();
