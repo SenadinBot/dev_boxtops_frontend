@@ -176,6 +176,7 @@ a {
     border-collapse: collapse;
     thead {
         tr {
+            background-color: #fff;
             th {
                 font-family: $brandonGrotesqueBold;
                 font-size: 16px;
@@ -202,6 +203,7 @@ a {
     }
     tbody {
         tr {
+            background-color: #fff;
             td {
                 font-family: $brandonGrotesque;
                 font-size: 16px;

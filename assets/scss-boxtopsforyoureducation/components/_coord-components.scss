@@ -956,6 +956,9 @@
         font-size: 18px;
         line-height: 21.6px;
         color: $midnightBlue;
+        &.intro {
+            margin-top: 7px;
+        }
     }
     .custom-btn {
         display: block;
@@ -1413,6 +1416,294 @@
                 @include media-xs {
                     font-size: 20px;
                     line-height: 20px;
+                }
+            }
+        }
+    }
+}
+.coord-earnings-container {
+    background-color: $midnightBlue;
+    padding: 45px 0 81px 0;
+    margin-bottom: 81px;
+    @include media-xs {
+        margin-bottom: 56px;
+        padding-bottom: 24px;
+    }
+}
+.coord-earnings-activity-container {
+    max-width: $contentWidth;
+    margin: 0 auto;
+    @include media-xs {
+        padding: 0 20px;
+    }
+    @include media-sm {
+        padding: 0 20px;
+    }
+    @include media-md {
+        padding: 0 20px;
+    }
+    .tab-container {
+        @include media-xs {
+            background-color: $midnightBlue;
+        }
+    }
+}
+.coord-earnings-inner-container {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: $contentWidth;
+    margin: 0 auto 81px auto;
+    @include media-xs {
+        margin: 0 20px 23px 20px;
+    }
+    @include media-sm {
+        margin: 0 20px 41px 20px;
+    }
+    @include media-md {
+        margin: 0 20px 61px 20px;
+    }
+    .earning-goal-container {
+        background-color: #fff;
+        flex: 1 0 0%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        margin-right: 30px;
+        position: relative;
+        overflow: hidden;
+        padding: 36px 43px 40px 43px;
+        @include media-xs {
+            margin: 0 auto 23px auto;
+            flex: 1 1 100%;
+            padding: 24px 23px 25px 23px;
+        }
+        @include media-sm {
+            flex: 1 1 100%;
+            margin: 0 auto 23px auto;
+    
+        }
+        .inner-step-content {
+            p {
+            text-align: left;
+            }
+            p {
+                &:first-child {
+                    width: 100%;
+                    margin-bottom: 8px;
+                }
+                span {
+                    font-family: $brandonGrotesqueBold;
+                    font-size: 38px;
+                    line-height: 38px;
+                    display: inline-block;
+                }
+                b,
+                strong {
+                    font-family: $brandonGrotesqueBold;
+                    font-size: 16px;
+                    line-height: 19.2px;
+                    display: inline-block;
+                    width: 55%;
+                    padding-left: 5px;
+                    @include media-xs {
+                        padding-left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .earning-history-container {
+        background-color: #fff;  
+        flex: 1 0 0%;
+        width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        position: relative;
+        overflow: hidden;
+        padding: 36px 40px 41px 40px;
+        @include media-xs {
+            flex: 1 1 100%;
+            padding: 24px 23px 25px 23px;            
+        }
+        @include media-sm {
+            flex: 1 1 100%;
+        }
+        .inner-step-content { 
+            text-align: center;
+        }
+    }
+    h3 {
+        color: $midnightBlue;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 25px;
+        @include media-xs {
+            padding: 0 20px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            line-height: 20px;
+        }
+    }
+    p {
+        font-size: 18px;
+        line-height: 21.6px;
+        color: $midnightBlue;
+        text-align: center;
+        @include media-xs {
+            font-size: 16px;
+            line-height: 19.2px;
+        }
+        &.intro {
+            margin-top: 10px;
+            @include media-xs {
+                width: 85%;
+                margin: 10px auto 0 auto;
+            }
+        }
+    }
+    .inner-step-content {
+        border-top: 1px solid #F0F0F0;
+        border-bottom: 1px solid #F0F0F0;
+        margin: 31px 0;
+        padding: 26px 0 23px 0;
+        @include media-xs {
+            margin: 20px 0;
+            padding: 20px 0 15px 0;
+        }
+    }
+    .custom-btn {
+        display: block;
+        margin: 0 auto;
+        padding: 12px 34px;
+        min-width: 274px;
+        @include media-xs {
+            padding: 8px 34px;
+            min-width: 264px;
+        }
+        @include media-xs-portrait {
+            width: 100%;
+        }
+    }
+    .form-group {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 14px 0 25px 0;
+        @include media-xs {
+            display: block;
+        }
+        .select {
+            width: 180px;
+            select {
+                font-size: 18px;
+                line-height: 21.6px;
+                font-family: $brandonGrotesqueBold;
+                @include media-sm {
+                    font-size: 16px;
+                }
+                margin-bottom: 0;
+            }
+        }
+    }
+    .year-goal {
+        position: relative;
+        text-align: center;
+        margin-bottom: 7px;
+        span {
+            font-family: $brandonGrotesqueBold;
+            font-size: 60px;
+            line-height: 60px;
+            color: $midnightBlue;
+            @include media-xs {
+                font-size: 48px;
+                line-height: 48px;
+            }
+        }
+        p {
+            margin-top: 5px;
+        }
+    }
+    .form-container {
+        font-size: 0;
+        margin-bottom: 29px;
+        @include media-xs {
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin: 0;
+            vertical-align: top;
+            &:first-child {
+                margin-right: 12px;
+                width: 40%;
+                @include media-xs {
+                    margin-right: 0;
+                    width: 100%;
+                    margin-bottom: 20px
+                }
+            }
+            &:last-child {
+                textarea {
+                    height: 71px;
+                    resize: none;
+                    padding: 6px 5px 6px 13px;
+                    @include media-xs {
+                        height: 84px;
+                        padding: 6px 13px;
+                    }
+                }   
+            }
+            width: 57%;
+            @include media-xs {
+                width: 100%;
+            }
+            @include media-md {
+                width: 56%;
+            }
+            label {
+                width: 100%;
+                font-size: 18px;
+                line-height: 21.6px;
+                margin-bottom: 4px;
+                @include media-xs {
+                    font-size: 16px;
+                    line-height: 19.2px;
+                }
+            }
+            input {
+                @include media-xs {
+                    padding: 11.5px 13px;
+                }
+            }
+            textarea,
+            input {
+                font-size: 18px;
+                line-height: 21.6px;
+                margin-bottom: 0;
+                &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                    font-family: $brandonGrotesque;
+                    color: #D9D9D9;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                }
+                &::-moz-placeholder { /* Firefox 19+ */
+                    font-family: $brandonGrotesque;
+                    color: #D9D9D9;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                }
+                &:-ms-input-placeholder { /* IE 10+ */
+                    font-family: $brandonGrotesque;
+                    color: #D9D9D9;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                }
+                &:-moz-placeholder { /* Firefox 18- */
+                    font-family: $brandonGrotesque;
+                    color: #D9D9D9;
+                    font-size: 18px;
+                    line-height: 21.6px;
                 }
             }
         }

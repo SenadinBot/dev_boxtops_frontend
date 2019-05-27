@@ -145,41 +145,45 @@ a {
 .custom-table {
   width: 100%;
   border-collapse: collapse; }
-  .custom-table thead tr th {
-    font-family: "Brandon Grotesque Bold", sans-serif;
-    font-size: 16px;
-    line-height: 14px;
-    text-transform: uppercase;
-    color: #002e5d;
-    text-align: left;
-    padding: 17px 15px; }
-    .custom-table thead tr th:last-child {
-      text-align: right; }
-    @media (max-width: 767px) {
-      .custom-table thead tr th {
-        font-size: 12px;
-        line-height: 10px;
-        padding: 13px 10px; } }
-    @media (max-width: 767px) {
-      .custom-table thead tr th span {
-        display: none; } }
-  .custom-table tbody tr td {
-    font-family: "Brandon Grotesque Regular", sans-serif;
-    font-size: 16px;
-    line-height: 14px;
-    color: #002e5d;
-    text-align: left;
-    padding: 17px 15px; }
-    .custom-table tbody tr td:last-child {
-      text-align: right; }
-    @media (max-width: 767px) {
-      .custom-table tbody tr td {
-        font-size: 12px;
-        line-height: 10px;
-        padding: 13px 10px;
-        vertical-align: top; } }
-  .custom-table tbody tr:nth-child(odd) {
-    background-color: #F0F0F0; }
+  .custom-table thead tr {
+    background-color: #fff; }
+    .custom-table thead tr th {
+      font-family: "Brandon Grotesque Bold", sans-serif;
+      font-size: 16px;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: #002e5d;
+      text-align: left;
+      padding: 17px 15px; }
+      .custom-table thead tr th:last-child {
+        text-align: right; }
+      @media (max-width: 767px) {
+        .custom-table thead tr th {
+          font-size: 12px;
+          line-height: 10px;
+          padding: 13px 10px; } }
+      @media (max-width: 767px) {
+        .custom-table thead tr th span {
+          display: none; } }
+  .custom-table tbody tr {
+    background-color: #fff; }
+    .custom-table tbody tr td {
+      font-family: "Brandon Grotesque Regular", sans-serif;
+      font-size: 16px;
+      line-height: 14px;
+      color: #002e5d;
+      text-align: left;
+      padding: 17px 15px; }
+      .custom-table tbody tr td:last-child {
+        text-align: right; }
+      @media (max-width: 767px) {
+        .custom-table tbody tr td {
+          font-size: 12px;
+          line-height: 10px;
+          padding: 13px 10px;
+          vertical-align: top; } }
+    .custom-table tbody tr:nth-child(odd) {
+      background-color: #F0F0F0; }
 
 .modal {
   position: fixed;
@@ -2952,6 +2956,16 @@ body.search-open .header-search {
     flex-flow: row wrap;
     text-align: center;
     padding: 30px 0 38px 0; }
+    @media (max-width: 767px) {
+      .consumer-earning-bar-container .consumer-earning-bar-wrapper.coord-earnings-bar-wrapper {
+        padding: 0px 0 38px 0; } }
+    .consumer-earning-bar-container .consumer-earning-bar-wrapper.coord-earnings-bar-wrapper .consumer-earning-bar-item:nth-last-child(3):after {
+      display: block;
+      right: -25px; }
+    @media (max-width: 767px) {
+      .consumer-earning-bar-container .consumer-earning-bar-wrapper.coord-earnings-bar-wrapper .consumer-earning-bar-item {
+        margin-bottom: 35px;
+        padding-bottom: 45px; } }
     .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item {
       position: relative;
       flex: 1 1 0%;
@@ -2991,7 +3005,8 @@ body.search-open .header-search {
             height: 13.65px; } }
       @media (max-width: 767px) {
         .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:nth-last-child(2) {
-          margin-bottom: 0; } }
+          margin-bottom: 0;
+          padding-bottom: 35px; } }
       .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:nth-last-child(2):after {
         display: none; }
       .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:last-child:after {
@@ -3061,6 +3076,19 @@ body.search-open .header-search {
       .consumer-earning-bar-container .consumer-earning-bar-wrapper .btn-container .custom-btn {
         display: inline-block;
         margin: 0 auto; }
+    .consumer-earning-bar-container .consumer-earning-bar-wrapper i {
+      text-align: center;
+      width: 100%;
+      color: #fff;
+      font-family: "Brandon Grotesque Regular Italic", sans-serif;
+      font-size: 14px;
+      line-height: 14px;
+      margin-top: 30px; }
+      @media (max-width: 767px) {
+        .consumer-earning-bar-container .consumer-earning-bar-wrapper i {
+          font-size: 12px;
+          line-height: 12px;
+          margin-top: 0; } }
   .consumer-earning-bar-container.school-earning-bar .consumer-earning-bar-wrapper {
     padding: 38px 0 46px 0; }
     @media (min-width: 992px) and (max-width: 1199px) {
@@ -4344,6 +4372,8 @@ body.search-open .header-search {
     font-size: 18px;
     line-height: 21.6px;
     color: #002e5d; }
+    .inner-step-container p.intro {
+      margin-top: 7px; }
   .inner-step-container .custom-btn {
     display: block;
     margin: 0 auto;
@@ -4722,6 +4752,264 @@ body.search-open .header-search {
         .get-details-modal .content-item .right-side span {
           font-size: 20px;
           line-height: 20px; } }
+
+.coord-earnings-container {
+  background-color: #002e5d;
+  padding: 45px 0 81px 0;
+  margin-bottom: 81px; }
+  @media (max-width: 767px) {
+    .coord-earnings-container {
+      margin-bottom: 56px;
+      padding-bottom: 24px; } }
+
+.coord-earnings-activity-container {
+  max-width: 1172px;
+  margin: 0 auto; }
+  @media (max-width: 767px) {
+    .coord-earnings-activity-container {
+      padding: 0 20px; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .coord-earnings-activity-container {
+      padding: 0 20px; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .coord-earnings-activity-container {
+      padding: 0 20px; } }
+  @media (max-width: 767px) {
+    .coord-earnings-activity-container .tab-container {
+      background-color: #002e5d; } }
+
+.coord-earnings-inner-container {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 1172px;
+  margin: 0 auto 81px auto; }
+  @media (max-width: 767px) {
+    .coord-earnings-inner-container {
+      margin: 0 20px 23px 20px; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .coord-earnings-inner-container {
+      margin: 0 20px 41px 20px; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .coord-earnings-inner-container {
+      margin: 0 20px 61px 20px; } }
+  .coord-earnings-inner-container .earning-goal-container {
+    background-color: #fff;
+    flex: 1 0 0%;
+    width: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    margin-right: 30px;
+    position: relative;
+    overflow: hidden;
+    padding: 36px 43px 40px 43px; }
+    @media (max-width: 767px) {
+      .coord-earnings-inner-container .earning-goal-container {
+        margin: 0 auto 23px auto;
+        flex: 1 1 100%;
+        padding: 24px 23px 25px 23px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .coord-earnings-inner-container .earning-goal-container {
+        flex: 1 1 100%;
+        margin: 0 auto 23px auto; } }
+    .coord-earnings-inner-container .earning-goal-container .inner-step-content p {
+      text-align: left; }
+    .coord-earnings-inner-container .earning-goal-container .inner-step-content p:first-child {
+      width: 100%;
+      margin-bottom: 8px; }
+    .coord-earnings-inner-container .earning-goal-container .inner-step-content p span {
+      font-family: "Brandon Grotesque Bold", sans-serif;
+      font-size: 38px;
+      line-height: 38px;
+      display: inline-block; }
+    .coord-earnings-inner-container .earning-goal-container .inner-step-content p b,
+    .coord-earnings-inner-container .earning-goal-container .inner-step-content p strong {
+      font-family: "Brandon Grotesque Bold", sans-serif;
+      font-size: 16px;
+      line-height: 19.2px;
+      display: inline-block;
+      width: 55%;
+      padding-left: 5px; }
+      @media (max-width: 767px) {
+        .coord-earnings-inner-container .earning-goal-container .inner-step-content p b,
+        .coord-earnings-inner-container .earning-goal-container .inner-step-content p strong {
+          padding-left: 0;
+          width: 100%; } }
+  .coord-earnings-inner-container .earning-history-container {
+    background-color: #fff;
+    flex: 1 0 0%;
+    width: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    padding: 36px 40px 41px 40px; }
+    @media (max-width: 767px) {
+      .coord-earnings-inner-container .earning-history-container {
+        flex: 1 1 100%;
+        padding: 24px 23px 25px 23px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .coord-earnings-inner-container .earning-history-container {
+        flex: 1 1 100%; } }
+    .coord-earnings-inner-container .earning-history-container .inner-step-content {
+      text-align: center; }
+  .coord-earnings-inner-container h3 {
+    color: #002e5d;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 25px; }
+    @media (max-width: 767px) {
+      .coord-earnings-inner-container h3 {
+        padding: 0 20px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 20px; } }
+  .coord-earnings-inner-container p {
+    font-size: 18px;
+    line-height: 21.6px;
+    color: #002e5d;
+    text-align: center; }
+    @media (max-width: 767px) {
+      .coord-earnings-inner-container p {
+        font-size: 16px;
+        line-height: 19.2px; } }
+    .coord-earnings-inner-container p.intro {
+      margin-top: 10px; }
+      @media (max-width: 767px) {
+        .coord-earnings-inner-container p.intro {
+          width: 85%;
+          margin: 10px auto 0 auto; } }
+  .coord-earnings-inner-container .inner-step-content {
+    border-top: 1px solid #F0F0F0;
+    border-bottom: 1px solid #F0F0F0;
+    margin: 31px 0;
+    padding: 26px 0 23px 0; }
+    @media (max-width: 767px) {
+      .coord-earnings-inner-container .inner-step-content {
+        margin: 20px 0;
+        padding: 20px 0 15px 0; } }
+  .coord-earnings-inner-container .custom-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 34px;
+    min-width: 274px; }
+    @media (max-width: 767px) {
+      .coord-earnings-inner-container .custom-btn {
+        padding: 8px 34px;
+        min-width: 264px; } }
+    @media (max-width: 767px) and (orientation: portrait) {
+      .coord-earnings-inner-container .custom-btn {
+        width: 100%; } }
+  .coord-earnings-inner-container .form-group {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 14px 0 25px 0; }
+    @media (max-width: 767px) {
+      .coord-earnings-inner-container .form-group {
+        display: block; } }
+    .coord-earnings-inner-container .form-group .select {
+      width: 180px; }
+      .coord-earnings-inner-container .form-group .select select {
+        font-size: 18px;
+        line-height: 21.6px;
+        font-family: "Brandon Grotesque Bold", sans-serif;
+        margin-bottom: 0; }
+        @media (min-width: 768px) and (max-width: 991px) {
+          .coord-earnings-inner-container .form-group .select select {
+            font-size: 16px; } }
+  .coord-earnings-inner-container .year-goal {
+    position: relative;
+    text-align: center;
+    margin-bottom: 7px; }
+    .coord-earnings-inner-container .year-goal span {
+      font-family: "Brandon Grotesque Bold", sans-serif;
+      font-size: 60px;
+      line-height: 60px;
+      color: #002e5d; }
+      @media (max-width: 767px) {
+        .coord-earnings-inner-container .year-goal span {
+          font-size: 48px;
+          line-height: 48px; } }
+    .coord-earnings-inner-container .year-goal p {
+      margin-top: 5px; }
+  .coord-earnings-inner-container .form-container {
+    font-size: 0;
+    margin-bottom: 29px; }
+    @media (max-width: 767px) {
+      .coord-earnings-inner-container .form-container {
+        margin-bottom: 25px; } }
+    .coord-earnings-inner-container .form-container .form-group {
+      margin: 0;
+      vertical-align: top;
+      width: 57%; }
+      .coord-earnings-inner-container .form-container .form-group:first-child {
+        margin-right: 12px;
+        width: 40%; }
+        @media (max-width: 767px) {
+          .coord-earnings-inner-container .form-container .form-group:first-child {
+            margin-right: 0;
+            width: 100%;
+            margin-bottom: 20px; } }
+      .coord-earnings-inner-container .form-container .form-group:last-child textarea {
+        height: 71px;
+        resize: none;
+        padding: 6px 5px 6px 13px; }
+        @media (max-width: 767px) {
+          .coord-earnings-inner-container .form-container .form-group:last-child textarea {
+            height: 84px;
+            padding: 6px 13px; } }
+      @media (max-width: 767px) {
+        .coord-earnings-inner-container .form-container .form-group {
+          width: 100%; } }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .coord-earnings-inner-container .form-container .form-group {
+          width: 56%; } }
+      .coord-earnings-inner-container .form-container .form-group label {
+        width: 100%;
+        font-size: 18px;
+        line-height: 21.6px;
+        margin-bottom: 4px; }
+        @media (max-width: 767px) {
+          .coord-earnings-inner-container .form-container .form-group label {
+            font-size: 16px;
+            line-height: 19.2px; } }
+      @media (max-width: 767px) {
+        .coord-earnings-inner-container .form-container .form-group input {
+          padding: 11.5px 13px; } }
+      .coord-earnings-inner-container .form-container .form-group textarea,
+      .coord-earnings-inner-container .form-container .form-group input {
+        font-size: 18px;
+        line-height: 21.6px;
+        margin-bottom: 0; }
+        .coord-earnings-inner-container .form-container .form-group textarea::-webkit-input-placeholder,
+        .coord-earnings-inner-container .form-container .form-group input::-webkit-input-placeholder {
+          /* Chrome/Opera/Safari */
+          font-family: "Brandon Grotesque Regular", sans-serif;
+          color: #D9D9D9;
+          font-size: 18px;
+          line-height: 21.6px; }
+        .coord-earnings-inner-container .form-container .form-group textarea::-moz-placeholder,
+        .coord-earnings-inner-container .form-container .form-group input::-moz-placeholder {
+          /* Firefox 19+ */
+          font-family: "Brandon Grotesque Regular", sans-serif;
+          color: #D9D9D9;
+          font-size: 18px;
+          line-height: 21.6px; }
+        .coord-earnings-inner-container .form-container .form-group textarea:-ms-input-placeholder,
+        .coord-earnings-inner-container .form-container .form-group input:-ms-input-placeholder {
+          /* IE 10+ */
+          font-family: "Brandon Grotesque Regular", sans-serif;
+          color: #D9D9D9;
+          font-size: 18px;
+          line-height: 21.6px; }
+        .coord-earnings-inner-container .form-container .form-group textarea:-moz-placeholder,
+        .coord-earnings-inner-container .form-container .form-group input:-moz-placeholder {
+          /* Firefox 18- */
+          font-family: "Brandon Grotesque Regular", sans-serif;
+          color: #D9D9D9;
+          font-size: 18px;
+          line-height: 21.6px; }
 
 .earn-product-container {
   display: flex;
@@ -5673,6 +5961,30 @@ hr.full-width {
       .form-group textarea {
         width: 100%;
         height: 291px; } }
+    .form-group textarea::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      font-family: "Brandon Grotesque Regular", sans-serif;
+      color: #D9D9D9;
+      font-size: 22px;
+      line-height: 26.4px; }
+    .form-group textarea::-moz-placeholder {
+      /* Firefox 19+ */
+      font-family: "Brandon Grotesque Regular", sans-serif;
+      color: #D9D9D9;
+      font-size: 22px;
+      line-height: 26.4px; }
+    .form-group textarea:-ms-input-placeholder {
+      /* IE 10+ */
+      font-family: "Brandon Grotesque Regular", sans-serif;
+      color: #D9D9D9;
+      font-size: 22px;
+      line-height: 26.4px; }
+    .form-group textarea:-moz-placeholder {
+      /* Firefox 18- */
+      font-family: "Brandon Grotesque Regular", sans-serif;
+      color: #D9D9D9;
+      font-size: 22px;
+      line-height: 26.4px; }
   .form-group.mandatory label:after {
     content: "*";
     position: relative;
