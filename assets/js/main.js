@@ -341,12 +341,12 @@ jQuery(function ($) {
         $card.data('open', true).toggleClass('video-gallery-card--open', true)
         $player.toggleClass('video-gallery-viewport--open', true)
 
-        if (Util.isOnMobile()) {
-            $player.get(0).scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest'
-            })
-        }
+        var offset = $player.offset()
+        var scrollTopGap = Util.isOnMobile() ? 120 : 160
+
+        jQuery('html, body').animate({
+            scrollTop: offset.top - scrollTopGap
+        }, 500)
     };
 
     /**
