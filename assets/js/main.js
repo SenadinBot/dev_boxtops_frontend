@@ -273,6 +273,31 @@ jQuery(function ($) {
             console.log("Data: ", data);
         });
     }
+
+    // Submission Form Steps
+    $('.submission-block:first').addClass('current first');
+    $('.submission-block:last').addClass('empty last');
+    $('.submission-block').not(':first, :last').addClass('empty');
+    $('.next-btn').click(function () {
+        var current = $('.current'),
+            next = $('.current').next('div');
+        current.removeClass('current').addClass('filled');
+        next.removeClass('empty').addClass('current');
+
+    });
+
+    // Smoth scrolling to form section
+    $(".go-to-form").on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 100
+            }, 800, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
 });
 
 /**
