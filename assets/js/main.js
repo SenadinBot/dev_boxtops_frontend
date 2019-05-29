@@ -299,11 +299,6 @@ jQuery(function ($) {
         }
     });
 
-    // Reset Mail Input
-    $('.reset-mail-input').on('click', function() {
-        $('.unsubscribe-page-content').find('input[type=text], input[type=email]').val('');
-    });
-
 });
 
 /**

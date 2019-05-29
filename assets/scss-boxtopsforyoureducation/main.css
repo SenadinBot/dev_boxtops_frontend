@@ -1123,7 +1123,8 @@ body {
   padding: 10px 14px;
   font-size: 0;
   background-color: #EEEEEE;
-  position: relative; }
+  position: relative;
+  overflow: initial; }
   .promo-offers-container .custom-btn {
     display: inline-block;
     margin-left: 12px;
@@ -1167,6 +1168,50 @@ body {
         .promo-offers-container i:after {
           width: 20px;
           height: 20px; } }
+  .promo-offers-container .promo-offers-input-wrapper.alert-error {
+    position: relative; }
+    .promo-offers-container .promo-offers-input-wrapper.alert-error input {
+      border: 2px solid #db0038; }
+@-webkit-keyframes showTooltip {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes showTooltip {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes showTooltip {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+    .promo-offers-container .promo-offers-input-wrapper.alert-error:after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 45px;
+      left: 79px;
+      display: none;
+      padding: 10px 15px;
+      color: #db0038;
+      border: 1px solid #db0038;
+      background: #fefefe;
+      font-family: "Brandon Grotesque Regular", sans-serif;
+      font-size: 16px;
+      line-height: 16px;
+      z-index: 999; }
+      @media (max-width: 767px) {
+        .promo-offers-container .promo-offers-input-wrapper.alert-error:after {
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          text-align: center; } }
+    .promo-offers-container .promo-offers-input-wrapper.alert-error:hover:after {
+      display: block;
+      -webkit-animation: showTooltip 0.35s ease-in-out;
+      -moz-animation: showTooltip 0.35s ease-in-out;
+      animation: showTooltip 0.35s ease-in-out; }
   .promo-offers-container input {
     font-family: "Brandon Grotesque Regular", sans-serif;
     font-size: 18px;
@@ -1182,8 +1227,6 @@ body {
         font-size: 14px;
         line-height: 14px;
         padding: 7px 10px; } }
-    .promo-offers-container input.alert-error {
-      border: 2px solid #db0038; }
     .promo-offers-container input:focus {
       outline: none;
       box-shadow: none; }

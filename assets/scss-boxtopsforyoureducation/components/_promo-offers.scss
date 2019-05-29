@@ -3,6 +3,7 @@
     font-size: 0;
     background-color: #EEEEEE;
     position: relative;
+    overflow: initial;
     .custom-btn {
         display: inline-block;
         margin-left: 12px;
@@ -50,6 +51,55 @@
             }
         }
     }
+    .promo-offers-input-wrapper {
+        &.alert-error {
+            position: relative;
+            input {
+                border: 2px solid #db0038;
+            }
+            @-webkit-keyframes showTooltip {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+            @-moz-keyframes showTooltip {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+            @keyframes showTooltip {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+            &:after {
+                content: attr(data-tooltip);
+                position: absolute;
+                top: 45px;
+                left: 79px;
+                display: none;
+                padding: 10px 15px;
+                color: #db0038;
+                border: 1px solid #db0038;
+                background: #fefefe;
+                font-family: $brandonGrotesque;
+                font-size: 16px;
+                line-height: 16px;
+                z-index: 999;
+                @include media-xs {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            &:hover {
+                &:after {
+                    display: block;
+                    -webkit-animation: showTooltip 0.35s ease-in-out;
+                    -moz-animation: showTooltip 0.35s ease-in-out;
+                    animation: showTooltip 0.35s ease-in-out;
+                }
+            }
+        }
+    }
     input {
         font-family: $brandonGrotesque;
         font-size: 18px;
@@ -64,9 +114,6 @@
             font-size: 14px;
             line-height: 14px;
             padding: 7px 10px;
-        }
-        &.alert-error {
-            border: 2px solid #db0038;
         }
         &:focus {
             outline: none;
