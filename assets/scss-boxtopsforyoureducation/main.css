@@ -6933,17 +6933,37 @@ hr.full-width {
           line-height: 24px;
           padding: 0 15px; } }
     .unsubscribe-page-container .unsubscribe-page-content span {
-      display: block;
-      width: 100%;
+      display: inline-block;
+      width: auto;
       color: #fff;
       font-family: "Brandon Grotesque Black", sans-serif;
       text-transform: uppercase;
       font-size: 18px;
-      line-height: 26.9x; }
+      line-height: 26.9px;
+      cursor: pointer;
+      position: relative;
+      margin: 0 auto; }
       @media (max-width: 767px) {
         .unsubscribe-page-container .unsubscribe-page-content span {
           font-size: 16px;
           line-height: 24px; } }
+      .unsubscribe-page-container .unsubscribe-page-content span:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        background-color: #ffffff; }
+      .unsubscribe-page-container .unsubscribe-page-content span:hover:before {
+        visibility: visible;
+        width: 100%; }
     .unsubscribe-page-container .unsubscribe-page-content .btn-container {
       margin-bottom: 25px;
       display: block;
@@ -6977,6 +6997,17 @@ hr.full-width {
           background-color: #ffffff; }
     .unsubscribe-page-container .unsubscribe-page-content .form-group {
       margin: 0 auto 10px auto; }
+    .unsubscribe-page-container .unsubscribe-page-content .new-login-container {
+      min-height: auto;
+      padding: 0;
+      margin: 0 auto; }
+      .unsubscribe-page-container .unsubscribe-page-content .new-login-container .login-form-wrapper {
+        margin: 0 auto; }
+        .unsubscribe-page-container .unsubscribe-page-content .new-login-container .login-form-wrapper .login-field-wrapper {
+          margin-bottom: 30px; }
+      .unsubscribe-page-container .unsubscribe-page-content .new-login-container .login-field-validation {
+        text-transform: initial;
+        width: auto; }
 
 @keyframes fadeIn {
   from {
