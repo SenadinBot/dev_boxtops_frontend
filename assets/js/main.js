@@ -114,7 +114,7 @@ jQuery(function ($) {
             }
         });
 
-        //Forgot Password form validation
+        //Forgot Password form validation and ajax call
         $("#reset-btn").on("click", function (e) {
             e.preventDefault();
             var email = $("#email").val();
@@ -141,10 +141,24 @@ jQuery(function ($) {
 
         });
 
+
         function validateEmail(email) {
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         }
+
+        //Update earnings ajax call
+        $("#update-earnings-btn").on("click", function (e) {
+            e.preventDefault();
+            if (!isNaN($("#earningsGoal").val())) {
+                jQuery.post("/UpdateYourEarning/UpdateYourEarning", $("#updateEarningsForm").serialize(), function (data) {
+                    if (data.status == "true") {
+                        $("#earningsGoal").val("");
+                        $("#earningsGo").val("")
+                    }
+                })
+            }
+        });
 
         // Show/Hide Earn Product Content
         $(".earn-product-item-heading").on("click", function () {

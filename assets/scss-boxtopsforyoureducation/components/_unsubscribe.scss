@@ -126,6 +126,12 @@
             margin: 0 auto;
             .login-form-wrapper {
                 margin: 0 auto;
+                input {
+                    border: 1px solid transparent;
+                    &.input-validation-error {
+                        border: 1px solid #a21a19;
+                    }
+                }
                 .login-field-wrapper {
                     margin-bottom: 30px;
                 }

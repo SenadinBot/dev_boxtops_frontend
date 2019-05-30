@@ -649,7 +649,7 @@
         height: 405px;
         flex: 1 1 33%;
         overflow: hidden;
-        padding: 35px 0 0 100px;
+        padding: 35px 0 0 0;
         @include media-xs {
             display: none;
         }
@@ -658,6 +658,9 @@
         }
         @include media-md {
             padding: 35px 0 0 40px;
+        }
+        img {
+            margin: 0 0 0 auto;
         }
     }
     .first-step-content {
@@ -705,7 +708,7 @@
             &.download-flyer {
                 color: $redRibbon;
                 position: relative;
-                font-family: $brandonGrotesque;
+                font-family: $brandonGrotesqueBold;
                 text-transform: uppercase;
                 font-size: 16px;
                 line-height: 29.97px;

@@ -4163,7 +4163,7 @@ body.search-open .header-search {
     height: 405px;
     flex: 1 1 33%;
     overflow: hidden;
-    padding: 35px 0 0 100px; }
+    padding: 35px 0 0 0; }
     @media (max-width: 767px) {
       .get-started-first-step .img-container {
         display: none; } }
@@ -4173,6 +4173,8 @@ body.search-open .header-search {
     @media (min-width: 992px) and (max-width: 1199px) {
       .get-started-first-step .img-container {
         padding: 35px 0 0 40px; } }
+    .get-started-first-step .img-container img {
+      margin: 0 0 0 auto; }
   .get-started-first-step .first-step-content {
     text-align: center;
     position: relative;
@@ -4214,7 +4216,7 @@ body.search-open .header-search {
     .get-started-first-step .first-step-content a.download-flyer {
       color: #E80A4D;
       position: relative;
-      font-family: "Brandon Grotesque Regular", sans-serif;
+      font-family: "Brandon Grotesque Bold", sans-serif;
       text-transform: uppercase;
       font-size: 16px;
       line-height: 29.97px;
@@ -7046,6 +7048,10 @@ hr.full-width {
       margin: 0 auto; }
       .unsubscribe-page-container .unsubscribe-page-content .new-login-container .login-form-wrapper {
         margin: 0 auto; }
+        .unsubscribe-page-container .unsubscribe-page-content .new-login-container .login-form-wrapper input {
+          border: 1px solid transparent; }
+          .unsubscribe-page-container .unsubscribe-page-content .new-login-container .login-form-wrapper input.input-validation-error {
+            border: 1px solid #a21a19; }
         .unsubscribe-page-container .unsubscribe-page-content .new-login-container .login-form-wrapper .login-field-wrapper {
           margin-bottom: 30px; }
       .unsubscribe-page-container .unsubscribe-page-content .new-login-container .login-field-validation {
@@ -7405,7 +7411,7 @@ hr.full-width {
       position: absolute;
       top: 3px;
       right: 8px;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 20px;
       color: #a21a19;
       font-family: "Brandon Grotesque Regular", sans-serif;
