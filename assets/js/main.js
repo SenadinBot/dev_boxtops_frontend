@@ -125,7 +125,7 @@ jQuery(function ($) {
                 $("#email").removeClass("input-validation-error");
                 $("#email").next().addClass("hidden");
 
-                jQuery.post("/ForgotPassword/SubmitForm", $("#forgotPasswordForm").serialize(), function (data) {
+                jQuery.post("/Password/SubmitForm", $("#forgotPasswordForm").serialize(), function (data) {
                     $("#forgotPasswordBody").addClass("hidden");
                     $("#formWrapper").addClass("hidden");
 
@@ -146,6 +146,12 @@ jQuery(function ($) {
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         }
+        //Update password ajax call
+        $("#reset-pass-btn").on("click", function (e) {
+            jQuery.post("/Password/UpdatePassword", { OldPassword: "test", NewPassword: "text" }, function (data) {
+                console.log("Data: ", data);
+            });
+        });
 
         //Update earnings ajax call
         $("#update-earnings-btn").on("click", function (e) {
