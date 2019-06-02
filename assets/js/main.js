@@ -273,6 +273,28 @@ jQuery(function ($) {
             e.preventDefault();
             $('.modal').removeClass('is-visible');
         });
+        $('.school-modal').on('click', function (e) {
+            e.preventDefault();
+            $('.modal').addClass('is-visible');
+        });
+
+        // Edit User Infoadd-store-btn
+        $('.edit-btn').on('click', function() {
+            $(this).parents('.account-item-content').toggleClass('edit-user');
+        });
+
+        // Add Store
+        $('.add-store-btn').on('click', function() {
+            $('.link-container').addClass('add-link-account');
+        });
+
+        //Add/Remove Account Coordinator
+        $('.close-add-coord-container').on('click', function() {
+            $(this).parents('.add-coord-container').removeClass('show-coordinatior-account')
+        });
+        $('.add-coordinator-btn').on('click', function() {
+            $('.add-coord-container').addClass('show-coordinatior-account')
+        });
     });
 
     function getSchools() {
@@ -317,6 +339,12 @@ jQuery(function ($) {
                 window.location.hash = hash;
             });
         }
+    });
+
+    // Show/Hide Account Content
+    $(".account-item-heading").on("click", function () {
+        $(this).parents('.account-item').siblings().removeClass('active');
+        $(this).parents('.account-item').toggleClass('active');
     });
 
 });

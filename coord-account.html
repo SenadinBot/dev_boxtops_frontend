@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coord Account</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="description"
+        content="This is an example of a meta description. This will often show up in search results.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
+
+    <!-- Styles -->
+    <link href="/assets/scss-boxtopsforyoureducation/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header id="masthead" class="header @headercss" role="banner">
+        <div class="header-wrap">
+            <a href="#" rel="home">
+                <img src="./assets/images/logo.png" alt="Header Logo" class="header-logo">
+            </a>
+            <nav id="nav" class="nav" role="navigation">
+                <div class="mobile-search-icon"></div>
+                <button id="navtoggle" class="nav-toggle" aria-controls="navmenu" aria-label="Menu"
+                    aria-expanded="false">
+                    <span class="screen-reader-text">Menu</span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                <ul id="navmenu" class="nav-menu">
+                    <!-- To show my account on mobile when user is logged in -->
+                    <li class="mobile-account-btn">
+                        <a href="#" class="account-btn">My Account</a>
+                    </li>
+                    <!-- End To show my account on mobile when user is logged in -->
+
+                    <li id="@navItem.ID" class="">
+                        <a href="#">About</a>
+                    </li>
+                    <li id="@navItem.ID" class="">
+                        <a href="#">How to earn</a>
+                    </li>
+                    <li id="@navItem.ID" class="current-menu-item">
+                        <a href="#">Find Offers</a>
+                    </li>
+                    <li id="@navItem.ID" class="">
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li id="navItem_sitesearch" class="search-icon-wrapper">
+                        <i class="fa-search-header"></i>
+                    </li>
+                    <div class="nav-registration-wrapper">
+                        <li id="nav-reg-my-account" class="@cssMyAccount">
+                            <a href="#" class="account-btn">My Account</a>
+                        </li>
+                        <li id="nav-reg-logout" class="@cssLogout logout-btn">
+                            <a href="#">Logout</a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+            <!-- Header Search Container -->
+            <div class="header-search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button type="button"></button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search Box Tops" aria-label=""
+                            aria-describedby="basic-addon1">
+                        <button type="button" class="desktop-close-search"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Header Search Container -->
+        </div>
+    </header>
+    <div class="site-content max-width">
+        <div class="content-area">
+            <div class="site-main">
+                <div class="modules">
+                    <!-- Heading Text Button -->
+                    <section class="heading-text-button-container registration-heading"
+                        style="background-image: url('')">
+                        <div class="heading-text-button-content">
+                            <h2>Account</h2>
+                        </div>
+                    </section>
+                    <!-- End of Heading Text Button -->
+                    <!-- Account Container -->
+                    <section class="account-container">
+                        <div class="account-content">
+                            <div class="account-item">
+                                <div class="account-item-heading">
+                                    <span>SCHOOL INFORMATION</span>
+                                    <div class="mobile-click"></div>
+                                </div>
+                                <div class="account-item-content">
+                                    <div class="supporting-container">
+                                        <!-- After School change hide this message : -->
+                                        <span>You’re supporting:</span>
+                                        <!-- After School change show this message : -->
+                                        <!-- <span>You have updated your school to:</span> -->
+                                        <span>OXBOW CREEK ELEMENTARY SCHOOL</span>
+                                    </div>
+                                    <div class="school-form">
+                                        <span>Enter your school name, ZIP code or city, state.</span>
+                                        <div class="form-group form-error">
+                                            <div class="input-group ">
+                                                <input type="text" placeholder="" required="required">
+                                            </div>
+                                            <span class="error-msg">This field is required.</span>
+                                        </div>
+                                        <a href="#" class="custom-btn school-modal">Change School</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobile-adverb-content">
+                                <div class="img-container">
+                                    <img src="./assets/images/earn-icons/Layer 12@1X.png" alt="Adverb Image">
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-item-heading">
+                                    <span>PERSONAL INFORMATION</span>
+                                    <div class="mobile-click"></div>
+                                </div>
+                                <div class="account-item-content">
+                                    <ul>
+                                        <li>
+                                            <div class="form-group">
+                                                <label>First name:</label>
+                                                <input type="text" name="" id="" placeholder="Jane">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label>Last name:</label>
+                                                <input type="text" name="" id="" placeholder="Smith">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label>ZIP Code:</label>
+                                                <input type="text" name="" id="" placeholder="55000">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label>Birthdate:</label>
+                                                <input type="text" name="" id="" placeholder="00/00/1900">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-container">
+                                        <button class="custom-btn edit-btn">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-item-heading">
+                                    <span>EMAIL PREFERENCES</span>
+                                    <div class="mobile-click"></div>
+                                </div>
+                                <div class="account-item-content">
+                                    <div class="form-group agree-checkbox">
+                                        <label class="control control-checkbox">You are signed up to receive emails with
+                                            your school’s earnings, bonus opportunities and other Box Tops offers.
+                                            <input type="checkbox" checked="checked">
+                                            <div class="control-indicator"></div>
+                                        </label>
+                                    </div>
+                                    <div class="btn-container">
+                                        <a href="#" class="custom-btn">Update</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-item-heading">
+                                    <span>RETAIL LOYALTY ACCOUNTS</span>
+                                    <div class="mobile-click"></div>
+                                </div>
+                                <div class="account-item-content">
+                                    <div class="text-content">
+                                        <p>Link loyalty accounts from your favorite grocery stores. We'll save them for
+                                            you in your profile so you can quickly add offers to your account and begin
+                                            saving. <a href="#">See all Digital Coupons</a></p>
+                                        <p>Add your favorite grocery store loyalty account and start saving
+                                            <b>instantly</b>.</p>
+                                    </div>
+                                    <div class="link-container">
+                                        <div class="form-group">
+                                            <label for="">Select Store</label>
+                                            <div class="select">
+                                                <select>
+                                                    <option>Link One</option>
+                                                    <option>Link Two</option>
+                                                    <option>Link Three</option>
+                                                </select>
+                                                <div class="select-arrow"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Loyalty Card Number</label>
+                                            <div class="input-group ">
+                                                <input type="text" placeholder="" required="required">
+                                            </div>
+                                        </div>
+                                        <a href="#" class="custom-btn">Link Account</a>
+                                        <span class="link-error-msg">Sorry, that number isn't valid, please check your
+                                            account and re-enter. Don't know your account number? Please contact
+                                            customer support in-store.</span>
+                                    </div>
+                                    <div class="btn-container">
+                                        <button class="custom-btn add-store-btn">Add Store</button>
+                                        <a href="#" class="custom-link">Help/Faq</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-item-heading">
+                                    <span>CHANGE PASSWORD</span>
+                                    <div class="mobile-click"></div>
+                                </div>
+                                <div class="account-item-content">
+                                    <div class="form-content">
+                                        <div class="form-group form-error">
+                                            <label for="oldPassword">Old password:</label>
+                                            <div class="input-group ">
+                                                <input id="oldPassword" type="text" placeholder="" required="required">
+                                            </div>
+                                            <span class="error-msg">This field is required.</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="newPassword">New password:</label>
+                                            <div class="input-group ">
+                                                <input id="newPassword" type="text" placeholder="" required="required">
+                                            </div>
+                                            <span class="error-msg">This field is required.</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirmNewPassword">Confirm new password:</label>
+                                            <div class="input-group ">
+                                                <input id="confirmNewPassword" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="password-description">
+                                        <p>Password must be 6-20 characters in length. Cannot contain all numbers or all
+                                            alphabet letters. Spaces are not allowed.</p>
+                                    </div>
+                                    <div class="btn-container">
+                                        <a href="#" class="custom-btn">Update</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-item coordinator-item">
+                                <div class="account-item-heading">
+                                    <span>COORDINATOR INFORMATION</span>
+                                    <div class="mobile-click"></div>
+                                </div>
+                                <div class="account-item-content">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Coordinators at:</th>
+                                                <th>School ID:</th>
+                                            </tr>
+                                            <tr>
+                                                <th>OXBOW CREEK ELEMENTARY SCHOOL</th>
+                                                <th>000000</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Jane Smith</td>
+                                                <td class="remove-coord"><span>Remove</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Iron Man</td>
+                                                <td class="remove-coord"><span>Remove</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cersei Lannister</td>
+                                                <td class="remove-coord"><span>Remove</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="btn-container">
+                                        <button type="button" class="custom-btn add-coordinator-btn">ADD COORDINATOR</button>
+                                    </div>
+                                    <div class="add-coord-container">
+                                        <div class="form-group">
+                                            <label for="">Enter their email address:</label>
+                                            <input type="text">
+                                        </div>
+                                        <button class="custom-btn">Send Invite</button>
+                                        <div class="close-add-coord-container"></div>
+                                    </div>
+                                    <div class="note">
+                                        <span><b>Note:</b> A school can have up to five registered Coordinators. Each
+                                            school year, current Coordinators are responsible for removing inactive
+                                            Coordinators from the school’s list and adding new Coordinators.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="adverb-content">
+                            <div class="img-container">
+                                <img src="./assets/images/earn-icons/Layer 12@1X.png" alt="Adverb Image">
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of Account Container -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal school-modal-container">
+        <div class="modal-overlay modal-toggle"></div>
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <img src="./assets/images/icons/modal-close-icon.png" class="modal-close"></img>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <div class="school-select-container">
+                        <div class="school-select">
+                            <span>THURGOOD MARSHALL ELEMENTARY SCHOOL</span>
+                            <p>100 Main Street E</p>
+                            <p>City, ST 00000</p>
+                            <button class="nextBtn">SELECT THIS SCHOOL</button>
+                        </div>
+                        <div class="school-select">
+                            <span>THURGOOD MARSHALL ELEMENTARY SCHOOL</span>
+                            <p>100 Main Street E</p>
+                            <p>City, ST 00000</p>
+                            <button class="nextBtn">SELECT THIS SCHOOL</button>
+                        </div>
+                        <div class="school-select">
+                            <span>THURGOOD MARSHALL ELEMENTARY SCHOOL</span>
+                            <p>100 Main Street E</p>
+                            <p>City, ST 00000</p>
+                            <button class="nextBtn">SELECT THIS SCHOOL</button>
+                        </div>
+                        <div class="school-select">
+                            <span>THURGOOD MARSHALL ELEMENTARY SCHOOL</span>
+                            <p>100 Main Street E</p>
+                            <p>City, ST 00000</p>
+                            <button class="nextBtn">SELECT THIS SCHOOL</button>
+                        </div>
+                        <div class="school-select">
+                            <span>THURGOOD MARSHALL ELEMENTARY SCHOOL</span>
+                            <p>100 Main Street E</p>
+                            <p>City, ST 00000</p>
+                            <button class="nextBtn">SELECT THIS SCHOOL</button>
+                        </div>
+                        <div class="school-select">
+                            <span>THURGOOD MARSHALL ELEMENTARY SCHOOL</span>
+                            <p>100 Main Street E</p>
+                            <p>City, ST 00000</p>
+                            <button class="nextBtn">SELECT THIS SCHOOL</button>
+                        </div>
+                        <div class="school-select">
+                            <span>THURGOOD MARSHALL ELEMENTARY SCHOOL</span>
+                            <p>100 Main Street E</p>
+                            <p>City, ST 00000</p>
+                            <button class="nextBtn">SELECT THIS SCHOOL</button>
+                        </div>
+                        <div class="school-select">
+                            <span>THURGOOD MARSHALL ELEMENTARY SCHOOL</span>
+                            <p>100 Main Street E</p>
+                            <p>City, ST 00000</p>
+                            <button class="nextBtn">SELECT THIS SCHOOL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="colophon" class="site-footer footer print-hide" role="contentinfo">
+        <div class="social-sharing">
+            <a class="social-sharing-link" href="" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-fcb.png" alt="Share on Facebook">
+            </a>
+            <a class="social-sharing-link" href="" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-instagram.png" alt="Share on Instagram">
+            </a>
+            <a class="social-sharing-link" href="#" target="_blank" rel="noopener">
+                <img src="./assets/images/icons/footer-youtube.png" alt="Pin it">
+            </a>
+        </div>
+        <div class="footer-wrap">
+            <div class="footer-menu-wrapper">
+                <ul id="footermenu" class="footer-menu">
+                    <li id="menu-item-0">
+                        <a target="_blank" rel="noopener" href="#">FAQs</a>
+                    </li>
+                    <li id="menu-item-1">
+                        <a target="_blank" rel="noopener" href="#"> Contact Us</a>
+                    </li>
+                    <li id="menu-item-2">
+                        <a target="_blank" rel="noopener" href="#"> Español</a>
+                    </li>
+                    <li id="menu-item-3">
+                        <a target="" rel="noopener" href="#">Privacy Policy</a>
+                    </li>
+                    <li id="menu-item-4">
+                        <a target="_blank" rel="noopener" href="#">Legal Terms</a>
+                    </li>
+                    <li id="menu-item-5">
+                        <a target="" rel="noopener" href="">Official Rules</a>
+                    </li>
+                    <li id="menu-item-6">
+                        <a target="" rel="noopener" href="">Ad Choices</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-copyright">© General Mills</div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+</body>
+
+</html>

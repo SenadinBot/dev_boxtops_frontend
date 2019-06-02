@@ -286,16 +286,17 @@
         input,
         select,
         textarea {
-            border: 1px solid #ff0000;
+            border: 1px solid #a21a19;
         }
         .error-msg {
             display: inline-block;
-            font-size: 13px;
-            line-height: 19px;
-            color: #ff0000;
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 3px;
+            right: 10px;
+            font-size: 16px;
+            line-height: 18px;
+            font-family: $brandonGrotesqueLight;
+            color: #a21a19;
             @include media-xs {
                 font-size: 12px;
                 margin-left: 5px;
