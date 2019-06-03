@@ -7927,15 +7927,15 @@ hr.full-width {
     @media (min-width: 768px) and (max-width: 991px) {
       .account-container .account-content {
         flex: 1 1 100%; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .account-container .account-content {
+        flex: 1 1 75%; } }
     .account-container .account-content .account-item {
       width: 98%; }
       @media (max-width: 767px) {
         .account-container .account-content .account-item {
           width: 100%;
           margin-bottom: 15px; } }
-      @media (max-width: 767px) {
-        .account-container .account-content .account-item:last-child {
-          margin-bottom: 0; } }
       .account-container .account-content .account-item .account-item-heading {
         font-size: 0;
         background-color: #F0F0F0;
@@ -7997,6 +7997,9 @@ hr.full-width {
             -webkit-transform: translate(-50%, -50%);
             -moz-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+      @media (max-width: 767px) {
+        .account-container .account-content .account-item:last-child {
+          margin-bottom: 0; } }
       .account-container .account-content .account-item:last-child .account-item-content {
         padding: 32px 0 0px 25px; }
         @media (max-width: 767px) {
@@ -8318,14 +8321,20 @@ hr.full-width {
         .account-container .account-content .account-item .link-container.show-error .link-error-msg {
           display: block; }
       .account-container .account-content .account-item.coordinator-item .account-item-content {
-        padding: 32px 0 40px 0; }
+        padding: 32px 0 0px 0; }
         @media (max-width: 767px) {
           .account-container .account-content .account-item.coordinator-item .account-item-content {
-            padding: 17px 0 20px 0; } }
+            padding: 17px 0 0px 0; } }
+        @media (max-width: 767px) {
+          .account-container .account-content .account-item.coordinator-item .account-item-content .btn-container .custom-btn {
+            margin-left: 20px; } }
     .account-container .account-content table {
       border-collapse: collapse;
       width: 100%;
-      margin-bottom: 15px; }
+      margin: 5px 0 15px 0; }
+      @media (max-width: 767px) {
+        .account-container .account-content table {
+          margin: 5px 0 6px 0; } }
       .account-container .account-content table thead tr th {
         text-align: left;
         color: #002e5d;
@@ -8333,30 +8342,76 @@ hr.full-width {
         font-size: 22px;
         line-height: 22px;
         text-align: left;
+        width: 70%;
         padding-left: 25px; }
         @media (max-width: 767px) {
           .account-container .account-content table thead tr th {
             font-size: 20px;
-            line-height: 20px; } }
+            line-height: 20px;
+            padding-left: 20px;
+            width: calc(100% + 30%); } }
+        @media (min-width: 992px) and (max-width: 1199px) {
+          .account-container .account-content table thead tr th {
+            width: 75%;
+            padding-left: 20px; } }
+        @media (min-width: 768px) and (max-width: 991px) {
+          .account-container .account-content table thead tr th {
+            width: 75%;
+            padding-left: 20px; } }
+        @media (max-width: 767px) {
+          .account-container .account-content table thead tr th:last-child {
+            display: none; } }
       .account-container .account-content table thead tr:last-child {
         padding-top: 3px;
-        border-bottom: 21px solid transparent; }
+        border-bottom: 21px solid transparent;
+        width: 30%; }
+        @media (min-width: 992px) and (max-width: 1199px) {
+          .account-container .account-content table thead tr:last-child {
+            width: 25%; } }
+        @media (min-width: 768px) and (max-width: 991px) {
+          .account-container .account-content table thead tr:last-child {
+            width: 25%; } }
+        @media (max-width: 767px) {
+          .account-container .account-content table thead tr:last-child {
+            width: 100%;
+            border-bottom: 13px solid transparent; } }
         .account-container .account-content table thead tr:last-child th {
           text-transform: uppercase;
           color: #E80A4D; }
+      @media (max-width: 767px) {
+        .account-container .account-content table thead tr {
+          display: grid; } }
       .account-container .account-content table tbody tr {
-        border-bottom: 1px solid red; }
+        border-bottom: 1px solid #F0F0F0; }
         .account-container .account-content table tbody tr td {
           color: #002e5d;
           font-family: "Brandon Grotesque Regular", sans-serif;
           font-size: 22px;
           line-height: 22px;
           text-align: left;
-          padding: 12px 0 11px 25px; }
+          padding: 12px 0 11px 25px;
+          width: 70%; }
           @media (max-width: 767px) {
             .account-container .account-content table tbody tr td {
               font-size: 20px;
-              line-height: 20px; } }
+              line-height: 20px;
+              padding: 15px 0 14px 20px; } }
+          @media (min-width: 992px) and (max-width: 1199px) {
+            .account-container .account-content table tbody tr td {
+              width: 75%;
+              padding: 12px 0 11px 20px; } }
+          @media (min-width: 768px) and (max-width: 991px) {
+            .account-container .account-content table tbody tr td {
+              width: 75%;
+              padding: 12px 0 11px 20px; } }
+          .account-container .account-content table tbody tr td:last-child {
+            width: 30%; }
+            @media (min-width: 992px) and (max-width: 1199px) {
+              .account-container .account-content table tbody tr td:last-child {
+                width: 25%; } }
+            @media (min-width: 768px) and (max-width: 991px) {
+              .account-container .account-content table tbody tr td:last-child {
+                width: 25%; } }
         .account-container .account-content table tbody tr:last-child {
           border-bottom: none; }
       .account-container .account-content table tbody .remove-coord span {
@@ -8388,6 +8443,8 @@ hr.full-width {
         .account-container .account-content table tbody .remove-coord span:hover:before {
           width: 100%;
           visibility: visible; }
+    .account-container .account-content .add-coordinator-btn {
+      margin-bottom: 35px; }
     .account-container .account-content .text-content {
       width: 95%; }
       @media (max-width: 767px) {
@@ -8440,34 +8497,173 @@ hr.full-width {
         margin: 0 auto; }
     .account-container .account-content .add-coord-container.show-coordinatior-account {
       display: inline-block; }
-    .account-container .account-content .add-coord-container {
+    .account-container .account-content .remove-container {
       background-color: #F0F0F0;
       padding: 9px 10px 8px 25px;
       font-size: 0;
       display: block;
       width: 100%;
-      margin: 23px 0 20px 0; }
+      height: 62px;
+      position: relative; }
+      @media (max-width: 767px) {
+        .account-container .account-content .remove-container {
+          height: auto;
+          padding: 12px 15px 22px 20px; } }
+      .account-container .account-content .remove-container .remove-content {
+        display: inline-block;
+        margin-right: 15px;
+        width: calc(100% - 45px); }
+        .account-container .account-content .remove-container .remove-content span {
+          color: #002e5d;
+          font-size: 22px;
+          line-height: 22px;
+          font-family: "Brandon Grotesque Bold", sans-serif;
+          display: inline-block;
+          width: 78%; }
+          @media (max-width: 767px) {
+            .account-container .account-content .remove-container .remove-content span {
+              font-size: 20px;
+              line-height: 20px;
+              margin-bottom: 20px; } }
+          @media (min-width: 992px) and (max-width: 1199px) {
+            .account-container .account-content .remove-container .remove-content span {
+              width: 84%; } }
+          @media (min-width: 768px) and (max-width: 991px) {
+            .account-container .account-content .remove-container .remove-content span {
+              width: 85%; } }
+        .account-container .account-content .remove-container .remove-content .custom-btn {
+          width: auto;
+          min-width: auto;
+          position: relative;
+          top: -2px; }
+      .account-container .account-content .remove-container .close-remove-container {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        top: 7px; }
+        @media (max-width: 767px) {
+          .account-container .account-content .remove-container .close-remove-container {
+            position: absolute;
+            top: 10px;
+            right: 15px; } }
+        .account-container .account-content .remove-container .close-remove-container:after {
+          content: "";
+          width: 30px;
+          height: 30px;
+          display: block;
+          background-image: url("../../../assets/images/icons/modal-close-icon.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          -webkit-transition: all .3s ease;
+          -moz-transition: all .3s ease;
+          -o-transition: all .3s ease;
+          transition: all .3s ease; }
+          @media (max-width: 767px) {
+            .account-container .account-content .remove-container .close-remove-container:after {
+              width: 27px;
+              height: 27px; } }
+        .account-container .account-content .remove-container .close-remove-container:hover:after {
+          opacity: 0.8; }
+      .account-container .account-content .remove-container .remove-msg {
+        display: inline-block;
+        margin-right: 15px;
+        width: calc(100% - 45px); }
+        @media (max-width: 767px) {
+          .account-container .account-content .remove-container .remove-msg {
+            margin-right: 10px;
+            width: calc(100% - 40px); } }
+        .account-container .account-content .remove-container .remove-msg span {
+          color: #002e5d;
+          font-size: 22px;
+          line-height: 22px;
+          font-family: "Brandon Grotesque Bold", sans-serif; }
+          @media (max-width: 767px) {
+            .account-container .account-content .remove-container .remove-msg span {
+              position: relative;
+              top: 9px; } }
+          @media (max-width: 767px) and (orientation: portrait) {
+            .account-container .account-content .remove-container .remove-msg span {
+              font-size: 18px;
+              line-height: 18px; } }
+    .account-container .account-content .remove-tr {
+      display: none; }
+      .account-container .account-content .remove-tr.show-remove {
+        display: table-row; }
+      .account-container .account-content .remove-tr td {
+        padding: 0; }
+    .account-container .account-content .add-coord-container {
+      background-color: #F0F0F0;
+      padding: 9px 10px 8px 15px;
+      font-size: 0;
+      display: none;
+      width: 100%;
+      margin: -13px 0 24px 0;
+      height: 62px;
+      position: relative; }
+      @media (max-width: 767px) {
+        .account-container .account-content .add-coord-container {
+          height: auto;
+          padding: 12px 15px 22px 20px;
+          margin: -13px 0 19px 0; } }
       .account-container .account-content .add-coord-container .form-group {
         display: inline-block;
-        margin-right: 15px; }
-        .account-container .account-content .add-coord-container .form-group input {
-          width: 275px; }
+        margin-right: 15px;
+        position: relative; }
+        @media (max-width: 767px) {
+          .account-container .account-content .add-coord-container .form-group {
+            margin-bottom: 12px; } }
+        .account-container .account-content .add-coord-container .form-group .input-group {
+          display: inline-block;
+          width: 288px;
+          margin: 0;
+          position: relative; }
           @media (max-width: 767px) {
-            .account-container .account-content .add-coord-container .form-group input {
-              width: 210px; } }
+            .account-container .account-content .add-coord-container .form-group .input-group {
+              width: 250px; } }
+          @media (min-width: 992px) and (max-width: 1199px) {
+            .account-container .account-content .add-coord-container .form-group .input-group {
+              width: 242px; } }
+          @media (min-width: 768px) and (max-width: 991px) {
+            .account-container .account-content .add-coord-container .form-group .input-group {
+              width: 232px; } }
+        .account-container .account-content .add-coord-container .form-group input {
+          width: 100%; }
         .account-container .account-content .add-coord-container .form-group label {
           width: auto;
           font-family: "Brandon Grotesque Bold", sans-serif;
           margin-right: 13px; }
+          @media (max-width: 767px) {
+            .account-container .account-content .add-coord-container .form-group label {
+              margin: 0 0 10px 0; } }
+        .account-container .account-content .add-coord-container .form-group .error-msg {
+          display: none; }
+        .account-container .account-content .add-coord-container .form-group.has-error .error-msg {
+          display: inline-block;
+          position: absolute;
+          top: 3px;
+          right: 10px;
+          font-size: 16px;
+          line-height: 18px;
+          font-family: "Brandon Grotesque Light", sans-serif;
+          color: #a21a19; }
+        .account-container .account-content .add-coord-container .form-group.has-error input {
+          border: 1px solid #a21a19; }
       .account-container .account-content .add-coord-container .custom-btn {
         display: inline-block;
-        margin-right: 15px;
         min-width: auto; }
+      .account-container .account-content .add-coord-container .add-coord-content {
+        display: inline-block;
+        margin-right: 15px; }
       .account-container .account-content .add-coord-container .close-add-coord-container {
         display: inline-block;
         cursor: pointer;
         position: relative;
-        top: 8px; }
+        top: 7px; }
+        @media (max-width: 767px) {
+          .account-container .account-content .add-coord-container .close-add-coord-container {
+            position: absolute;
+            top: 10px;
+            right: 15px; } }
         .account-container .account-content .add-coord-container .close-add-coord-container:after {
           content: "";
           width: 30px;
@@ -8480,11 +8676,32 @@ hr.full-width {
           -moz-transition: all .3s ease;
           -o-transition: all .3s ease;
           transition: all .3s ease; }
+          @media (max-width: 767px) {
+            .account-container .account-content .add-coord-container .close-add-coord-container:after {
+              width: 27px;
+              height: 27px; } }
         .account-container .account-content .add-coord-container .close-add-coord-container:hover:after {
           opacity: 0.8; }
+      .account-container .account-content .add-coord-container .add-coord-msg {
+        display: inline-block;
+        width: calc(100% - 30px); }
+        .account-container .account-content .add-coord-container .add-coord-msg span {
+          color: #002e5d;
+          font-size: 22px;
+          line-height: 22px;
+          font-family: "Brandon Grotesque Bold", sans-serif;
+          position: relative;
+          top: 5px; }
+          @media (max-width: 767px) and (orientation: portrait) {
+            .account-container .account-content .add-coord-container .add-coord-msg span {
+              font-size: 18px;
+              line-height: 18px; } }
     .account-container .account-content .note {
       width: 96%;
       padding-left: 25px; }
+      @media (max-width: 767px) {
+        .account-container .account-content .note {
+          padding-left: 20px; } }
       .account-container .account-content .note span {
         color: #002e5d;
         font-family: "Brandon Grotesque Regular", sans-serif;
@@ -8506,6 +8723,9 @@ hr.full-width {
     @media (min-width: 768px) and (max-width: 991px) {
       .account-container .adverb-content {
         display: none; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .account-container .adverb-content {
+        flex: 1 1 25%; } }
 
 .school-modal-container .modal-body {
   padding: 34px 50px 0 50px;

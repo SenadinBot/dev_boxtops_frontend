@@ -25,16 +25,14 @@
         @include media-sm {
             flex: 1 1 100%;
         }
+        @include media-md {
+            flex: 1 1 75%;
+        }
         .account-item {
             width: 98%;
             @include media-xs {
                 width: 100%;
                 margin-bottom: 15px;
-            }
-            &:last-child {
-                @include media-xs {
-                    margin-bottom: 0;
-                }
             }
             .account-item-heading {
                 font-size: 0;
@@ -103,6 +101,9 @@
                 }
             }
             &:last-child {
+                @include media-xs {
+                    margin-bottom: 0;
+                }
                 .account-item-content {
                     padding: 32px 0 0px 25px;
                     @include media-xs {
@@ -493,9 +494,16 @@
             }
             &.coordinator-item {
                 .account-item-content {
-                    padding: 32px 0 40px 0;
+                    padding: 32px 0 0px 0;
                     @include media-xs {
-                        padding: 17px 0 20px 0;
+                        padding: 17px 0 0px 0;
+                    }
+                    .btn-container {
+                        .custom-btn {
+                            @include media-xs {
+                                margin-left: 20px;
+                            }
+                        }
                     }
                 }
             }
@@ -503,7 +511,10 @@
         table {
             border-collapse: collapse;
             width: 100%;
-            margin-bottom: 15px;
+            margin: 5px 0 15px 0;
+            @include media-xs {
+                margin: 5px 0 6px 0;
+            }
             thead {
                 tr {
                     th {
@@ -513,26 +524,55 @@
                         font-size: 22px;
                         line-height: 22px;
                         text-align: left;
+                        width: 70%;
+                        padding-left: 25px;
                         @include media-xs {
                             font-size: 20px;
                             line-height: 20px;
+                            padding-left: 20px;
+                            width: calc(100% + 30%);
                         }
-                        padding-left: 25px;
+                        @include media-md {
+                            width: 75%;
+                            padding-left: 20px;
+                        }
+                        @include media-sm {
+                            width: 75%;
+                            padding-left: 20px;
+                        }
+                        &:last-child {
+                            @include media-xs {
+                                display: none;
+                            }
+                        }
                     }
                     &:last-child {
                         padding-top: 3px;
                         border-bottom: 21px solid transparent;
+                        width: 30%;
+                        @include media-md {
+                            width: 25%;
+                        }
+                        @include media-sm {
+                            width: 25%;
+                        }
+                        @include media-xs {
+                            width: 100%;
+                            border-bottom: 13px solid transparent;
+                        }
                         th {
                             text-transform: uppercase;
                             color: $redRibbon;
                         }
                     }
+                    @include media-xs {
+                        display: grid;
+                    }
                 }
             }
             tbody {
                 tr {
-                    // border-bottom: 1px solid #F0F0F0;
-                    border-bottom: 1px solid red;
+                    border-bottom: 1px solid #F0F0F0;
                     td {
                         color: $midnightBlue;
                         font-family: $brandonGrotesque;
@@ -540,9 +580,28 @@
                         line-height: 22px;
                         text-align: left;
                         padding: 12px 0 11px 25px;
+                        width: 70%;
                         @include media-xs {
                             font-size: 20px;
                             line-height: 20px;
+                            padding: 15px 0 14px 20px;
+                        }
+                        @include media-md {
+                            width: 75%;
+                            padding: 12px 0 11px 20px;
+                        }
+                        @include media-sm {
+                            width: 75%;
+                            padding: 12px 0 11px 20px;
+                        }
+                        &:last-child {
+                            width: 30%;
+                            @include media-md {
+                                width: 25%;
+                            }
+                            @include media-sm {
+                                width: 25%;
+                            }
                         }
                     }
                     &:last-child {
@@ -586,6 +645,9 @@
                     }
                 }
             }
+        }
+        .add-coordinator-btn {
+            margin-bottom: 35px;
         }
         .text-content {
             width: 95%;
@@ -652,39 +714,58 @@
                 display: inline-block;
             }
         }
-        .add-coord-container {
+        .remove-container {
             background-color: #F0F0F0;
             padding: 9px 10px 8px 25px;
             font-size: 0;
-            // display: none;
             display: block;
             width: 100%;
-            margin: 23px 0 20px 0;
-            .form-group {
+            height: 62px;
+            position: relative;
+            @include media-xs {
+                height: auto;
+                padding: 12px 15px 22px 20px;
+            }
+            .remove-content {
                 display: inline-block;
                 margin-right: 15px;
-                input {
-                    width: 275px;
+                width: calc(100% - 45px);
+                span {
+                    color: $midnightBlue;
+                    font-size: 22px;
+                    line-height: 22px;
+                    font-family: $brandonGrotesqueBold;
+                    display: inline-block;
+                    width: 78%;
                     @include media-xs {
-                        width: 210px;
+                        font-size: 20px;
+                        line-height: 20px;
+                        margin-bottom: 20px;
+                    }
+                    @include media-md {
+                        width: 84%;
+                    }
+                    @include media-sm {
+                        width: 85%;
                     }
                 }
-                label {
+                .custom-btn {
                     width: auto;
-                    font-family: $brandonGrotesqueBold;
-                    margin-right: 13px;
+                    min-width: auto;
+                    position: relative;
+                    top: -2px
                 }
             }
-            .custom-btn {
-                display: inline-block;
-                margin-right: 15px;
-                min-width: auto;
-            }
-            .close-add-coord-container {
+            .close-remove-container {
                 display: inline-block;
                 cursor: pointer;
                 position: relative;
-                top: 8px;
+                top: 7px;
+                @include media-xs {
+                    position: absolute;
+                    top: 10px;
+                    right: 15px;
+                }
                 &:after {
                     content: "";
                     width: 30px;
@@ -697,6 +778,10 @@
                     -moz-transition: all .3s ease;
                     -o-transition: all .3s ease;
                     transition: all .3s ease;
+                    @include media-xs {
+                        width: 27px;
+                        height: 27px;
+                    }
                 }
                 &:hover {
                     &:after {
@@ -704,10 +789,169 @@
                     }
                 }
             }
+            .remove-msg {
+                display: inline-block;
+                margin-right: 15px;
+                width: calc(100% - 45px);
+                @include media-xs {
+                    margin-right: 10px;
+                    width: calc(100% - 40px);
+                }
+                span {
+                    color: $midnightBlue;
+                    font-size: 22px;
+                    line-height: 22px;
+                    font-family: $brandonGrotesqueBold;
+                    @include media-xs {
+                        position: relative;
+                        top: 9px;
+                    }
+                    @include media-xs-portrait {
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+                }
+            }
+        }
+        .remove-tr {
+            display: none;
+            &.show-remove {
+                display: table-row;
+            }
+            td {
+                padding: 0;
+            }
+        }
+        .add-coord-container {
+            background-color: #F0F0F0;
+            padding: 9px 10px 8px 15px;
+            font-size: 0;
+            display: none;
+            width: 100%;
+            margin: -13px 0 24px 0;
+            height: 62px;
+            position: relative;
+            @include media-xs {
+                height: auto;
+                padding: 12px 15px 22px 20px;
+                margin: -13px 0 19px 0;
+            }
+            .form-group {
+                display: inline-block;
+                margin-right: 15px;
+                position: relative;
+                @include media-xs {
+                    margin-bottom: 12px;
+                }
+                .input-group {
+                    display: inline-block;
+                    width: 288px;
+                    margin: 0;
+                    position: relative;
+                    @include media-xs {
+                        width: 250px;
+                    }
+                    @include media-md {
+                        width: 242px;
+                    }
+                    @include media-sm {
+                        width: 232px;
+                    }
+                }
+                input {
+                    width: 100%;
+                }
+                label {
+                    width: auto;
+                    font-family: $brandonGrotesqueBold;
+                    margin-right: 13px;
+                    @include media-xs {
+                        margin: 0 0 10px 0;
+                    }
+                }
+                .error-msg {
+                    display: none;
+                }
+                &.has-error {
+                    .error-msg {
+                        display: inline-block;
+                        position: absolute;
+                        top: 3px;
+                        right: 10px;
+                        font-size: 16px;
+                        line-height: 18px;
+                        font-family: $brandonGrotesqueLight;
+                        color: #a21a19;
+                    }
+                    input {
+                        border: 1px solid #a21a19;
+                    }
+                }
+            }
+            .custom-btn {
+                display: inline-block;
+                min-width: auto;
+            }
+            .add-coord-content {
+                display: inline-block;
+                margin-right: 15px;
+            }
+            .close-add-coord-container {
+                display: inline-block;
+                cursor: pointer;
+                position: relative;
+                top: 7px;
+                @include media-xs {
+                    position: absolute;
+                    top: 10px;
+                    right: 15px;
+                }
+                &:after {
+                    content: "";
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    background-image: url("../../../assets/images/icons/modal-close-icon.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    -webkit-transition: all .3s ease;
+                    -moz-transition: all .3s ease;
+                    -o-transition: all .3s ease;
+                    transition: all .3s ease;
+                    @include media-xs {
+                        width: 27px;
+                        height: 27px;
+                    }
+                }
+                &:hover {
+                    &:after {
+                        opacity: 0.8;
+                    }
+                }
+            }
+            .add-coord-msg {
+                display: inline-block;
+                width: calc(100% - 30px);
+                span {
+                    color: $midnightBlue;
+                    font-size: 22px;
+                    line-height: 22px;
+                    font-family: $brandonGrotesqueBold;
+                    position: relative;
+                    top: 5px;
+                    @include media-xs-portrait {
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+                }
+            }
         }
         .note {
             width: 96%;
             padding-left: 25px;
+            @include media-xs {
+                padding-left: 20px;
+            }
             span {
                 color: $midnightBlue;
                 font-family: $brandonGrotesque;
@@ -732,6 +976,9 @@
         }
         @include media-sm {
             display: none;
+        }
+        @include media-md {
+            flex: 1 1 25%;
         }
     }
 }

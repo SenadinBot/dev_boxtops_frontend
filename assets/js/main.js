@@ -295,6 +295,13 @@ jQuery(function ($) {
         $('.add-coordinator-btn').on('click', function() {
             $('.add-coord-container').addClass('show-coordinatior-account')
         });
+
+        $('.close-remove-container').on('click', function() {
+            $(this).parents('.remove-tr').removeClass('show-remove')
+        });
+        $('.remove-coord').on('click', function() {
+            $(this).parent().next().addClass('show-remove')
+        });
     });
 
     function getSchools() {
