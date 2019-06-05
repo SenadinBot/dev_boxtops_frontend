@@ -2,7 +2,8 @@ p {
   font-family: "Brandon Grotesque Regular", sans-serif;
   margin: 0; }
 
-i {
+i,
+em {
   font-family: "Brandon Grotesque Regular Italic", sans-serif; }
 
 h2 {
@@ -1549,12 +1550,14 @@ body {
       @media (max-width: 767px) {
         .image-heading-text-container .image-heading-text-content p {
           width: 93%; } }
-    .image-heading-text-container .image-heading-text-content i {
+    .image-heading-text-container .image-heading-text-content i,
+    .image-heading-text-container .image-heading-text-content em {
       position: relative;
       color: #002e5d;
       font-family: "Brandon Grotesque Light", sans-serif;
       display: inline-block; }
-      .image-heading-text-container .image-heading-text-content i:before {
+      .image-heading-text-container .image-heading-text-content i:before,
+      .image-heading-text-container .image-heading-text-content em:before {
         content: "*";
         position: absolute;
         top: 0;
@@ -1735,13 +1738,15 @@ body {
         .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content p b,
         .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content p strong {
           font-family: "Brandon Grotesque Bold", sans-serif; }
-      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content i {
+      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content i,
+      .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content em {
         font-family: "Brandon Grotesque Regular Italic", sans-serif;
         color: #002e5d;
         font-size: 14px;
         line-height: 20px; }
         @media (max-width: 767px) {
-          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content i {
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content i,
+          .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content em {
             font-family: 12px;
             line-height: 18px; } }
       .image-heading-text-container .two-column-image-heading-text-container .two-column-image-heading-text-content img {
@@ -3218,7 +3223,7 @@ body.search-open .header-search {
           position: absolute;
           top: 0;
           left: 0; }
-      .story-section-container .story-section-wrapper .story-section-item span {
+      .story-section-container .story-section-wrapper .story-section-item .year-num {
         color: #FFF;
         font-size: 16px;
         line-height: 28px;
@@ -3231,9 +3236,9 @@ body.search-open .header-search {
         -moz-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%); }
         @media (max-width: 767px) {
-          .story-section-container .story-section-wrapper .story-section-item span {
+          .story-section-container .story-section-wrapper .story-section-item .year-num {
             font-size: 16px;
-            line-height: 28pxpx; } }
+            line-height: 28px; } }
       .story-section-container .story-section-wrapper .story-section-item p {
         font-size: 18px;
         line-height: 21px;
@@ -3350,7 +3355,7 @@ body.search-open .header-search {
     .heading-text-button-container.registration-heading .heading-text-button-content h2 {
       color: #002e5d;
       margin: 0 auto;
-      width: 40%; }
+      width: 45%; }
       @media (max-width: 767px) {
         .heading-text-button-container.registration-heading .heading-text-button-content h2 {
           width: 100%; } }
@@ -7521,18 +7526,20 @@ hr.full-width {
           -moz-transform: translate(0, -50%);
           transform: translate(0, -50%);
           right: 10px; }
-      .registration-step-container .stepwizard-container .stepwizard-step.active-stepwizard:before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        right: 50%;
-        width: 100%;
-        height: 6px;
-        background-color: #39BCD9;
-        z-index: 1; }
+      .registration-step-container .stepwizard-container .stepwizard-step.active-stepwizard {
+        pointer-events: none; }
+        .registration-step-container .stepwizard-container .stepwizard-step.active-stepwizard:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          right: 50%;
+          width: 100%;
+          height: 6px;
+          background-color: #39BCD9;
+          z-index: 1; }
       .registration-step-container .stepwizard-container .stepwizard-step:first-child.active-stepwizard:before {
         display: none; }
       .registration-step-container .stepwizard-container .stepwizard-step a {
@@ -7573,6 +7580,74 @@ hr.full-width {
         .registration-step-container .stepwizard-container .stepwizard-step a[disabled] {
           opacity: 1;
           pointer-events: none; }
+  .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step h2 {
+    font-size: 25px;
+    line-height: 30px; }
+    @media (max-width: 767px) {
+      .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step h2 {
+        font-size: 20px;
+        line-height: 24px; } }
+  .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step p {
+    width: 70%; }
+    @media (max-width: 767px) {
+      .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step p {
+        width: 100%; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step p {
+        width: 80%; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step p {
+        width: 65%; } }
+  .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .custom-btn.getSchools {
+    background-color: #fff;
+    color: #E80A4D; }
+    .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .custom-btn.getSchools:before {
+      background: #E80A4D; }
+    .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .custom-btn.getSchools:hover {
+      color: #fff; }
+  .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step {
+    position: relative;
+    margin-bottom: 34px; }
+    @media (max-width: 767px) {
+      .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step {
+        margin-bottom: 44px; } }
+    .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step:after {
+      content: "";
+      background: #D9D9D9;
+      width: calc(100% + 145px);
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      left: -145px; }
+      @media (max-width: 767px) {
+        .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step:after {
+          left: 0;
+          width: 100%; } }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step:after {
+          width: calc(100% + 100px);
+          left: -100px; } }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step:after {
+          width: calc(100% + 70px);
+          left: -70px; } }
+    .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step p {
+      margin-bottom: 0; }
+      @media (max-width: 767px) {
+        .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step p {
+          width: 81%;
+          margin-bottom: 3px; } }
+    .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step h2 {
+      margin-bottom: 22px; }
+      @media (max-width: 767px) {
+        .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step h2 {
+          margin-bottom: 19px;
+          width: 81%; } }
+    .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step .custom-btn {
+      margin-bottom: 40px; }
+      @media (max-width: 767px) {
+        .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step .custom-btn {
+          margin-bottom: 50px; } }
   .registration-step-container .stepcontent-container {
     margin: 0 auto;
     width: 860px; }
@@ -7588,7 +7663,7 @@ hr.full-width {
       -o-transition: all .3s ease;
       transition: all .3s ease; }
       .registration-step-container .stepcontent-container .step-content h2 {
-        margin-bottom: 23px; }
+        margin-bottom: 13px; }
         @media (max-width: 767px) {
           .registration-step-container .stepcontent-container .step-content h2 {
             margin-bottom: 13px; } }
@@ -7657,7 +7732,7 @@ hr.full-width {
           .registration-step-container .stepcontent-container .step-content .form-container {
             padding-left: 70px; } }
         .registration-step-container .stepcontent-container .step-content .form-container .form-content {
-          margin: 12px 0 15px 0;
+          margin: 12px 0 10px 0;
           display: inline-block; }
         .registration-step-container .stepcontent-container .step-content .form-container .form-group {
           position: relative;

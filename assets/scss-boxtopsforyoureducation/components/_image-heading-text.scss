@@ -64,7 +64,8 @@
                 width: 93%;
             }
         }
-        i {
+        i,
+        em {
             position: relative;
             color: $midnightBlue;
             font-family: $brandonGrotesqueLight;
@@ -274,7 +275,8 @@
                     font-family: $brandonGrotesqueBold;
                 }
             }
-            i {
+            i,
+            em {
                 font-family: $brandonGrotesqueItalic;
                 color: $midnightBlue;
                 font-size: 14px;

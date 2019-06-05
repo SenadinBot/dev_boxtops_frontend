@@ -54,6 +54,7 @@
                 }
             }
             &.active-stepwizard {
+                pointer-events: none;
                 &:before {
                     content: "";
                     position: absolute;
@@ -119,6 +120,94 @@
             }
         }
     }
+    &.upgrade-step-container {
+        .stepcontent-container { 
+            .step-content {
+                &.first-step {
+                    h2 {
+                        font-size: 25px;
+                        line-height: 30px;
+                        @include media-xs {
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+                    p {
+                        width: 70%;
+                        @include media-xs {
+                            width: 100%;
+                        }
+                        @include media-sm {
+                            width: 80%;
+                        }
+                        @include media-md {
+                            width: 65%;
+                        }
+                    }
+                    .custom-btn {
+                        &.getSchools {
+                            background-color: #fff;
+                            color: $redRibbon;
+                            &:before {
+                                background: $redRibbon;
+                            }
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                    }
+                    .upgrade-step {
+                        position: relative;
+                        margin-bottom: 34px;
+                        @include media-xs {
+                            margin-bottom: 44px;
+                        }
+                        &:after {
+                            content: "";
+                            background: #D9D9D9;
+                            width: calc(100% + 145px);
+                            height: 1px;
+                            position: absolute;
+                            bottom: 0;
+                            left: -145px;
+                            @include media-xs {
+                                left: 0;
+                                width: 100%;
+                            }
+                            @include media-sm {
+                                width: calc(100% + 100px);
+                                left: -100px;
+                            }
+                            @include media-md {
+                                width: calc(100% + 70px);
+                                left: -70px;
+                            }
+                        }
+                        p {
+                            margin-bottom: 0;
+                            @include media-xs {
+                                width: 81%;
+                                margin-bottom: 3px;
+                            }
+                        }
+                        h2 {
+                            margin-bottom: 22px;
+                            @include media-xs {
+                                margin-bottom: 19px;
+                                width: 81%;
+                            }
+                        }
+                        .custom-btn {
+                            margin-bottom: 40px;
+                            @include media-xs {
+                                margin-bottom: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .stepcontent-container {
         margin: 0 auto;
         width: 860px;
@@ -134,7 +223,7 @@
             -o-transition: all .3s ease;
             transition: all .3s ease;
             h2 {
-                margin-bottom: 23px;
+                margin-bottom: 13px;
                 @include media-xs {
                     margin-bottom: 13px;
                 }
@@ -215,7 +304,7 @@
                     padding-left: 70px;
                 }
                 .form-content {
-                    margin: 12px 0 15px 0;
+                    margin: 12px 0 10px 0;
                     display: inline-block;
                 }
                 .form-group {

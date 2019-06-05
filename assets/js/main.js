@@ -65,7 +65,9 @@ jQuery(function ($) {
         // }
 
         // Check Subscribe Form
-        if ($('.promo-offers-container').length) {
+        if ($('.promo-offers-container').length == 0) {
+            $('body').removeClass('has-promo-offers');
+        } else if ($('.promo-offers-container').length) {
             $('body').addClass('has-promo-offers');
             $(window).scroll(function () {
                 var winOffset = document.documentElement.scrollTop || document.body.scrollTop;
@@ -75,9 +77,6 @@ jQuery(function ($) {
                     $('body').addClass('has-promo-offers');
                 }
             });
-        }
-        else {
-            $('body').removeClass('has-promo-offers');
         }
 
         // Load more for Multiple  Columns Component
@@ -148,10 +147,45 @@ jQuery(function ($) {
         }
         //Update password ajax call
         $("#reset-pass-btn").on("click", function (e) {
-            jQuery.post("/Password/UpdatePassword", { OldPassword: "test", NewPassword: "text" }, function (data) {
-                console.log("Data: ", data);
-            });
+            if (validateUpdatePasswordForm()) {
+                jQuery.post("/Password/UpdatePassword", { OldPassword: "test", NewPassword: "text" }, function (data) {
+                    console.log("Data: ", data);
+                });
+            }
         });
+
+        function validateUpdatePasswordForm() {
+            var oldPass = $("#oldPassword");
+            var newPass = $("#newPassword");
+            var confirmPass = $("#confirmNewPassword");
+
+            var isValid = true;
+
+            if (oldPass.val() == "") {
+                oldPass.parents(".form-group").addClass("form-error");
+                isValid = false;
+            } else {
+                oldPass.parents(".form-group").removeClass("form-error");
+                isValid = true;
+            }
+
+            if (newPass.val() == "") {
+                newPass.parents(".form-group").addClass("form-error");
+                isValid = false;
+            } else {
+                newPass.parents(".form-group").removeClass("form-error");
+                isValid = true;
+            }
+
+            if (confirmPass.val() == "" || confirmPass.val() != newPass.val()) {
+                confirmPass.parents(".form-group").addClass("form-error");
+                isValid = false;
+            } else {
+                confirmPass.parents(".form-group").removeClass("form-error");
+                isValid = true;
+            }
+            return isValid;
+        }
 
         //Update earnings ajax call
         $("#update-earnings-btn").on("click", function (e) {
@@ -245,6 +279,12 @@ jQuery(function ($) {
             }
         });
 
+        $("body").on("click", ".upgrade-step .nextBtn", function () {
+            var curStep = $(this).closest(".step-content"),
+                curStepBtn = curStep.attr("id");
+            $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a").removeAttr('disabled').trigger('click');
+        });
+
         $('.getSchools').click(function () {
             var curStep = $(this).closest(".step-content"),
                 curInputs = curStep.find("input[type='text'],input[type='url'], input[type='email'], input[type='password']");
@@ -279,27 +319,69 @@ jQuery(function ($) {
         });
 
         // Edit User Infoadd-store-btn
-        $('.edit-btn').on('click', function() {
+        $('.edit-btn').on('click', function () {
+            var oldFirstName;
+            var oldLastName;
+            var oldZipCode;
+            var oldBirthDate;
+            var isValid = true;
+
+            if ($(this).parents('.account-item-content').hasClass('edit-user')) {
+                console.log("Sent")
+                var firstName = $("#consAccFirstName").val();
+                var lastName = $("#consAccLastName").val();
+                var zipCode = $("#consAccZipCode").val();
+                var birthDate = $("#consAccBirthDate").val();
+                var obj = {};
+
+                obj["FirstName"] = firstName;
+                obj["LastName"] = lastName;
+                obj["ZipCode"] = zipCode;
+                obj["BirthDate"] = birthDate;
+
+                $.post("/Account/UpdateUserInfo", obj, function (data) {
+                    console.log("Data: ", data);
+                });
+
+            } else {
+                oldFirstName = $("#consAccFirstName").val();
+                oldLastName = $("#consAccLastName").val();
+                oldZipCode = $("#consAccZipCode").val();
+                oldBirthDate = $("#consAccBirthDate").val();
+            }
+
             $(this).parents('.account-item-content').toggleClass('edit-user');
         });
 
+        //Search school on the Accounts page
+        $(".school-select-container").on("click", ".nextBtn", function (e) {
+            e.preventDefault();
+            var schoolId = $(this).data("schoolid");
+            var schoolName = $(this).data("schoolname");
+            console.log("Params: ", schoolId, " ", schoolName);
+            $.post("/Account/ChangeSchool", { SchoolId: schoolId, SchoolName: schoolName }, function (data) {
+                $("#suppSchool").text(data.schoolName);
+                $('.modal').removeClass('is-visible');
+            });
+        });
+
         // Add Store
-        $('.add-store-btn').on('click', function() {
+        $('.add-store-btn').on('click', function () {
             $('.link-container').addClass('add-link-account');
         });
 
         //Add/Remove Account Coordinator
-        $('.close-add-coord-container').on('click', function() {
+        $('.close-add-coord-container').on('click', function () {
             $(this).parents('.add-coord-container').removeClass('show-coordinatior-account')
         });
-        $('.add-coordinator-btn').on('click', function() {
+        $('.add-coordinator-btn').on('click', function () {
             $('.add-coord-container').addClass('show-coordinatior-account')
         });
 
-        $('.close-remove-container').on('click', function() {
+        $('.close-remove-container').on('click', function () {
             $(this).parents('.remove-tr').removeClass('show-remove')
         });
-        $('.remove-coord').on('click', function() {
+        $('.remove-coord').on('click', function () {
             $(this).parent().next().addClass('show-remove')
         });
     });
@@ -315,7 +397,7 @@ jQuery(function ($) {
                     "<span>" + data.list[i].SchoolName + "</span>" +
                     "<p>" + data.list[i].Address + "</p>" +
                     "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" +
-                    "<button class='nextBtn' data-schoolId='" + data.list[i].GmilId + "'>SELECT THIS SCHOOL</button>" +
+                    "<button class='nextBtn' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" +
                     "</div >"
             }
             $(".school-select-container").append(htmlData)

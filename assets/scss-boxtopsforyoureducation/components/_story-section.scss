@@ -70,7 +70,7 @@
                     left: 0;
                 }
             }
-            span {
+            .year-num {
                 color: $white;
                 font-size: 16px;
                 line-height: 28px;
@@ -84,7 +84,7 @@
                 transform: translate(-50%, -50%);
                 @include media-xs {
                     font-size: 16px;
-                    line-height: 28pxpx;
+                    line-height: 28px;
                 }
             }
             p {
