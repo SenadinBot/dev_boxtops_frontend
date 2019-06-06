@@ -70,6 +70,12 @@
             color: $midnightBlue;
             font-family: $brandonGrotesqueLight;
             display: inline-block;
+            font-size: 18px;
+            line-height: 18px;
+            @include media-xs {
+                font-size: 14px;
+                line-height: 14px;
+            }
             &:before {
                 content: "*";
                 position: absolute;
@@ -315,7 +321,7 @@
             }
             .column-icons-item {
                 display: inline-block;
-                width: 33%;
+                width: 32.5%;
                 text-align: left;
                 // min-height: 94px;
                 position: relative;

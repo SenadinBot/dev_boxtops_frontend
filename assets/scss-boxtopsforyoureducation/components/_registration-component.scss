@@ -313,11 +313,14 @@
                     -moz-transition: all .3s ease;
                     -o-transition: all .3s ease;
                     transition: all .3s ease;
+                    .input-group {
+                        position: relative;
+                    }
                     span {
                         display: none;
                         position: absolute;
-                        top: 3px;
-                        right: 10px;
+                        bottom: -18px;
+                        left: 0;
                         font-size: 16px;
                         line-height: 18px;
                         font-family: $brandonGrotesqueLight;

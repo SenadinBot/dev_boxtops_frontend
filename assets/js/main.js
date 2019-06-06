@@ -65,18 +65,19 @@ jQuery(function ($) {
         // }
 
         // Check Subscribe Form
-        if ($('.promo-offers-container').length == 0) {
-            $('body').removeClass('has-promo-offers');
-        } else if ($('.promo-offers-container').length) {
+        if ($('.promo-offers-container').length) {
             $('body').addClass('has-promo-offers');
             $(window).scroll(function () {
                 var winOffset = document.documentElement.scrollTop || document.body.scrollTop;
-                if (winOffset > 59) {
+                if (winOffset > 0) {
                     $('body').removeClass('has-promo-offers');
                 } else {
                     $('body').addClass('has-promo-offers');
                 }
             });
+        }
+        else {
+            $('body').removeClass('has-promo-offers');
         }
 
         // Load more for Multiple  Columns Component
@@ -315,6 +316,16 @@ jQuery(function ($) {
         });
         $('.school-modal').on('click', function (e) {
             e.preventDefault();
+
+            if ($("#text").val() === null || $("#text").val().match(/^ *$/) !== null) {
+                $(".school-form .error-msg").removeClass("hidden");
+                $(".school-form .form-group").addClass("form-error");
+            } else {
+                $(".school-form .error-msg").addClass("hidden");
+                $(".school-form .form-group").removeClass("form-error");
+
+                getSchools();
+            }
             $('.modal').addClass('is-visible');
         });
 
@@ -325,13 +336,17 @@ jQuery(function ($) {
             var oldZipCode;
             var oldBirthDate;
             var isValid = true;
+            var fnSelector = $("#consAccFirstName");
+            var lnSelector = $("#consAccLastName");
+            var zcSelector = $("#consAccZipCode");
+            var bdSelector = $("#consAccBirthDate");
+
 
             if ($(this).parents('.account-item-content').hasClass('edit-user')) {
-                console.log("Sent")
-                var firstName = $("#consAccFirstName").val();
-                var lastName = $("#consAccLastName").val();
-                var zipCode = $("#consAccZipCode").val();
-                var birthDate = $("#consAccBirthDate").val();
+                var firstName = fnSelector.val();
+                var lastName = lnSelector.val();
+                var zipCode = zcSelector.val();
+                var birthDate = bdSelector.val();
                 var obj = {};
 
                 obj["FirstName"] = firstName;
@@ -340,14 +355,36 @@ jQuery(function ($) {
                 obj["BirthDate"] = birthDate;
 
                 $.post("/Account/UpdateUserInfo", obj, function (data) {
-                    console.log("Data: ", data);
+                    
+                    fnSelector.attr("placeholder", data.data["FirstName"]);
+                    fnSelector.val("");
+                    
+                    lnSelector.attr("placeholder", data.data["LastName"]);
+                    lnSelector.val("");
+                    
+                    zcSelector.attr("placeholder", data.data["ZipCode"]);
+                    zcSelector.val("");
+                    
+                    bdSelector.attr("placeholder", data.data["BirthDate"]);
+                    bdSelector.val("");
+
+                    oldFirstName = data["FirstName"];
+                    oldLastName = data["LastName"];
+                    oldZipCode = data["ZipCode"];
+                    oldBirthDate = data["BirthDate"];
+
                 });
 
             } else {
-                oldFirstName = $("#consAccFirstName").val();
-                oldLastName = $("#consAccLastName").val();
-                oldZipCode = $("#consAccZipCode").val();
-                oldBirthDate = $("#consAccBirthDate").val();
+                fnSelector.attr("value", fnSelector.attr("placeholder"));
+                lnSelector.attr("value", lnSelector.attr("placeholder"));
+                zcSelector.attr("value", zcSelector.attr("placeholder"));
+                bdSelector.attr("value", bdSelector.attr("placeholder"));
+                oldFirstName = fnSelector.attr("placeholder");
+                oldLastName = lnSelector.attr("placeholder");
+                oldZipCode = zcSelector.attr("placeholder");
+                oldBirthDate = bdSelector.attr("placeholder");
+
             }
 
             $(this).parents('.account-item-content').toggleClass('edit-user');
@@ -359,9 +396,10 @@ jQuery(function ($) {
             var schoolId = $(this).data("schoolid");
             var schoolName = $(this).data("schoolname");
             console.log("Params: ", schoolId, " ", schoolName);
+            $('.modal').removeClass('is-visible');
+
             $.post("/Account/ChangeSchool", { SchoolId: schoolId, SchoolName: schoolName }, function (data) {
                 $("#suppSchool").text(data.schoolName);
-                $('.modal').removeClass('is-visible');
             });
         });
 
@@ -388,7 +426,7 @@ jQuery(function ($) {
 
     function getSchools() {
         var text = $("#text").val()
-
+        $(".school-select-container").empty();
         $.get("/Registration/searchschools?keyword=" + text, function (data) {
             var htmlData = "";
             for (var i = 0; i < data.list.length; i++) {
@@ -401,7 +439,6 @@ jQuery(function ($) {
                     "</div >"
             }
             $(".school-select-container").append(htmlData)
-            console.log("Data: ", data);
         });
     }
 
