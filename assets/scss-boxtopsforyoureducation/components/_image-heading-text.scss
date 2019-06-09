@@ -68,23 +68,18 @@
         em {
             position: relative;
             color: $midnightBlue;
-            font-family: $brandonGrotesqueLight;
+            font-family: $brandonGrotesqueItalic;
             display: inline-block;
             font-size: 18px;
             line-height: 18px;
             @include media-xs {
                 font-size: 14px;
-                line-height: 14px;
-            }
-            &:before {
-                content: "*";
-                position: absolute;
-                top: 0;
-                left: -5px;
+                line-height: 17px;
             }
         }
         .column-icons-container {
             margin: 25px 0 17.8px 0;
+            font-size: 0;
             @include media-xs {
                 margin: 20px 0;
             }

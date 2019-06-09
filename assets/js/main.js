@@ -5,6 +5,12 @@ var skipField = jQuery(".skip");
 var searchTerm = jQuery(".searchTerm");
 var searchPageId = jQuery(".pageId");
 var showMoreButton = jQuery(".showMoreBtn");
+var totalClips = jQuery(".totalClips");
+var totalBonus = jQuery(".totalBonus");
+var firstStepButton = jQuery(".firstStep-next-btn");
+var seconStepButton = jQuery(".firstStep-next-btn");
+var generatePdfButton = jQuery(".generatePdf");
+
 
 jQuery(function ($) {
     $(document).ready(function () {
@@ -355,16 +361,16 @@ jQuery(function ($) {
                 obj["BirthDate"] = birthDate;
 
                 $.post("/Account/UpdateUserInfo", obj, function (data) {
-                    
+
                     fnSelector.attr("placeholder", data.data["FirstName"]);
                     fnSelector.val("");
-                    
+
                     lnSelector.attr("placeholder", data.data["LastName"]);
                     lnSelector.val("");
-                    
+
                     zcSelector.attr("placeholder", data.data["ZipCode"]);
                     zcSelector.val("");
-                    
+
                     bdSelector.attr("placeholder", data.data["BirthDate"]);
                     bdSelector.val("");
 
@@ -403,6 +409,15 @@ jQuery(function ($) {
             });
         });
 
+        //Email Preference 
+        $("#ep-update-btn").on("click", function (e) {
+            e.preventDefault();
+            console.log("CHK: ", $("#ep-checkbox").is(":checked"));
+            $.post("/Account/UpdateEmailPreference", { subscribed: $("#ep-checkbox").is(":checked") }, function (data) {
+                console.log("Data: ", data);
+            });
+        });
+
         // Add Store
         $('.add-store-btn').on('click', function () {
             $('.link-container').addClass('add-link-account');
@@ -438,6 +453,7 @@ jQuery(function ($) {
                     "<button class='nextBtn' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" +
                     "</div >"
             }
+            $("#text").val("");
             $(".school-select-container").append(htmlData)
         });
     }
@@ -670,6 +686,106 @@ jQuery(function ($) {
             elementHtml += '<p>' + data.Description + '</p></a></div>';
             return elementHtml;
         }
+    }
+
+    function setInputFilter(textbox, inputFilter) {
+        ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
+            textbox.addEventListener(event, function () {
+                if (inputFilter(this.value)) {
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                } else if (this.hasOwnProperty("oldValue")) {
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                }
+            });
+        });
+    }
+
+    if (totalBonus.length > 0 && totalClips.length > 0) {
+        setInputFilter(document.getElementById("TotalClips"), function (value) {
+            return /^\d*$/.test(value);
+        });
+
+        setInputFilter(document.getElementById("TotalBonus"), function (value) {
+            return /^\d*$/.test(value);
+        });
+    }
+
+  
+
+    firstStepButton.on("click", function () {
+        var current = jQuery('.current'),
+            next = jQuery('.current').next('div');
+        current.removeClass('current').addClass('filled');
+        next.removeClass('empty').addClass('current');
+    });
+
+
+    totalClips.on("keyup", function (e) {
+        CalculateClips();
+        CalculateAll();
+    })
+
+    totalBonus.bind("keyup", function (e) {
+        CalculateBonus();
+        CalculateAll();
+    })
+
+    function CalculateClips() {
+        if (isEmptyOrSpaces(totalClips.val())) {
+            jQuery(".calculatedClips").text("0.00");
+            jQuery(".enteredClips").text(0);
+        }
+        else {
+            jQuery(".enteredClips").text(totalClips.val());
+            var multipleBy = parseFloat(jQuery(".clipsMultipleWith").text());
+            jQuery(".calculatedClips").text((multipleBy * totalClips.val()).toFixed(2));
+        }
+    }
+
+    function CalculateBonus() {
+        if (isEmptyOrSpaces(totalBonus.val())) {
+            jQuery(".calculatedBonus").text("0.00");
+            jQuery(".enteredBonus").text(0);
+        }
+        else {
+            jQuery(".enteredBonus").text(totalBonus.val());
+            var multipleBy = parseFloat(jQuery(".bonusMultipleWith").text());
+            jQuery(".calculatedBonus").text((multipleBy * totalBonus.val()).toFixed(2));
+        }
+    }
+
+    function CalculateAll() {
+        var calculatedBonus = parseFloat(jQuery(".calculatedBonus").text());
+        var calculatedClips = parseFloat(jQuery(".calculatedClips").text());
+        jQuery(".totalAmmount").text((calculatedBonus + calculatedClips).toFixed(2));
+    }
+
+    generatePdfButton.on("click", function () {
+        downloadURI("/form/generatepdf?noOfBonusBoxtopsRequested=" + totalBonus.val() +
+            "&noOfBoxtopsRequested=" + totalClips.val() +
+            "&bonusMultiplyWith=" + parseFloat(jQuery(".bonusMultipleWith").text()) +
+            "&clipsMultiplyWith=" + parseFloat(jQuery(".clipsMultipleWith").text()));
+    })
+
+    function downloadURI(uri) {
+        jQuery.get(uri, function (data) {
+            if (data.success != "false") {
+                var link = document.createElement("a");
+                link.download = "";
+                link.href = uri;
+                link.click();
+            }
+
+            else {
+                alert("Something went wrong please try again later");
+            }
+
+        })
+
+
     }
 
 })(jQuery)

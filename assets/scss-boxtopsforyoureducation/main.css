@@ -6,6 +6,10 @@ i,
 em {
   font-family: "Brandon Grotesque Regular Italic", sans-serif; }
 
+b,
+strong {
+  font-family: "Brandon Grotesque Bold", sans-serif; }
+
 h2 {
   font-size: 38px;
   line-height: 34.96px;
@@ -1554,7 +1558,7 @@ body {
     .image-heading-text-container .image-heading-text-content em {
       position: relative;
       color: #002e5d;
-      font-family: "Brandon Grotesque Light", sans-serif;
+      font-family: "Brandon Grotesque Regular Italic", sans-serif;
       display: inline-block;
       font-size: 18px;
       line-height: 18px; }
@@ -1562,15 +1566,10 @@ body {
         .image-heading-text-container .image-heading-text-content i,
         .image-heading-text-container .image-heading-text-content em {
           font-size: 14px;
-          line-height: 14px; } }
-      .image-heading-text-container .image-heading-text-content i:before,
-      .image-heading-text-container .image-heading-text-content em:before {
-        content: "*";
-        position: absolute;
-        top: 0;
-        left: -5px; }
+          line-height: 17px; } }
     .image-heading-text-container .image-heading-text-content .column-icons-container {
-      margin: 25px 0 17.8px 0; }
+      margin: 25px 0 17.8px 0;
+      font-size: 0; }
       @media (max-width: 767px) {
         .image-heading-text-container .image-heading-text-content .column-icons-container {
           margin: 20px 0; } }
@@ -7267,8 +7266,9 @@ hr.full-width {
 
 .new-login-container {
   text-align: center;
-  padding-top: 120px;
-  min-height: 100vh; }
+  padding: 120px 0;
+  min-height: 100vh;
+  position: relative; }
   @media (max-width: 767px) {
     .new-login-container {
       min-height: auto;
@@ -7278,15 +7278,16 @@ hr.full-width {
       min-height: 800px; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .new-login-container {
-      min-height: 850px; } }
+      min-height: auto; } }
   .new-login-container .back-btn {
     color: #fff;
     font-size: 14px;
     line-height: 16.8px;
     position: absolute;
-    top: 55px;
-    left: 50px;
-    text-transform: uppercase; }
+    top: 52px;
+    left: 60px;
+    text-transform: uppercase;
+    font-family: "Brandon Grotesque Bold", sans-serif; }
     @media (min-width: 768px) and (max-width: 991px) {
       .new-login-container .back-btn {
         display: none; } }
@@ -7356,15 +7357,74 @@ hr.full-width {
         .new-login-container .login-image img {
           width: 113px;
           height: 98px; } }
+  @media (max-width: 767px) {
+    .new-login-container.terms-condtions-container {
+      padding: 25px 25px 40px 25px; } }
+  @media (max-width: 767px) {
+    .new-login-container.terms-condtions-container .login-heading {
+      padding: 0 20px; } }
+  .new-login-container.terms-condtions-container .login-text {
+    width: 50%;
+    margin: 0 auto;
+    text-align: left; }
+    @media (max-width: 767px) {
+      .new-login-container.terms-condtions-container .login-text {
+        width: 100%; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .new-login-container.terms-condtions-container .login-text {
+        width: 85%; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .new-login-container.terms-condtions-container .login-text {
+        width: 65%; } }
+    @media (max-width: 767px) {
+      .new-login-container.terms-condtions-container .login-text p {
+        padding: 0; } }
+  .new-login-container.terms-condtions-container .login-form-wrapper {
+    width: 50%; }
+    @media (max-width: 767px) {
+      .new-login-container.terms-condtions-container .login-form-wrapper {
+        width: 100%;
+        margin: 25px 0 0 0; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .new-login-container.terms-condtions-container .login-form-wrapper {
+        width: 85%; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .new-login-container.terms-condtions-container .login-form-wrapper {
+        width: 65%; } }
+    .new-login-container.terms-condtions-container .login-form-wrapper .custom-btn {
+      width: 303px; }
+      @media (max-width: 767px) and (orientation: portrait) {
+        .new-login-container.terms-condtions-container .login-form-wrapper .custom-btn {
+          width: 100%; } }
   .new-login-container .login-text p {
     color: #ffffff;
     font-size: 22px;
-    line-height: 22px; }
+    line-height: 28px; }
     @media (max-width: 767px) {
       .new-login-container .login-text p {
         line-height: 24px;
         font-size: 20px;
         padding: 0 20px; } }
+    .new-login-container .login-text p a {
+      color: #E80A4D;
+      position: relative; }
+      .new-login-container .login-text p a:hover:before {
+        visibility: visible;
+        width: 100%; }
+      .new-login-container .login-text p a:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        background-color: #E80A4D; }
   .new-login-container .login-heading {
     margin-bottom: 25px; }
     .new-login-container .login-heading h2 {
@@ -7454,6 +7514,12 @@ hr.full-width {
         display: block; }
     .new-login-container .login-form-wrapper .custom-btn {
       width: 100%; }
+    .new-login-container .login-form-wrapper .form-group .control {
+      color: #FFF;
+      margin-left: 0; }
+    @media (max-width: 767px) {
+      .new-login-container .login-form-wrapper .form-group.agree-checkbox {
+        margin: 0 0 30px 0; } }
   .new-login-container .login-forgot-password-wrapper {
     margin: 25px 0 34px 0; }
     @media (max-width: 767px) {

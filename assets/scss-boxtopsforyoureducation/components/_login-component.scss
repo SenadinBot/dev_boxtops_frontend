@@ -22,18 +22,18 @@
 }
 .new-login-container {
     text-align: center;
-    padding-top: 120px;
+    padding: 120px 0;
     min-height: 100vh;
+    position: relative;
     @include media-xs {
         min-height: auto;
         padding: 25px 0 40px 0;
-        
     }
     @include media-sm {
         min-height: 800px;
     }
     @include media-md {
-        min-height: 850px;
+        min-height: auto;
     }
     .back-btn {
         @include media-sm {
@@ -46,9 +46,10 @@
         font-size: 14px;
         line-height: 16.8px;
         position: absolute;
-        top: 55px;
-        left: 50px;
+        top: 52px;
+        left: 60px;
         text-transform: uppercase;
+        font-family: $brandonGrotesqueBold;
         &:hover {
             &:before {
                 visibility: visible;
@@ -119,15 +120,88 @@
             }
         }
     }
+    &.terms-condtions-container {
+        @include media-xs {
+            padding: 25px 25px 40px 25px;
+        }
+        .login-heading {
+            @include media-xs {
+                padding: 0 20px;
+            }
+        }
+        .login-text {
+            width: 50%;
+            margin: 0 auto;
+            text-align: left;
+            @include media-xs {
+                width: 100%;
+            }
+            @include media-sm {
+                width: 85%;
+            }
+            @include media-md {
+                width: 65%;
+            }
+            p {
+                @include media-xs {
+                    padding: 0;
+                }
+            }
+        } 
+        .login-form-wrapper { 
+            width: 50%;
+            @include media-xs {
+                width: 100%;
+                margin: 25px 0 0 0;
+            }
+            @include media-sm {
+                width: 85%;
+            }
+            @include media-md {
+                width: 65%;
+            }
+            .custom-btn {
+                width: 303px;
+                @include media-xs-portrait {
+                    width: 100%;
+                }
+            }
+        }
+    }
     .login-text {
         p {
             color: #ffffff;
             font-size: 22px;
-            line-height: 22px;
+            line-height: 28px;
             @include media-xs {
                 line-height: 24px;
                 font-size: 20px;
                 padding: 0 20px;
+            }
+            a {
+                color: $redRibbon;
+                position: relative;
+                &:hover {
+                    &:before {
+                        visibility: visible;
+                        width: 100%;
+                    }
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 1px;
+                    bottom: 0;
+                    left: 0;
+                    visibility: hidden;
+                    -webkit-transition: all 0.3s ease-in-out 0s;
+                    -moz-transition: all 0.3s ease-in-out 0s;
+                    -ms-transition: all 0.3s ease-in-out 0s;
+                    -o-transition: all 0.3s ease-in-out 0s;
+                    transition: all 0.3s ease-in-out 0s;
+                    background-color: $redRibbon;
+                }
             }
         }
     }
@@ -231,6 +305,17 @@
         .custom-btn {
             width: 100%;
         }
+        .form-group {
+            .control {
+                color: $white;
+                margin-left: 0;
+            }
+            &.agree-checkbox {
+                @include media-xs {
+                    margin: 0 0 30px 0;
+                }
+            }
+        }
     }
     .login-forgot-password-wrapper {
         margin: 25px 0 34px 0;
@@ -267,4 +352,6 @@
             }
         }
     }
+}
+.terms-form-wrapper {
 }
