@@ -1648,13 +1648,15 @@ body {
               .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p {
                 font-size: 22px;
                 line-height: 31px; } }
-            .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p b {
+            .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p b,
+            .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p strong {
               text-transform: uppercase;
               font-family: "Brandon Grotesque Bold", sans-serif;
               font-size: 25px;
               line-height: 36px; }
               @media (min-width: 768px) and (max-width: 991px) {
-                .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p b {
+                .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p b,
+                .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p strong {
                   font-size: 20px;
                   line-height: 30px; } }
   .image-heading-text-container .two-column-image-heading-text-container {
