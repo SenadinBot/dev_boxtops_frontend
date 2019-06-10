@@ -1524,7 +1524,17 @@ body {
           max-height: 106px; } }
     .image-heading-text-container .image-heading-text-content .text-content {
       margin-top: 7.2px;
-      display: inline-block; }
+      display: inline-block;
+      width: 75%; }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .image-heading-text-container .image-heading-text-content .text-content {
+          width: 100%; } }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .image-heading-text-container .image-heading-text-content .text-content {
+          width: 95%; } }
+      @media (max-width: 767px) {
+        .image-heading-text-container .image-heading-text-content .text-content {
+          width: 93%; } }
     .image-heading-text-container .image-heading-text-content h2 {
       margin-bottom: 10px; }
     .image-heading-text-container .image-heading-text-content h3 {
@@ -1535,23 +1545,13 @@ body {
       font-size: 22px;
       line-height: 31px;
       margin: 0 auto 20px auto;
-      display: block;
-      width: 75%; }
+      display: block; }
       @media (max-width: 767px) {
         .image-heading-text-container .image-heading-text-content p {
           font-size: 20px;
           line-height: 29px; } }
       .image-heading-text-container .image-heading-text-content p b {
         font-family: "Brandon Grotesque Bold", sans-serif; }
-      @media (min-width: 768px) and (max-width: 991px) {
-        .image-heading-text-container .image-heading-text-content p {
-          width: 100%; } }
-      @media (min-width: 992px) and (max-width: 1199px) {
-        .image-heading-text-container .image-heading-text-content p {
-          width: 95%; } }
-      @media (max-width: 767px) {
-        .image-heading-text-container .image-heading-text-content p {
-          width: 93%; } }
     .image-heading-text-container .image-heading-text-content i,
     .image-heading-text-container .image-heading-text-content em {
       position: relative;

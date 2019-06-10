@@ -32,6 +32,16 @@
         .text-content {
             margin-top: 7.2px;
             display: inline-block;
+            width: 75%;
+            @include media-sm {
+                width: 100%;
+            }
+            @include media-md {
+                width: 95%;
+            }
+            @include media-xs {
+                width: 93%;
+            }
         }
         h2 {
             margin-bottom: 10px;
@@ -46,22 +56,12 @@
             line-height: 31px;
             margin: 0 auto 20px auto;
             display: block;
-            width: 75%;
             @include media-xs {
                 font-size: 20px;
                 line-height: 29px;
             }
             b {
                 font-family: $brandonGrotesqueBold;
-            }
-            @include media-sm {
-                width: 100%;
-            }
-            @include media-md {
-                width: 95%;
-            }
-            @include media-xs {
-                width: 93%;
             }
         }
         i,
