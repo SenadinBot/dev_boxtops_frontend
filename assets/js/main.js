@@ -22,6 +22,40 @@ jQuery(function ($) {
             $('body').removeClass('login-reset-body');
         }
 
+
+
+        $("#login-btn").on("click", function (e) {
+            e.preventDefault();
+            var isValid = true;
+            var email = $("#login-email");
+            var password = $("#login-password");
+            if (!validateEmail(email.val())) {
+                isValid = false;
+                email.addClass("input-validation-error");
+                email.next(".login-field-validation").removeClass("hidden");
+            }
+            if (password.val()) {
+                isValid = false;
+                password.addClass("input-validation-error");
+                password.next(".login-field-validation").removeClass("hidden");
+            }
+            if (isValid) {
+                password.removeClass("input-validation-error");
+                password.next(".login-field-validation").addClass("hidden");
+
+                email.removeClass("input-validation-error");
+                email.next(".login-field-validation").addClass("hidden");
+
+                var action = $("#loginAction").val();
+                $.post("/LoginPage/" + action, { Email: email, Password: password }, function (data) {
+                    console.log("Data: ", data);
+                    if (data.status) {
+                        window.location.href = "/";
+                    }
+                });
+            } 
+
+        });
         // Menu
         $('#navtoggle').on('click', function () {
             //$('.nav').toggleClass('open');
@@ -395,13 +429,11 @@ jQuery(function ($) {
 
             $(this).parents('.account-item-content').toggleClass('edit-user');
         });
-
         //Search school on the Accounts page
-        $(".school-select-container").on("click", ".nextBtn", function (e) {
+        $(".accounts-select-schools").on("click", ".nextBtn", function (e) {
             e.preventDefault();
             var schoolId = $(this).data("schoolid");
             var schoolName = $(this).data("schoolname");
-            console.log("Params: ", schoolId, " ", schoolName);
             $('.modal').removeClass('is-visible');
 
             $.post("/Account/ChangeSchool", { SchoolId: schoolId, SchoolName: schoolName }, function (data) {
@@ -713,7 +745,7 @@ jQuery(function ($) {
         });
     }
 
-  
+
 
     firstStepButton.on("click", function () {
         var current = jQuery('.current'),

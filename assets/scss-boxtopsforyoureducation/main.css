@@ -7154,11 +7154,21 @@ hr.full-width {
       background-size: cover;
       user-select: none;
       cursor: pointer; }
+      @media (max-width: 768px) {
+        .video-gallery-card-thumbnail {
+          display: none; } }
       .video-gallery-card-thumbnail > img {
         width: 100%;
         height: auto;
         max-height: 220px;
         object-fit: cover; }
+    .video-gallery-card-player {
+      width: 100%;
+      height: auto;
+      min-height: 220px; }
+      @media (min-width: 768px) {
+        .video-gallery-card-player {
+          display: none; } }
     .video-gallery-card-description {
       margin: 0.5rem 0;
       font-family: "Brandon Grotesque Regular", sans-serif;
@@ -7184,33 +7194,16 @@ hr.full-width {
     background-color: #FFF; }
     .video-gallery-viewport--open {
       display: block; }
-    @media (max-width: 768px) {
-      .video-gallery-viewport {
-        top: -1.6rem;
-        right: 0;
-        margin: 4rem 0 0 0;
-        padding: .5rem;
-        background-color: #FFF; } }
     .video-gallery-viewport-close {
       position: absolute;
       top: .75rem;
       right: 1rem;
       cursor: pointer; }
-      @media (max-width: 768px) {
-        .video-gallery-viewport-close {
-          top: -1.6rem;
-          right: 0;
-          padding: 0 .25rem;
-          background-color: #FFF; } }
   .video-gallery-player-content {
     position: relative;
     min-height: 570px;
     background-color: #FCBE4F;
     user-select: none; }
-    @media (max-width: 768px) {
-      .video-gallery-player-content {
-        display: flex;
-        min-height: auto; } }
     .video-gallery-player-content > iframe {
       position: absolute;
       top: 0;
@@ -7219,11 +7212,6 @@ hr.full-width {
       left: 0;
       width: 100%;
       height: 100%; }
-      @media (max-width: 768px) {
-        .video-gallery-player-content > iframe {
-          position: relative;
-          height: calc(100vh - 150px);
-          max-height: 300px; } }
   .video-gallery-player-footer {
     display: flex;
     align-items: center;
@@ -7549,6 +7537,18 @@ hr.full-width {
         -o-transition: all 0.3s ease-in-out 0s;
         transition: all 0.3s ease-in-out 0s;
         background-color: #fff; }
+
+.custom-error {
+  font-size: 16px;
+  line-height: 20px;
+  color: #a21a19;
+  font-family: "Brandon Grotesque Regular", sans-serif;
+  text-align: left;
+  display: none;
+  margin-top: -15px;
+  border-bottom: 1px solid #a21a19; }
+  .custom-error.show-custom-error {
+    display: block; }
 
 .registration-step-container {
   max-width: 1172px;
