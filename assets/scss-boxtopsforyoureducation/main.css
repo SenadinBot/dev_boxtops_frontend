@@ -81,11 +81,9 @@ a {
   .custom-btn:focus {
     text-decoration: none;
     outline: 0;
-    color: #E80A4D; }
-    .custom-btn:focus:before {
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      transform: scale(1); }
+    color: #FFF; }
+    .custom-btn:focus:hover {
+      color: #E80A4D; }
   .custom-btn:active {
     outline: 0; }
   .custom-btn:before {
@@ -2514,7 +2512,7 @@ body {
     position: absolute;
     width: 75%;
     background-color: #FFF;
-    top: 124px;
+    top: 123px;
     height: 101px;
     left: 50%;
     -webkit-transform: translateX(-50%);

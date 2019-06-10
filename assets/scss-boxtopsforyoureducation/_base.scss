@@ -87,11 +87,9 @@ a {
     &:focus {
         text-decoration: none;
         outline: 0;
-        color: $redRibbon;
-        &:before {
-            -webkit-transform: scale(1);
-            -moz-transform: scale(1);
-            transform: scale(1);
+        color: $white;
+        &:hover {
+            color: $redRibbon;
         }
     }
     &:active {
