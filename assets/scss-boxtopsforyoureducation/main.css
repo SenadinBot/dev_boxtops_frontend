@@ -1634,7 +1634,9 @@ body {
           display: inline-block;
           width: 221.35px;
           vertical-align: middle;
-          padding-left: 10px; }
+          padding-left: 10px;
+          font-size: 22px;
+          line-height: 31px; }
           @media (min-width: 768px) and (max-width: 991px) {
             .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content {
               width: 180px;
@@ -1642,7 +1644,9 @@ body {
           @media (max-width: 767px) {
             .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content {
               padding-left: 13px;
-              width: calc(100% - 60px); } }
+              width: calc(100% - 60px);
+              font-size: 20px;
+              line-height: 29px; } }
           .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item .column-icons-content p {
             margin: 0;
             width: auto; }

@@ -145,6 +145,8 @@
                     width: 221.35px;
                     vertical-align: middle;
                     padding-left: 10px;
+                    font-size: 22px;
+                    line-height: 31px;
                     @include media-sm {
                         width: 180px;
                         padding-left: 5px;
@@ -152,6 +154,8 @@
                     @include media-xs {
                         padding-left: 13px;
                         width: calc(100% - 60px);
+                        font-size: 20px;
+                        line-height: 29px;
                     }
                     p {
                         margin: 0;
