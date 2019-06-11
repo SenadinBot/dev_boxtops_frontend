@@ -7734,7 +7734,8 @@ hr.full-width {
       -webkit-transition: all .3s ease;
       -moz-transition: all .3s ease;
       -o-transition: all .3s ease;
-      transition: all .3s ease; }
+      transition: all .3s ease;
+      outline: none; }
       .registration-step-container .stepcontent-container .step-content h2 {
         margin-bottom: 13px; }
         @media (max-width: 767px) {

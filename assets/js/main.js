@@ -10,6 +10,9 @@ var totalBonus = jQuery(".totalBonus");
 var firstStepButton = jQuery(".firstStep-next-btn");
 var seconStepButton = jQuery(".firstStep-next-btn");
 var generatePdfButton = jQuery(".generatePdf");
+var passwordTextbox = jQuery(".password");
+var confirmPasswordTextbox = jQuery(".confirmPassword");
+
 
 
 jQuery(function ($) {
@@ -34,12 +37,13 @@ jQuery(function ($) {
                 email.addClass("input-validation-error");
                 email.next(".login-field-validation").removeClass("hidden");
             }
-            if (password.val()) {
+            if (password.val() == null || password.val() == "") {
                 isValid = false;
                 password.addClass("input-validation-error");
                 password.next(".login-field-validation").removeClass("hidden");
             }
             if (isValid) {
+
                 password.removeClass("input-validation-error");
                 password.next(".login-field-validation").addClass("hidden");
 
@@ -47,13 +51,16 @@ jQuery(function ($) {
                 email.next(".login-field-validation").addClass("hidden");
 
                 var action = $("#loginAction").val();
-                $.post("/LoginPage/" + action, { Email: email, Password: password }, function (data) {
-                    console.log("Data: ", data);
+                $.post("/LoginPage/" + action, { Email: email.val(), Password: password.val() }, function (data) {
                     if (data.status) {
+                        $(".login-field-wrapper").next(".custom-error").removeClass("show-custom-error");
                         window.location.href = "/";
+                    } else {
+                        $(".login-field-wrapper").next(".custom-error").text(data.message);
+                        $(".login-field-wrapper").next(".custom-error").addClass("show-custom-error");
                     }
                 });
-            } 
+            }
 
         });
         // Menu
@@ -159,27 +166,68 @@ jQuery(function ($) {
             e.preventDefault();
             var email = $("#email").val();
             if (email.length == 0 || !validateEmail(email)) {
-                $("#email").addClass("input-validation-error");
-                $("#email").next().removeClass("hidden");
+                jQuery(".custom-error").text("");
+                jQuery(".custom-error").text(jQuery("#forgotPasswordErrorMesssage").text());
+                jQuery(".custom-error").show();
             } else {
                 $("#email").removeClass("input-validation-error");
                 $("#email").next().addClass("hidden");
 
                 jQuery.post("/Password/SubmitForm", $("#forgotPasswordForm").serialize(), function (data) {
-                    $("#forgotPasswordBody").addClass("hidden");
-                    $("#formWrapper").addClass("hidden");
-
-                    if (data["status"] == true) {
+                    if (data.status) {
+                        $("#forgotPasswordBody").addClass("hidden");
+                        $("#formWrapper").addClass("hidden");
                         $("#forgotPasswordSuccessMessage").removeClass("hidden");
-                    } else {
-                        $("#forgotPasswordErrorMessage").removeClass("hidden");
-
                     }
+                    else {
+                        jQuery(".custom-error").text("");
+                        jQuery(".custom-error").text(jQuery("#forgotPasswordErrorMesssage").text());
+                        jQuery(".custom-error").show();
+                    }
+                });
+            }
+        });
 
+        // Reset Password 
+
+        jQuery("#change-password-btn").on("click", function (e) {
+            e.preventDefault();
+            var passwordsValid = true;
+            var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}$/;
+            if (passwordTextbox.val() != confirmPasswordTextbox.val()) {
+                passwordsValid = false;
+                jQuery(".custom-error").text("");
+                jQuery(".custom-error").text(jQuery("#passwordsDoNotMatch").text());
+                jQuery(".custom-error").show();
+            }
+
+            else {
+                if (!regex.test(confirmPasswordTextbox.val())) {
+                    passwordsValid = false;
+                    jQuery(".custom-error").text("");
+                    jQuery(".custom-error").text(jQuery("#forgotPasswordErrorMesssage").text());
+                    jQuery(".custom-error").show();
+                }
+            }
+
+            if (passwordsValid) {
+                jQuery(".custom-error").hide();
+                jQuery.post("/Password/SubmitForm", jQuery("#resetPasswordForm").serialize(), function (data) {
+                    if (data.status) {
+                        window.location.href = "/";
+                    }
+                    else {
+                        jQuery(".custom-error").text("");
+                        jQuery(".custom-error").text(jQuery("#forgotPasswordErrorMesssage").text());
+                        jQuery(".custom-error").show();
+                    }
                 });
             }
 
         });
+
+
+
 
 
         function validateEmail(email) {
@@ -301,13 +349,14 @@ jQuery(function ($) {
         });
 
         $("body").on("click", ".nextBtn", function () {
-            var curStep = $(this).closest(".step-content"),
-                curStepBtn = curStep.attr("id"),
-                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                curInputs = curStep.find("input[type='text'],input[type='url'], input[type='email'], input[type='password']"),
-                isValid = true;
+            var curStep = $(this).closest(".step-content");
+            var currentStep = curStep.data("step");
+            var nextStep = parseInt(currentStep) + 1;
+            var curInputs = curStep.find("input[type='text'],input[type='url'], input[type='email'], input[type='password']");
+
 
             $(".form-group").removeClass("has-error");
+            isValid = true;
             for (var i = 0; i < curInputs.length; i++) {
                 if (!curInputs[i].validity.valid) {
                     isValid = false;
@@ -315,8 +364,26 @@ jQuery(function ($) {
                 }
             }
 
+            if ($(this).data("schoolid")) {
+                $("#schoolId").val($(this).data("schoolid"));
+                $("#schoolName").val($(this).data("schoolname"));
+            }
+
             if (isValid) {
-                nextStepWizard.removeAttr('disabled').trigger('click');
+                if ($(this).hasClass("last")) {
+                    console.log("Form: ", $("#registerForm").serialize())
+                    $.post("/Registration/" + $("#cAction").val(), $("#registerForm").serialize(), function (data) {
+                        if (status == true) {
+                            $(".custom-error").removeClass("show-custom-error");
+                            window.location.href = "/";
+                        } else {
+                            $(".custom-error").text(data.message);
+                            $(".custom-error").addClass("show-custom-error");
+                        }
+                    });
+                }
+                jQuery(".step-content").hide();
+                jQuery(".step-content[data-step='" + nextStep + "']").show();
             }
         });
 
@@ -444,9 +511,7 @@ jQuery(function ($) {
         //Email Preference 
         $("#ep-update-btn").on("click", function (e) {
             e.preventDefault();
-            console.log("CHK: ", $("#ep-checkbox").is(":checked"));
             $.post("/Account/UpdateEmailPreference", { subscribed: $("#ep-checkbox").is(":checked") }, function (data) {
-                console.log("Data: ", data);
             });
         });
 
@@ -482,10 +547,13 @@ jQuery(function ($) {
                     "<span>" + data.list[i].SchoolName + "</span>" +
                     "<p>" + data.list[i].Address + "</p>" +
                     "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" +
-                    "<button class='nextBtn' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" +
+                    "<button class='nextBtn' type='button' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" +
                     "</div >"
             }
-            $("#text").val("");
+            if (!$("#text").hasClass("registerPage")) {
+                $("#text").val("");
+            }
+
             $(".school-select-container").append(htmlData)
         });
     }
@@ -513,6 +581,13 @@ jQuery(function ($) {
                 window.location.hash = hash;
             });
         }
+    });
+    //Get Started Coordinators
+    $("#getStartedChk").on("click", function (e) {
+        e.preventDefault();
+        $.post("/Account/UpdateEmailPreference", { subscribed: $(this).is(":checked") }, function (data) {
+            console.log("Data: ", data);
+        });
     });
 
     // Show/Hide Account Content
