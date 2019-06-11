@@ -2091,7 +2091,6 @@ body {
         -ms-transition: all 0.1s ease;
         -o-transition: all 0.1s ease;
         transition: all 0.1s ease;
-        background-image: url("../../../assets/images/icons/orange-menu-icon@2x.png");
         background-repeat: no-repeat;
         background-size: cover;
         -webkit-transform: translateX(-50%);
@@ -2141,6 +2140,14 @@ body {
             -webkit-transform: scale(1);
             -moz-transform: scale(1);
             transform: scale(1); }
+  .nav-menu .green-menu-icon a:after {
+    background-image: url("../../../assets/images/icons/green-menu-icon@2x.png"); }
+  .nav-menu .yellow-menu-icon a:after {
+    background-image: url("../../../assets/images/icons/yellow-menu-icon@2x.png"); }
+  .nav-menu .orange-menu-icon a:after {
+    background-image: url("../../../assets/images/icons/orange-menu-icon@2x.png"); }
+  .nav-menu .blue-menu-icon a:after {
+    background-image: url("../../../assets/images/icons/blue-menu-icon@2x.png"); }
   .nav-menu .current-menu-item a:after {
     visibility: visible; }
   @media (min-width: 768px) and (max-width: 991px) {

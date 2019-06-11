@@ -228,7 +228,6 @@
                 -o-transition: all 0.1s ease;
                 transition: all 0.1s ease;
                 // background-color: $midnightBlue;
-                background-image: url("../../../assets/images/icons/orange-menu-icon@2x.png");
                 background-repeat: no-repeat;
                 background-size: cover;
                 -webkit-transform: translateX(-50%);
@@ -283,6 +282,34 @@
                         transform: scale(1);
                     }
                 }
+            }
+        }
+    }
+    .green-menu-icon {
+        a {
+            &:after {
+                background-image: url("../../../assets/images/icons/green-menu-icon@2x.png");
+            }
+        }
+    }
+    .yellow-menu-icon {
+        a {
+            &:after {
+                background-image: url("../../../assets/images/icons/yellow-menu-icon@2x.png");
+            }
+        }
+    }
+    .orange-menu-icon {
+        a {        
+            &:after {
+                background-image: url("../../../assets/images/icons/orange-menu-icon@2x.png");
+            }
+        }
+    }
+    .blue-menu-icon {
+        a {
+            &:after {
+                background-image: url("../../../assets/images/icons/blue-menu-icon@2x.png");
             }
         }
     }
