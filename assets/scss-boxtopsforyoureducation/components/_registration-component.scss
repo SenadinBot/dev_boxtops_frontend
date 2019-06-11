@@ -294,6 +294,7 @@
             }
             .form-container {
                 padding-left: 145px;
+                outline: none;
                 @include media-xs {
                     padding-left: 0;
                 }
