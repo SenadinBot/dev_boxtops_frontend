@@ -766,12 +766,16 @@ body {
 .ios-app a:after {
   content: "";
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: block;
   margin: 0 auto;
-  width: 130px;
-  height: 43px;
+  width: 166px;
+  height: 55px;
   background-image: url("../../../assets/images/icons/app-icon.png"); }
+  @media (max-width: 767px) {
+    .ios-app a:after {
+      width: 130px;
+      height: 43px; } }
 .ios-app a span {
   display: none; }
 
@@ -781,12 +785,16 @@ body {
 .android-app a:after {
   content: "";
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: block;
   margin: 0 auto;
-  width: 142px;
-  height: 43px;
+  width: 181px;
+  height: 55px;
   background-image: url("../../../assets/images/icons/play-icon.png"); }
+  @media (max-width: 767px) {
+    .android-app a:after {
+      width: 142px;
+      height: 43px; } }
 .android-app a span {
   display: none; }
 
@@ -802,10 +810,10 @@ body {
       margin-top: 35px; } }
   .ios-android-container .ios-app {
     display: inline-block;
-    margin: 0 5px; }
+    margin: 0 6.5px; }
   .ios-android-container .android-app {
     display: inline-block;
-    margin: 0 5px; }
+    margin: 0 6.5px; }
 
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -8051,6 +8059,52 @@ hr.full-width {
         -o-transition: all 0.3s ease-in-out 0s;
         transition: all 0.3s ease-in-out 0s;
         background-color: #E80A4D; }
+
+.registration-img-container {
+  margin: 0 auto 73.3px auto;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: 860px;
+  overflow: hidden; }
+  @media (max-width: 767px) {
+    .registration-img-container {
+      width: calc(100% - 38.4px);
+      margin: 0 auto 20.3px auto; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .registration-img-container {
+      width: calc(100% - 38.4px); } }
+  .registration-img-container img {
+    display: block;
+    margin: 0 auto; }
+  .registration-img-container .link-container {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto 0 auto; }
+  .registration-img-container a {
+    text-transform: uppercase;
+    color: #E80A4D;
+    position: relative;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Brandon Grotesque Bold", sans-serif; }
+    .registration-img-container a:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      visibility: hidden;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      -o-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+      background-color: #E80A4D; }
+    .registration-img-container a:hover:before {
+      visibility: visible;
+      width: 100%; }
 
 .account-container {
   display: flex;

@@ -591,3 +591,56 @@
         }
     }
 }
+.registration-img-container {
+    margin: 0 auto 73.3px auto;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    width: 860px;
+    overflow: hidden;
+    @include media-xs {
+        width: calc(100% - 38.4px);
+        margin: 0 auto 20.3px auto;
+    }
+    @include media-sm {
+        width: calc(100% - 38.4px);
+    }
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+    .link-container {
+        width: 100%;
+        text-align: center;
+        margin: 20px auto 0 auto;
+    }
+    a {
+        text-transform: uppercase;
+        color: $redRibbon;
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: $brandonGrotesqueBold;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            visibility: hidden;
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            -moz-transition: all 0.3s ease-in-out 0s;
+            -ms-transition: all 0.3s ease-in-out 0s;
+            -o-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+            background-color: $redRibbon;
+        }
+        &:hover {
+            &:before {
+                visibility: visible;
+                width: 100%;
+            }
+        }
+    }
+}

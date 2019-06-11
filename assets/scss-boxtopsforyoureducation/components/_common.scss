@@ -225,12 +225,16 @@
         &:after {
             content: "";
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
             display: block;
             margin: 0 auto;
-            width: 130px;
-            height: 43px;
+            width: 166px;
+            height: 55px;
             background-image: url("../../../assets/images/icons/app-icon.png");
+            @include media-xs {
+                width: 130px;
+                height: 43px;
+            }
         }
         span {
             display: none;
@@ -245,12 +249,16 @@
         &:after {
             content: "";
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
             display: block;
             margin: 0 auto;
-            width: 142px;
-            height: 43px;
+            width: 181px;
+            height: 55px;
             background-image: url("../../../assets/images/icons/play-icon.png");
+            @include media-xs {
+                width: 142px;
+                height: 43px;
+            }
         }
         span {
             display: none;
@@ -270,11 +278,11 @@
     }
     .ios-app {
         display: inline-block;
-        margin: 0 5px;
+        margin: 0 6.5px;
     }
     .android-app {
         display: inline-block;
-        margin: 0 5px;
+        margin: 0 6.5px;
     }
 }
 .screen-reader-text {
