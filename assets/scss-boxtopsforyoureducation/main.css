@@ -7795,7 +7795,8 @@ hr.full-width {
           .registration-step-container .stepcontent-container .step-content .custom-btn.prevBtn:hover {
             color: #D9D9D9; }
       .registration-step-container .stepcontent-container .step-content .form-container {
-        padding-left: 145px; }
+        padding-left: 145px;
+        outline: none; }
         @media (max-width: 767px) {
           .registration-step-container .stepcontent-container .step-content .form-container {
             padding-left: 0; } }
