@@ -469,8 +469,19 @@ hr {
             display: block;
             margin-bottom: 5px;
         }
+        a {
+            &:hover {
+                img {
+                    opacity: 0.8;
+                }
+            }
+        }
         img {
             margin: 0 auto;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
         }
         &.add-bottom-border {
             @include media-xs {

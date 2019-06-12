@@ -30,6 +30,12 @@
             display: block;
         }
     }
+    &.background-image-container {
+        padding: 106px 0 40px 0;
+        @include media-xs {
+            padding: 87px 0 10px 0;
+        }
+    }
     .custom-template-content {
         text-align: center;
         max-width: $contentWidth;

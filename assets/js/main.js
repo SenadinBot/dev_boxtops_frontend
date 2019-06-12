@@ -1,3 +1,5 @@
+"use strict";
+
 var searchIcon = jQuery(".searchIcon");
 var searchTextBox = jQuery(".searchText");
 var sortBySelect = jQuery(".sortBySelect");
@@ -13,8 +15,6 @@ var generatePdfButton = jQuery(".generatePdf");
 var passwordTextbox = jQuery(".password");
 var confirmPasswordTextbox = jQuery(".confirmPassword");
 
-
-
 jQuery(function ($) {
     $(document).ready(function () {
 
@@ -24,8 +24,6 @@ jQuery(function ($) {
         } else {
             $('body').removeClass('login-reset-body');
         }
-
-
 
         $("#login-btn").on("click", function (e) {
             e.preventDefault();
@@ -61,7 +59,6 @@ jQuery(function ($) {
                     }
                 });
             }
-
         });
         // Menu
         $('#navtoggle').on('click', function () {
@@ -79,7 +76,6 @@ jQuery(function ($) {
         $('.site-content').on('click', function (e) {
             if ($(e.target).is('.header-search') === false) {
                 $('body').removeClass('search-open');
-
             }
         });
 
@@ -122,8 +118,7 @@ jQuery(function ($) {
                     $('body').addClass('has-promo-offers');
                 }
             });
-        }
-        else {
+        } else {
             $('body').removeClass('has-promo-offers');
         }
 
@@ -139,7 +134,7 @@ jQuery(function ($) {
 
             selector = ".columnRow-" + index + 1;
             if (parent.children(selector).length == 0) {
-                $(this).attr("style", "display:none")
+                $(this).attr("style", "display:none");
             }
         });
 
@@ -157,7 +152,7 @@ jQuery(function ($) {
 
             selector = ".columnVideoRow-" + index;
             if (parent.children(selector).length == 0) {
-                $(this).attr("style", "display:none")
+                $(this).attr("style", "display:none");
             }
         });
 
@@ -178,8 +173,7 @@ jQuery(function ($) {
                         $("#forgotPasswordBody").addClass("hidden");
                         $("#formWrapper").addClass("hidden");
                         $("#forgotPasswordSuccessMessage").removeClass("hidden");
-                    }
-                    else {
+                    } else {
                         jQuery(".custom-error").text("");
                         jQuery(".custom-error").text(jQuery("#forgotPasswordErrorMesssage").text());
                         jQuery(".custom-error").show();
@@ -188,7 +182,7 @@ jQuery(function ($) {
             }
         });
 
-        // Reset Password 
+        // Reset Password
 
         jQuery("#change-password-btn").on("click", function (e) {
             e.preventDefault();
@@ -199,9 +193,7 @@ jQuery(function ($) {
                 jQuery(".custom-error").text("");
                 jQuery(".custom-error").text(jQuery("#passwordsDoNotMatch").text());
                 jQuery(".custom-error").show();
-            }
-
-            else {
+            } else {
                 if (!regex.test(confirmPasswordTextbox.val())) {
                     passwordsValid = false;
                     jQuery(".custom-error").text("");
@@ -215,20 +207,14 @@ jQuery(function ($) {
                 jQuery.post("/Password/SubmitForm", jQuery("#resetPasswordForm").serialize(), function (data) {
                     if (data.status) {
                         window.location.href = "/";
-                    }
-                    else {
+                    } else {
                         jQuery(".custom-error").text("");
                         jQuery(".custom-error").text(jQuery("#forgotPasswordErrorMesssage").text());
                         jQuery(".custom-error").show();
                     }
                 });
             }
-
         });
-
-
-
-
 
         function validateEmail(email) {
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -283,9 +269,9 @@ jQuery(function ($) {
                 jQuery.post("/UpdateYourEarning/UpdateYourEarning", $("#updateEarningsForm").serialize(), function (data) {
                     if (data.status == "true") {
                         $("#earningsGoal").val("");
-                        $("#earningsGo").val("")
+                        $("#earningsGo").val("");
                     }
-                })
+                });
             }
         });
 
@@ -354,7 +340,6 @@ jQuery(function ($) {
             var nextStep = parseInt(currentStep) + 1;
             var curInputs = curStep.find("input[type='text'],input[type='url'], input[type='email'], input[type='password']");
 
-
             $(".form-group").removeClass("has-error");
             isValid = true;
             for (var i = 0; i < curInputs.length; i++) {
@@ -371,7 +356,7 @@ jQuery(function ($) {
 
             if (isValid) {
                 if ($(this).hasClass("last")) {
-                    console.log("Form: ", $("#registerForm").serialize())
+                    console.log("Form: ", $("#registerForm").serialize());
                     $.post("/Registration/" + $("#cAction").val(), $("#registerForm").serialize(), function (data) {
                         if (status == true) {
                             $(".custom-error").removeClass("show-custom-error");
@@ -448,7 +433,6 @@ jQuery(function ($) {
             var zcSelector = $("#consAccZipCode");
             var bdSelector = $("#consAccBirthDate");
 
-
             if ($(this).parents('.account-item-content').hasClass('edit-user')) {
                 var firstName = fnSelector.val();
                 var lastName = lnSelector.val();
@@ -479,9 +463,7 @@ jQuery(function ($) {
                     oldLastName = data["LastName"];
                     oldZipCode = data["ZipCode"];
                     oldBirthDate = data["BirthDate"];
-
                 });
-
             } else {
                 fnSelector.attr("value", fnSelector.attr("placeholder"));
                 lnSelector.attr("value", lnSelector.attr("placeholder"));
@@ -491,7 +473,6 @@ jQuery(function ($) {
                 oldLastName = lnSelector.attr("placeholder");
                 oldZipCode = zcSelector.attr("placeholder");
                 oldBirthDate = bdSelector.attr("placeholder");
-
             }
 
             $(this).parents('.account-item-content').toggleClass('edit-user');
@@ -508,11 +489,10 @@ jQuery(function ($) {
             });
         });
 
-        //Email Preference 
+        //Email Preference
         $("#ep-update-btn").on("click", function (e) {
             e.preventDefault();
-            $.post("/Account/UpdateEmailPreference", { subscribed: $("#ep-checkbox").is(":checked") }, function (data) {
-            });
+            $.post("/Account/UpdateEmailPreference", { subscribed: $("#ep-checkbox").is(":checked") }, function (data) {});
         });
 
         // Add Store
@@ -522,39 +502,34 @@ jQuery(function ($) {
 
         //Add/Remove Account Coordinator
         $('.close-add-coord-container').on('click', function () {
-            $(this).parents('.add-coord-container').removeClass('show-coordinatior-account')
+            $(this).parents('.add-coord-container').removeClass('show-coordinatior-account');
         });
         $('.add-coordinator-btn').on('click', function () {
-            $('.add-coord-container').addClass('show-coordinatior-account')
+            $('.add-coord-container').addClass('show-coordinatior-account');
         });
 
         $('.close-remove-container').on('click', function () {
-            $(this).parents('.remove-tr').removeClass('show-remove')
+            $(this).parents('.remove-tr').removeClass('show-remove');
         });
         $('.remove-coord').on('click', function () {
-            $(this).parent().next().addClass('show-remove')
+            $(this).parent().next().addClass('show-remove');
         });
     });
 
     function getSchools() {
-        var text = $("#text").val()
+        var text = $("#text").val();
         $(".school-select-container").empty();
         $.get("/Registration/searchschools?keyword=" + text, function (data) {
             var htmlData = "";
             for (var i = 0; i < data.list.length; i++) {
 
-                htmlData += "<div class='school-select'>" +
-                    "<span>" + data.list[i].SchoolName + "</span>" +
-                    "<p>" + data.list[i].Address + "</p>" +
-                    "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" +
-                    "<button class='nextBtn' type='button' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" +
-                    "</div >"
+                htmlData += "<div class='school-select'>" + "<span>" + data.list[i].SchoolName + "</span>" + "<p>" + data.list[i].Address + "</p>" + "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" + "<button class='nextBtn' type='button' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" + "</div >";
             }
             if (!$("#text").hasClass("registerPage")) {
                 $("#text").val("");
             }
 
-            $(".school-select-container").append(htmlData)
+            $(".school-select-container").append(htmlData);
         });
     }
 
@@ -567,7 +542,6 @@ jQuery(function ($) {
             next = $('.current').next('div');
         current.removeClass('current').addClass('filled');
         next.removeClass('empty').addClass('current');
-
     });
 
     // Smoth scrolling to form section
@@ -595,7 +569,6 @@ jQuery(function ($) {
         $(this).parents('.account-item').siblings().removeClass('active');
         $(this).parents('.account-item').toggleClass('active');
     });
-
 });
 
 /**
@@ -614,17 +587,17 @@ jQuery(function ($) {
      * @param {Element} gallery
      */
     function View(gallery) {
-        this.$el = jQuery(gallery)
-        this.$feeder = this.$el.find('.video-gallery-feeder')
-        this.$cards = this.$el.find('.video-gallery-card')
-        this.$viewport = this.$el.find('.video-gallery-viewport')
-        this.$iframes = this.$el.find('iframe')
-        this.index = 0
+        this.$el = jQuery(gallery);
+        this.$feeder = this.$el.find('.video-gallery-feeder');
+        this.$cards = this.$el.find('.video-gallery-card');
+        this.$viewport = this.$el.find('.video-gallery-viewport');
+        this.$iframes = this.$el.find('iframe');
+        this.index = 0;
 
-        this.$feeder.on('click', this.onFeederClick.bind(this))
-        this.$cards.on('click', this.onCardClick.bind(this))
+        this.$feeder.on('click', this.onFeederClick.bind(this));
+        this.$cards.on('click', this.onCardClick.bind(this));
 
-        this.$el.find('.video-gallery-viewport-close').on('click', this.closePlayer.bind(this))
+        this.$el.find('.video-gallery-viewport-close').on('click', this.closePlayer.bind(this));
     }
 
     /**
@@ -633,14 +606,14 @@ jQuery(function ($) {
      * @param {jQuery.Event} event
      */
     View.prototype.onFeederClick = function (event) {
-        event.preventDefault()
+        event.preventDefault();
 
-        this.index += 1
+        this.index += 1;
 
-        this.getWrapperByIndex(this.index).addClass('feature-item-wrap--visible')
+        this.getWrapperByIndex(this.index).addClass('feature-item-wrap--visible');
 
         if (!this.getWrapperByIndex(this.index + 1).get(0)) {
-            this.$feeder.hide()
+            this.$feeder.hide();
         }
     };
 
@@ -650,26 +623,26 @@ jQuery(function ($) {
      * @param {jQuery.Event} event
      */
     View.prototype.onCardClick = function (event) {
-        event.preventDefault()
+        event.preventDefault();
 
-        var $card = jQuery(event.currentTarget)
-        var $player = jQuery(`#${$card.attr('data-player')}`)
+        var $card = jQuery(event.currentTarget);
+        var $player = jQuery("#" + $card.attr('data-player'));
 
         if ($card.data('open')) {
-            return
+            return;
         }
 
-        this.closePlayer()
+        this.closePlayer();
 
-        $card.data('open', true).toggleClass('video-gallery-card--open', true)
-        $player.toggleClass('video-gallery-viewport--open', true)
+        $card.data('open', true).toggleClass('video-gallery-card--open', true);
+        $player.toggleClass('video-gallery-viewport--open', true);
 
-        var offset = $player.offset()
-        var scrollTopGap = Util.isOnMobile() ? 120 : 160
+        var offset = $player.offset();
+        var scrollTopGap = Util.isOnMobile() ? 120 : 160;
 
         jQuery('html, body').animate({
             scrollTop: offset.top - scrollTopGap
-        }, 500)
+        }, 500);
     };
 
     /**
@@ -685,12 +658,12 @@ jQuery(function ($) {
      * Close all video players from the element context.
      */
     View.prototype.closePlayer = function () {
-        this.$cards.data('open', false).toggleClass('video-gallery-card--open', false)
-        this.$viewport.toggleClass('video-gallery-viewport--open', false)
+        this.$cards.data('open', false).toggleClass('video-gallery-card--open', false);
+        this.$viewport.toggleClass('video-gallery-viewport--open', false);
 
         this.$iframes.each(function () {
-            this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
-        })
+            this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+        });
     };
 
     /**
@@ -702,17 +675,10 @@ jQuery(function ($) {
          * 
          * @return {Boolean}
          */
-        isOnMobile: function () {
-            return (navigator.userAgent.match(/Android/i) ||
-                navigator.userAgent.match(/webOS/i) ||
-                navigator.userAgent.match(/iPhone/i) ||
-                navigator.userAgent.match(/iPad/i) ||
-                navigator.userAgent.match(/iPod/i) ||
-                navigator.userAgent.match(/BlackBerry/i) ||
-                navigator.userAgent.match(/Windows Phone/i)
-            )
+        isOnMobile: function isOnMobile() {
+            return navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i);
         }
-    }
+    };
 
     //
     // Initialize
@@ -720,12 +686,12 @@ jQuery(function ($) {
     jQuery(document).ready(function () {
         jQuery('.video-gallery').each(function (index, gallery) {
             return new View(gallery);
-        })
+        });
     });
 
     searchIcon.on("click", function () {
         DoSearch();
-    })
+    });
 
     searchTextBox.keydown(function (e) {
         if (e.keyCode == 13) {
@@ -733,12 +699,11 @@ jQuery(function ($) {
         }
     });
 
-
-    var DoSearch = function () {
+    var DoSearch = function DoSearch() {
         if (!isEmptyOrSpaces(searchTextBox.val())) {
             location.href = "/search?q=" + searchTextBox.val();
         }
-    }
+    };
 
     function isEmptyOrSpaces(str) {
         return str === null || str.match(/^ *$/) !== null;
@@ -748,24 +713,24 @@ jQuery(function ($) {
 
     sortBySelect.on("change", function () {
         searchManager.DoSorting();
-    })
+    });
 
     showMoreButton.on("click", function () {
         searchManager.ShowMore();
-    })
+    });
 
     var searchManager = {
-        DoSorting: function () {
+        DoSorting: function DoSorting() {
             skipField.val(0);
             jQuery(".search-result-item-container").html("");
             this.fetchResults();
         },
-        ShowMore: function () {
+        ShowMore: function ShowMore() {
             var temp = parseInt(skipField.val()) + 1;
             skipField.val(temp);
             this.fetchResults();
         },
-        fetchResults: function () {
+        fetchResults: function fetchResults() {
             var term = searchTerm.val();
             var skip = skipField.val();
             var pId = searchPageId.val();
@@ -774,8 +739,7 @@ jQuery(function ($) {
 
                 if (data.HideShowMoreButton) {
                     showMoreButton.addClass("hidden");
-                }
-                else {
+                } else {
                     showMoreButton.removeClass("hidden");
                 }
                 var html = jQuery(".search-result-item-container").html();
@@ -783,17 +747,16 @@ jQuery(function ($) {
                     html += searchManager.buildHtml(data.Results[i]);
                 }
                 jQuery(".search-result-item-container").html(html);
-            })
-
+            });
         },
-        buildHtml: function (data) {
+        buildHtml: function buildHtml(data) {
             var elementHtml = '<div class="search-result-item">';
             elementHtml += '<a href="' + data.Url + '">';
             elementHtml += '<span>' + data.Title + '</span>';
             elementHtml += '<p>' + data.Description + '</p></a></div>';
             return elementHtml;
         }
-    }
+    };
 
     function setInputFilter(textbox, inputFilter) {
         ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
@@ -812,15 +775,15 @@ jQuery(function ($) {
 
     if (totalBonus.length > 0 && totalClips.length > 0) {
         setInputFilter(document.getElementById("TotalClips"), function (value) {
-            return /^\d*$/.test(value);
+            return (/^\d*$/.test(value)
+            );
         });
 
         setInputFilter(document.getElementById("TotalBonus"), function (value) {
-            return /^\d*$/.test(value);
+            return (/^\d*$/.test(value)
+            );
         });
     }
-
-
 
     firstStepButton.on("click", function () {
         var current = jQuery('.current'),
@@ -829,23 +792,21 @@ jQuery(function ($) {
         next.removeClass('empty').addClass('current');
     });
 
-
     totalClips.on("keyup", function (e) {
         CalculateClips();
         CalculateAll();
-    })
+    });
 
     totalBonus.bind("keyup", function (e) {
         CalculateBonus();
         CalculateAll();
-    })
+    });
 
     function CalculateClips() {
         if (isEmptyOrSpaces(totalClips.val())) {
             jQuery(".calculatedClips").text("0.00");
             jQuery(".enteredClips").text(0);
-        }
-        else {
+        } else {
             jQuery(".enteredClips").text(totalClips.val());
             var multipleBy = parseFloat(jQuery(".clipsMultipleWith").text());
             jQuery(".calculatedClips").text((multipleBy * totalClips.val()).toFixed(2));
@@ -856,8 +817,7 @@ jQuery(function ($) {
         if (isEmptyOrSpaces(totalBonus.val())) {
             jQuery(".calculatedBonus").text("0.00");
             jQuery(".enteredBonus").text(0);
-        }
-        else {
+        } else {
             jQuery(".enteredBonus").text(totalBonus.val());
             var multipleBy = parseFloat(jQuery(".bonusMultipleWith").text());
             jQuery(".calculatedBonus").text((multipleBy * totalBonus.val()).toFixed(2));
@@ -871,11 +831,8 @@ jQuery(function ($) {
     }
 
     generatePdfButton.on("click", function () {
-        downloadURI("/form/generatepdf?noOfBonusBoxtopsRequested=" + totalBonus.val() +
-            "&noOfBoxtopsRequested=" + totalClips.val() +
-            "&bonusMultiplyWith=" + parseFloat(jQuery(".bonusMultipleWith").text()) +
-            "&clipsMultiplyWith=" + parseFloat(jQuery(".clipsMultipleWith").text()));
-    })
+        downloadURI("/form/generatepdf?noOfBonusBoxtopsRequested=" + totalBonus.val() + "&noOfBoxtopsRequested=" + totalClips.val() + "&bonusMultiplyWith=" + parseFloat(jQuery(".bonusMultipleWith").text()) + "&clipsMultiplyWith=" + parseFloat(jQuery(".clipsMultipleWith").text()));
+    });
 
     function downloadURI(uri) {
         jQuery.get(uri, function (data) {
@@ -884,15 +841,10 @@ jQuery(function ($) {
                 link.download = "";
                 link.href = uri;
                 link.click();
-            }
-
-            else {
+            } else {
                 alert("Something went wrong please try again later");
             }
-
-        })
-
-
+        });
     }
+})(jQuery);
 
-})(jQuery)
