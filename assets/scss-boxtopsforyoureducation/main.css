@@ -4676,7 +4676,15 @@ body.search-open .header-search {
         .submission-component-table-container .submission-component-table-header .right-side {
           width: 100%;
           text-align: center; } }
-      .submission-component-table-container .submission-component-table-header .right-side a {
+      .submission-component-table-container .submission-component-table-header .right-side button {
+        border: none;
+        background-color: transparent;
+        padding: 0; }
+        .submission-component-table-container .submission-component-table-header .right-side button:focus {
+          outline: none;
+          box-shadow: none; }
+      .submission-component-table-container .submission-component-table-header .right-side a,
+      .submission-component-table-container .submission-component-table-header .right-side button {
         color: #E80A4D;
         text-transform: uppercase;
         font-family: "Brandon Grotesque Bold", sans-serif;
@@ -4684,14 +4692,18 @@ body.search-open .header-search {
         line-height: 24px;
         position: relative; }
         @media (min-width: 768px) and (max-width: 991px) {
-          .submission-component-table-container .submission-component-table-header .right-side a {
+          .submission-component-table-container .submission-component-table-header .right-side a,
+          .submission-component-table-container .submission-component-table-header .right-side button {
             font-size: 16px; } }
-        .submission-component-table-container .submission-component-table-header .right-side a:first-child {
+        .submission-component-table-container .submission-component-table-header .right-side a:first-child,
+        .submission-component-table-container .submission-component-table-header .right-side button:first-child {
           margin-right: 30px; }
           @media (max-width: 767px) {
-            .submission-component-table-container .submission-component-table-header .right-side a:first-child {
+            .submission-component-table-container .submission-component-table-header .right-side a:first-child,
+            .submission-component-table-container .submission-component-table-header .right-side button:first-child {
               margin-right: 35px; } }
-          .submission-component-table-container .submission-component-table-header .right-side a:first-child:after {
+          .submission-component-table-container .submission-component-table-header .right-side a:first-child:after,
+          .submission-component-table-container .submission-component-table-header .right-side button:first-child:after {
             content: "";
             height: 18px;
             width: 1px;
@@ -4700,12 +4712,15 @@ body.search-open .header-search {
             top: 4px;
             right: -15px; }
             @media (max-width: 767px) {
-              .submission-component-table-container .submission-component-table-header .right-side a:first-child:after {
+              .submission-component-table-container .submission-component-table-header .right-side a:first-child:after,
+              .submission-component-table-container .submission-component-table-header .right-side button:first-child:after {
                 right: -17.5px; } }
-        .submission-component-table-container .submission-component-table-header .right-side a:hover:before {
+        .submission-component-table-container .submission-component-table-header .right-side a:hover:before,
+        .submission-component-table-container .submission-component-table-header .right-side button:hover:before {
           visibility: visible;
           width: 100%; }
-        .submission-component-table-container .submission-component-table-header .right-side a:before {
+        .submission-component-table-container .submission-component-table-header .right-side a:before,
+        .submission-component-table-container .submission-component-table-header .right-side button:before {
           content: "";
           position: absolute;
           width: 0;

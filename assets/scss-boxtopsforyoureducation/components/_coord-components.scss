@@ -1215,7 +1215,17 @@
                 width: 100%;
                 text-align: center;
             }
-            a {
+            button {
+                border: none;
+                background-color: transparent;
+                padding: 0;
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+            a,
+            button {
                 color: $redRibbon;
                 text-transform: uppercase;
                 font-family: $brandonGrotesqueBold;
