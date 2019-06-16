@@ -52,7 +52,12 @@ jQuery(function ($) {
                 $.post("/LoginPage/" + action, { Email: email.val(), Password: password.val() }, function (data) {
                     if (data.status) {
                         $(".login-field-wrapper").next(".custom-error").removeClass("show-custom-error");
-                        window.location.href = "/";
+                        if (data.type == "Consumer") {
+                            window.location.href = "/Consumer Logged in Landing Page";
+                        }
+                        else if (data.type == "Coordinator"){
+                            window.location.href = "/Coordinator Logged in Landing Page";
+                        }
                     } else {
                         $(".login-field-wrapper").next(".custom-error").text(data.message);
                         $(".login-field-wrapper").next(".custom-error").addClass("show-custom-error");
@@ -352,26 +357,43 @@ jQuery(function ($) {
             if ($(this).data("schoolid")) {
                 $("#schoolId").val($(this).data("schoolid"));
                 $("#schoolName").val($(this).data("schoolname"));
+                isValid = true;
             }
 
             if (isValid) {
                 if ($(this).hasClass("last")) {
-                    console.log("Form: ", $("#registerForm").serialize());
-                    $.post("/Registration/" + $("#cAction").val(), $("#registerForm").serialize(), function (data) {
-                        if (status == true) {
-                            $(".custom-error").removeClass("show-custom-error");
-                            window.location.href = "/";
-                        } else {
-                            $(".custom-error").text(data.message);
-                            $(".custom-error").addClass("show-custom-error");
-                        }
-                    });
+                    postRegistration();
+                }
+                if ($(this).hasClass("last-upgrade-coord")) {
+                    postUpgradeCoordinator();
                 }
                 jQuery(".step-content").hide();
                 jQuery(".step-content[data-step='" + nextStep + "']").show();
             }
         });
+        function postUpgradeCoordinator() {
+            $.post("/UpgradeToCoordinator/UpgradeTo", $("#upgradeCoord").serialize(), function (data) {
+                if (status == true) {
+                    $(".custom-error").removeClass("show-custom-error");
+                    window.location.href = "/";
+                } else {
+                    $(".custom-error").text(data.message);
+                    $(".custom-error").addClass("show-custom-error");
+                }
+            });
+        }
 
+        function postRegistration() {
+            $.post("/Registration/" + $("#cAction").val(), $("#registerForm").serialize(), function (data) {
+                if (status == true) {
+                    $(".custom-error").removeClass("show-custom-error");
+                    window.location.href = "/";
+                } else {
+                    $(".custom-error").text(data.message);
+                    $(".custom-error").addClass("show-custom-error");
+                }
+            });
+        }
         $("body").on("click", ".upgrade-step .nextBtn", function () {
             var curStep = $(this).closest(".step-content"),
                 curStepBtn = curStep.attr("id");
@@ -400,7 +422,11 @@ jQuery(function ($) {
         // Custom Modal
         $('.details-td').on('click', function (e) {
             e.preventDefault();
-            $('.modal').addClass('is-visible');
+            $('.get-details-modal').addClass('is-visible');
+        });
+        $('.question-help').on('click', function (e) {
+            e.preventDefault();
+            $('.help-modal').addClass('is-visible');
         });
         $('.modal-close').on('click', function (e) {
             e.preventDefault();
@@ -520,6 +546,8 @@ jQuery(function ($) {
         var text = $("#text").val();
         $(".school-select-container").empty();
         $.get("/Registration/searchschools?keyword=" + text, function (data) {
+            console.log("HtmlData: ", data);
+
             var htmlData = "";
             for (var i = 0; i < data.list.length; i++) {
 
@@ -528,7 +556,6 @@ jQuery(function ($) {
             if (!$("#text").hasClass("registerPage")) {
                 $("#text").val("");
             }
-
             $(".school-select-container").append(htmlData);
         });
     }

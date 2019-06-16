@@ -348,7 +348,7 @@
                         height: 280px;
                     }
                 }
-                p {
+                .feature-itext {
                     width: 90%;
                 }
             }
@@ -1278,7 +1278,15 @@
         }
     }
 }
-.get-details-modal {
+.help-modal { 
+    .content-item {
+        > span {
+            margin-bottom: 15px !important;
+        }
+    }
+}
+.get-details-modal,
+.help-modal {
     &.modal {
         .modal-wrapper {
             padding-bottom: 44px;
@@ -1331,6 +1339,42 @@
                 font-size: 16px;
                 line-height: 16px;
                 margin-bottom: 15px;
+            }
+        }
+        p {
+            font-size: 18px;
+            line-height: 24px;
+            color: $midnightBlue;
+            margin-bottom: 25px;
+            @include media-xs {
+                font-size: 16px;
+                line-height: 16px;
+                margin-bottom: 15px;
+            }
+            a {
+                color: $redRibbon;
+                position: relative;
+                &:hover {
+                    &:before {
+                        visibility: visible;
+                        width: 100%;
+                    }
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 1px;
+                    bottom: -2px;
+                    left: 0;
+                    visibility: hidden;
+                    -webkit-transition: all 0.3s ease-in-out 0s;
+                    -moz-transition: all 0.3s ease-in-out 0s;
+                    -ms-transition: all 0.3s ease-in-out 0s;
+                    -o-transition: all 0.3s ease-in-out 0s;
+                    transition: all 0.3s ease-in-out 0s;
+                    background-color: $redRibbon;
+                }
             }
         }
         .date {
@@ -1504,7 +1548,7 @@
         }
         .inner-step-content {
             p {
-            text-align: left;
+            text-align: center;
             }
             p {
                 &:first-child {
@@ -1677,6 +1721,7 @@
     .form-container {
         font-size: 0;
         margin-bottom: 29px;
+        text-align: center;
         @include media-xs {
             margin-bottom: 25px;
         }
@@ -1684,7 +1729,7 @@
             margin: 0;
             vertical-align: top;
             &:first-child {
-                margin-right: 12px;
+                // margin-right: 12px;
                 width: 40%;
                 @include media-xs {
                     margin-right: 0;
@@ -1692,17 +1737,17 @@
                     margin-bottom: 20px
                 }
             }
-            &:last-child {
-                textarea {
-                    height: 71px;
-                    resize: none;
-                    padding: 6px 5px 6px 13px;
-                    @include media-xs {
-                        height: 84px;
-                        padding: 6px 13px;
-                    }
-                }   
-            }
+            // &:last-child {
+            //     textarea {
+            //         height: 71px;
+            //         resize: none;
+            //         padding: 6px 5px 6px 13px;
+            //         @include media-xs {
+            //             height: 84px;
+            //             padding: 6px 13px;
+            //         }
+            //     }   
+            // }
             width: 57%;
             @include media-xs {
                 width: 100%;
@@ -1715,6 +1760,7 @@
                 font-size: 18px;
                 line-height: 21.6px;
                 margin-bottom: 4px;
+                text-align: center;
                 @include media-xs {
                     font-size: 16px;
                     line-height: 19.2px;
@@ -2372,5 +2418,15 @@
                 }
             }
         }
+    }
+}
+.question-help {
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    &:hover {
+        opacity: 0.8;
     }
 }

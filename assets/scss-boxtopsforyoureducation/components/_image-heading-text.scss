@@ -6,18 +6,46 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: $white;
+    &.background-image-container {
+        .image-heading-text-content {
+            padding: 115px 0 56.3px 0;
+            @include media-md {
+                padding: 95px 10px 56.3px 10px;
+            }
+            @include media-sm {
+                padding: 85px 20px 46.3px 20px;
+            }
+            @include media-xs {
+                padding: 95px 20px 46.3px 20px;
+            }
+        }
+        .two-column-image-heading-text-container {
+            .two-column-image-heading-text-content {
+                padding: 115px 0 56.3px 0;
+                @include media-md {
+                    padding: 95px 10px 56.3px 10px;
+                }
+                @include media-sm {
+                    padding: 100px 20px 46.3px 20px;
+                }
+                @include media-xs {
+                    padding: 100px 20px 46.3px 20px;
+                }
+            }
+        }
+    }
     .image-heading-text-content {
-        padding: 115px 0 56.3px 0;
+        padding: 80px 0 56.3px 0;
         max-width: $contentWidth;
         margin: 0 auto;
         @include media-md {
-            padding: 95px 10px 56.3px 10px;
+            padding: 70px 10px 56.3px 10px;
         }
         @include media-sm {
-            padding: 85px 20px 46.3px 20px;
+            padding: 50px 20px 46.3px 20px;
         }
         @include media-xs {
-            padding: 95px 20px 46.3px 20px;
+            padding: 30px 20px 46.3px 20px;
         }
         img {
             max-width: 264px;
@@ -53,12 +81,12 @@
             color: $midnightBlue;
             font-family: $brandonGrotesque;
             font-size: 22px;
-            line-height: 31px;
+            line-height: 26px;
             margin: 0 auto 20px auto;
             display: block;
             @include media-xs {
                 font-size: 20px;
-                line-height: 29px;
+                line-height: 26px;
             }
             b {
                 font-family: $brandonGrotesqueBold;
@@ -173,10 +201,10 @@
                             text-transform: uppercase;
                             font-family: $brandonGrotesqueBold;
                             font-size: 25px;
-                            line-height: 36px;
+                            line-height: 26px;
                             @include media-sm {
                                 font-size: 20px;
-                                line-height: 30px;
+                                line-height: 28px;
                             }
                         }
                     }
@@ -191,7 +219,7 @@
         flex-flow: row wrap;
         .two-column-image-heading-text-content {
             text-align: center;
-            padding: 115px 0 56.3px 0;
+            padding: 80px 0 56.3px 0;
             flex: 1 1 0%;
             width: auto;
             display: flex;
@@ -200,14 +228,14 @@
             align-items: center; 
             position: relative;       
             @include media-md {
-                padding: 95px 10px 56.3px 10px;
+                padding: 70px 10px 56.3px 10px;
             }
             @include media-sm {
-                padding: 100px 20px 46.3px 20px;
+                padding: 60px 20px 46.3px 20px;
                 flex: 1 1 100%;
             }
             @include media-xs {
-                padding: 100px 20px 46.3px 20px;
+                padding: 30px 20px 46.3px 20px;
                 flex: 1 1 100%;
             }
             &:first-child {
@@ -411,10 +439,10 @@
                             text-transform: uppercase;
                             font-family: $brandonGrotesqueBold;
                             font-size: 25px;
-                            line-height: 36px;
+                            line-height: 26px;
                             @include media-sm {
                                 font-size: 20px;
-                                line-height: 30px;
+                                line-height: 28px;
                             }
                         }
                     }

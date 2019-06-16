@@ -17,7 +17,7 @@
         content: "";
         width: 71.7px;
         height: 13.65px;
-        background-image: url("../../../assets/images/icons/color-icons.png");
+        background-image: url("../../../assets/images/icons/bgy-color-icons.png");
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -79,10 +79,13 @@
         }
         .feature-item {
             p {
-                width: 93%;
+                width: 100%;
                 margin-top: 3px;
                 font-size: 18px;
                 line-height: 26px;
+            }
+            .feature-text {
+                width: 93%;
                 @include media-xs {
                     width: 100%;
                 }
