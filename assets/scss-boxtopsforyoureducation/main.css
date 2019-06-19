@@ -6092,13 +6092,17 @@ body.search-open .header-search {
         .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text h5 {
           font-size: 14px;
           line-height: 16.8px; } }
-    .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text b {
+    .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text p {
+      color: #002e5d; }
+    .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text b,
+    .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text strong {
       font-family: "Brandon Grotesque Bold", sans-serif;
       font-size: 18px;
       line-height: 24px;
       color: #002e5d; }
       @media (max-width: 767px) {
-        .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text b {
+        .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text b,
+        .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text strong {
           font-size: 14px;
           line-height: 16.8px; } }
     .sweepstakes-winners-content .cta-2-col-wrap .cta-2-col-text ul {

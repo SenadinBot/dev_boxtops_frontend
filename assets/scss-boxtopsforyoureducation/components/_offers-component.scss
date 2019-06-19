@@ -152,7 +152,11 @@
                     line-height: 16.8px;
                 }
             }
-            b {
+            p {
+                color: $midnightBlue;
+            }
+            b,
+            strong {
                 font-family: $brandonGrotesqueBold;
                 font-size: 18px;
                 line-height: 24px;
