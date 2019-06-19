@@ -332,8 +332,14 @@
                         span {
                             display: block;
                         }
-                        input {
+                        input,
+                        select {
                             border-color: #a21a19;
+                        }
+                        .select {
+                            span {
+                                right: 45px;
+                            }
                         }
                     }
                     label {

@@ -133,7 +133,7 @@
                                             <input id="city" type="text" placeholder="">
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group has-error">
                                         <label for="state">State:</label>
                                         <div class="select">
                                             <select>
@@ -142,6 +142,7 @@
                                                 <option>Option</option>
                                             </select>
                                             <div class="select-arrow"></div>
+                                            <span>This field is required.</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -150,10 +151,11 @@
                                             <input id="zipCode" type="text" placeholder="">
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group has-error">
                                         <label for="birthdate">Birthdate:</label>
                                         <div class="input-group ">
-                                            <input id="birthdate" type="text" placeholder="00/00/0000">
+                                            <input id="birthdate" type="date" placeholder="00/00/0000">
+                                            <span>This field is required.</span>
                                         </div>
                                     </div>
                                     <div class="form-group agree-checkbox">
@@ -164,7 +166,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <a href="#" class="custom-btn">Enter now</a>
+                                <input type="submit" value="ENTER NOW" class="custom-btn" id="submit-form">
                             </div>
                             <div class="disclaimer-container full-width">
                                 <span>

@@ -161,6 +161,12 @@
             width: 100%;
         }
     }
+    input[type="date"] {
+        padding: 3px 10px;
+        text-transform: initial;
+        font-size: 22px;
+        line-height: 22px;
+    }
     input {
         font-family: $brandonGrotesque;
         color: $midnightBlue;

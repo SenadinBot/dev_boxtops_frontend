@@ -1509,6 +1509,17 @@
         @include media-xs {
             background-color: $midnightBlue;
         }
+        .custom-table {
+            tbody {
+                tr {
+                    td {
+                        &:last-child {
+                            font-family: $brandonGrotesqueBold;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 .coord-earnings-inner-container {

@@ -4983,6 +4983,8 @@ body.search-open .header-search {
   @media (max-width: 767px) {
     .coord-earnings-activity-container .tab-container {
       background-color: #002e5d; } }
+  .coord-earnings-activity-container .tab-container .custom-table tbody tr td:last-child {
+    font-family: "Brandon Grotesque Bold", sans-serif; }
 
 .coord-earnings-inner-container {
   display: flex;
@@ -6467,8 +6469,11 @@ hr.full-width {
         color: #a21a19; }
       .offer-content-wrapper .offer-form .form-group.has-error span {
         display: block; }
-      .offer-content-wrapper .offer-form .form-group.has-error input {
+      .offer-content-wrapper .offer-form .form-group.has-error input,
+      .offer-content-wrapper .offer-form .form-group.has-error select {
         border-color: #a21a19; }
+      .offer-content-wrapper .offer-form .form-group.has-error .select span {
+        right: 45px; }
       .offer-content-wrapper .offer-form .form-group .input-group {
         position: relative; }
   .offer-content-wrapper .offer-scan-info {
@@ -6668,6 +6673,11 @@ hr.full-width {
     @media (max-width: 767px) {
       .form-group select {
         width: 100%; } }
+  .form-group input[type="date"] {
+    padding: 3px 10px;
+    text-transform: initial;
+    font-size: 22px;
+    line-height: 22px; }
   .form-group input {
     font-family: "Brandon Grotesque Regular", sans-serif;
     color: #002e5d;
@@ -7985,8 +7995,11 @@ hr.full-width {
             color: #a21a19; }
           .registration-step-container .stepcontent-container .step-content .form-container .form-group.has-error span {
             display: block; }
-          .registration-step-container .stepcontent-container .step-content .form-container .form-group.has-error input {
+          .registration-step-container .stepcontent-container .step-content .form-container .form-group.has-error input,
+          .registration-step-container .stepcontent-container .step-content .form-container .form-group.has-error select {
             border-color: #a21a19; }
+          .registration-step-container .stepcontent-container .step-content .form-container .form-group.has-error .select span {
+            right: 45px; }
           .registration-step-container .stepcontent-container .step-content .form-container .form-group label {
             width: 185px; }
           .registration-step-container .stepcontent-container .step-content .form-container .form-group.agree-checkbox {
@@ -9001,8 +9014,11 @@ hr.full-width {
           line-height: 18px;
           font-family: "Brandon Grotesque Light", sans-serif;
           color: #a21a19; }
-        .account-container .account-content .add-coord-container .form-group.has-error input {
+        .account-container .account-content .add-coord-container .form-group.has-error input,
+        .account-container .account-content .add-coord-container .form-group.has-error select {
           border: 1px solid #a21a19; }
+        .account-container .account-content .add-coord-container .form-group.has-error .select span {
+          right: 45px; }
       .account-container .account-content .add-coord-container .custom-btn {
         display: inline-block;
         min-width: auto; }

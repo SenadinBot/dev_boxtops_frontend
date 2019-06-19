@@ -883,8 +883,14 @@
                         font-family: $brandonGrotesqueLight;
                         color: #a21a19;
                     }
-                    input {
+                    input,
+                    select {
                         border: 1px solid #a21a19;
+                    }
+                    .select {
+                        span {
+                            right: 45px;
+                        }
                     }
                 }
             }
