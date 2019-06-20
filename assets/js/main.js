@@ -34,11 +34,17 @@ jQuery(function ($) {
                 isValid = false;
                 email.addClass("input-validation-error");
                 email.next(".login-field-validation").removeClass("hidden");
+            } else {
+                email.removeClass("input-validation-error");
+                email.next(".login-field-validation").addClass("hidden");
             }
             if (password.val() == null || password.val() == "") {
                 isValid = false;
                 password.addClass("input-validation-error");
                 password.next(".login-field-validation").removeClass("hidden");
+            } else {
+                password.removeClass("input-validation-error");
+                password.next(".login-field-validation").addClass("hidden");
             }
             if (isValid) {
 
@@ -55,7 +61,7 @@ jQuery(function ($) {
                         if (data.type == "Consumer") {
                             window.location.href = "/Consumer Logged in Landing Page";
                         }
-                        else if (data.type == "Coordinator"){
+                        else if (data.type == "Coordinator") {
                             window.location.href = "/Coordinator Logged in Landing Page";
                         }
                     } else {
@@ -65,6 +71,10 @@ jQuery(function ($) {
                 });
             }
         });
+        //Custom Feature Section Mobile Nav
+        if ($("body").find("#customFeatureNav").length > 0) {
+            $("#navmenu").append($("#customFeatureMobileNav"));
+        }
         // Menu
         $('#navtoggle').on('click', function () {
             //$('.nav').toggleClass('open');
@@ -111,6 +121,39 @@ jQuery(function ($) {
         // else {
         //     $('.download-app').addClass('desktop-app');
         // }
+
+        $('#years').on('change', function () {
+            var yearVal = this.value;
+            $("#school-activity-table tbody").empty();
+            jQuery.get(
+                "/SchoolEarningActivity/GetData?yearFilter=" + yearVal, function (data) {
+                    var tableData = appendToTable(data);
+                    $("#school-activity-table tbody").append(tableData)
+                });
+        });
+
+        $('#school-earning-years').on('change', function () {
+            var year = this.value;
+            $("#school-earning-table tbody").empty();
+            jQuery.get(
+                "/ActivityComponent/GetActivityData?year=" + year, function (data) {
+                    var tableData = appendToTable(data);
+                    $("#school-earning-table tbody").append(tableData)
+                });
+        });
+        function appendToTable(data) {
+            var tableData = "";
+            for (var i = 0; i < data.list.schoolActivity.length; i++) {
+                var date = new Date(parseInt(data.list.schoolActivity[i].date.substr(6)));
+                tableData += "<tr>" +
+                    //"<td>" + data.list.schoolActivity[i].date + "</td>" +
+                    "<td>" + ((date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) + "/" + date.getDate() + "/" + date.getFullYear() + "</td>" +
+                    "<td>" + data.list.schoolActivity[i].description + "</td>" +
+                    "<td>" + "$" + data.list.schoolActivity[i].amount_earned + "</td>" +
+                    "</tr>"
+            }
+            return tableData;
+        }
 
         // Check Subscribe Form
         if ($('.promo-offers-container').length) {
@@ -234,6 +277,108 @@ jQuery(function ($) {
             }
         });
 
+        //Sweestake details form validation
+        $("#submit-form").on("click", function (e) {
+            e.preventDefault();
+            var isValid = true;
+            var sweepFirstName = $("#firstName");
+            var sweepLastName = $("#lastName");
+            var sweepAddress = $("#address");
+            var sweepCity = $("#city");
+            var sweepZipcode = $("#zipCode");
+            var statesEr = $(".select");
+            var states = $('#states_id option:selected').val();
+            var regex = /^[0-9]{5}(?:-[0-9]{4})?$/;
+            var sweepBirthdate = $("#birthdate");
+            var checkAgree = $(".agreeCheckBox").is(":checked") ? 1 : 0;
+            if (states == "") {
+                isValid = false;
+                statesEr.parents(".form-group").addClass("has-error");
+            } else {
+                statesEr.parents(".form-group").removeClass("has-error");
+            }
+            if (sweepBirthdate.val() == "" || !isFullyMature(sweepBirthdate)) {
+                sweepBirthdate.parents(".form-group").addClass("has-error");
+                if (sweepBirthdate.val() == "") {
+                    $("#mature_err").addClass("hidden");
+                }
+                else if (!isFullyMature(sweepBirthdate)) {
+                    $("#brqrd_err").addClass("hidden");
+                    $("#mature_err").removeClass("hidden");
+                }
+                isValid = false;
+            } else {
+                sweepBirthdate.parents(".form-group").removeClass("has-error");
+            }
+            if (sweepFirstName.val() == "") {
+                isValid = false;
+                sweepFirstName.parents(".form-group").addClass("has-error");
+            }
+            else {
+                sweepFirstName.parents(".form-group").removeClass("has-error");
+            }
+            if (sweepLastName.val() == "") {
+                isValid = false;
+                sweepLastName.parents(".form-group").addClass("has-error");
+            }
+            else {
+                sweepLastName.parents(".form-group").removeClass("has-error");
+            }
+            if (sweepAddress.val() == "") {
+                isValid = false;
+                sweepAddress.parents(".form-group").addClass("has-error");
+            }
+            else {
+                sweepAddress.parents(".form-group").removeClass("has-error");
+            }
+            if (sweepCity.val() == "") {
+                isValid = false;
+                sweepCity.parents(".form-group").addClass("has-error");
+            }
+            else {
+                sweepCity.parents(".form-group").removeClass("has-error")
+            }
+            if (sweepZipcode.val() == "" || !regex.test(sweepZipcode.val())) {
+                sweepZipcode.parents(".form-group").addClass("has-error");
+                if (sweepZipcode.val() == "") {
+                    $("#format_err").addClass("hidden");
+                }
+                else if (!regex.test(sweepZipcode.val())) {
+                    $("#rqrd_err").addClass("hidden");
+                    $("#format_err").removeClass("hidden");
+                }
+                isValid = false;
+            }
+            else {
+                sweepZipcode.parents(".form-group").removeClass("has-error");
+            }
+            if (checkAgree == 0) {
+                isValid = false;
+            }
+            if (isValid) {
+                var id = $("#sweepId").val();
+                jQuery.post(
+                    "/SweepstakesDetailsForm/Submit", { SweepstakeId: id }, function (data) {
+                        if (data.success) {
+                            window.location.href = "/Offer Sweep Details With Download";
+                        }
+                    });
+            }
+        });
+        function isFullyMature(selector) {
+            var today = new Date();
+            var date = new Date(selector.val())
+            if (date < today) {
+                const diffTime = Math.abs(today.getTime() - date.getTime());
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                const diffYears = diffDays / 365;
+                if (diffYears < 18)
+                    return false;
+            } else if (date > today) {
+                return false;
+            }
+            return true;
+        }
         function validateUpdatePasswordForm() {
             var oldPass = $("#oldPassword");
             var newPass = $("#newPassword");
@@ -287,25 +432,21 @@ jQuery(function ($) {
         });
 
         // Tabs to Accordion
-        $(".tab-content").hide();
-        $(".tab-content:first").show();
         $(".custom-tabs li").click(function () {
-            $(".tab-content").hide();
             var activeTab = $(this).attr("rel");
-            $("#" + activeTab).fadeIn();
+            $("#" + activeTab).toggleClass("t-active").siblings().removeClass("t-active");
             $(".custom-tabs li").removeClass("active");
             $(this).addClass("active");
             $(".tab-heading").removeClass("d-active");
             $(".tab-heading[rel^='" + activeTab + "']").addClass("d-active");
         });
         $(".tab-heading").click(function () {
-            $(".tab-content").hide();
+            $(this).parent().addClass('active-content');
             var d_activeTab = $(this).attr("rel");
-            $("#" + d_activeTab).fadeIn();
-            $(".tab-heading").removeClass("d-active");
-            $(this).addClass("d-active");
+            $("#" + d_activeTab).toggleClass("t-active");
+            $(this).toggleClass("d-active");
             $(".custom-tabs li").removeClass("active");
-            $(".custom-tabs li[rel^='" + d_activeTab + "']").addClass("active");
+            $(".custom-tabs li[rel^='" + d_activeTab + "']").toggleClass("active");
         });
 
         // Registration Step Wizard
@@ -342,11 +483,13 @@ jQuery(function ($) {
         $("body").on("click", ".nextBtn", function () {
             var curStep = $(this).closest(".step-content");
             var currentStep = curStep.data("step");
+            var curStepBtn = curStep.attr("id");
             var nextStep = parseInt(currentStep) + 1;
+            var nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a");
             var curInputs = curStep.find("input[type='text'],input[type='url'], input[type='email'], input[type='password']");
+            var isValid = true;
 
             $(".form-group").removeClass("has-error");
-            isValid = true;
             for (var i = 0; i < curInputs.length; i++) {
                 if (!curInputs[i].validity.valid) {
                     isValid = false;
@@ -360,6 +503,18 @@ jQuery(function ($) {
                 isValid = true;
             }
 
+            if (parseInt(currentStep) == 2 && (!isFullyMature($("#birthdate")) || $("#birthdate").val() == "")) {
+                $("#birthdate").closest(".form-group").addClass("has-error");
+                if ($("#birthdate").val() == "") {
+                    $("#mature_err").addClass("hidden");
+                }
+                else if (!isFullyMature($("#birthdate"))) {
+                    $("#brqrd_err").addClass("hidden");
+                    $("#mature_err").removeClass("hidden");
+                }
+                isValid = false;
+            }
+
             if (isValid) {
                 if ($(this).hasClass("last")) {
                     postRegistration();
@@ -369,6 +524,7 @@ jQuery(function ($) {
                 }
                 jQuery(".step-content").hide();
                 jQuery(".step-content[data-step='" + nextStep + "']").show();
+                nextStepWizard.removeAttr('disabled').trigger('click');
             }
         });
         function postUpgradeCoordinator() {
@@ -401,10 +557,10 @@ jQuery(function ($) {
         });
 
         $('.getSchools').click(function () {
+            var isValid = true;
             var curStep = $(this).closest(".step-content"),
                 curInputs = curStep.find("input[type='text'],input[type='url'], input[type='email'], input[type='password']");
             $(".form-group").removeClass("has-error");
-            isValid = true;
             for (var i = 0; i < curInputs.length; i++) {
                 if (!curInputs[i].validity.valid) {
                     isValid = false;
@@ -458,6 +614,7 @@ jQuery(function ($) {
             var lnSelector = $("#consAccLastName");
             var zcSelector = $("#consAccZipCode");
             var bdSelector = $("#consAccBirthDate");
+            var bd2Selector = $("#consAccBirthDate2");
 
             if ($(this).parents('.account-item-content').hasClass('edit-user')) {
                 var firstName = fnSelector.val();
@@ -482,8 +639,10 @@ jQuery(function ($) {
                     zcSelector.attr("placeholder", data.data["ZipCode"]);
                     zcSelector.val("");
 
-                    bdSelector.attr("placeholder", data.data["BirthDate"]);
+                    bd2Selector.attr("placeholder", data.data["BirthDate"]);
                     bdSelector.val("");
+                    bdSelector.addClass("hidden");
+                    bd2Selector.show();
 
                     oldFirstName = data["FirstName"];
                     oldLastName = data["LastName"];
@@ -495,6 +654,8 @@ jQuery(function ($) {
                 lnSelector.attr("value", lnSelector.attr("placeholder"));
                 zcSelector.attr("value", zcSelector.attr("placeholder"));
                 bdSelector.attr("value", bdSelector.attr("placeholder"));
+                bd2Selector.hide();
+                bdSelector.removeClass("hidden");
                 oldFirstName = fnSelector.attr("placeholder");
                 oldLastName = lnSelector.attr("placeholder");
                 oldZipCode = zcSelector.attr("placeholder");
@@ -518,7 +679,7 @@ jQuery(function ($) {
         //Email Preference
         $("#ep-update-btn").on("click", function (e) {
             e.preventDefault();
-            $.post("/Account/UpdateEmailPreference", { subscribed: $("#ep-checkbox").is(":checked") }, function (data) {});
+            $.post("/Account/UpdateEmailPreference", { subscribed: $("#ep-checkbox").is(":checked") }, function (data) { });
         });
 
         // Add Store
@@ -874,4 +1035,3 @@ jQuery(function ($) {
         });
     }
 })(jQuery);
-

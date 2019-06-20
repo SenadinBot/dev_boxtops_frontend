@@ -1027,7 +1027,7 @@
         &:last-child {
             margin-bottom: 65px;
             @include media-xs {
-                margin-bottom: 0;
+                margin-bottom: 30px;
             }
             @include media-sm {
                 margin-bottom: 30px;

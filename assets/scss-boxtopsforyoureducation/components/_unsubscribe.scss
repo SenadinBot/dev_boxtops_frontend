@@ -42,43 +42,43 @@
                 padding: 0 15px;
             }
         }
-        span {
-            display: inline-block;
-            width: auto;
-            color: #fff;
-            font-family: $brandonGrotesqueBlack;
-            text-transform: uppercase;
-            font-size: 18px;
-            line-height: 26.9px;
-            cursor: pointer;
-            position: relative;
-            margin: 0 auto;
-            @include media-xs {
-                font-size: 16px;
-                line-height: 24px;
-            }
-            &:before {
-                content: "";
-                position: absolute;
-                width: 0;
-                height: 1px;
-                bottom: 0;
-                left: 0;
-                visibility: hidden;
-                -webkit-transition: all 0.3s ease-in-out 0s;
-                -moz-transition: all 0.3s ease-in-out 0s;
-                -ms-transition: all 0.3s ease-in-out 0s;
-                -o-transition: all 0.3s ease-in-out 0s;
-                transition: all 0.3s ease-in-out 0s;
-                background-color: #ffffff;
-            }
-            &:hover {
-                &:before {
-                    visibility: visible;
-                    width: 100%;
-                }
-            }
-        }
+        // span {
+        //     display: inline-block;
+        //     width: auto;
+        //     color: #fff;
+        //     font-family: $brandonGrotesqueBlack;
+        //     text-transform: uppercase;
+        //     font-size: 18px;
+        //     line-height: 26.9px;
+        //     cursor: pointer;
+        //     position: relative;
+        //     margin: 0 auto;
+        //     @include media-xs {
+        //         font-size: 16px;
+        //         line-height: 24px;
+        //     }
+        //     &:before {
+        //         content: "";
+        //         position: absolute;
+        //         width: 0;
+        //         height: 1px;
+        //         bottom: 0;
+        //         left: 0;
+        //         visibility: hidden;
+        //         -webkit-transition: all 0.3s ease-in-out 0s;
+        //         -moz-transition: all 0.3s ease-in-out 0s;
+        //         -ms-transition: all 0.3s ease-in-out 0s;
+        //         -o-transition: all 0.3s ease-in-out 0s;
+        //         transition: all 0.3s ease-in-out 0s;
+        //         background-color: #ffffff;
+        //     }
+        //     &:hover {
+        //         &:before {
+        //             visibility: visible;
+        //             width: 100%;
+        //         }
+        //     }
+        // }
         .btn-container {
             margin-bottom: 25px;
             display: block;
@@ -132,7 +132,8 @@
                         border: 1px solid #a21a19;
                     }
                 }
-                .login-field-wrapper {
+                .login-field-wrapper,
+                .custom-error {
                     margin-bottom: 30px;
                 }
             }

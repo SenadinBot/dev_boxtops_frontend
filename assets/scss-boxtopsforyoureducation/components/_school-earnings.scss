@@ -228,6 +228,13 @@
         @include media-xs {
             border: 5px solid #39BCD9;
         }
+        &.t-active {
+            display: block;
+            @include media-xs {
+                display: inline-block;
+                width: 100%;
+            }
+        }
     }
     .tab-heading {
         background-color: #39BCD9;
@@ -260,7 +267,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             width: 16px;
-            height: 43px;
+            height: 40px;
             position: absolute;
             right: 24px;
             top: 50%;
@@ -273,6 +280,18 @@
         &:after {
             background-image: url("../../../assets/images/icons/tab-minus@2x.png");
             width: 10px;
+            transform: translateY(-54%);
+        }
+    }
+    .custom-table {
+        tbody {
+            tr {
+                td {
+                    &:last-child {
+                        font-family: $brandonGrotesqueBold;
+                    }
+                }
+            }
         }
     }
 }

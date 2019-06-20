@@ -6,6 +6,35 @@
         @include media-md {
             display: none;
         }
+        @include media-xs {
+            background-color: $midnightBlue;
+        }
+        @include media-sm {
+            background-color: $midnightBlue;                
+        } 
+        .header-logo {
+            @include media-xs {
+                display: none;
+            }
+            @include media-sm {
+                display: none;
+            }
+        }
+        .mobile-search-icon {
+            &:before {
+                @include media-xs {
+                    background-image: url("../../../assets/images/icons/white-mobile-search-icon.png");
+                }
+                @include media-sm {
+                    background-image: url("../../../assets/images/icons/white-mobile-search-icon.png");
+                } 
+            }
+        }
+        .nav-toggle {
+            span {
+                background-color: $white;
+            }
+        }
     }
     .site-content {
         background-color: $midnightBlue;
@@ -15,6 +44,12 @@
         @include media-md {
             margin-top: 0;        
         }
+        @include media-xs {
+            margin-top: 69px;
+        }
+        @include media-sm {
+            margin-top: 89px;                            
+        } 
     }
     .social-sharing {
         display: none;
@@ -358,12 +393,12 @@
 .custom-error {
     font-size: 16px;
     line-height: 20px;
-    color: #a21a19;
+    color: #ffffff;
     font-family: $brandonGrotesque;
     text-align: left;
     display: none;
     margin-top: -15px;
-    border-bottom: 1px solid #a21a19;
+    // border-bottom: 1px solid #ffffff;
     &.show-custom-error {
         display: block;
     }
