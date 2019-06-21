@@ -28,6 +28,7 @@
         .consumer-earning-bar-item {
             position: relative;
             flex: 1 1 0%;
+            -ms-flex: 1 1 33%;
             width: auto;
             display: flex;
             flex-flow: column nowrap;

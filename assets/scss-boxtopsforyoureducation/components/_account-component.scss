@@ -107,14 +107,14 @@
                 .account-item-content {
                     padding: 32px 0 0px 25px;
                     @include media-xs {
-                        padding: 17px 0 0 20px;
+                        padding: 17px 2px 0 15px;
                     }
                 }
             }
             .account-item-content {
                 padding: 32px 0 40px 25px;
                 @include media-xs {
-                    padding: 17px 0 20px 20px;
+                    padding: 17px 2px 20px 15px;
                     -webkit-transition: all 0.3s ease-in-out 0s;
                     -moz-transition: all 0.3s ease-in-out 0s;
                     -ms-transition: all 0.3s ease-in-out 0s;
@@ -144,8 +144,8 @@
                     display: block;
                     font-family: $brandonGrotesqueBold;
                     color: $midnightBlue;
-                    font-family: 22px;
-                    line-height: 26.4px;
+                    font-size: 22px;
+                    line-height: 28.4px;
                     &:last-child {
                         text-transform: uppercase;
                         color: $redRibbon;
@@ -231,6 +231,9 @@
                 button {
                     &:first-child {
                         margin-right: 20px;
+                        @media only screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation : portrait) { 
+                            margin-right: 10px;
+                        }
                     }
                     &:last-child {
                         margin-right: 0;
@@ -240,6 +243,10 @@
             .custom-btn {
                 min-width: 194px;
                 padding: 8px 20px;
+                @media only  screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation : portrait) { 
+                    min-width: 165px;
+                    padding: 8px 15px;
+                }
             }
             .custom-link {
                 color: $redRibbon;
@@ -344,7 +351,7 @@
                                 }
                             }
                             &::-moz-placeholder { /* Firefox 19+ */
-                                font-family: $brandonGrotesque;
+                                font-family: $brandonGrotesqueBold;
                                 color: $midnightBlue;
                                 font-size: 22px;
                                 line-height: 26.4px;
@@ -354,7 +361,7 @@
                                 }
                             }
                             &:-ms-input-placeholder { /* IE 10+ */
-                                font-family: $brandonGrotesque;
+                                font-family: $brandonGrotesqueBold;
                                 color: $midnightBlue;
                                 font-size: 22px;
                                 line-height: 26.4px;
@@ -364,7 +371,7 @@
                                 }
                             }
                             &:-moz-placeholder { /* Firefox 18- */
-                                font-family: $brandonGrotesque;
+                                font-family: $brandonGrotesqueBold;
                                 color: $midnightBlue;
                                 font-size: 22px;
                                 line-height: 26.4px;

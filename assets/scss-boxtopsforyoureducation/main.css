@@ -1088,7 +1088,6 @@ body {
         display: block; } }
   .hero-banner-container.logged-page-hero .hero-banner-inner-container {
     display: flex;
-    flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
     max-width: 1172px;
@@ -3073,6 +3072,7 @@ body.search-open .header-search {
     .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item {
       position: relative;
       flex: 1 1 0%;
+      -ms-flex: 1 1 33%;
       width: auto;
       display: flex;
       flex-flow: column nowrap;
@@ -8382,12 +8382,12 @@ hr.full-width {
         padding: 32px 0 0px 25px; }
         @media (max-width: 767px) {
           .account-container .account-content .account-item:last-child .account-item-content {
-            padding: 17px 0 0 20px; } }
+            padding: 17px 2px 0 15px; } }
       .account-container .account-content .account-item .account-item-content {
         padding: 32px 0 40px 25px; }
         @media (max-width: 767px) {
           .account-container .account-content .account-item .account-item-content {
-            padding: 17px 0 20px 20px;
+            padding: 17px 2px 20px 15px;
             -webkit-transition: all 0.3s ease-in-out 0s;
             -moz-transition: all 0.3s ease-in-out 0s;
             -ms-transition: all 0.3s ease-in-out 0s;
@@ -8406,8 +8406,8 @@ hr.full-width {
           display: block;
           font-family: "Brandon Grotesque Bold", sans-serif;
           color: #002e5d;
-          font-family: 22px;
-          line-height: 26.4px; }
+          font-size: 22px;
+          line-height: 28.4px; }
           .account-container .account-content .account-item .supporting-container span:last-child {
             text-transform: uppercase;
             color: #E80A4D; }
@@ -8473,12 +8473,20 @@ hr.full-width {
         .account-container .account-content .account-item .btn-container a:first-child,
         .account-container .account-content .account-item .btn-container button:first-child {
           margin-right: 20px; }
+          @media only screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+            .account-container .account-content .account-item .btn-container a:first-child,
+            .account-container .account-content .account-item .btn-container button:first-child {
+              margin-right: 10px; } }
         .account-container .account-content .account-item .btn-container a:last-child,
         .account-container .account-content .account-item .btn-container button:last-child {
           margin-right: 0; }
       .account-container .account-content .account-item .custom-btn {
         min-width: 194px;
         padding: 8px 20px; }
+        @media only screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+          .account-container .account-content .account-item .custom-btn {
+            min-width: 165px;
+            padding: 8px 15px; } }
       .account-container .account-content .account-item .custom-link {
         color: #E80A4D;
         font-family: "Brandon Grotesque Black", sans-serif;
@@ -8569,7 +8577,7 @@ hr.full-width {
                   line-height: 24px; } }
             .account-container .account-content .account-item ul li .form-group input::-moz-placeholder {
               /* Firefox 19+ */
-              font-family: "Brandon Grotesque Regular", sans-serif;
+              font-family: "Brandon Grotesque Bold", sans-serif;
               color: #002e5d;
               font-size: 22px;
               line-height: 26.4px; }
@@ -8579,7 +8587,7 @@ hr.full-width {
                   line-height: 24px; } }
             .account-container .account-content .account-item ul li .form-group input:-ms-input-placeholder {
               /* IE 10+ */
-              font-family: "Brandon Grotesque Regular", sans-serif;
+              font-family: "Brandon Grotesque Bold", sans-serif;
               color: #002e5d;
               font-size: 22px;
               line-height: 26.4px; }
@@ -8589,7 +8597,7 @@ hr.full-width {
                   line-height: 24px; } }
             .account-container .account-content .account-item ul li .form-group input:-moz-placeholder {
               /* Firefox 18- */
-              font-family: "Brandon Grotesque Regular", sans-serif;
+              font-family: "Brandon Grotesque Bold", sans-serif;
               color: #002e5d;
               font-size: 22px;
               line-height: 26.4px; }

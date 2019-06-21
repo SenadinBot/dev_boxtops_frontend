@@ -60,13 +60,29 @@ jQuery(function ($) {
                         $(".login-field-wrapper").next(".custom-error").removeClass("show-custom-error");
                         if (data.type == "Consumer") {
                             window.location.href = "/Consumer Logged in Landing Page";
-                        }
-                        else if (data.type == "Coordinator") {
+                        } else if (data.type == "Coordinator") {
                             window.location.href = "/Coordinator Logged in Landing Page";
                         }
                     } else {
                         $(".login-field-wrapper").next(".custom-error").text(data.message);
                         $(".login-field-wrapper").next(".custom-error").addClass("show-custom-error");
+                    }
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    if (jqXHR.status == 404) {
+                        var data = jqXHR.responseJSON;
+                        console.log(data);
+                        if (data.status == true) {
+                            $(".login-field-wrapper").next(".custom-error").removeClass("show-custom-error");
+                            if (action == "LoginPageConsumer") {
+                                window.location.href = "/Consumer Logged in Landing Page";
+                            } else if (action == "LoginPageCoordinator") {
+                                window.location.href = "/Coordinator Logged in Landing Page";
+                            }
+                        }
+                        else {
+                            $(".login-field-wrapper").next(".custom-error").text(data.message);
+                            $(".login-field-wrapper").next(".custom-error").addClass("show-custom-error");
+                        }
                     }
                 });
             }
@@ -235,7 +251,7 @@ jQuery(function ($) {
         jQuery("#change-password-btn").on("click", function (e) {
             e.preventDefault();
             var passwordsValid = true;
-            var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}$/;
+            var regex = /(?=^.{6,20}$)(?=.*\d)(?=.*[a-zA-Z])(?!.*\s)(\w|[~!$&+,:;=?\[\]@#_|<>{}()^%*\.\-\+])*$/;
             if (passwordTextbox.val() != confirmPasswordTextbox.val()) {
                 passwordsValid = false;
                 jQuery(".custom-error").text("");
@@ -277,6 +293,23 @@ jQuery(function ($) {
             }
         });
 
+        //Modal Coordinator Submission Status
+        $("#getDetails").on("click", function (e) {
+            var html = "";
+            var submissionId = $("#submissionId").val();
+            $(".modal-content").empty();
+
+            jQuery.get( 
+                "/SchoolSubmission/GetSubmission?submId=" + submissionId, function (data) {
+                    if (data.success) {
+                        html += "<span><strong>School ID: </strong>" + data.SubmissionId + "</span>" +
+                            "<span><strong>Submitted on:</strong>" + 2 / 26 / 2020 + "</span>" +
+                            "<span><strong>Status:</strong>" + Processed + "</span>";
+                        $(".modal-content").append(html);
+                    }
+                });
+        });
+       
         //Sweestake details form validation
         $("#submit-form").on("click", function (e) {
             e.preventDefault();
@@ -540,13 +573,35 @@ jQuery(function ($) {
         }
 
         function postRegistration() {
+            var cAction = $("#cAction").val();
             $.post("/Registration/" + $("#cAction").val(), $("#registerForm").serialize(), function (data) {
                 if (status == true) {
                     $(".custom-error").removeClass("show-custom-error");
-                    window.location.href = "/";
+                    if (caction == "ConsumerRegister") {
+                        window.location.href = "/Consumer Login Page";
+                    } else if (caction == "CoordinatorRegister") {
+                        window.location.href = "/Coordinators login";
+                    }
                 } else {
                     $(".custom-error").text(data.message);
                     $(".custom-error").addClass("show-custom-error");
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status == 404) {
+                    var data = jqXHR.responseJSON;
+                    console.log(data);
+                    if (data.status == true) {
+                        $(".custom-error").removeClass("show-custom-error");
+                        if (caction == "ConsumerRegister") {
+                            window.location.href = "/Consumer Login Page";
+                        } else if (caction == "CoordinatorRegister") {
+                            window.location.href = "/Coordinators login";
+                        }
+                    }
+                    else {
+                        $(".custom-error").text(data.message);
+                        $(".custom-error").addClass("show-custom-error");
+                    }
                 }
             });
         }
@@ -617,6 +672,8 @@ jQuery(function ($) {
             var bd2Selector = $("#consAccBirthDate2");
 
             if ($(this).parents('.account-item-content').hasClass('edit-user')) {
+
+                $(".edit-btn").text("EDIT");
                 var firstName = fnSelector.val();
                 var lastName = lnSelector.val();
                 var zipCode = zcSelector.val();
@@ -649,7 +706,11 @@ jQuery(function ($) {
                     oldZipCode = data["ZipCode"];
                     oldBirthDate = data["BirthDate"];
                 });
+              
             } else {
+
+                $(".edit-btn").text("UPDATE");
+
                 fnSelector.attr("value", fnSelector.attr("placeholder"));
                 lnSelector.attr("value", lnSelector.attr("placeholder"));
                 zcSelector.attr("value", zcSelector.attr("placeholder"));
@@ -659,7 +720,7 @@ jQuery(function ($) {
                 oldFirstName = fnSelector.attr("placeholder");
                 oldLastName = lnSelector.attr("placeholder");
                 oldZipCode = zcSelector.attr("placeholder");
-                oldBirthDate = bdSelector.attr("placeholder");
+                oldBirthDate = bdSelector.attr("placeholder");              
             }
 
             $(this).parents('.account-item-content').toggleClass('edit-user');
@@ -708,7 +769,9 @@ jQuery(function ($) {
         $(".school-select-container").empty();
         $.get("/Registration/searchschools?keyword=" + text, function (data) {
             console.log("HtmlData: ", data);
-
+            if (data.list.length == 0) {
+                return false;
+            }
             var htmlData = "";
             for (var i = 0; i < data.list.length; i++) {
 
@@ -718,6 +781,24 @@ jQuery(function ($) {
                 $("#text").val("");
             }
             $(".school-select-container").append(htmlData);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status == 404) {
+                var data = jqXHR.responseJSON;
+                console.log(data);
+                if (data.list.length == 0) {
+                    return false;
+                }
+                var htmlData = "";
+                for (var i = 0; i < data.list.length; i++) {
+
+                    htmlData += "<div class='school-select'>" + "<span>" + data.list[i].SchoolName + "</span>" + "<p>" + data.list[i].Address + "</p>" + "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" + "<button class='nextBtn' type='button' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" + "</div >";
+                }
+                if (!$("#text").hasClass("registerPage")) {
+                    $("#text").val("");
+                }
+
+                $(".school-select-container").append(htmlData);
+            }
         });
     }
 
