@@ -7848,13 +7848,6 @@ hr.full-width {
     @media (min-width: 992px) and (max-width: 1199px) {
       .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step p {
         width: 65%; } }
-  .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .custom-btn.getSchools {
-    background-color: #fff;
-    color: #E80A4D; }
-    .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .custom-btn.getSchools:before {
-      background: #E80A4D; }
-    .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .custom-btn.getSchools:hover {
-      color: #fff; }
   .registration-step-container.upgrade-step-container .stepcontent-container .step-content.first-step .upgrade-step {
     position: relative;
     margin-bottom: 34px; }

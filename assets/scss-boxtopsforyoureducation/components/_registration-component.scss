@@ -150,18 +150,18 @@
                             width: 65%;
                         }
                     }
-                    .custom-btn {
-                        &.getSchools {
-                            background-color: #fff;
-                            color: $redRibbon;
-                            &:before {
-                                background: $redRibbon;
-                            }
-                            &:hover {
-                                color: #fff;
-                            }
-                        }
-                    }
+                    // .custom-btn {
+                    //     &.getSchools {
+                    //         background-color: #fff;
+                    //         color: $redRibbon;
+                    //         &:before {
+                    //             background: $redRibbon;
+                    //         }
+                    //         &:hover {
+                    //             color: #fff;
+                    //         }
+                    //     }
+                    // }
                     .upgrade-step {
                         position: relative;
                         margin-bottom: 34px;
