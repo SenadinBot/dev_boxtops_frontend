@@ -733,8 +733,10 @@
                     padding: 12.5px 2px;
                     -webkit-box-shadow: none;
                     box-shadow: none;
+                    height: 46px;
                     @include media-sm {
                         padding: 22.5px 2px;
+                        height: 66px;                        
                     }
                     &:focus {
                         outline: none;

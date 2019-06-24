@@ -88,9 +88,7 @@ a {
         text-decoration: none;
         outline: 0;
         color: $white;
-        &:hover {
-            color: $redRibbon;
-        }
+        background-color: $redRibbon;
     }
     &:active {
         outline: 0;
@@ -138,6 +136,7 @@ a {
         border: 2px solid $redRibbon;
         &:hover {
             background-color: $redRibbon;
+            color: $white;
         }
     }
 }
