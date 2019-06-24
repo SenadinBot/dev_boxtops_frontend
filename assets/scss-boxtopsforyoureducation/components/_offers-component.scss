@@ -135,12 +135,11 @@
         .cta-2-col-text {
             display: inline-block;
             padding-left: 20px;
+            width: calc(100% - 150px);            
             @include media-xs {
                 display: block;
                 padding: 0 15px;
-            }
-            @include media-md {
-                width: calc(100% - 150px);
+                width: 100%;
             }
             h5 {
                 color: #39BCD9;

@@ -17,6 +17,7 @@
             top: 0;
         }
         select {
+            background: url("../../../assets/images/icons/select-arrow@2x.png") no-repeat 94% 16px/15px 10px;
             display: inline-block;
             width: 100%;
             cursor: pointer;
@@ -39,19 +40,19 @@
                 pointer-events: none;
             }
         }
-        .select-arrow {
-            &:after {
-                content: "";
-                width: 15.36px;
-                height: 9.95px;
-                background-image: url("../../../assets/images/icons/select-arrow@2x.png");
-                background-size: cover;
-                background-repeat: no-repeat;
-                position: absolute;
-                top: 15px;
-                right: 12px;
-            }
-        }
+        // .select-arrow {
+        //     &:after {
+        //         content: "";
+        //         width: 15.36px;
+        //         height: 9.95px;
+        //         background-image: url("../../../assets/images/icons/select-arrow@2x.png");
+        //         background-size: cover;
+        //         background-repeat: no-repeat;
+        //         position: absolute;
+        //         top: 15px;
+        //         right: 12px;
+        //     }
+        // }
     }
     .control {
         display: block;

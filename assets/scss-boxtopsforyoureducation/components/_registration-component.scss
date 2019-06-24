@@ -410,9 +410,11 @@
                     flex-basis: calc(100% / 3);
                     flex: 1 0 30%;
                     margin-bottom: 65px;
+                    padding-right: 10px;
                     @include media-xs {
                         flex: 1 0 100%;
                         margin-bottom: 10px;
+                        padding-right: 0;
                     }
                     @include media-sm {
                         margin-bottom: 30px;
@@ -514,9 +516,11 @@
         flex-basis: calc(100% / 3);
         flex: 1 0 30%;
         margin-bottom: 65px;
+        padding-right: 10px;
         @include media-xs {
             flex: 1 0 100%;
             margin-bottom: 10px;
+            padding-right: 0;
         }
         @include media-sm {
             margin-bottom: 30px;
