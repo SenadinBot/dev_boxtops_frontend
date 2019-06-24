@@ -136,6 +136,22 @@
                         font-size: 48px;
                         line-height: 44px;
                     }
+                    &.resize {
+                        font-size: 60px;
+                        line-height: 66px;
+                        @include media-xs {
+                            font-size: 48px;
+                            line-height: 44px;
+                        }
+                        @include media-sm {
+                            font-size: 36px;
+                            line-height: 44px;
+                        }
+                        @include media-md {
+                            font-size: 50px;
+                            line-height: 50px;
+                        }
+                    }
                 }
             }
         }

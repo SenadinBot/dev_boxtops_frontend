@@ -10,13 +10,19 @@ var showMoreButton = jQuery(".showMoreBtn");
 var totalClips = jQuery(".totalClips");
 var totalBonus = jQuery(".totalBonus");
 var firstStepButton = jQuery(".firstStep-next-btn");
-var seconStepButton = jQuery(".firstStep-next-btn");
+var secondStepButton = jQuery(".secondStep-next-btn");
 var generatePdfButton = jQuery(".generatePdf");
 var passwordTextbox = jQuery(".password");
 var confirmPasswordTextbox = jQuery(".confirmPassword");
 
 jQuery(function ($) {
     $(document).ready(function () {
+        // Count char
+        $('.number').each(function () {
+            if ($(this).text().length > 8) {
+                $(this).addClass('resize');
+            }
+        });
 
         // Login/Reset Password Content
         if ($('.login-site-content').length) {
@@ -55,13 +61,15 @@ jQuery(function ($) {
                 email.next(".login-field-validation").addClass("hidden");
 
                 var action = $("#loginAction").val();
-                $.post("/LoginPage/" + action, { Email: email.val(), Password: password.val() }, function (data) {
+                $.post("/LoginPage/" + action + window.location.search, { Email: email.val(), Password: password.val(), RedirectUri: $("#redirectUri").val(), ClientId: $("#clientId").val() }, function (data) {
                     if (data.status) {
                         $(".login-field-wrapper").next(".custom-error").removeClass("show-custom-error");
                         if (data.type == "Consumer") {
                             window.location.href = "/Consumer Logged in Landing Page";
                         } else if (data.type == "Coordinator") {
                             window.location.href = "/Coordinator Logged in Landing Page";
+                        } else if (data.type == "Retailer") {
+                            window.location.href = data.redirectUri;
                         }
                     } else {
                         $(".login-field-wrapper").next(".custom-error").text(data.message);
@@ -157,6 +165,53 @@ jQuery(function ($) {
                     $("#school-earning-table tbody").append(tableData)
                 });
         });
+
+        $('#subm-years').on('change', function () {
+            var year = this.value;
+            jQuery(".page").val(1);
+            jQuery(".submissions-list").empty();
+            jQuery.get(
+                "/SchoolSubmission/GetSubmissionByYear?year=" + year + "&itemId=" + jQuery(".itemId").val(), function (data) {
+                    jQuery(".submissions-list").html(data);
+                });
+        });
+
+        jQuery(".school-submission-next-btn").on("click", function () {
+            var currentPage = parseInt(jQuery(".page").val());
+            SwitchStep(currentPage + 1);
+        })
+
+        jQuery(".school-submission-previous-btn").on("click", function () {
+            var currentPage = parseInt(jQuery(".page").val());
+            SwitchStep(currentPage - 1);
+        })
+
+        function SwitchStep(step) {
+            jQuery(".page").val(step);
+            if (step > 1) {
+                jQuery(".school-submission-previous-btn").removeAttr("disabled");
+                if (step == parseInt(jQuery(".numberOfPages").val())) {
+                    jQuery(".school-submission-next-btn").attr("disabled", "disabled");
+                }
+                else {
+                    jQuery(".school-submission-next-btn").removeAttr("disabled");
+                }
+            }
+            else {
+                jQuery(".school-submission-previous-btn").attr("disabled", "disabled");
+            }
+            jQuery(".custom-table").addClass("hidden");
+            jQuery(".page-" + step).removeClass("hidden");
+        }
+
+        //function appendToSubmissionTable(data) {
+        //    var tableData = "";
+        //    for (var i = 0; i < data.submissions.length; i++) {
+        //        tableData += 
+        //    }
+        //    return tableData;
+        //}
+
         function appendToTable(data) {
             var tableData = "";
             for (var i = 0; i < data.list.schoolActivity.length; i++) {
@@ -293,23 +348,6 @@ jQuery(function ($) {
             }
         });
 
-        //Modal Coordinator Submission Status
-        $("#getDetails").on("click", function (e) {
-            var html = "";
-            var submissionId = $("#submissionId").val();
-            $(".modal-content").empty();
-
-            jQuery.get( 
-                "/SchoolSubmission/GetSubmission?submId=" + submissionId, function (data) {
-                    if (data.success) {
-                        html += "<span><strong>School ID: </strong>" + data.SubmissionId + "</span>" +
-                            "<span><strong>Submitted on:</strong>" + 2 / 26 / 2020 + "</span>" +
-                            "<span><strong>Status:</strong>" + Processed + "</span>";
-                        $(".modal-content").append(html);
-                    }
-                });
-        });
-       
         //Sweestake details form validation
         $("#submit-form").on("click", function (e) {
             e.preventDefault();
@@ -574,13 +612,19 @@ jQuery(function ($) {
 
         function postRegistration() {
             var cAction = $("#cAction").val();
-            $.post("/Registration/" + $("#cAction").val(), $("#registerForm").serialize(), function (data) {
-                if (status == true) {
+            console.log("action: ", cAction);
+            $.post("/Registration/" + $("#cAction").val() + window.location.search, $("#registerForm").serialize(), function (data) {
+                if (data.status == true) {
+                    console.log("status: ", data.status)
                     $(".custom-error").removeClass("show-custom-error");
-                    if (caction == "ConsumerRegister") {
+                    if (cAction == "ConsumerRegister") {
                         window.location.href = "/Consumer Login Page";
-                    } else if (caction == "CoordinatorRegister") {
+                    } else if (cAction == "CoordinatorRegister") {
                         window.location.href = "/Coordinators login";
+                    } else if (cAction == "RetailerRegister") {
+                        console.log("Inside if", cAction);
+
+                        window.location.href = data.redirectUri;
                     }
                 } else {
                     $(".custom-error").text(data.message);
@@ -589,13 +633,14 @@ jQuery(function ($) {
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 if (jqXHR.status == 404) {
                     var data = jqXHR.responseJSON;
-                    console.log(data);
                     if (data.status == true) {
                         $(".custom-error").removeClass("show-custom-error");
-                        if (caction == "ConsumerRegister") {
+                        if (cAction == "ConsumerRegister") {
                             window.location.href = "/Consumer Login Page";
-                        } else if (caction == "CoordinatorRegister") {
+                        } else if (cAction == "CoordinatorRegister") {
                             window.location.href = "/Coordinators login";
+                        } else if (cAction == "RetailerRegister") {
+                            window.location.href = data.redirectUri;
                         }
                     }
                     else {
@@ -633,7 +678,14 @@ jQuery(function ($) {
         // Custom Modal
         $('.details-td').on('click', function (e) {
             e.preventDefault();
-            $('.get-details-modal').addClass('is-visible');
+            var submissionId = $(this).data("id");
+            $(".modal-content").empty();
+
+            jQuery.get(
+                "/SchoolSubmission/GetSubmission?submId=" + submissionId, function (data) {
+                    $('.get-details-modal').addClass('is-visible');
+                    $(".modal-content").html(data);
+                });
         });
         $('.question-help').on('click', function (e) {
             e.preventDefault();
@@ -706,7 +758,7 @@ jQuery(function ($) {
                     oldZipCode = data["ZipCode"];
                     oldBirthDate = data["BirthDate"];
                 });
-              
+
             } else {
 
                 $(".edit-btn").text("UPDATE");
@@ -720,7 +772,7 @@ jQuery(function ($) {
                 oldFirstName = fnSelector.attr("placeholder");
                 oldLastName = lnSelector.attr("placeholder");
                 oldZipCode = zcSelector.attr("placeholder");
-                oldBirthDate = bdSelector.attr("placeholder");              
+                oldBirthDate = bdSelector.attr("placeholder");
             }
 
             $(this).parents('.account-item-content').toggleClass('edit-user');
@@ -1055,11 +1107,38 @@ jQuery(function ($) {
     }
 
     firstStepButton.on("click", function () {
+        changeStep();
+    });
+
+    secondStepButton.on("click", function () {
+        if (jQuery(this).data("editmode") == "True") {
+            changeStep();
+        }
+        else {
+            jQuery.post(
+                "/form/insertsubmission",
+                {
+                    clipsAmount: totalClips.val(),
+                    bonusAmount: totalBonus.val()
+                },
+                function (data) {
+                    if (data.success == true) {
+                        jQuery(".submissionNumber").text(data.submissionId);
+                        changeStep();
+                    }
+                    else {
+                        alert("Something went wrong please try again later");
+                    }
+                })
+        }
+    });
+
+    function changeStep() {
         var current = jQuery('.current'),
             next = jQuery('.current').next('div');
         current.removeClass('current').addClass('filled');
         next.removeClass('empty').addClass('current');
-    });
+    }
 
     totalClips.on("keyup", function (e) {
         CalculateClips();
@@ -1100,7 +1179,11 @@ jQuery(function ($) {
     }
 
     generatePdfButton.on("click", function () {
-        downloadURI("/form/generatepdf?noOfBonusBoxtopsRequested=" + totalBonus.val() + "&noOfBoxtopsRequested=" + totalClips.val() + "&bonusMultiplyWith=" + parseFloat(jQuery(".bonusMultipleWith").text()) + "&clipsMultiplyWith=" + parseFloat(jQuery(".clipsMultipleWith").text()));
+        downloadURI("/form/generatepdf?noOfBonusBoxtopsRequested=" + totalBonus.val() +
+            "&noOfBoxtopsRequested=" + totalClips.val() +
+            "&bonusMultiplyWith=" + parseFloat(jQuery(".bonusMultipleWith").text()) +
+            "&clipsMultiplyWith=" + parseFloat(jQuery(".clipsMultipleWith").text()) +
+            "&submissionId=" + jQuery(".submissionNumber").text());
     });
 
     function downloadURI(uri) {

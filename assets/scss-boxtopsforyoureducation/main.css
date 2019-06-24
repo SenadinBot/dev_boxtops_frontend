@@ -3173,6 +3173,21 @@ body.search-open .header-search {
             .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number {
               font-size: 48px;
               line-height: 44px; } }
+          .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number.resize {
+            font-size: 60px;
+            line-height: 66px; }
+            @media (max-width: 767px) {
+              .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number.resize {
+                font-size: 48px;
+                line-height: 44px; } }
+            @media (min-width: 768px) and (max-width: 991px) {
+              .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number.resize {
+                font-size: 36px;
+                line-height: 44px; } }
+            @media (min-width: 992px) and (max-width: 1199px) {
+              .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number.resize {
+                font-size: 50px;
+                line-height: 50px; } }
     .consumer-earning-bar-container .consumer-earning-bar-wrapper .btn-container {
       flex: 1 1 100%;
       margin-top: 30px; }
@@ -4723,6 +4738,9 @@ body.search-open .header-search {
           .submission-component-table-container .submission-component-table-header .right-side a,
           .submission-component-table-container .submission-component-table-header .right-side button {
             font-size: 16px; } }
+        .submission-component-table-container .submission-component-table-header .right-side a:disabled,
+        .submission-component-table-container .submission-component-table-header .right-side button:disabled {
+          cursor: not-allowed; }
         .submission-component-table-container .submission-component-table-header .right-side a:first-child,
         .submission-component-table-container .submission-component-table-header .right-side button:first-child {
           margin-right: 30px; }
