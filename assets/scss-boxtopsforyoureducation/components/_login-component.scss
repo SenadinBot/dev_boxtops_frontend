@@ -1,5 +1,6 @@
 .login-reset-body {
-    .login-header {
+    .login-header,
+    .header {
         @include media-lg {
             display: none;
         }
