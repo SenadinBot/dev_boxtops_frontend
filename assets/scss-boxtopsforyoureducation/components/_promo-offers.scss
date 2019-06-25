@@ -15,6 +15,23 @@
             line-height: 16.37px;
             padding: 8.2px 13.8px 8.9px 13.8px;
         }
+        &:before {
+            @include media-xs {
+                background-color: $redRibbon;
+            }
+        }
+        &:hover {
+            @include media-xs {
+                background-color: $redRibbon;     
+                color: $white;           
+            }
+        }
+        &:focus {
+            @include media-xs {
+                background-color: $redRibbon;     
+                color: $white;           
+            }
+        }
     }
     i {
         cursor: pointer;
@@ -189,7 +206,7 @@
     .header {
         top: 60px;
         @include media-xs {
-            top: 56px;
+            top: 63px;
         }
     }
 }

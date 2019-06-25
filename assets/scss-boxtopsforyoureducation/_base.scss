@@ -83,6 +83,9 @@ a {
             -moz-transform: scale(1);
             transform: scale(1);
         }
+        &:focus { 
+            color: $redRibbon;            
+        }
     }
     &:focus {
         text-decoration: none;
@@ -136,7 +139,11 @@ a {
         border: 2px solid $redRibbon;
         &:hover {
             background-color: $redRibbon;
-            color: $white;
+            color: $redRibbon;
+            @include media-xs {
+                background-color: #fff;
+                color: $redRibbon;
+            }
         }
     }
 }
