@@ -1663,6 +1663,10 @@
         @include media-xs-portrait {
             width: 100%;
         }
+        @media all and (-ms-high-contrast:none) {
+            width: 274px;
+            height: 52px;
+        }
     }
     .form-group {
         display: inline-block;

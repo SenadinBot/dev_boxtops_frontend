@@ -345,6 +345,10 @@
                                 color: $midnightBlue;
                                 font-size: 22px;
                                 line-height: 26.4px;
+                                opacity: 1;
+                                -webkit-transform: scale(1);
+                                -moz-transform: scale(1);
+                                transform: scale(1);
                                 @include media-xs {
                                     font-size: 20px;
                                     line-height: 24px;
@@ -355,6 +359,10 @@
                                 color: $midnightBlue;
                                 font-size: 22px;
                                 line-height: 26.4px;
+                                opacity: 1;
+                                -webkit-transform: scale(1);
+                                -moz-transform: scale(1);
+                                transform: scale(1);
                                 @include media-xs {
                                     font-size: 20px;
                                     line-height: 24px;
@@ -365,6 +373,19 @@
                                 color: $midnightBlue;
                                 font-size: 22px;
                                 line-height: 26.4px;
+                                opacity: 1;
+                                @include media-xs {
+                                    font-size: 20px;
+                                    line-height: 24px;
+                                }
+                            }
+                            &::-ms-input-placeholder { /* Edge */
+                                font-family: $brandonGrotesqueBlack;
+                                font-weight: 900;
+                                color: $midnightBlue;
+                                font-size: 22px;
+                                line-height: 26.4px;
+                                opacity: 1;
                                 @include media-xs {
                                     font-size: 20px;
                                     line-height: 24px;
@@ -375,6 +396,10 @@
                                 color: $midnightBlue;
                                 font-size: 22px;
                                 line-height: 26.4px;
+                                opacity: 1;
+                                -webkit-transform: scale(1);
+                                -moz-transform: scale(1);
+                                transform: scale(1);
                                 @include media-xs {
                                     font-size: 20px;
                                     line-height: 24px;
