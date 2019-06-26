@@ -3096,12 +3096,13 @@ body.search-open .header-search {
       display: flex;
       flex-flow: column nowrap;
       justify-content: flex-start;
-      align-items: center; }
+      align-items: center;
+      padding-right: 15px; }
       @media (max-width: 767px) {
         .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item {
           flex: 1 1 100%;
           margin-bottom: 30px;
-          padding-bottom: 35px; } }
+          padding: 0 10px 35px 10px; } }
       .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item:after {
         content: "";
         width: 16.46px;
@@ -3190,21 +3191,6 @@ body.search-open .header-search {
             .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number {
               font-size: 48px;
               line-height: 44px; } }
-          .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number.resize {
-            font-size: 60px;
-            line-height: 66px; }
-            @media (max-width: 767px) {
-              .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number.resize {
-                font-size: 48px;
-                line-height: 44px; } }
-            @media (min-width: 768px) and (max-width: 991px) {
-              .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number.resize {
-                font-size: 36px;
-                line-height: 44px; } }
-            @media (min-width: 992px) and (max-width: 1199px) {
-              .consumer-earning-bar-container .consumer-earning-bar-wrapper .consumer-earning-bar-item span.number.resize {
-                font-size: 50px;
-                line-height: 50px; } }
     .consumer-earning-bar-container .consumer-earning-bar-wrapper .btn-container {
       flex: 1 1 100%;
       margin-top: 30px; }
@@ -5577,6 +5563,12 @@ body.search-open .header-search {
   @media (max-width: 767px) {
     .submission-main-container {
       padding: 117px 10px 14px 10px; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .submission-main-container {
+      padding: 117px 15px 81px 15px; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .submission-main-container {
+      padding: 117px 20px 81px 20px; } }
   .submission-main-container h2 {
     margin-bottom: 20px; }
     @media (max-width: 767px) {
@@ -6078,19 +6070,6 @@ body.search-open .header-search {
       .offers-container .offer-details-content {
         flex: 1 1 100%;
         margin-bottom: 50px; } }
-  .offers-container .adverb-content {
-    flex: 1 1 33.333%;
-    width: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    text-align: left; }
-    @media (max-width: 767px) {
-      .offers-container .adverb-content {
-        flex: 1 1 100%; } }
-    @media (min-width: 768px) and (max-width: 991px) {
-      .offers-container .adverb-content {
-        flex: 1 1 100%; } }
 
 .sweepstakes-winners-content .cta-2-col-wrap {
   width: 100%;
@@ -6210,6 +6189,9 @@ body.search-open .header-search {
         .redeem-code-content .form-group label {
           font-size: 20px;
           line-height: 24px; } }
+      @media (max-width: 767px) {
+        .redeem-code-content .form-group label:first-child {
+          margin-bottom: 25px; } }
     .redeem-code-content .form-group input {
       border: 1px solid #E1E1E1;
       width: 450px;
@@ -6227,6 +6209,26 @@ body.search-open .header-search {
         .redeem-code-content .form-group input {
           width: 100%;
           padding: 4px 15px 4px 15px; } }
+    .redeem-code-content .form-group .input-group {
+      position: relative;
+      width: 450px;
+      margin-bottom: 0; }
+      @media (max-width: 767px) {
+        .redeem-code-content .form-group .input-group {
+          width: 100%; } }
+    .redeem-code-content .form-group.has-error span {
+      display: block; }
+    .redeem-code-content .form-group.has-error input {
+      border-color: #a21a19; }
+    .redeem-code-content .form-group span {
+      display: none;
+      position: absolute;
+      top: 3px;
+      right: 10px;
+      font-size: 14px;
+      line-height: 18px;
+      font-family: "Brandon Grotesque Light", sans-serif;
+      color: #a21a19; }
   .redeem-code-content .custom-btn {
     display: block;
     width: 274px;
@@ -6570,13 +6572,69 @@ hr.full-width {
   width: auto;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start; }
-  .adverb-content .img-container {
-    text-align: center;
+  justify-content: flex-start;
+  max-width: 1172px;
+  background-color: #f0f0f0;
+  padding: 20px 0;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; }
+  @media (max-width: 767px) {
+    .adverb-content {
+      padding: 0;
+      background: red; } }
+  .adverb-content.small-adverb {
+    flex: 1 1 33.333%;
+    height: auto;
+    background-color: transparent;
+    padding: 0; }
+    @media (max-width: 767px) {
+      .adverb-content.small-adverb {
+        flex: 1 1 100%; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .adverb-content.small-adverb {
+        flex: 1 1 100%; } }
+    .adverb-content.small-adverb .ad-box {
+      margin-bottom: 10px; }
+    .adverb-content.small-adverb > span {
+      position: relative; }
+  .adverb-content.add-adverb-margin {
+    margin-bottom: 80px; }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .adverb-content.add-adverb-margin {
+        margin-bottom: 60px; } }
+    @media (max-width: 767px) {
+      .adverb-content.add-adverb-margin {
+        margin-bottom: 40px; } }
+  .adverb-content > span {
+    text-transform: uppercase;
+    font-family: "Brandon Grotesque Bold", sans-serif;
+    font-size: 10px;
+    line-height: 10px;
+    color: #767676;
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    @media (max-width: 767px) {
+      .adverb-content > span {
+        bottom: 0; } }
+  .adverb-content .desktop-ad-box {
     display: block;
     margin: 0 auto; }
-  .adverb-content.full-width {
-    flex: 1 1 100%; }
+    @media (max-width: 767px) {
+      .adverb-content .desktop-ad-box {
+        display: none; } }
+  .adverb-content .mobile-ad-box {
+    display: none;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-bottom: 10px; }
+    @media (max-width: 767px) {
+      .adverb-content .mobile-ad-box {
+        display: block; } }
 
 .form-group {
   font-size: 0; }

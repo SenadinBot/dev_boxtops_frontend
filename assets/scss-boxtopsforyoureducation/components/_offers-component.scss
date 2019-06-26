@@ -87,20 +87,6 @@
             margin-bottom: 50px;
         }
     }
-    .adverb-content {
-        flex: 1 1 33.333%;
-        width: auto;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        text-align: left;
-        @include media-xs {
-            flex: 1 1 100%;
-        }
-        @include media-sm {
-            flex: 1 1 100%;
-        }
-    }
 }
 .sweepstakes-winners-content {
     .cta-2-col-wrap {
@@ -234,6 +220,11 @@
                 font-size: 20px;
                 line-height: 24px;
             }
+            &:first-child {
+                @include media-xs {
+                    margin-bottom: 25px;
+                }
+            }
         }
         input {
             border: 1px solid #E1E1E1;
@@ -253,6 +244,32 @@
                 width: 100%;
                 padding: 4px 15px 4px 15px;
             }
+        }
+        .input-group {
+            position: relative;
+            width: 450px;
+            margin-bottom: 0;
+            @include media-xs {
+                width: 100%;
+            }
+        }
+        &.has-error {
+            span {
+                display: block;
+            }
+            input {
+                border-color: #a21a19;
+            }
+        }
+        span {
+            display: none;
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            font-size: 14px;
+            line-height: 18px;
+            font-family: "Brandon Grotesque Light", sans-serif;
+            color: #a21a19;
         }
     }
     .custom-btn {
@@ -650,12 +667,73 @@ hr {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    .img-container {
-        text-align: center;
+    max-width: $contentWidth;
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    @include media-xs {
+        padding: 0;
+        background: red;
+    }
+    &.small-adverb {
+        flex: 1 1 33.333%;
+        height: auto;
+        background-color: transparent;
+        padding: 0;
+        @include media-xs {
+            flex: 1 1 100%;
+        }
+        @include media-sm {
+            flex: 1 1 100%;
+        }
+        .ad-box {
+            margin-bottom: 10px;            
+        }
+        > span {
+            position: relative;
+        }
+    }
+    &.add-adverb-margin {
+        margin-bottom: 80px;
+        @include media-sm {
+            margin-bottom: 60px;
+        }
+        @include media-xs {
+            margin-bottom: 40px;
+        }
+    }
+    > span {
+        text-transform: uppercase;
+        font-family: $brandonGrotesqueBold;
+        font-size: 10px;
+        line-height: 10px;
+        color: #767676;
+        position: absolute;
+        left: 50%;
+        bottom: 6px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+        @include media-xs {
+            bottom: 0;
+        }
+    }
+    .desktop-ad-box {
         display: block;
         margin: 0 auto;
+        @include media-xs {
+            display: none;
+        }
     }
-    &.full-width {
-        flex: 1 1 100%;
+    .mobile-ad-box {
+        display: none;
+        margin: 0 auto;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        @include media-xs {
+            display: block;
+        }
     }
 }
