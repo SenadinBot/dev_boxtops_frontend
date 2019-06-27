@@ -2041,6 +2041,7 @@
                     font-size: 18px;
                     line-height: 21.6px;
                     color: $midnightBlue;
+                    text-transform: initial;
                     @include media-xs {
                         font-size: 14px;
                         line-height: 16.8px;
