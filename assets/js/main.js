@@ -152,7 +152,7 @@ jQuery(function ($) {
             jQuery.get(
                 "/SchoolEarningActivity/GetData?yearFilter=" + yearVal, function (data) {
                     var tableData = appendToTable(data);
-                    $("#school-activity-table tbody").append(tableData)
+                    $("#school-activity-table tbody").append(tableData);
                 });
         });
 
@@ -162,7 +162,7 @@ jQuery(function ($) {
             jQuery.get(
                 "/ActivityComponent/GetActivityData?year=" + year, function (data) {
                     var tableData = appendToTable(data);
-                    $("#school-earning-table tbody").append(tableData)
+                    $("#school-earning-table tbody").append(tableData);
                 });
         });
 
@@ -179,12 +179,12 @@ jQuery(function ($) {
         jQuery(".school-submission-next-btn").on("click", function () {
             var currentPage = parseInt(jQuery(".page").val());
             SwitchStep(currentPage + 1);
-        })
+        });
 
         jQuery(".school-submission-previous-btn").on("click", function () {
             var currentPage = parseInt(jQuery(".page").val());
             SwitchStep(currentPage - 1);
-        })
+        });
 
         function SwitchStep(step) {
             jQuery(".page").val(step);
@@ -221,7 +221,7 @@ jQuery(function ($) {
                     "<td>" + ((date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) + "/" + date.getDate() + "/" + date.getFullYear() + "</td>" +
                     "<td>" + data.list.schoolActivity[i].description + "</td>" +
                     "<td>" + "$" + data.list.schoolActivity[i].amount_earned + "</td>" +
-                    "</tr>"
+                    "</tr>";
             }
             return tableData;
         }
@@ -407,7 +407,7 @@ jQuery(function ($) {
                 sweepCity.parents(".form-group").addClass("has-error");
             }
             else {
-                sweepCity.parents(".form-group").removeClass("has-error")
+                sweepCity.parents(".form-group").removeClass("has-error");
             }
             if (sweepZipcode.val() == "" || !regex.test(sweepZipcode.val())) {
                 sweepZipcode.parents(".form-group").addClass("has-error");
@@ -438,7 +438,7 @@ jQuery(function ($) {
         });
         function isFullyMature(selector) {
             var today = new Date();
-            var date = new Date(selector.val())
+            var date = new Date(selector.val());
             if (date < today) {
                 const diffTime = Math.abs(today.getTime() - date.getTime());
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -502,6 +502,25 @@ jQuery(function ($) {
             $(this).parents('.earn-product-item').toggleClass('active');
         });
 
+        //Redeem code
+        $("#redeemCodeBtn").on("click", function () {
+            var code = $("#redeemCodeText").val();
+            if (code == "" || code == null) {
+                $("#redeemCodeText").next(".error-msg").removeClass("hidden");
+                $("#redeemCodeText").parents(".form-group").addClass("has-error");
+            } else {
+                $("#redeemCodeText").next(".error-msg").addClass("hidden");
+                $.post("RedeemBox/SubmitCode", { code: code }, function (data) {
+                    if (data.status) {
+                        $("#redeemCodeText").val("");
+                    } else {
+                        $("#redeemCodeText").next(".error-msg").addClass("hidden");
+                        $("#redeemCodeText").parents(".form-group").removeClass("has-error");
+                    }
+                });
+
+            }
+        });
         // Tabs to Accordion
         $(".custom-tabs li").click(function () {
             var activeTab = $(this).attr("rel");
@@ -615,7 +634,7 @@ jQuery(function ($) {
             console.log("action: ", cAction);
             $.post("/Registration/" + $("#cAction").val() + window.location.search, $("#registerForm").serialize(), function (data) {
                 if (data.status == true) {
-                    console.log("status: ", data.status)
+                    console.log("status: ", data.status);
                     $(".custom-error").removeClass("show-custom-error");
                     if (cAction == "ConsumerRegister") {
                         window.location.href = "/Consumer Login Page";
@@ -749,6 +768,7 @@ jQuery(function ($) {
                     zcSelector.val("");
 
                     bd2Selector.attr("placeholder", data.data["BirthDate"]);
+                    bd2Selector.val("");
                     bdSelector.val("");
                     bdSelector.addClass("hidden");
                     bd2Selector.show();
@@ -772,7 +792,7 @@ jQuery(function ($) {
                 oldFirstName = fnSelector.attr("placeholder");
                 oldLastName = lnSelector.attr("placeholder");
                 oldZipCode = zcSelector.attr("placeholder");
-                oldBirthDate = bdSelector.attr("placeholder");
+                oldBirthDate = bd2Selector.attr("placeholder");
             }
 
             $(this).parents('.account-item-content').toggleClass('edit-user');
@@ -1198,4 +1218,31 @@ jQuery(function ($) {
             }
         });
     }
+
+    jQuery(".notlogged-in-cookie-btn").on("click", function (e) {
+        e.preventDefault();
+        setCookie("cookieAccepted", "true", 90);
+        jQuery(".not-logged-in-cookie-container").fadeOut();
+
+    });
+
+    jQuery(".logged-in-cookie-btn").on("click", function (e) {
+        e.preventDefault();
+        setCookie("loggedInCookieAccepted", "true", 90);
+        jQuery(".logged-in-cookie-container").fadeOut();
+    });
+
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+
+
 })(jQuery);

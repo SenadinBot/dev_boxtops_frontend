@@ -389,6 +389,51 @@
                         }
                     }
                 }
+                .submit-container {
+                    display: none;
+                    h2 {
+                        margin-bottom: 32px;
+                    }
+                    .form-group {
+                        &.agree-checkbox {
+                            margin: 32px 0 35px 0;
+                            padding-top: 0;
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+                    .custom-btn {
+                        min-width: 255px;
+                    }
+                    p {
+                        a {
+                            color: $redRibbon;
+                            position: relative;
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                width: 0;
+                                height: 1px;
+                                bottom: 0;
+                                left: 0;
+                                visibility: hidden;
+                                -webkit-transition: all 0.3s ease-in-out 0s;
+                                -moz-transition: all 0.3s ease-in-out 0s;
+                                -ms-transition: all 0.3s ease-in-out 0s;
+                                -o-transition: all 0.3s ease-in-out 0s;
+                                transition: all 0.3s ease-in-out 0s;
+                                background-color: $redRibbon;
+                            }
+                            &:hover {
+                                &:before {
+                                    visibility: visible;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             &.show-school-container {
                 .school-select-container {
