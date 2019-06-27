@@ -7115,7 +7115,7 @@ body.search-open .header-search {
 .submission-form-container .submission-form-content .sub-step-container .confirm-group {
     width: calc(100% + 60px);
     position: relative;
-    left: -60px;
+    left: -69px;
   }
 }
 .submission-form-container .submission-form-content .sub-step-container .form-group label,
@@ -7209,10 +7209,11 @@ body.search-open .header-search {
 }
 @media (max-width: 767px) {
   .submission-form-container .submission-form-content .sub-step-container .requested-total {
-    width: calc(100% + 60px);
+    width: calc(100% + 69px);
     position: relative;
-    left: -60px;
+    left: -69px;
     margin-right: 0;
+    text-align: center;
   }
 }
 .submission-form-container .submission-form-content .sub-step-container .requested-total span {
@@ -7226,7 +7227,6 @@ body.search-open .header-search {
   .submission-form-container .submission-form-content .sub-step-container .requested-total span {
     font-size: 14px;
     line-height: 16.8px;
-    margin-right: calc(100% - 235px);
   }
 }
 .submission-form-container .submission-block {
