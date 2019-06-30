@@ -1,9 +1,7 @@
 .earn-product-container {
-    display: flex;
-    flex-flow: row wrap;
     max-width: $contentWidth;
     margin: 0 auto;
-    padding: 80px 15px 20px 15px;
+    padding: 80px 0 20px 0;
     position: relative;
     @include media-xs {
         padding: 45px 10px 20px 10px;
@@ -35,15 +33,18 @@
         }
     }
     .earn-product-item {
-        flex: 1 1 50%;
-        width: auto;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        text-align: left;
+        height: auto;
+        display: inline-block;
+        width: calc((100% / 2) - 30px);
+        @include media-md {
+            width: calc((100% / 2) - 45px);            
+        }
+        @include media-sm {
+            width: calc((100% / 2) - 45px);                        
+        }
         @include media-xs {
-            flex: 1 1 100%;
             margin-bottom: 15px;
+            width: 100%;
         }
         &.adverb {
             padding-bottom: 40px;
@@ -74,16 +75,7 @@
             }
         }
         .earn-product-item-content {
-            width: 90%;
-            @include media-xs {
-                width: 100%;
-            }
-            @include media-sm {
-                width: 95%;
-            }
-            @include media-md {
-                width: 95%;
-            }
+            width: 100%;
             .earn-product-item-heading {
                 font-size: 0;
                 background-color: #F0F0F0;

@@ -17,12 +17,14 @@ var confirmPasswordTextbox = jQuery(".confirmPassword");
 
 jQuery(function ($) {
     $(document).ready(function () {
-        // Count char
-        $('.number').each(function () {
-            if ($(this).text().length > 8) {
-                $(this).addClass('resize');
-            }
-        });
+
+        // Products Masonry
+        if ($(window).width() > 767 ) {
+            $('.earn-product-container').masonry({
+                itemSelector: '.earn-product-item',
+                gutter: 60
+            }); 
+        }
 
         // Login/Reset Password Content
         if ($('.login-site-content').length) {
@@ -506,7 +508,7 @@ jQuery(function ($) {
         $("#redeemCodeBtn").on("click", function () {
             var code = $("#redeemCodeText").val();
             if (code == "" || code == null) {
-                $("#redeemCodeText").next(".error-msg").removeClass("hidden");
+                $("#redeemCodeError").removeClass("hidden");
                 $("#redeemCodeText").parents(".form-group").addClass("has-error");
             } else {
                 $("#redeemCodeText").next(".error-msg").addClass("hidden");
@@ -514,7 +516,7 @@ jQuery(function ($) {
                     if (data.status) {
                         $("#redeemCodeText").val("");
                     } else {
-                        $("#redeemCodeText").next(".error-msg").addClass("hidden");
+                        $("#redeemCodeError").addClass("hidden");
                         $("#redeemCodeText").parents(".form-group").removeClass("has-error");
                     }
                 });
@@ -690,6 +692,10 @@ jQuery(function ($) {
                 getSchools();
                 $(this).parents('.step-content').addClass('show-school-container');
             }
+        });
+
+        $('.schoolBack').on('click',function () {
+            $(this).parents('.step-content').removeClass('show-school-container');
         });
 
         $('div.setup-panel div a.active-step, div.setup-panel div .active-stepwizard').trigger('click');
