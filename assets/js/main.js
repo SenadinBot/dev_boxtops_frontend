@@ -28,6 +28,14 @@ jQuery(function ($) {
     $(document).ready(function () {
         // dynamicallyLoadScript();
 
+        // Scroll to center on tabss
+        $(".tab-heading").on('click', function () {
+            console.log('test');
+            $('html, body').animate({
+                scrollTop: $(".tab-container").offset().top - 100
+            }, 500);
+        });
+
         // Remove space if there is no header
         if ($('#masthead').length == 0) {
             $('.site-content').css('margin-top', '0');
