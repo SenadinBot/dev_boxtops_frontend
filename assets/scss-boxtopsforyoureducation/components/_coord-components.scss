@@ -2346,6 +2346,15 @@
                 color: $midnightBlue;
                 line-height: 30px;
                 margin-bottom: 0;
+                @include media-xs {
+                    font-size: 20px;
+                }
+                @include media-sm {
+                    font-size: 20px;
+                }
+                @include media-md {
+                    font-size: 22px;
+                }
             }
             ul {
                 list-style: none;
