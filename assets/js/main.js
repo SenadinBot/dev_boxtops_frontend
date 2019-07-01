@@ -28,16 +28,17 @@ jQuery(function ($) {
     $(document).ready(function () {
         // dynamicallyLoadScript();
 
-        if($('#masthead').length == 0) {
+        // Remove space if there is no header
+        if ($('#masthead').length == 0) {
             $('.site-content').css('margin-top', '0');
         }
 
         // Products Masonry
-        if ($(window).width() > 767 ) {
+        if ($(window).width() > 767) {
             $('.earn-product-container').masonry({
                 itemSelector: '.earn-product-item',
                 gutter: 60
-            }); 
+            });
         }
 
         // Login/Reset Password Content
@@ -77,16 +78,9 @@ jQuery(function ($) {
                 email.next(".login-field-validation").addClass("hidden");
 
                 var action = $("#loginAction").val();
-                $.post("/LoginPage/" + action + window.location.search, { Email: email.val(), Password: password.val(), RedirectUri: $("#redirectUri").val(), ClientId: $("#clientId").val() }, function (data) {
+                $.post("/LoginPage/" + action + window.location.search, { Email: email.val(), Password: password.val(), RedirectUri: $("#redirectUri").val(), ClientId: $("#clientId").val(), NotAcceptedTermsUrl: $("#NotAcceptedTermsUrl").val(), AcceptedTermsUrl: $("#AcceptedTermsUrl").val() }, function (data) {
                     if (data.status) {
-                        $(".login-field-wrapper").next(".custom-error").removeClass("show-custom-error");
-                        if (data.type == "Consumer") {
-                            window.location.href = "/Consumer Logged in Landing Page";
-                        } else if (data.type == "Coordinator") {
-                            window.location.href = "/Coordinator Logged in Landing Page";
-                        } else if (data.type == "Retailer") {
-                            window.location.href = data.redirectUri;
-                        }
+                        window.location.href = data.redirectUri;
                     } else {
                         $(".login-field-wrapper").next(".custom-error").text(data.message);
                         $(".login-field-wrapper").next(".custom-error").addClass("show-custom-error");
@@ -557,9 +551,10 @@ jQuery(function ($) {
 
         // Registration Step Wizard
         var navListItems = $('div.setup-panel div a'),
-            allWells = $('.step-content'),
+            allWells = $('.step-content').not(".experienceEditorMode"),
             allNextBtn = $('.nextBtn'),
             allPrevBtn = $('.prevBtn');
+
 
         allWells.hide();
 
@@ -622,17 +617,43 @@ jQuery(function ($) {
             }
 
             if (isValid) {
+
                 if ($(this).hasClass("last")) {
-                    postRegistration();
+                    if (acceptedTerms()) {
+                        postRegistration();
+                    }
+                    else {
+                        jQuery(".error-msg").show();
+                    }
+                    return;
                 }
                 if ($(this).hasClass("last-upgrade-coord")) {
-                    postUpgradeCoordinator();
+                    if (acceptedTerms()) {
+                        postUpgradeCoordinator();
+                    }
+                    else {
+                        jQuery(".error-msg").show();
+                    }
+                    return;
                 }
-                jQuery(".step-content").hide();
-                jQuery(".step-content[data-step='" + nextStep + "']").show();
-                nextStepWizard.removeAttr('disabled').trigger('click');
+
+
+                if (!$(this).hasClass("final-step-btn")) {
+                    jQuery(".step-content").hide();
+                    jQuery(".step-content[data-step='" + nextStep + "']").show();
+                    nextStepWizard.removeAttr('disabled').trigger('click');
+                }
+                else {
+                    jQuery(".sign-up-container").hide();
+                    jQuery(".submit-container").show();
+                }
             }
         });
+
+        function acceptedTerms() {
+            return (($(".accept-terms").length > 0 && jQuery(".accept-terms").is(':checked')) || $(".accept-terms").length == 0);
+        }
+
         function postUpgradeCoordinator() {
             $.post("/UpgradeToCoordinator/UpgradeTo", $("#upgradeCoord").serialize(), function (data) {
                 if (status == true) {
@@ -708,7 +729,7 @@ jQuery(function ($) {
             }
         });
 
-        $('.schoolBack').on('click',function () {
+        $('.schoolBack').on('click', function () {
             $(this).parents('.step-content').removeClass('show-school-container');
         });
 
@@ -1239,28 +1260,32 @@ jQuery(function ($) {
         });
     }
 
-    jQuery(".notlogged-in-cookie-btn").on("click", function (e) {
+    jQuery(".cookie-btn").on("click", function (e) {
         e.preventDefault();
-        setCookie("cookieAccepted", "true", 90);
-        jQuery(".not-logged-in-cookie-container").fadeOut();
-
-    });
-
-    jQuery(".logged-in-cookie-btn").on("click", function (e) {
-        e.preventDefault();
-        setCookie("loggedInCookieAccepted", "true", 90);
-        jQuery(".logged-in-cookie-container").fadeOut();
-    });
-
-
-    function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
+        if (jQuery(".acceptTerms").is(":checked")) {
+            jQuery.get("/cookie/setcookie", function (data) {
+                if (data.success) {
+                    window.location.href = getParameterByName("returnUrl");
+                }
+                else {
+                    jQuery(".error-msg").css("display", "block");
+                }
+            });
         }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        else {
+            jQuery(".error-msg").css("display", "block");
+        }
+
+    });
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 
 

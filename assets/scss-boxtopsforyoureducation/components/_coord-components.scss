@@ -2012,6 +2012,9 @@
                         font-size: 14px;
                         line-height: 16.8px;
                     }
+                }
+                > span,
+                > p {
                     @include media-sm {
                         position: relative;
                         top: -8px;
