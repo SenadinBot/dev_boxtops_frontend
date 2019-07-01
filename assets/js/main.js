@@ -30,7 +30,6 @@ jQuery(function ($) {
 
         // Scroll to center on tabss
         $(".tab-heading").on('click', function () {
-            console.log('test');
             $('html, body').animate({
                 scrollTop: $(".tab-container").offset().top - 100
             }, 500);
