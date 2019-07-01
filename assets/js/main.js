@@ -16,7 +16,21 @@ var passwordTextbox = jQuery(".password");
 var confirmPasswordTextbox = jQuery(".confirmPassword");
 
 jQuery(function ($) {
+
+
+    //function dynamicallyLoadScript() {
+    //    var script = document.createElement("script");  // create a script DOM node
+    //    script.type = "text/javascript";
+    //    script.src = "/assets/js/vendor/boxtopsforyoureducation/masonry.min.js";  // set its src to the provided URL
+
+    //    document.head.prepend(script);  // add it to the begining of the head section of the page (could change 'head' to 'body' to add it to the end of the body section instead)
+    //}
     $(document).ready(function () {
+        // dynamicallyLoadScript();
+
+        if($('#masthead').length == 0) {
+            $('.site-content').css('margin-top', '0');
+        }
 
         // Products Masonry
         if ($(window).width() > 767 ) {
