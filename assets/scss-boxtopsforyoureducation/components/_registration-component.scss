@@ -344,6 +344,9 @@
                     &.has-error {
                         span {
                             display: block;
+                            &.error-msg {
+                                display: none;
+                            }
                         }
                         input,
                         select {
@@ -357,6 +360,13 @@
                     }
                     label {
                         width: 185px;
+                        &.has-error { 
+                            span {
+                                &.error-msg {
+                                    display: block;
+                                }
+                            }
+                        }
                     }
                     &.agree-checkbox {
                         margin: 21px 0 30px 0;
