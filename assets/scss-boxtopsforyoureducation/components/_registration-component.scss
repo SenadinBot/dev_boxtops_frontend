@@ -333,6 +333,13 @@
                         line-height: 18px;
                         font-family: $brandonGrotesqueLight;
                         color: #a21a19;
+                        &.error-msg {
+                            position: relative;
+                            bottom: 0;
+                            margin-top: 20px;
+                            font-size: 18px;
+                            line-height: 22px;
+                        }
                     }
                     &.has-error {
                         span {

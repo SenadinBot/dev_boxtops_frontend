@@ -10671,6 +10671,13 @@ hr.full-width {
   font-family: "Brandon Grotesque Light", sans-serif;
   color: #a21a19;
 }
+.registration-step-container .stepcontent-container .step-content .form-container .form-group span.error-msg {
+  position: relative;
+  bottom: 0;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 22px;
+}
 .registration-step-container .stepcontent-container .step-content .form-container .form-group.has-error span {
   display: block;
 }
