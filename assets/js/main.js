@@ -87,7 +87,16 @@ jQuery(function ($) {
                 var action = $("#loginAction").val();
                 $.post("/LoginPage/" + action + window.location.search, { Email: email.val(), Password: password.val(), RedirectUri: $("#redirectUri").val(), ClientId: $("#clientId").val(), NotAcceptedTermsUrl: $("#NotAcceptedTermsUrl").val(), AcceptedTermsUrl: $("#AcceptedTermsUrl").val() }, function (data) {
                     if (data.status) {
+                        if (data.showTermsAndConditions) {
+                            $(".login-page-wrapper").hide();
+                            $(".redirectUrl").val(data.redirectUri);
+                            $(".token").val(data.token);
+                            $(".type").val(data.type);
+                            $(".terms-conditions-wrapper").show();
+                        }
+                        else {
                         window.location.href = data.redirectUri;
+                        }
                     } else {
                         $(".login-field-wrapper").next(".custom-error").text(data.message);
                         $(".login-field-wrapper").next(".custom-error").addClass("show-custom-error");
@@ -182,6 +191,15 @@ jQuery(function ($) {
                     $("#school-earning-table tbody").append(tableData);
                 });
         });
+
+        //$('#school-earning-years').on('change', function () {
+        //    var year = this.value;
+        //    $("#SchoolEarningTotal").empty();
+        //    jQuery.get(
+        //        "/SchoolEarningHistory/GetSchoolEarning?year=" + year, function (data) {
+        //            $("#SchoolEarningTotal").append(data);
+        //        });
+        //});
 
         $('#subm-years').on('change', function () {
             var year = this.value;
@@ -556,6 +574,34 @@ jQuery(function ($) {
             $(".custom-tabs li[rel^='" + d_activeTab + "']").toggleClass("active");
         });
 
+        // Checkbox value
+        $(".control-checkbox").on("click", function () {
+            console.log("Test click");
+            if ($(".checkbox-value").is(":checked")) {
+                $(".checkbox-value").attr("value", "true");
+            } else {
+                $(".checkbox-value").attr("value", "false");
+            }
+        });
+
+        //Cookie
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        //Hide Hero Banner
+        $(".app-download-link").on("click", function (e) {
+
+            e.preventDefault();
+            setCookie("AppDownloadCookie", true, 10);
+            window.open(jQuery(this).attr("href"), '_blank')
+            $(".hero-banner-container").fadeOut();
+
+        })
+
         // Registration Step Wizard
         var navListItems = $('div.setup-panel div a'),
             allWells = $('.step-content').not(".experienceEditorMode"),
@@ -621,6 +667,26 @@ jQuery(function ($) {
                     $("#mature_err").removeClass("hidden");
                 }
                 isValid = false;
+            }
+            if (parseInt(currentStep) == 3) {
+                var passwordTextbox = $("#password");
+                var confirmPasswordTextbox = $("#confirmPassword");
+                if (passwordTextbox.val() != confirmPasswordTextbox.val()) {
+                    isValid = false;
+                    passwordTextbox.closest(".form-group").addClass("has-error")
+                    confirmPasswordTextbox.closest(".form-group").addClass("has-error")
+                } else {
+                    var regex = /(?=^.{6,20}$)(?=.*\d)(?=.*[a-zA-Z])(?!.*\s)(\w|[~!$&+,:;=?\[\]@#_|<>{}()^%*\.\-\+])*$/;
+                    if (!regex.test(confirmPasswordTextbox.val())) {
+                        isValid = false;
+                        console.log()
+                        passwordTextbox.closest(".form-group").addClass("has-error")
+                        confirmPasswordTextbox.closest(".form-group").addClass("has-error")
+                    } else {
+                        passwordTextbox.closest(".form-group").addClass("has-error")
+                        confirmPasswordTextbox.closest(".form-group").addClass("has-error")
+                    }
+                }
             }
 
             if (isValid) {
@@ -1270,9 +1336,9 @@ jQuery(function ($) {
     jQuery(".cookie-btn").on("click", function (e) {
         e.preventDefault();
         if (jQuery(".acceptTerms").is(":checked")) {
-            jQuery.get("/cookie/setcookie", function (data) {
+            jQuery.get("/cookie/setcookie?token=" + jQuery(".token").val() + "&email=" + jQuery("#login-email").val() + "&type=" + jQuery(".type").val(), function (data) {
                 if (data.success) {
-                    window.location.href = getParameterByName("returnUrl");
+                    window.location.href = jQuery(".redirectUrl").val();
                 }
                 else {
                     jQuery(".error-msg").css("display", "block");
@@ -1284,17 +1350,4 @@ jQuery(function ($) {
         }
 
     });
-
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-
-
-
 })(jQuery);
