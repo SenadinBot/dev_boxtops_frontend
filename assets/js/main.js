@@ -17,16 +17,14 @@ var confirmPasswordTextbox = jQuery(".confirmPassword");
 
 jQuery(function ($) {
 
-
-    //function dynamicallyLoadScript() {
-    //    var script = document.createElement("script");  // create a script DOM node
-    //    script.type = "text/javascript";
-    //    script.src = "/assets/js/vendor/boxtopsforyoureducation/masonry.min.js";  // set its src to the provided URL
-
-    //    document.head.prepend(script);  // add it to the begining of the head section of the page (could change 'head' to 'body' to add it to the end of the body section instead)
-    //}
     $(document).ready(function () {
-        // dynamicallyLoadScript();
+
+        $(".datepicker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "100:+0"
+        });
+        $(".datepicker").datepicker("option", "dateFormat", "yy-mm-dd");
 
         // Scroll to center on tabss
         $(".tab-heading").on('click', function () {
@@ -802,8 +800,9 @@ jQuery(function ($) {
             }
         });
 
-        $('.schoolBack').on('click', function () {
-            $(this).parents('.step-content').removeClass('show-school-container');
+        $('.schoolBack').on('click', function (e) {
+            e.preventDefault();
+            $(".schoolBack").parents('.step-content').removeClass('show-school-container');
         });
 
         $('div.setup-panel div a.active-step, div.setup-panel div .active-stepwizard').trigger('click');
@@ -854,7 +853,6 @@ jQuery(function ($) {
             var lnSelector = $("#consAccLastName");
             var zcSelector = $("#consAccZipCode");
             var bdSelector = $("#consAccBirthDate");
-            var bd2Selector = $("#consAccBirthDate2");
 
             if ($(this).parents('.account-item-content').hasClass('edit-user')) {
 
@@ -881,11 +879,8 @@ jQuery(function ($) {
                     zcSelector.attr("placeholder", data.data["ZipCode"]);
                     zcSelector.val("");
 
-                    bd2Selector.attr("placeholder", data.data["BirthDate"]);
-                    bd2Selector.val("");
+                    bdSelector.attr("placeholder", data.data["BirthDate"]);
                     bdSelector.val("");
-                    bdSelector.addClass("hidden");
-                    bd2Selector.show();
 
                     oldFirstName = data["FirstName"];
                     oldLastName = data["LastName"];
@@ -901,12 +896,10 @@ jQuery(function ($) {
                 lnSelector.attr("value", lnSelector.attr("placeholder"));
                 zcSelector.attr("value", zcSelector.attr("placeholder"));
                 bdSelector.attr("value", bdSelector.attr("placeholder"));
-                bd2Selector.hide();
-                bdSelector.removeClass("hidden");
                 oldFirstName = fnSelector.attr("placeholder");
                 oldLastName = lnSelector.attr("placeholder");
                 oldZipCode = zcSelector.attr("placeholder");
-                oldBirthDate = bd2Selector.attr("placeholder");
+                oldBirthDate = bdSelector.attr("placeholder");
             }
 
             $(this).parents('.account-item-content').toggleClass('edit-user');
@@ -952,7 +945,7 @@ jQuery(function ($) {
 
     function getSchools() {
         var text = $("#text").val();
-        $(".school-select-container").empty();
+        $(".school-select-container").remove(".school-select");
         $.get("/Registration/searchschools?keyword=" + text, function (data) {
             console.log("HtmlData: ", data);
             if (data.list.length == 0) {
@@ -966,7 +959,11 @@ jQuery(function ($) {
             if (!$("#text").hasClass("registerPage")) {
                 $("#text").val("");
             }
-            $(".school-select-container").append(htmlData);
+            if ($(".school-select-container").hasClass("register-select-schools")) {
+                $(".school-select-container").prepend(htmlData);
+            } else {
+                $(".school-select-container").append(htmlData);
+            }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 404) {
                 var data = jqXHR.responseJSON;
@@ -983,7 +980,11 @@ jQuery(function ($) {
                     $("#text").val("");
                 }
 
-                $(".school-select-container").append(htmlData);
+                if ($(".school-select-container").hasClass("register-select-schools")) {
+                    $(".school-select-container").prepend(htmlData);
+                } else {
+                    $(".school-select-container").append(htmlData);
+                }
             }
         });
     }

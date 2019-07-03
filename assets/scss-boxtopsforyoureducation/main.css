@@ -70,6 +70,12 @@ a {
   border: 1px solid #E80A4D;
   display: inline-block;
   cursor: pointer; }
+  @media (max-width: 767px) {
+    .custom-btn {
+      -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease; } }
   .custom-btn:hover {
     text-decoration: none;
     color: #E80A4D;
@@ -78,6 +84,12 @@ a {
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       transform: scale(1); }
+      @media (max-width: 767px) {
+        .custom-btn:hover:before {
+          transform: none; } }
+    @media (max-width: 767px) {
+      .custom-btn:hover {
+        background-color: #FFF; } }
     .custom-btn:hover:focus {
       color: #E80A4D; }
   .custom-btn:focus {
@@ -103,6 +115,9 @@ a {
     -moz-transition: 0.2s linear;
     transition: 0.2s linear;
     border-radius: 6px; }
+    @media (max-width: 767px) {
+      .custom-btn:before {
+        display: none; } }
   .custom-btn.blue-btn {
     border: 1px solid #002e5d;
     background-color: #002e5d; }
@@ -112,12 +127,18 @@ a {
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
         transform: scale(1); }
+        @media (max-width: 767px) {
+          .custom-btn.blue-btn:hover:before {
+            transform: none; } }
     .custom-btn.blue-btn:focus {
       color: #002e5d; }
       .custom-btn.blue-btn:focus:before {
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
         transform: scale(1); }
+        @media (max-width: 767px) {
+          .custom-btn.blue-btn:focus:before {
+            transform: none; } }
   .custom-btn.join-free {
     background-color: #fff;
     color: #E80A4D;
