@@ -391,7 +391,9 @@ body {
             height: 100%;
         }
         .btn-container {
-            margin-top: -30px;
+            position: absolute;
+            top: 0;
+            right: 0;
             text-align: right;
         }
     }
