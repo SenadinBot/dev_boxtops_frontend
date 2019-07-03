@@ -2987,6 +2987,10 @@ body.search-open .header:after {
     order: 2;
   }
 }
+.nav-menu .non-logged-nav ul {
+  margin: 0;
+  padding: 0;
+}
 @media (max-width: 767px) {
   .nav-menu .non-logged-nav li:nth-last-child(2) {
     padding-bottom: 0;

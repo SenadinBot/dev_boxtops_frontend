@@ -407,6 +407,10 @@
             top: 0;
             order: 2;
         }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
         li {
             &:nth-last-child(2) {
                 @include media-xs {
