@@ -19,6 +19,17 @@ jQuery(function ($) {
 
     $(document).ready(function () {
 
+        // Retailer Registration & Login Modal
+        $('.registrationModal').on('click', function (e) {
+            e.preventDefault();
+            $('.retailer-registration').addClass('is-visible');
+        });
+
+        $('.loginModal').on('click', function (e) {
+            e.preventDefault();
+            $('.retailer-login').addClass('is-visible');
+        });
+
         $(".datepicker").datepicker({
             changeMonth: true,
             changeYear: true,
@@ -119,6 +130,12 @@ jQuery(function ($) {
                 });
             }
         });
+
+        $(".login-field-handler").on("keyup", function (e) {
+            $(this).removeClass("input-validation-error");
+            $(this).next(".login-field-validation").addClass("hidden");
+        });
+
         //Custom Feature Section Mobile Nav
         if ($("body").find("#customFeatureNav").length > 0) {
             $("#navmenu").append($("#customFeatureMobileNav"));
@@ -945,7 +962,7 @@ jQuery(function ($) {
 
     function getSchools() {
         var text = $("#text").val();
-        $(".school-select-container").remove(".school-select");
+        $(".school-removal").remove();
         $.get("/Registration/searchschools?keyword=" + text, function (data) {
             console.log("HtmlData: ", data);
             if (data.list.length == 0) {
@@ -954,7 +971,7 @@ jQuery(function ($) {
             var htmlData = "";
             for (var i = 0; i < data.list.length; i++) {
 
-                htmlData += "<div class='school-select'>" + "<span>" + data.list[i].SchoolName + "</span>" + "<p>" + data.list[i].Address + "</p>" + "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" + "<button class='nextBtn' type='button' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" + "</div >";
+                htmlData += "<div class='school-select school-removal'>" + "<span>" + data.list[i].SchoolName + "</span>" + "<p>" + data.list[i].Address + "</p>" + "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" + "<button class='nextBtn' type='button' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" + "</div >";
             }
             if (!$("#text").hasClass("registerPage")) {
                 $("#text").val("");

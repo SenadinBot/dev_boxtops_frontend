@@ -32,8 +32,10 @@
     }
     &.background-image-container {
         padding: 106px 0 40px 0;
+        margin-bottom: 40px;
         @include media-xs {
             padding: 87px 0 10px 0;
+            margin-bottom: 15px;
         }
     }
     .custom-template-content {

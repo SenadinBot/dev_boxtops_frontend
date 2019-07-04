@@ -6638,7 +6638,7 @@ hr.full-width {
   @media (max-width: 767px) {
     .adverb-content {
       padding: 0;
-      background: red; } }
+      background: transparent !important; } }
   .adverb-content.small-adverb {
     flex: 1 1 33.333%;
     height: auto;
@@ -7247,10 +7247,12 @@ hr.full-width {
   .custom-template-component.add-top-icon:before {
     display: block; }
   .custom-template-component.background-image-container {
-    padding: 106px 0 40px 0; }
+    padding: 106px 0 40px 0;
+    margin-bottom: 40px; }
     @media (max-width: 767px) {
       .custom-template-component.background-image-container {
-        padding: 87px 0 10px 0; } }
+        padding: 87px 0 10px 0;
+        margin-bottom: 15px; } }
   .custom-template-component .custom-template-content {
     text-align: center;
     max-width: 1172px;
@@ -8477,6 +8479,47 @@ hr.full-width {
     .registration-img-container a:hover:before {
       visibility: visible;
       width: 100%; }
+
+.modal.retailer-registration .modal-wrapper {
+  background-color: transparent;
+  width: 825px; }
+  @media (max-width: 767px) {
+    .modal.retailer-registration .modal-wrapper {
+      width: auto; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .modal.retailer-registration .modal-wrapper {
+      width: auto; } }
+  .modal.retailer-registration .modal-wrapper .modal-header {
+    padding: 0; }
+  .modal.retailer-registration .modal-wrapper .modal-body {
+    background-color: #FFF;
+    padding-bottom: 30px; }
+.modal.retailer-registration .heading-text-button-container.registration-heading .heading-text-button-content h2 {
+  width: 100%; }
+.modal.retailer-registration .registration-step-container .stepwizard-container {
+  width: 750px; }
+  @media (max-width: 767px) {
+    .modal.retailer-registration .registration-step-container .stepwizard-container {
+      width: calc(100% - 38.4px); } }
+.modal.retailer-registration .registration-step-container .stepcontent-container {
+  width: 750px; }
+  @media (max-width: 767px) {
+    .modal.retailer-registration .registration-step-container .stepcontent-container {
+      width: calc(100% - 38.4px); } }
+.modal.retailer-login .modal-wrapper {
+  background-color: transparent;
+  width: 825px; }
+  @media (max-width: 767px) {
+    .modal.retailer-login .modal-wrapper {
+      width: auto; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .modal.retailer-login .modal-wrapper {
+      width: auto; } }
+  .modal.retailer-login .modal-wrapper .modal-header {
+    padding: 0; }
+  .modal.retailer-login .modal-wrapper .modal-body {
+    background-color: #002e5d;
+    padding-bottom: 30px; }
 
 .account-container {
   display: flex;

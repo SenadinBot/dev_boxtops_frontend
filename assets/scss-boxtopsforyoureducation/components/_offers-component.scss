@@ -675,7 +675,7 @@ hr {
     position: relative;
     @include media-xs {
         padding: 0;
-        background: red;
+        background: transparent !important;
     }
     &.small-adverb {
         flex: 1 1 33.333%;

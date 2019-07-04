@@ -720,3 +720,66 @@
         }
     }
 }
+.modal {
+    &.retailer-registration {
+        .modal-wrapper {
+            background-color: transparent;
+            width: 825px;
+            @include media-xs {
+                width: auto;
+            }
+            @include media-sm {
+                width: auto;
+            }
+            .modal-header {
+                padding: 0;
+            }
+            .modal-body {
+                background-color: $white;
+                padding-bottom: 30px;
+            }
+        }
+        .heading-text-button-container {
+            &.registration-heading {
+                .heading-text-button-content {
+                    h2 {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .registration-step-container {
+            .stepwizard-container {
+                width: 750px;
+                @include media-xs {
+                    width: calc(100% - 38.4px);
+                }
+            }
+            .stepcontent-container {
+                width: 750px;
+                @include media-xs {
+                    width: calc(100% - 38.4px);
+                }
+            }
+        }
+    }
+    &.retailer-login {
+        .modal-wrapper {
+            background-color: transparent;
+            width: 825px;
+            @include media-xs {
+                width: auto;
+            }
+            @include media-sm {
+                width: auto;
+            }
+            .modal-header {
+                padding: 0;
+            }
+            .modal-body {
+                background-color: $midnightBlue;
+                padding-bottom: 30px;
+            }
+        }
+    }
+}
