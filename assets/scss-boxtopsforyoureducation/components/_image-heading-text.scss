@@ -145,6 +145,9 @@
                     @include media-xs {
                         margin-bottom: 0;
                     }
+                    .column-icons-content { 
+                        width: calc(100% - 60px);
+                    }
                 }
                 @include media-xs {
                     width: 100%;

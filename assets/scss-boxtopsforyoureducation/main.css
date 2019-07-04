@@ -1675,6 +1675,8 @@ body {
         @media (max-width: 767px) {
           .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item:last-child {
             margin-bottom: 0; } }
+        .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item:last-child .column-icons-content {
+          width: calc(100% - 60px); }
         @media (max-width: 767px) {
           .image-heading-text-container .image-heading-text-content .column-icons-container .column-icons-item {
             width: 100%;
