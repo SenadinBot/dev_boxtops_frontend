@@ -903,6 +903,26 @@
         &:first-child {
             margin-bottom: 23px;
         }
+        .link-container {
+            a {
+                display: inline-block;
+                margin-right: 15px;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                transition: all .3s ease;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &:hover {
+                    opacity: 0.7;
+                }
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+        }
     }
     .form-group {
         &.agree-checkbox {
