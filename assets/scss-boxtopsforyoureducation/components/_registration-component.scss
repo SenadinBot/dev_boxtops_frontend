@@ -325,27 +325,21 @@
                         position: relative;
                     }
                     span {
-                        display: none;
-                        position: absolute;
-                        bottom: -18px;
-                        left: 0;
-                        font-size: 16px;
-                        line-height: 18px;
-                        font-family: $brandonGrotesqueLight;
-                        color: #a21a19;
                         &.error-msg {
-                            position: relative;
-                            bottom: 0;
-                            margin-top: 20px;
-                            font-size: 18px;
-                            line-height: 22px;
+                            display: none;
+                            position: absolute;
+                            bottom: -18px;
+                            left: 0;
+                            font-size: 16px;
+                            line-height: 18px;
+                            font-family: $brandonGrotesqueLight;
+                            color: #a21a19;
                         }
                     }
                     &.has-error {
                         span {
-                            display: block;
                             &.error-msg {
-                                display: none;
+                                display: block;
                             }
                         }
                         input,
@@ -364,6 +358,11 @@
                             span {
                                 &.error-msg {
                                     display: block;
+                                    position: relative;
+                                    bottom: 0;
+                                    margin-top: 20px;
+                                    font-size: 18px;
+                                    line-height: 22px;
                                 }
                             }
                         }
@@ -780,6 +779,15 @@
                 background-color: $midnightBlue;
                 padding-bottom: 30px;
             }
+        }
+    }
+    .custom-btn {
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+        &:hover {
+            background-color: $white;
         }
     }
 }
