@@ -10423,6 +10423,33 @@ a.ui-button:hover, a.ui-button:focus {
 .ui-widget-shadow {
   -webkit-box-shadow: 0px 0px 5px #666666;
   box-shadow: 0px 0px 5px #666666; }
+<<<<<<< Updated upstream
+=======
+
+.retailer-container {
+  max-width: 825px;
+  width: 100%; }
+  .retailer-container .registration-step-container {
+    padding-bottom: 30px; }
+    .retailer-container .registration-step-container .stepwizard-container {
+      width: 750px; }
+      @media (max-width: 767px) {
+        .retailer-container .registration-step-container .stepwizard-container {
+          width: calc(100% - 38.4px); } }
+    .retailer-container .registration-step-container .stepcontent-container {
+      width: 750px; }
+      @media (max-width: 767px) {
+        .retailer-container .registration-step-container .stepcontent-container {
+          width: calc(100% - 38.4px); } }
+  .retailer-container .registration-step-container {
+    max-width: 100%;
+    margin: 0px auto; }
+  .retailer-container .registration-img-container {
+    width: 100%;
+    margin: 0 auto 23.3px auto; }
+  .retailer-container.retailer-login {
+    background-color: #002e5d; }
+>>>>>>> Stashed changes
 
 .feature-item-wrap {
   display: flex;

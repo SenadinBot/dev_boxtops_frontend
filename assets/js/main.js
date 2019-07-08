@@ -19,19 +19,6 @@ jQuery(function ($) {
 
     $(document).ready(function () {
 
-        // Retailer Registration & Login Modal
-        $('.registrationModal').on('click', function (e) {
-            e.preventDefault();
-            $('.retailer-registration').addClass('is-visible');
-            $('body').addClass('modal-open');            
-        });
-
-        $('.loginModal').on('click', function (e) {
-            e.preventDefault();
-            $('.retailer-login').addClass('is-visible');
-            $('body').addClass('modal-open');            
-        });
-
         $(".datepicker").datepicker({
             changeMonth: true,
             changeYear: true,
