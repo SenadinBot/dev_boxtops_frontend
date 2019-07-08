@@ -26,11 +26,22 @@ jQuery(function ($) {
         });
         $(".datepicker").datepicker("option", "dateFormat", "yy-mm-dd");
 
-        // Scroll to center on tabss
+        // Scroll to center on tabs
         $(".tab-heading").on('click', function () {
-            $('html, body').animate({
-                scrollTop: $(".tab-container").offset().top - 100
-            }, 500);
+            var tabHeading = $(this);
+            var tabHeadingOffset = tabHeading.offset().top;
+            var tabHeadingHeight = tabHeading.height();
+            var windowHeight = $(window).height();
+            var offset;
+
+            if (tabHeadingHeight < windowHeight) {
+                offset = tabHeadingOffset - ((windowHeight / 2) - (tabHeadingHeight / 2));
+            }
+            else {
+                offset = tabHeadingOffset;
+            }
+            var speed = 700;
+            $('html, body').animate({ scrollTop: offset }, speed);
         });
 
         // Remove space if there is no header
@@ -955,7 +966,7 @@ jQuery(function ($) {
             var schoolName = $(this).data("schoolname");
             $('.modal').removeClass('is-visible');
             $('body').removeClass('modal-open');
-            
+
 
             $.post("/Account/ChangeSchool", { SchoolId: schoolId, SchoolName: schoolName }, function (data) {
                 $("#suppSchool").text(data.schoolName);
