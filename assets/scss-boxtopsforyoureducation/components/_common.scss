@@ -314,6 +314,9 @@
   }
 body {
     background-color: #00182D;
+    &.modal-open {
+        overflow: hidden;
+    }
     &.menu-open {
         overflow: hidden;
         .site-content {

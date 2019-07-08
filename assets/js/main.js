@@ -49,13 +49,14 @@ jQuery(function ($) {
             $('.site-content').css('margin-top', '0');
         }
 
-        // Products Masonry
-        if ($(window).width() > 767) {
-            $('.earn-product-container').masonry({
-                itemSelector: '.earn-product-item',
-                gutter: 60
-            });
-        }
+        $(window).load(function () {
+            if ($(window).width() > 767) {
+                $('.earn-product-container').masonry({
+                    itemSelector: '.earn-product-item',
+                    gutter: 60
+                });
+            }
+        });
 
         // Login/Reset Password Content
         if ($('.login-site-content').length) {
@@ -104,7 +105,7 @@ jQuery(function ($) {
                             $(".terms-conditions-wrapper").show();
                         }
                         else {
-                        window.location.href = data.redirectUri;
+                            window.location.href = data.redirectUri;
                         }
                     } else {
                         $(".login-field-wrapper").next(".custom-error").text(data.message);
@@ -138,7 +139,8 @@ jQuery(function ($) {
 
         //Custom Feature Section Mobile Nav
         if ($("body").find("#customFeatureNav").length > 0) {
-            $("#navmenu").append($("#customFeatureMobileNav"));
+            //$("#navmenu").append($("#customFeatureMobileNav"));
+            $("#customFeatureMobileNav").insertAfter(".mobile-account-btn");
         }
         // Menu
         $('#navtoggle').on('click', function () {
@@ -686,28 +688,58 @@ jQuery(function ($) {
             if (parseInt(currentStep) == 3) {
                 var passwordTextbox = $("#password");
                 var confirmPasswordTextbox = $("#confirmPassword");
-                if (passwordTextbox.val() != confirmPasswordTextbox.val()) {
-                    isValid = false;
-                    passwordTextbox.closest(".form-group").addClass("has-error")
-                    confirmPasswordTextbox.closest(".form-group").addClass("has-error")
+                var passHasValue = true;
+                if (passwordTextbox.val() == "" || passwordTextbox.val() == null) {
+                    var errPTxt = passwordTextbox.closest(".input-group").find(".pass-err-msg").text();
+
+                    passwordTextbox.closest(".input-group").find(".error-msg").text(errPTxt)
+                    passHasValue = false;
+                    passwordTextbox.closest(".form-group").addClass("has-error");
                 } else {
-                    var regex = /(?=^.{6,20}$)(?=.*\d)(?=.*[a-zA-Z])(?!.*\s)(\w|[~!$&+,:;=?\[\]@#_|<>{}()^%*\.\-\+])*$/;
-                    if (!regex.test(confirmPasswordTextbox.val())) {
+                    passwordTextbox.closest(".error-msg").addClass("hidden");
+                }
+
+                if (confirmPasswordTextbox.val() == "" || confirmPasswordTextbox.val() == null) {
+                    var errCPTxt = confirmPasswordTextbox.closest(".input-group").find(".pass-err-msg").text();
+
+                    confirmPasswordTextbox.closest(".input-group").find(".error-msg").text(errCPTxt);
+                    confirmPasswordTextbox.closest(".error-msg").removeClass("hidden");
+                    passHasValue = false;
+                    confirmPasswordTextbox.closest(".form-group").addClass("has-error");
+                } else {
+                    confirmPasswordTextbox.closest(".error-msg").addClass("hidden");
+                }
+                if (passHasValue) {
+                    if (passwordTextbox.val() != confirmPasswordTextbox.val()) {
                         isValid = false;
-                        console.log()
-                        passwordTextbox.closest(".form-group").addClass("has-error")
-                        confirmPasswordTextbox.closest(".form-group").addClass("has-error")
+
+                        var errTxt = confirmPasswordTextbox.closest(".input-group").find(".pass-not-match").text();
+                        confirmPasswordTextbox.closest(".input-group").find(".error-msg").text(errTxt);
+                        passwordTextbox.closest(".input-group").find(".error-msg").text(errTxt);
+
+                        passwordTextbox.closest(".form-group").addClass("has-error");
+                        confirmPasswordTextbox.closest(".form-group").addClass("has-error");
                     } else {
-                        passwordTextbox.closest(".form-group").addClass("has-error")
-                        confirmPasswordTextbox.closest(".form-group").addClass("has-error")
+                        var regex = /(?=^.{6,20}$)(?=.*\d)(?=.*[a-zA-Z])(?!.*\s)(\w|[~!$&+,:;=?\[\]@#_|<>{}()^%*\.\-\+])*$/;
+                        if (!regex.test(confirmPasswordTextbox.val())) {
+                            isValid = false;
+                            var errTxt = confirmPasswordTextbox.closest(".input-group").find(".pass-format-err").text();
+                            confirmPasswordTextbox.closest(".input-group").find(".error-msg").text(errTxt);
+                            passwordTextbox.closest(".input-group").find(".error-msg").text(errTxt);
+
+                            passwordTextbox.closest(".form-group").addClass("has-error");
+                            confirmPasswordTextbox.closest(".form-group").addClass("has-error");
+                        } else {
+                            passwordTextbox.closest(".form-group").removeClass("has-error")
+                            confirmPasswordTextbox.closest(".form-group").removeClass("has-error")
+                        }
                     }
                 }
             }
-
             if (isValid) {
 
                 if ($(this).hasClass("last")) {
-                    if (acceptedTerms()) {
+                    if (acceptedTerms() || $("#cAction").val() == "RetailerRegister") {
                         postRegistration();
                     }
                     else {
@@ -766,7 +798,6 @@ jQuery(function ($) {
                     } else if (cAction == "CoordinatorRegister") {
                         window.location.href = "/Coordinators login";
                     } else if (cAction == "RetailerRegister") {
-                        console.log("Inside if", cAction);
 
                         window.location.href = data.redirectUri;
                     }
@@ -843,6 +874,7 @@ jQuery(function ($) {
         $('.modal-close').on('click', function (e) {
             e.preventDefault();
             $('.modal').removeClass('is-visible');
+            $('body').removeClass('modal-open');
         });
         $('.school-modal').on('click', function (e) {
             e.preventDefault();
@@ -857,6 +889,12 @@ jQuery(function ($) {
                 getSchools();
             }
             $('.modal').addClass('is-visible');
+            $('body').addClass('modal-open');
+        });
+        $('.accountBack').on('click', function (e) {
+            e.preventDefault();
+            $('.modal').removeClass('is-visible');
+            $('body').addClass('modal-open');
         });
 
         // Edit User Infoadd-store-btn
@@ -927,6 +965,8 @@ jQuery(function ($) {
             var schoolId = $(this).data("schoolid");
             var schoolName = $(this).data("schoolname");
             $('.modal').removeClass('is-visible');
+            $('body').removeClass('modal-open');
+            
 
             $.post("/Account/ChangeSchool", { SchoolId: schoolId, SchoolName: schoolName }, function (data) {
                 $("#suppSchool").text(data.schoolName);
@@ -964,14 +1004,15 @@ jQuery(function ($) {
         var text = $("#text").val();
         $(".school-removal").remove();
         $.get("/Registration/searchschools?keyword=" + text, function (data) {
-            console.log("HtmlData: ", data);
-            if (data.list.length == 0) {
-                return false;
-            }
             var htmlData = "";
-            for (var i = 0; i < data.list.length; i++) {
 
-                htmlData += "<div class='school-select school-removal'>" + "<span>" + data.list[i].SchoolName + "</span>" + "<p>" + data.list[i].Address + "</p>" + "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" + "<button class='nextBtn' type='button' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" + "</div >";
+            if (data.list.length == 0) {
+                htmlData += "<h3 class='school-removal'>No schools matched your search term.</h3>"
+            } else {
+                for (var i = 0; i < data.list.length; i++) {
+
+                    htmlData += "<div class='school-select school-removal'>" + "<span>" + data.list[i].SchoolName + "</span>" + "<p>" + data.list[i].Address + "</p>" + "<p>" + data.list[i].City + "," + data.list[i].State + " " + data.list[i].ZipCode + "</p>" + "<button class='nextBtn' type='button' data-schoolId='" + data.list[i].GmilId + "' data-schoolName='" + data.list[i].SchoolName + "'>SELECT THIS SCHOOL</button>" + "</div >";
+                }
             }
             if (!$("#text").hasClass("registerPage")) {
                 $("#text").val("");
@@ -1368,4 +1409,6 @@ jQuery(function ($) {
         }
 
     });
+
 })(jQuery);
+

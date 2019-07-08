@@ -871,6 +871,8 @@ body {
 
 body {
   background-color: #00182D; }
+  body.modal-open {
+    overflow: hidden; }
   body.menu-open {
     overflow: hidden; }
     body.menu-open .site-content {
@@ -9458,6 +9460,17 @@ hr.full-width {
   @media (min-width: 992px) and (max-width: 1199px) {
     .school-modal-container .school-select:last-child {
       margin-bottom: 45px; } }
+.school-modal-container .btn-container {
+  width: 100%; }
+  .school-modal-container .btn-container .accountBack {
+    background-color: #D9D9D9;
+    border-color: #D9D9D9;
+    margin-right: 16px; }
+    @media (max-width: 767px) {
+      .school-modal-container .btn-container .accountBack {
+        margin-right: 10px; } }
+    .school-modal-container .btn-container .accountBack:hover {
+      color: #D9D9D9; }
 
 .ui-helper-hidden {
   display: none; }
