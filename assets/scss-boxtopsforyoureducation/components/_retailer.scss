@@ -3,16 +3,12 @@
     width: 100%;
     .registration-step-container {
         .stepwizard-container {
-            width: 750px;
-            @include media-xs {
-                width: calc(100% - 38.4px);
-            }
+            max-width: 825px;
+            width: 90%;
         }
         .stepcontent-container {
-            width: 750px;
-            @include media-xs {
-                width: calc(100% - 38.4px);
-            }
+            max-width: 825px;
+            width: 90%;            
         }
         padding-bottom: 30px;
     }
