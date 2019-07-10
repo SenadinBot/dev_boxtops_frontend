@@ -42,13 +42,19 @@
         flex-flow: column nowrap;
         justify-content: flex-start;
         text-align: left;
+        padding-right: 60px;
         @include media-xs {
             flex: 1 1 100%;
             margin-bottom: 15px;
+            padding-right: 0;
         }
         @include media-sm {
             flex: 1 1 100%;
             margin-bottom: 15px;
+            padding-right: 0;
+        }
+        @include media-md {
+            padding-right: 40px;
         }
     }
     .redeem-code-content {
@@ -59,6 +65,7 @@
         justify-content: flex-start;
         text-align: center;
         margin-bottom: 150px;
+        padding-right: 60px;
         @include media-xs {
             flex: 1 1 100%;
             margin-bottom: 20px;
@@ -68,6 +75,9 @@
             flex: 1 1 100%;
             margin-bottom: 20px;
             padding: 0 10px;
+        }
+        @include media-md {
+            padding-right: 40px;
         }
     }
     .offer-details-content {
@@ -78,13 +88,19 @@
         justify-content: flex-start;
         text-align: center;
         margin-bottom: 150px;
+        padding-right: 60px;
         @include media-xs {
             flex: 1 1 100%;
             margin-bottom: 50px;
+            padding-right: 0;
         }
         @include media-sm {
             flex: 1 1 100%;
             margin-bottom: 50px;
+            padding-right: 0;
+        }
+        @include media-md {
+            padding-right: 40px;
         }
     }
 }
