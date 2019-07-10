@@ -5,10 +5,33 @@
         .stepwizard-container {
             max-width: 825px;
             width: 90%;
+            margin: 0 auto 30px auto;
         }
         .stepcontent-container {
             max-width: 825px;
-            width: 90%;            
+            width: 90%;     
+            .step-content {
+                .form-container {
+                    .form-group {
+                        &.agree-checkbox {
+                            margin: 0;
+                            padding-top: 25px;
+                            label {
+                                margin-bottom: 25px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .description {
+                        margin-top: 25px;
+                    }
+                }
+                .school-select-container {
+                    .school-select {
+                        margin-bottom: 30px;
+                    }
+                }
+            }   
         }
         padding-bottom: 30px;
     }
@@ -22,5 +45,15 @@
     }
     &.retailer-login {
         background-color: $midnightBlue;
+        .new-login-container {
+            padding: 40px 0;
+            min-height: auto;
+            .login-image {
+                margin: 0 29px 31.7px 29px;
+            }
+            .login-form-wrapper {
+                margin: 25px auto 0 auto;
+            }
+        }
     }
 }
