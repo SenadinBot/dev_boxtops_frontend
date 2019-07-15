@@ -49,14 +49,14 @@ jQuery(function ($) {
             $('.site-content').css('margin-top', '0');
         }
 
-        // $(window).load(function () {
-        //     if ($(window).width() > 767) {
-        //         $('.earn-product-container').masonry({
-        //             itemSelector: '.earn-product-item',
-        //             gutter: 60
-        //         });
-        //     }
-        // });
+        $(window).load(function () {
+            if ($(window).width() > 767) {
+                $('.earn-product-container').masonry({
+                    itemSelector: '.earn-product-item',
+                    gutter: 60
+                });
+            }
+        });
 
         // Login/Reset Password Content
         if ($('.login-site-content').length) {
