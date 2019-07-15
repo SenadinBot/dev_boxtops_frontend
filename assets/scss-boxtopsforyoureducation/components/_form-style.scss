@@ -232,6 +232,7 @@
         text-align: left;
         display: inline-block;
         width: 150px;
+        vertical-align: top;
         &:first-child {
             @include media-sm {
                 margin-bottom: 10px;
